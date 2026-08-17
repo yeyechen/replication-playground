@@ -1,0 +1,132 @@
+{
+  "_schema": "data_verification.v1",
+  "slug": "graves_2025_what_lies_beneath_zero_censoring_demand_estimation_and_hidden_belief",
+  "checked_at": "2026-08-14",
+  "verdict": "ready",
+  "verdict_rationale": "All required data sources are present in the ClickHouse catalog: 13F holdings (Thomson Reuters s34), CRSP stock data, Compustat fundamentals, NAICS codes via CRSP/Compustat header tables. Coverage spans the paper's full sample period (1984-2021). The data verification is READY in terms of source coverage. The computational scope reduction (sub-period + sub-sample) is recorded in scope_reduction_target below and tracked in preparations/assumptions.md.",
+  "coverage_pct": 100,
+  "blocking_issues": [],
+  "requirements": [
+    {
+      "id": "13F_holdings_data",
+      "description": "Thomson Reuters 13F institutional holdings (s34) with manager numbers, CUSIPs, holdings, and AUM",
+      "needed_columns": ["mgrno", "fdate", "cusip", "shares", "typecode", "country"],
+      "matched_table": "tr_13f_202401.s34",
+      "matched_columns": ["mgrno", "fdate", "cusip", "shares", "typecode", "country"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "13F_manager_names",
+      "description": "Manager names, typecodes, and country for rigid/dynamic classification",
+      "needed_columns": ["mgrno", "mgrname", "typecode", "country"],
+      "matched_table": "tr_13f_202401.s34names",
+      "matched_columns": ["mgrno", "mgrname", "typecode", "country"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "13F_aggregated_holdings",
+      "description": "Aggregated holding data by (mgrno, cusip, fdate)",
+      "needed_columns": ["mgrno", "cusip", "fdate", "shares"],
+      "matched_table": "tr_13f_202401.s34type3",
+      "matched_columns": ["mgrno", "cusip", "fdate", "shares"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_daily_stock_data",
+      "description": "CRSP daily stock file (returns, prices, shares outstanding, exchcd)",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_stock_data",
+      "description": "CRSP monthly stock file (returns, prices, shares outstanding)",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_pit_header",
+      "description": "CRSP PIT header with shrcd, exchcd, NAICS for universe filter",
+      "needed_columns": ["permno", "hshrcd", "hexcd", "hnaics", "begdat", "enddat"],
+      "matched_table": "crsp_202601.dsfhdr",
+      "matched_columns": ["permno", "hshrcd", "hexcd", "hnaics", "begdat", "enddat"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_annual_fundamentals",
+      "description": "Compustat annual fundamentals for book equity, OP, investment",
+      "needed_columns": ["gvkey", "datadate", "cusip", "at", "ceq", "txdb", "pstkrv", "ib", "revt", "cogs", "xsga", "xint", "capx", "sale", "naicsh"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "cusip", "at", "ceq", "txdb", "pstkrv", "ib", "revt", "cogs", "xsga", "xint", "capx", "sale", "naicsh"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "fama_french_factors",
+      "description": "Fama-French 3-factor + Carhart momentum (UMD) factors",
+      "needed_columns": ["mkt_rf", "smb", "hml", "umd", "rf"],
+      "matched_table": "ff_202401_archive (or ff_archive_202410)",
+      "matched_columns": ["mkt_rf", "smb", "hml", "umd", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat link table for CUSIP/permno/gvkey linkage",
+      "needed_columns": ["permno", "gvkey"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["permno", "gvkey"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "computed_columns_required": [
+    {
+      "name": "beta",
+      "formula": "Cov(log(1+R_i), M) / Var(M) over 6 months (~126 trading days)",
+      "source": "computed from dsf + market returns"
+    },
+    {
+      "name": "operating_profitability",
+      "formula": "(revt - cogs - xsga - xint) / be  per FF2015",
+      "source": "comp_202601.funda with 1-year lag"
+    },
+    {
+      "name": "investment",
+      "formula": "(capx_t / capx_{t-1}) - 1 OR total assets growth per FF2015",
+      "source": "comp_202601.funda with 1-year lag"
+    },
+    {
+      "name": "book_equity",
+      "formula": "ceq + txdb - pstkrv  per FF (2008)",
+      "source": "comp_202601.funda"
+    },
+    {
+      "name": "idiosyncratic_variance",
+      "formula": "var(log(1+R)) - beta^2 * var(log(1+M)) over past 126 days",
+      "source": "computed from dsf + market factor"
+    },
+    {
+      "name": "naics4",
+      "formula": "first 4 digits of NAICS",
+      "source": "comp_202601.funda.naicsh or crsp_202601.dsfhdr.hnaics"
+    }
+  ],
+  "scope_reduction_recorded": true,
+  "scope_reduction_reason": "Paper requires SCQR estimation across 247,997 institution × quarter pairs (Section 5). Each SCQR = ~100 LP solves (descending grid). Total: ~25M LP solves. At even 1s/LP, this is 250+ days of single-thread compute. Within a single replication session, this is infeasible.",
+  "scope_reduction_target": {
+    "sub_period": "2010Q1 to 2021Q4 (most data-rich 12 years; most stable methodology)",
+    "sub_sample": "Top 100 dynamic institutions by AUM (preserves economic content while reducing compute 1000x)",
+    "estimated_compute": "~25K LP solves = several hours of compute"
+  },
+  "paper_evidence_for_scope_reduction": "Section 5: 'The main empirical results in Section 6 require the SCQR method to be applied to 247,997 institution × date pairs.' Section 4.1: 'I estimate institutional demand for common stocks in each quarter' from 1984Q4-2021Q4 (149 quarters × ~1660 institutions = 247K)."
+}

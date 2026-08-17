@@ -1,0 +1,282 @@
+[
+  {
+    "rule_id": "universe_share_codes",
+    "category": "universe",
+    "section": "§3.1 Sample Construction",
+    "paper_location": "L163",
+    "paper_quote": "Our stock sample includes all common stocks (CRSP share codes 10 and 11) traded on the New York Stock Exchange (NYSE), American Stock Exchange (Amex), and Nasdaq exchanges from January 1968 to December 2022."
+  },
+  {
+    "rule_id": "universe_exchanges",
+    "category": "universe",
+    "section": "§3.1 Sample Construction",
+    "paper_location": "L163",
+    "paper_quote": "Our stock sample includes all common stocks (CRSP share codes 10 and 11) traded on the New York Stock Exchange (NYSE), American Stock Exchange (Amex), and Nasdaq exchanges from January 1968 to December 2022."
+  },
+  {
+    "rule_id": "universe_price_floor",
+    "category": "universe",
+    "section": "§3.1 Sample Construction",
+    "paper_location": "L169",
+    "paper_quote": "We exclude stocks priced below $5 per share to ensure that our results are not driven by micro-cap or illiquid firms."
+  },
+  {
+    "rule_id": "universe_utility_financial_exclusion",
+    "category": "universe",
+    "section": "§3.1 Sample Construction",
+    "paper_location": "L169",
+    "paper_quote": "We also exclude firms in the heavily regulated utility (SIC codes 4900–4949) and financial (SIC codes 6000–6999) sectors."
+  },
+  {
+    "rule_id": "avail_min_daily_obs",
+    "category": "sample",
+    "section": "§3.1 Sample Construction",
+    "paper_location": "L167-169",
+    "paper_quote": "To be included in our sample for a given month, we require that at least 15 daily stock return observations are available to calculate the key variables."
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "§3.1 Sample Construction",
+    "paper_location": "L163",
+    "paper_quote": "Our stock sample includes all common stocks (CRSP share codes 10 and 11) traded on the New York Stock Exchange (NYSE), American Stock Exchange (Amex), and Nasdaq exchanges from January 1968 to December 2022."
+  },
+  {
+    "rule_id": "sample_period_dhs",
+    "category": "sample",
+    "section": "§3.4.1 Factor Models for Performance Evaluation",
+    "paper_location": "L219",
+    "paper_quote": "The FIN and PEAD factors are available from July 1972 to December 2022, whereas the analyses involving the remaining factors cover the full sample period from January 1968 to December 2022."
+  },
+  {
+    "rule_id": "sample_period_inst_iskew",
+    "category": "sample",
+    "section": "Table 2 description",
+    "paper_location": "L1143",
+    "paper_quote": "The sample period spans April 1980 to December 2022 for INST and E(ISKEW), and January 1968 to December 2022 for all other characteristics."
+  },
+  {
+    "rule_id": "delisting_no_special_treatment",
+    "category": "delisting",
+    "section": "§3 (paper silent on delisting return substitution)",
+    "paper_location": "L163-169",
+    "paper_quote": "The daily and monthly return and volume data are from the Center for Research in Security Prices (CRSP)."
+  },
+  {
+    "rule_id": "sort_monthly_decile_vw",
+    "category": "sort",
+    "section": "§4.1 + Table 1 description",
+    "paper_location": "L269",
+    "paper_quote": "Following the established literature, we sort stocks in ascending order based on their MAX values, defined as the average of the five highest daily returns in a given month, and form 10 decile portfolios."
+  },
+  {
+    "rule_id": "sort_vw_excess_ret_minus_rf",
+    "category": "sort",
+    "section": "Table 1 description",
+    "paper_location": "L972",
+    "paper_quote": "The reported values are value-weighted average one-month-ahead excess returns (RET – RF), as well as alphas from risk-adjusted models (CAPM, FF3, FFC4, FFCPS, FF5, FF6, and FF6PS) and mispricing-adjusted models (SY and DHS)."
+  },
+  {
+    "rule_id": "sort_max_beta_neutralized",
+    "category": "sort",
+    "section": "§3.2 + §5.1",
+    "paper_location": "L175-177",
+    "paper_quote": "We construct $\\text{MAX}^\\beta$ by first sorting stocks into decile portfolios based on their market beta, and then within each beta-sorted portfolio, we sort stocks into decile portfolios based on their MAX. We then group together all stocks with the same MAX portfolio ranking, $n$, across the different beta portfolio ranks, and call the newly formed decile portfolio the $\\text{MAX}^\\beta$ portfolio of rank $n$."
+  },
+  {
+    "rule_id": "winsorize_fm_1pct",
+    "category": "winsorize",
+    "section": "§4.4 + §5.4",
+    "paper_location": "L350-358",
+    "paper_quote": "To mitigate the effects of outliers in the regression tests, we winsorize all explanatory variables cross-sectionally at the 1st and 99th percentiles of their distribution. We apply winsorization to each variable on a month-to-month basis using this fixed sample."
+  },
+  {
+    "rule_id": "winsorize_not_in_portfolios",
+    "category": "winsorize",
+    "section": "§4.4 footnote 9",
+    "paper_location": "L368",
+    "paper_quote": "The winsorization procedure applied here would not affect the portfolio-level tests, which constitute the majority of the analyses carried out in the paper, as the portfolios are created according to their characteristics ranks (such as the ones for MAX and MAX$^{\\beta}$) and their granularity is above a percentile."
+  },
+  {
+    "rule_id": "factor_models_set",
+    "category": "factor",
+    "section": "§3.4.1",
+    "paper_location": "L207",
+    "paper_quote": "We test the significance of the return spreads on MAX- and MAX$^{\\beta}$-sorted portfolios using a comprehensive set of factor models: (i) CAPM with the excess market return (MKT); (ii) Fama-French (1993) three-factor (FF3) model with the MKT, size (SMB), and book-to-market (HML) factors; (iii) Fama-French-Carhart four-factor (FFC4) model with the MKT, size (SMB), book-to-market (HML), and Carhart's (1997) momentum factor; (iv) FFCPS model that combines the FFC4 model with the liquidity factor of Pastor and Stambaugh (2003); (v) Fama-French (2015) five-factor (FF5) model with the MKT, size (SMB), book-to-market (HML), profitability (RMW), and investment (CMA) factors; (vi) Fama-French (2018) six-factor (FF6) model that combines the FF5 model with the momentum factor; and (vii) the 7-factor model (FF6PS) that combines the FF6 model with the liquidity factor of Pastor and Stambaugh (2003)."
+  },
+  {
+    "rule_id": "factor_mispricing_models",
+    "category": "factor",
+    "section": "§3.4.1",
+    "paper_location": "L209",
+    "paper_quote": "In addition to these standard risk factor models, we use two established behavioral models: (viii) the Stambaugh and Yuan (SY, 2017) four-factor mispricing model, which consists of the value-weighted excess market return (MKT), a size factor (SMB), and management (MGMT)- and performance (PERF)-related mispricing factors; and (ix) the Daniel, Hirshleifer, and Sun (DHS, 2020) three-factor behavioral model, which includes the value-weighted excess market return (MKT), long-horizon (FIN), and short-horizon (PEAD) behavioral factors."
+  },
+  {
+    "rule_id": "fm_newey_west_lags",
+    "category": "fm",
+    "section": "§4.1 footnote 7",
+    "paper_location": "L275",
+    "paper_quote": "Newey and West (1987) adjusted standard errors are computed using the optimal lag length selection procedure of Newey and West (1994). The optimal number of lags is defined as $4(T/100)^{\\gamma}$, where $T$ is the number of observations in the time series. Following this procedure, we employ six lags for the sample periods spanning January 1968 to December 2022 and July 1972 to December 2022, and five lags for the period from April 1980 to December 2022."
+  },
+  {
+    "rule_id": "fm_fixed_sample",
+    "category": "fm",
+    "section": "§4.4 + §5.4",
+    "paper_location": "L350-352",
+    "paper_quote": "We restrict our Fama–MacBeth analyses to a fixed sample in which all observations have available data for every independent variable: MAX, BETA, MIS, CE, SIZE, BM, REV, MOM, ILLIQ, ROE, I/A, and IVOL. Thus, all regression specifications (Columns 1–6) are estimated using the same fixed sample, and the number of observations remains constant across specifications."
+  },
+  {
+    "rule_id": "fm_maxbeta_dummies",
+    "category": "fm",
+    "section": "§5.4 + Table 8 description",
+    "paper_location": "L506",
+    "paper_quote": "Since MAX$^{\\beta}$ is a portfolio-level measure, we use 10 dummy variables for the decile rankings, omitting the lowest decile."
+  },
+  {
+    "rule_id": "var_max",
+    "category": "variable",
+    "section": "§3.2",
+    "paper_location": "L173",
+    "paper_quote": "we define MAX as the average of the five highest daily returns generated by a stock in a given month."
+  },
+  {
+    "rule_id": "var_beta_rolling_252",
+    "category": "variable",
+    "section": "§3.3 footnote 6",
+    "paper_location": "L181",
+    "paper_quote": "A stock's market beta at the end of each month is estimated as the slope coefficient from a regression of its daily excess returns on the market's excess returns over a 252-day rolling window."
+  },
+  {
+    "rule_id": "var_size",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L189",
+    "paper_quote": "Market capitalization (SIZE) is a stock's number of shares outstanding multiplied by its price per share."
+  },
+  {
+    "rule_id": "var_book_value",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L189",
+    "paper_quote": "The book value of a firm is calculated as the sum of stockholders' equity (SEQ), deferred taxes (TXDB), and investment tax credit (ITCB), minus the book value of preferred stock (PSTKRV, PSTKL, or PSTK)."
+  },
+  {
+    "rule_id": "var_bm",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L189",
+    "paper_quote": "BM is the natural logarithm of the ratio of a firm's book value to its market capitalization."
+  },
+  {
+    "rule_id": "var_mom",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L189",
+    "paper_quote": "Following Jegadeesh and Titman (1993), intermediate-term momentum (MOM) is measured as a stock's cumulative return over the 11-month period prior to the portfolio formation month."
+  },
+  {
+    "rule_id": "var_rev",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L189",
+    "paper_quote": "Short-term reversal (REV) is the excess return generated over the portfolio formation month (Jegadeesh, 1990)."
+  },
+  {
+    "rule_id": "var_illiq",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L191",
+    "paper_quote": "Following Amihud (2002), a stock's monthly illiquidity (ILLIQ, scaled by $10^6$) is the ratio of the daily absolute stock return to the dollar trading volume averaged over the past one month."
+  },
+  {
+    "rule_id": "var_ia",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L191",
+    "paper_quote": "Following Hou, Xue, and Zhang (2015), we control for the annual growth of total assets (I/A) and return on equity (ROE). Asset growth is the change in the book value of assets scaled by lagged assets."
+  },
+  {
+    "rule_id": "var_roe",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L191",
+    "paper_quote": "Return-on-equity is income before extraordinary items (IBQ) divided by one-quarter-lagged book equity."
+  },
+  {
+    "rule_id": "var_ivol_rolling_252",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L191",
+    "paper_quote": "Idiosyncratic volatility (IVOL) is computed as the standard deviation of the daily residuals from regressing a stock's daily excess returns on the market's excess returns over a 252-day rolling window, using the same specification employed to estimate market beta."
+  },
+  {
+    "rule_id": "var_inst_13f",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L193",
+    "paper_quote": "Institutional holdings (INST) data are from the Thomson Reuters Institutional Holdings (13F) database. INST measures the percentage of a firm's shares held by institutional investors at each quarter-end."
+  },
+  {
+    "rule_id": "var_iskew_rolling_60",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L193",
+    "paper_quote": "Idiosyncratic skewness for each stock and for each month is calculated as the skewness of the time-series regression residuals estimated over a 60-month rolling window based on the Fama and French (1993) three-factor model."
+  },
+  {
+    "rule_id": "var_eiskew_predictive",
+    "category": "variable",
+    "section": "§3.3",
+    "paper_location": "L193-201",
+    "paper_quote": "Following Boyer, Mitton, and Vorkink (2010), expected idiosyncratic skewness, E(ISKEW), is estimated using predictive cross-sectional regressions of realized idiosyncratic skewness on lagged idiosyncratic skewness, lagged idiosyncratic volatility, past cumulative returns (momentum), turnover (sum of daily turnovers), dummy variable indicating firms listed on Nasdaq, firm size indicators (dummy variables indicating firms in the bottom tercile and middle tercile ranked by size), and industry fixed effects (dummy variables for 16 of the 17 industries defined by Ken French)."
+  },
+  {
+    "rule_id": "var_mis_composite",
+    "category": "variable",
+    "section": "§3.4.2",
+    "paper_location": "L237",
+    "paper_quote": "A stock's composite mispricing measure (MIS) is defined as the arithmetic average of the ranks of the 11 anomalies."
+  },
+  {
+    "rule_id": "var_ce_one_year",
+    "category": "variable",
+    "section": "Table 2 description",
+    "paper_location": "L1143",
+    "paper_quote": "composite equity issuance (CE), defined as the 12-month growth in equity market capitalization minus the 12-month cumulative stock return"
+  },
+  {
+    "rule_id": "var_beta_max",
+    "category": "variable",
+    "section": "§4.2",
+    "paper_location": "L299",
+    "paper_quote": "the market MAX beta (defined as the sensitivity of a stock's MAX to the market-level MAX, estimated using 12-month rolling regressions)"
+  },
+  {
+    "rule_id": "var_ltry_composite",
+    "category": "variable",
+    "section": "§3.5",
+    "paper_location": "L253",
+    "paper_quote": "Following Kumar (2009), we construct the composite lottery index, LTRY, based on three stock characteristics: stock price (PRC), idiosyncratic volatility (IVOL), and idiosyncratic skewness (ISKEW). To construct the index, we sort stocks independently into 50 bins based on PRC in descending order, and into 50 bins based on IVOL and ISKEW in ascending order."
+  },
+  {
+    "rule_id": "var_max_treynor",
+    "category": "variable",
+    "section": "§3.5",
+    "paper_location": "L257",
+    "paper_quote": "MAX$^{Treynor}$ scales the magnitude of extreme returns by systematic risk and is calculated as the average of the five highest daily returns in a month (MAX) divided by the stock's market beta."
+  },
+  {
+    "rule_id": "var_max1_max95_max99",
+    "category": "variable",
+    "section": "§3.5",
+    "paper_location": "L255",
+    "paper_quote": "MAX(1) is defined as the maximum daily return generated by a stock within a given month. MAX(95%) and MAX(99%) capture the extreme upper end of the daily return distribution, corresponding to the 95th and 99th percentiles, respectively, of a stock estimated over the past 252 trading days."
+  },
+  {
+    "rule_id": "var_issuance_index_components",
+    "category": "variable",
+    "section": "§3.4.2",
+    "paper_location": "L239-241",
+    "paper_quote": "stocks are independently assigned percentile ranks based on (i) changes in split-adjusted shares outstanding (Ritter, 2008; Loughran and Ritter, 1995; Fama and French, 2008); (ii) composite equity issues, measured as the one-year growth in market capitalization minus the one-year equity return (Daniel and Titman, 2006); and (iii) the five-year composite share issuance (CSI) of Daniel and Titman (2006). A stock's issuance index is then defined as the arithmetic average of its percentile ranks across these three equity issuance-related variables."
+  }
+]

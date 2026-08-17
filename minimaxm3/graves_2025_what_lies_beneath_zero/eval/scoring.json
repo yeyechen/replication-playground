@@ -1,0 +1,321 @@
+{
+  "schema_version": 3,
+  "slug": "graves_2025_what_lies_beneath_zero_censoring_demand_estimation_and_hidden_belief",
+  "iteration": 1,
+  "loss_form": "binary_match",
+  "warnings": [
+    "loss_function.json is missing \u2014 the loss is computed from status counts (per-cell extensions default to None)."
+  ],
+  "cells": [
+    {
+      "cell": "t1_2013_2016_num_inst",
+      "table": "Table 1",
+      "group": "descriptive",
+      "paper": 3733,
+      "ours": 4002,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.07206000535762122,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "t1_2013_2016_tot_aum",
+      "table": "Table 1",
+      "group": "descriptive",
+      "paper": 14000,
+      "ours": 15232.4,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.0880285714285714,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "t1_2017_2020_num_inst",
+      "table": "Table 1",
+      "group": "descriptive",
+      "paper": 4752,
+      "ours": 5231,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.1007996632996633,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "t1_2017_2020_tot_aum",
+      "table": "Table 1",
+      "group": "descriptive",
+      "paper": 20587,
+      "ours": 19754.7,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.040428425705542295,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "t1_2021_num_inst",
+      "table": "Table 1",
+      "group": "descriptive",
+      "paper": 5970,
+      "ours": 4838,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.1896147403685092,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "t1_2021_tot_aum",
+      "table": "Table 1",
+      "group": "descriptive",
+      "paper": 31962,
+      "ours": 28657.7,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.10338214129278515,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "t2_2013_2016_avg_pos_hold",
+      "table": "Table 2",
+      "group": "descriptive",
+      "paper": 203,
+      "ours": null,
+      "tolerance_pct": 20.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t2_2013_2016_med_pos_hold",
+      "table": "Table 2",
+      "group": "descriptive",
+      "paper": 86,
+      "ours": null,
+      "tolerance_pct": 20.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t2_2013_2016_med_cs_size",
+      "table": "Table 2",
+      "group": "descriptive",
+      "paper": 1260,
+      "ours": null,
+      "tolerance_pct": 25.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t2_2017_2020_avg_pos_hold",
+      "table": "Table 2",
+      "group": "descriptive",
+      "paper": 209,
+      "ours": null,
+      "tolerance_pct": 20.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t2_2017_2020_med_pos_hold",
+      "table": "Table 2",
+      "group": "descriptive",
+      "paper": 87,
+      "ours": null,
+      "tolerance_pct": 20.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t2_2017_2020_med_cs_size",
+      "table": "Table 2",
+      "group": "descriptive",
+      "paper": 1347,
+      "ours": null,
+      "tolerance_pct": 25.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t2_2021_avg_pos_hold",
+      "table": "Table 2",
+      "group": "descriptive",
+      "paper": 205,
+      "ours": null,
+      "tolerance_pct": 20.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t2_2021_med_pos_hold",
+      "table": "Table 2",
+      "group": "descriptive",
+      "paper": 90,
+      "ours": null,
+      "tolerance_pct": 20.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t2_2021_med_cs_size",
+      "table": "Table 2",
+      "group": "descriptive",
+      "paper": 1438,
+      "ours": null,
+      "tolerance_pct": 25.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t3_d10_q5_alpha",
+      "table": "Table 3",
+      "group": "descriptive",
+      "paper": 3.75,
+      "ours": null,
+      "tolerance_pct": 25.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t3_d5_q5_alpha",
+      "table": "Table 3",
+      "group": "descriptive",
+      "paper": 6.76,
+      "ours": null,
+      "tolerance_pct": 25.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t3_d1_q5_alpha",
+      "table": "Table 3",
+      "group": "descriptive",
+      "paper": 23.06,
+      "ours": null,
+      "tolerance_pct": 30.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t4_d10_alpha",
+      "table": "Table 4",
+      "group": "descriptive",
+      "paper": 4.69,
+      "ours": null,
+      "tolerance_pct": 25.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t4_d5_alpha",
+      "table": "Table 4",
+      "group": "descriptive",
+      "paper": 11.61,
+      "ours": null,
+      "tolerance_pct": 25.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t4_d1_alpha",
+      "table": "Table 4",
+      "group": "descriptive",
+      "paper": 12.75,
+      "ours": null,
+      "tolerance_pct": 30.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t6_d10_alpha",
+      "table": "Table 6",
+      "group": "descriptive",
+      "paper": 0.85,
+      "ours": null,
+      "tolerance_pct": 25.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    },
+    {
+      "cell": "t6_d5_alpha",
+      "table": "Table 6",
+      "group": "descriptive",
+      "paper": 0.48,
+      "ours": null,
+      "tolerance_pct": 25.0,
+      "rel_err": null,
+      "status": "MISSING",
+      "flags": [],
+      "notes": null
+    }
+  ],
+  "aggregates": {
+    "loss": 0.7391304347826086,
+    "n_cells": 23,
+    "n_committed": 23,
+    "match_count": 6,
+    "fail_count": 0,
+    "missing_count": 17,
+    "skip_count": 0,
+    "no_effect_count": 0,
+    "match_rate": 0.2608695652173913,
+    "per_table_status": {
+      "Table 1": {
+        "Match": 6
+      },
+      "Table 2": {
+        "MISSING": 9
+      },
+      "Table 3": {
+        "MISSING": 3
+      },
+      "Table 4": {
+        "MISSING": 3
+      },
+      "Table 6": {
+        "MISSING": 2
+      }
+    }
+  }
+}

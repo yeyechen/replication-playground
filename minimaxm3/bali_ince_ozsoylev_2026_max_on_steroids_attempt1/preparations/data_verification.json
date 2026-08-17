@@ -1,0 +1,181 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 70,
+
+  "requirements": [
+    {
+      "id": "crsp_daily_returns",
+      "description": "CRSP daily stock returns for MAX signal construction (avg of 5 highest daily returns in month).",
+      "needed_columns": ["permno", "date", "ret"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "vol"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns",
+      "description": "CRSP monthly stock returns for portfolio formation and FM regressions.",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "vol", "retx"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_pit",
+      "description": "CRSP point-in-time universe for share-code (10/11) and exchange-code (1/2/3) filters, plus SIC code for utility/financial exclusions.",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "Delisting returns for surviving CRSP universe; needed for performance persistence (Shumway/BMP-style treatment when dlret is missing).",
+      "needed_columns": ["permno", "dlstdt", "dlret", "dlstcd"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlret", "dlstcd", "dlprc"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat link for merging fundamentals into the stock panel.",
+      "needed_columns": ["permno", "gvkey", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["permno", "gvkey", "linkdt", "linkenddt", "linktype", "linkprim"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_funda",
+      "description": "Compustat annual fundamentals for book equity (BE = SEQ + TXDB + ITCB - PSTKRV/PSTKL/PSTK), ROA, asset growth, and SIC code for industry exclusions.",
+      "needed_columns": ["gvkey", "datadate", "fyear", "seq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "at", "ib", "sich"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "seq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "at", "ib", "sich"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_fundq",
+      "description": "Compustat quarterly fundamentals for IBQ (ROE) and lagged book equity (1-quarter lag).",
+      "needed_columns": ["gvkey", "datadate", "fyearq", "fqtr", "ibq", "atq", "seqq", "ceqq"],
+      "matched_table": "comp_202601.fundq",
+      "matched_columns": ["gvkey", "datadate", "fyearq", "fqtr", "ibq", "atq", "seqq", "ceqq", "txdbq", "pstkq"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_three_factor",
+      "description": "Fama-French three-factor monthly (MKT-RF, SMB, HML) for FF3 alphas.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.three_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_carhart_momentum",
+      "description": "Carhart momentum factor (WML) needed for FFC4 / FF6 / FF6PS construction (Mom not in five_factor).",
+      "needed_columns": ["dt", "mom"],
+      "matched_table": "ff.four_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_five_factor",
+      "description": "Fama-French five-factor monthly (MKT-RF, SMB, HML, RMW, CMA) for FF5/FF6 alphas.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "matched_table": "ff.five_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_rf",
+      "description": "Monthly risk-free rate for excess-return computation.",
+      "needed_columns": ["dt", "rf"],
+      "matched_table": "ea_oneoff.rf",
+      "matched_columns": ["dt", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_market_excess_return",
+      "description": "Market portfolio daily/monthly returns for the CAPM alpha regression.",
+      "needed_columns": ["as_of_date", "mktret"],
+      "matched_table": "ea_oneoff.market_portfolio",
+      "matched_columns": ["as_of_date", "mktret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "dsf_beta_252",
+      "description": "Pre-computed daily market-beta on 252-day rolling window — used directly for MAX^beta construction (each month, sort stocks into beta deciles, then MAX within beta).",
+      "needed_columns": ["security_id", "dt", "beta_mktrf"],
+      "matched_table": "ea_oneoff.dsf_beta_252",
+      "matched_columns": ["security_id", "dt", "beta_intercept", "beta_mktrf", "resid", "fitted"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "thirteen_f_institutional",
+      "description": "13F institutional holdings data (Thomson Reuters) for INST variable (% shares held by institutions at quarter-end) and INST terciles in Table 9.",
+      "needed_columns": ["rdate", "cusip", "shares", "typecode", "shrout1", "shrout2"],
+      "matched_table": "instown_202601.s34",
+      "matched_columns": ["fdate", "mgrname", "country", "mgrno", "typecode", "rdate", "prdate", "cusip", "shares", "sole", "shared", "no", "change", "stkname", "ticker", "exchcd", "stkcd", "indcode", "stkcdesc", "prc", "shrout1", "shrout2"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ps_liq_factor",
+      "description": "Pastor-Stambaugh (2003) traded liquidity factor (LIQ). Required for FFCPS and FF6PS alpha columns in Tables 1, 6, and Table 9 FF6PS column. Paper explicitly sources it from Robert Stambaugh's website.",
+      "needed_columns": ["dt", "ps_liq"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["dt", "ps_liq"],
+      "status": "missing"
+    },
+    {
+      "id": "sy_mispricing_factors",
+      "description": "Stambaugh-Yuan (2017) mispricing factors (MGMT, PERF). Required for SY alpha columns in Tables 1, 6, and Table 9. Paper explicitly sources them from Robert Stambaugh's website.",
+      "needed_columns": ["dt", "mgmt", "perf"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["dt", "mgmt", "perf"],
+      "status": "missing"
+    },
+    {
+      "id": "dhs_behavioral_factors",
+      "description": "Daniel-Hirshleifer-Sun (2020) behavioral factors (FIN, PEAD). Required for DHS alpha columns in Tables 1, 6, and Table 9. Paper explicitly sources them from Lin Sun's website. DHS-only sample starts Jul 1972.",
+      "needed_columns": ["dt", "fin", "pead"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["dt", "fin", "pead"],
+      "status": "missing"
+    }
+  ],
+
+  "blocking_issues": [
+    {
+      "requirement": "ps_liq_factor",
+      "reason": "Pastor-Stambaugh (2003) LIQ factor is not present in the FF database or anywhere in the ClickHouse catalog. The paper sources it directly from Robert Stambaugh's website.",
+      "affected_targets": ["T1", "T3", "T4"],
+      "recommendation": "Drop FFCPS and FF6PS alpha columns from Tables 1, 6, and the FF6PS alpha column from Table 9 Panel B. These cells will be closed-vocab-marker FAILs (documented in assumptions.md with [THIRD-PARTY-DATASET]). The headline MAX^beta effect is still testable via FF3/FF5/FF6 alphas, which are available; the FF6PS column in Table 9 is replaced by the RET-RF column (already in metrics) so the heterogeneity test remains meaningful."
+    },
+    {
+      "requirement": "sy_mispricing_factors",
+      "reason": "Stambaugh-Yuan (2017) MGMT and PERF factors are not in the FF database. The paper sources them from Robert Stambaugh's website.",
+      "affected_targets": ["T1", "T3"],
+      "recommendation": "Drop the SY alpha column from Tables 1 and 6. Mark as [THIRD-PARTY-DATASET] in assumptions.md. The mispricing-interpretation claim (C2) is still testable via the FF6PS column drop (already noted above) plus the MIS/CE firm-level characteristics in Table 2."
+    },
+    {
+      "requirement": "dhs_behavioral_factors",
+      "reason": "Daniel-Hirshleifer-Sun (2020) FIN and PEAD factors are not in the FF database. The paper sources them from Lin Sun's website. DHS analysis is restricted to Jul 1972 - Dec 2022 even with data.",
+      "affected_targets": ["T1", "T3"],
+      "recommendation": "Drop the DHS alpha column from Tables 1 and 6. Mark as [THIRD-PARTY-DATASET] in assumptions.md."
+    }
+  ]
+}

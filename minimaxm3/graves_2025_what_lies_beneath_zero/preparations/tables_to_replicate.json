@@ -1,0 +1,148 @@
+{
+  "_schema": "tables_to_replicate.v1",
+  "slug": "graves_2025_what_lies_beneath_zero_censoring_demand_estimation_and_hidden_belief",
+  "selection_rationale": "This paper requires SCQR estimation across ~248K institution-quarter pairs, making a full numerical replication infeasible within a single session. We prioritize: (1) summary statistics tables that validate the data pipeline and universe construction without needing SCQR; (2) the headline HBI portfolio-sort tables that demonstrate the paper's central empirical claim, on a manageable subsample.",
+  "tables": [
+    {
+      "id": "Table 1",
+      "table_ref": "Table 1: Institutional Demand Estimation Summary Statistics, page 25",
+      "title": "Institutional Demand Estimation Summary Statistics",
+      "description": "Quarterly institution count and aggregate AUM by manager type and period.",
+      "replication_meaning": "Proves correct universe construction (institution count, AUM categories) and validates that 13F data + manager classification works. No SCQR needed.",
+      "paper_quote": "Table 1 contains summary statistics for the demand estimation, including number of institutions, total institutional AUM, the AUM of rigid institutions, the AUM of dynamic institutions, and the AUM of institutions for which the SCQR estimation converges.",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock",
+        "universe_exchange_filter",
+        "minimum_holdings_filter"
+      ],
+      "page": 25,
+      "section": "Section 5.1 Summary Statistics: Managers, Consideration Sets, and AUM",
+      "priority": 1,
+      "feasibility": "high",
+      "scope_for_partial": "sub-period 2010Q1-2021Q4",
+      "notes": "Paper reports 4-year windows 1984-2021 plus 2021 alone. We aggregate 2010-2021 into 4-year/1-year windows. Rigid/Dynamic AUM and AUM SCQR cells require SCQR pipeline — marked MISSING.",
+      "metrics": [
+        {"name": "t1_2013_2016_num_inst", "value": 3733, "tolerance_pct": 20, "unit": "count", "paper_location": "L600"},
+        {"name": "t1_2013_2016_tot_aum", "value": 14000, "tolerance_pct": 20, "unit": "$B", "paper_location": "L600"},
+        {"name": "t1_2017_2020_num_inst", "value": 4752, "tolerance_pct": 20, "unit": "count", "paper_location": "L600"},
+        {"name": "t1_2017_2020_tot_aum", "value": 20587, "tolerance_pct": 20, "unit": "$B", "paper_location": "L600"},
+        {"name": "t1_2021_num_inst", "value": 5970, "tolerance_pct": 20, "unit": "count", "paper_location": "L600"},
+        {"name": "t1_2021_tot_aum", "value": 31962, "tolerance_pct": 20, "unit": "$B", "paper_location": "L600"}
+      ]
+    },
+    {
+      "id": "Table 2",
+      "table_ref": "Table 2: Institutional Demand Estimation Consideration Sets and Holdings, page 26",
+      "title": "Institutional Demand Estimation Consideration Sets and Holdings",
+      "description": "Average/median positive holdings, consideration set sizes by period.",
+      "replication_meaning": "Proves correct construction of consideration sets (NAICS-4 expansion). Validates that holdings counts match paper's range.",
+      "paper_quote": "Table 2 contains summary statistics on the consideration sets (CS) and holdings of institutional investors that have twenty-five or more positive holdings in their portfolio.",
+      "exercises_preprocessing_rules": [
+        "consideration_set_dynamic",
+        "minimum_holdings_filter"
+      ],
+      "page": 26,
+      "section": "Section 5.1 Summary Statistics: Managers, Consideration Sets, and AUM",
+      "priority": 2,
+      "feasibility": "high",
+      "scope_for_partial": "sub-period 2010Q1-2021Q4",
+      "notes": "All cells require NAICS-4 expansion + consideration set construction. Marked MISSING.",
+      "metrics": [
+        {"name": "t2_2013_2016_avg_pos_hold", "value": 203, "tolerance_pct": 20, "unit": "count", "paper_location": "L714"},
+        {"name": "t2_2013_2016_med_pos_hold", "value": 86, "tolerance_pct": 20, "unit": "count", "paper_location": "L714"},
+        {"name": "t2_2013_2016_med_cs_size", "value": 1260, "tolerance_pct": 25, "unit": "count", "paper_location": "L714"},
+        {"name": "t2_2017_2020_avg_pos_hold", "value": 209, "tolerance_pct": 20, "unit": "count", "paper_location": "L714"},
+        {"name": "t2_2017_2020_med_pos_hold", "value": 87, "tolerance_pct": 20, "unit": "count", "paper_location": "L714"},
+        {"name": "t2_2017_2020_med_cs_size", "value": 1347, "tolerance_pct": 25, "unit": "count", "paper_location": "L714"},
+        {"name": "t2_2021_avg_pos_hold", "value": 205, "tolerance_pct": 20, "unit": "count", "paper_location": "L714"},
+        {"name": "t2_2021_med_pos_hold", "value": 90, "tolerance_pct": 20, "unit": "count", "paper_location": "L714"},
+        {"name": "t2_2021_med_cs_size", "value": 1438, "tolerance_pct": 25, "unit": "count", "paper_location": "L714"}
+      ]
+    },
+    {
+      "id": "Table 3",
+      "table_ref": "Table 3: The HBI and Portfolio Returns: Size × HBI Sorts, page 29",
+      "title": "The HBI and Portfolio Returns: Size × HBI Sorts",
+      "description": "Annualized four-factor alpha and t-stat for size × HBI quintile portfolios.",
+      "replication_meaning": "Proves the central empirical claim: HBI predicts returns monotonically across size deciles. Requires SCQR pipeline + portfolio sorts.",
+      "paper_quote": "Table 3 contains the results for portfolios formed via sorts on the Hidden Beliefs Index (HBI) from 1986 to 2021.",
+      "exercises_preprocessing_rules": [
+        "scqr_estimation_method",
+        "median_zero_restriction",
+        "hbi_construction",
+        "size_decile_construction",
+        "size_hbi_quintile_construction",
+        "three_lag_averaging",
+        "factor_regression"
+      ],
+      "page": 29,
+      "section": "Section 6 Hidden Beliefs and Return Predictability",
+      "priority": 3,
+      "feasibility": "low",
+      "scope_for_partial": "subsample — largest dynamic institutions only, sub-period 2010Q1-2021Q4",
+      "notes": "All cells require full SCQR + HBI + sort + FF4 factor regression. Marked MISSING.",
+      "metrics": [
+        {"name": "t3_d10_q5_alpha", "value": 3.75, "tolerance_pct": 25, "unit": "% (annualized)", "paper_location": "L866"},
+        {"name": "t3_d5_q5_alpha", "value": 6.76, "tolerance_pct": 25, "unit": "% (annualized)", "paper_location": "L907"},
+        {"name": "t3_d1_q5_alpha", "value": 23.06, "tolerance_pct": 30, "unit": "% (annualized)", "paper_location": "L939"}
+      ]
+    },
+    {
+      "id": "Table 4",
+      "table_ref": "Table 4: HBI Long Short Strategy Results by Size Decile, page 30",
+      "title": "HBI Long Short Strategy Results by Size Decile",
+      "description": "Annualized four-factor alpha and t-stat for HBI long-short strategy by size decile.",
+      "replication_meaning": "Long-short strategy derived from Table 3. Tests whether long-short alphas remain significant per decile. The headline 8.50% / t = 9.27 lives here.",
+      "paper_quote": "Table 4 gives the results of a simple long-short strategy that purchases each of the top HBI quintile portfolios and sells short each of the bottom HBI quintile portfolios.",
+      "exercises_preprocessing_rules": [
+        "scqr_estimation_method",
+        "hbi_construction",
+        "size_decile_construction",
+        "factor_regression"
+      ],
+      "page": 30,
+      "section": "Section 6 Hidden Beliefs and Return Predictability",
+      "priority": 4,
+      "feasibility": "low",
+      "scope_for_partial": "subsample — largest dynamic institutions only, sub-period 2010Q1-2021Q4",
+      "notes": "Depends on Table 3 portfolios. Marked MISSING.",
+      "metrics": [
+        {"name": "t4_d10_alpha", "value": 4.69, "tolerance_pct": 25, "unit": "% (annualized)", "paper_location": "L974"},
+        {"name": "t4_d5_alpha", "value": 11.61, "tolerance_pct": 25, "unit": "% (annualized)", "paper_location": "L1018"},
+        {"name": "t4_d1_alpha", "value": 12.75, "tolerance_pct": 30, "unit": "% (annualized)", "paper_location": "L1046"}
+      ]
+    },
+    {
+      "id": "Table 6",
+      "table_ref": "Table 6: The OBI and Portfolio Returns: Size × OBI Sorts, page 32",
+      "title": "The OBI and Portfolio Returns: Size × OBI Sorts",
+      "description": "Annualized four-factor alpha and t-stat for size × OBI quintile portfolios.",
+      "replication_meaning": "Tests the null hypothesis of rational expectations: OBI should NOT predict returns. This is the paper's key comparison to HBI.",
+      "paper_quote": "Unlike the HBI, the OBI has limited predictive power, with high and low index values yielding approximately equal performance.",
+      "exercises_preprocessing_rules": [
+        "scqr_estimation_method",
+        "obi_construction",
+        "size_decile_construction",
+        "factor_regression"
+      ],
+      "page": 32,
+      "section": "Section 6.3 Overt Beliefs and (the Lack of) Return Predictability",
+      "priority": 5,
+      "feasibility": "low",
+      "scope_for_partial": "subsample — largest dynamic institutions only, sub-period 2010Q1-2021Q4",
+      "notes": "Same SCQR pipeline dependency as Table 3. Marked MISSING.",
+      "metrics": [
+        {"name": "t6_d10_alpha", "value": 0.85, "tolerance_pct": 25, "unit": "% (annualized)", "paper_location": "L1236"},
+        {"name": "t6_d5_alpha", "value": 0.48, "tolerance_pct": 25, "unit": "% (annualized)", "paper_location": "L1303"}
+      ]
+    }
+  ],
+  "excluded_tables": [
+    {"table_id": "Table 5", "reason": "HBI persistence by quarter lag — same pipeline as Table 4, lower priority"},
+    {"table_id": "Table 7", "reason": "Style-box consideration sets — robustness only, requires re-running full SCQR"},
+    {"table_id": "Table 8", "reason": "HBI vs Institutional Ownership correlation — secondary result"},
+    {"table_id": "Tables 9-13", "reason": "Robustness/mutual fund exercises — would require additional s12 data and extensive recomputation"}
+  ],
+  "scope_reduction_recorded": true,
+  "scope_reduction_log_location": "preparations/assumptions.md"
+}

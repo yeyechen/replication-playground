@@ -1,0 +1,28 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "loss": 0.6,
+      "n_committed": 25,
+      "status_counts": {
+        "match": 10,
+        "fail": 15,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 0.6,
+      "n_committed": 25,
+      "status_counts": {
+        "match": 10,
+        "fail": 15,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    }
+  ]
+}

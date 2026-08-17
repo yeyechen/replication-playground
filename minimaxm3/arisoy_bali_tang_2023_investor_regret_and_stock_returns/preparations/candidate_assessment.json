@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Arisoy, Bali, Tang (2023) 'Investor Regret and Stock Returns' is a cross-sectional equity asset pricing paper. Section 4.1 ('Data sources') and Section 4.2 ('Control variables') explicitly describe the data and sample: CRSP for market variables, Compustat for accounting, NYSE/AMEX/NASDAQ common stocks (share codes 10, 11) with $5 <= prc <= $1,000, sample period July 1963 to December 2020, average 3,036 stocks/month and 2.10 million firm-month observations. The regret signal REG_{i,t} = -(R_{i,t} - max_j[R_{j,t}]) is fully operationalized with the 3-digit SIC industry peer group as counterfactual. The paper presents 8 main tables (Tables 1-8) reporting univariate sorts, average characteristics, dependent bivariate sorts, Fama-MacBeth regressions, household trading analysis, longer-horizon regret, and limits-to-arbitrage / information-frictions bivariate sorts. All numerical claims are quantitative returns, alphas, and slope coefficients with Newey-West t-statistics, fully replicable from public CRSP/Compustat data plus Fama-French / Pastor-Stambaugh / Hou-Xue-Zhang factor libraries (all available in our ClickHouse catalog).",
+  "block_reasons": []
+}

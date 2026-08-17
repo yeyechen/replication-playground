@@ -1,0 +1,233 @@
+[
+  {
+    "rule_id": "universe_exchanges",
+    "category": "universe",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "I follow standard conventions and restrict my analysis to common stocks of firms incorporated in the United States trading on NYSE, Amex, or Nasdaq."
+  },
+  {
+    "rule_id": "universe_exclude_financials",
+    "category": "universe",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "I exclude financials ( $6000 \\leq \\text{SIC} < 7000$ ) and utilities ( $4900 \\leq \\text{SIC} < 5000$ )."
+  },
+  {
+    "rule_id": "universe_microcap_filter",
+    "category": "universe",
+    "section": "§4.2 (Table 1 description)",
+    "paper_location": "L210",
+    "paper_quote": "I only use stocks above the 20th size percentile."
+  },
+  {
+    "rule_id": "avail_two_years_compustat",
+    "category": "sample",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "To alleviate a potential survivorship bias due to backfilling, I require that a firm has at least two years of Compustat data."
+  },
+  {
+    "rule_id": "sample_period_main",
+    "category": "sample",
+    "section": "§2 Data",
+    "paper_location": "L176",
+    "paper_quote": "My sample period is July 1963 until June 2014."
+  },
+  {
+    "rule_id": "sample_period_ior",
+    "category": "sample",
+    "section": "§2 Data",
+    "paper_location": "L176",
+    "paper_quote": "The sample is restricted from July 1981 until June 2014, when I make use of the institutional ownership data"
+  },
+  {
+    "rule_id": "sample_period_ibes",
+    "category": "sample",
+    "section": "§2 Data",
+    "paper_location": "L176",
+    "paper_quote": "July 1982–June 2009, when I employ I/B/E/S data on earnings forecasts, realized five year growth, and long term growth forecast"
+  },
+  {
+    "rule_id": "sample_period_price_target",
+    "category": "sample",
+    "section": "§2 Data",
+    "paper_location": "L176",
+    "paper_quote": "July 2001–June 2014, when I employ I/B/E/S forecasts on price targets."
+  },
+  {
+    "rule_id": "delisting_shumway",
+    "category": "delisting",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "If a company is delisted for cause (delisting codes 400–591) and has a missing delisting return, I follow the findings in Shumway (1997) and assume a return of $-30\\%$ ."
+  },
+  {
+    "rule_id": "delisting_prorate_cohen",
+    "category": "delisting",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "In some cases, CRSP reports delisting returns several months after the security stopped trading. In these instances, I prorate the delisting return over the intervening period as in Cohen et al. (2009)."
+  },
+  {
+    "rule_id": "sort_annual_june",
+    "category": "sort",
+    "section": "§3.1 Portfolios sorted on duration",
+    "paper_location": "L339",
+    "paper_quote": "At the end of June each year $t$ from 1963 to 2013, I sort stocks into ten deciles based on duration for the fiscal year ending in calendar year $t - 1$ ."
+  },
+  {
+    "rule_id": "sort_equal_weight",
+    "category": "sort",
+    "section": "§3.1 Portfolios sorted on duration",
+    "paper_location": "L339",
+    "paper_quote": "I rebalance portfolios on an annual basis and weight returns within portfolio equally."
+  },
+  {
+    "rule_id": "winsorize_p1_p99",
+    "category": "winsorize",
+    "section": "§2 Data",
+    "paper_location": "L176",
+    "paper_quote": "To minimize the impact of outliers, I winsorize all variables at the 1% and 99% levels."
+  },
+  {
+    "rule_id": "factor_ff3",
+    "category": "factor",
+    "section": "§3.1 (Table 3 description)",
+    "paper_location": "L595",
+    "paper_quote": "Market is the value-weighted return on all NYSE, Amex, and Nasdaq common stocks minus the one-month Treasury bill rate, SMB is the average return on three small portfolios minus the average return on three big portfolios, and HML is the average return on two value portfolios minus the average return on two growth portfolios."
+  },
+  {
+    "rule_id": "factor_ff4_add_momentum",
+    "category": "factor",
+    "section": "§3.1 (Table 3 description)",
+    "paper_location": "L597",
+    "paper_quote": "Mom is the average return on two high prior return portfolios minus the average return on two low prior return portfolios."
+  },
+  {
+    "rule_id": "factor_ff5_add_rmw_cma",
+    "category": "factor",
+    "section": "§3.1 (Table 3 description)",
+    "paper_location": "L599",
+    "paper_quote": "RMW is the average return on two robust operating profitability portfolios minus the average return on two weak operating profitability portfolios, and CMA is the average return on two conservative investment portfolios minus the average return on two aggressive investment portfolios."
+  },
+  {
+    "rule_id": "fm_decile_sort_annual",
+    "category": "fm",
+    "section": "§3.1",
+    "paper_location": "L339",
+    "paper_quote": "I sort stocks into ten deciles based on duration for the fiscal year ending in calendar year $t - 1$ . I rebalance portfolios on an annual basis and weight returns within portfolio equally."
+  },
+  {
+    "rule_id": "var_dur_formula",
+    "category": "variable",
+    "section": "§2.1 Eq. (2)",
+    "paper_location": "L146-154",
+    "paper_quote": "$$Dur_{i,t} = \\frac{\\sum_{s=1}^{T} s \\times CF_{i,t+s}/(1+r)^s}{P_{i,t}} + \\left(T + \\frac{1+r}{r}\\right) \\times \\frac{P_{i,t} - \\sum_{s=1}^{T} CF_{i,t+s}/(1+r)^s}{P_{i,t}}.$$"
+  },
+  {
+    "rule_id": "var_cf_forecast",
+    "category": "variable",
+    "section": "§2.1 Eq. (3) and (4)",
+    "paper_location": "L158-166",
+    "paper_quote": "$$CF_{i,t+s} = E_{i,t+s} - (BV_{i,t+s} - BV_{i,t+s-1}) = BV_{i,t+s-1} \\times \\left[\\frac{E_{i,t+s}}{BV_{i,t+s-1}} - \\frac{BV_{i,t+s} - BV_{i,t+s-1}}{BV_{i,t+s-1}}\\right].$$"
+  },
+  {
+    "rule_id": "var_dur_parameters",
+    "category": "variable",
+    "section": "§2.1",
+    "paper_location": "L174",
+    "paper_quote": "ROE has an AR(1) coefficient of 0.41 and BV of 0.24. I assume a discount rate $r$ of 0.12, a steady-state average cost of equity of 0.12, an average long-run nominal growth rate of 0.06, and a detailed forecasting period of 15 years."
+  },
+  {
+    "rule_id": "var_book_equity",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L106",
+    "paper_quote": "I define book equity (BE) as total stockholders' equity plus deferred taxes and investment tax credit (if available) minus the book value of preferred stock."
+  },
+  {
+    "rule_id": "var_bm_definition",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L106",
+    "paper_quote": "The book-to-market (BM) ratio of year $t$ is then the book equity for the fiscal year ending in calendar year $t - 1$ over the market equity as of December $t - 1$ ."
+  },
+  {
+    "rule_id": "var_market_equity",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "Market equity (ME) is the total market capitalization at the firm level."
+  },
+  {
+    "rule_id": "var_payout_ratio",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "I define the payout ratio (PR) as net payout over net income. Net payout is the sum of ordinary dividends and net purchases of common and preferred stock."
+  },
+  {
+    "rule_id": "var_roe",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "Return on equity (ROE) is the ratio of income before extraordinary items over lagged book equity."
+  },
+  {
+    "rule_id": "var_sales_growth",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "Sales growth (Sales_g) is the percentage growth rate in net sales."
+  },
+  {
+    "rule_id": "var_age",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "Age is the number of years a firm has been in Compustat."
+  },
+  {
+    "rule_id": "var_ior",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L110",
+    "paper_quote": "I calculate the institutional ownership ratio (IOR) by first summing the holdings of all reporting institutions at the security level, and then dividing by the total shares outstanding from CRSP."
+  },
+  {
+    "rule_id": "var_ior_zero_when_missing",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L110",
+    "paper_quote": "If a common stock is on CRSP, but not in the TR-13F database, I assign an institutional ownership ratio of zero."
+  },
+  {
+    "rule_id": "avail_ior_history",
+    "category": "sample",
+    "section": "§2 Data",
+    "paper_location": "L110",
+    "paper_quote": "The TR-13F database carries forward institutional reports up to eight quarters. In calculating the institutional ownership ratio, I only keep the holding data as they first appear in the database."
+  },
+  {
+    "rule_id": "var_rior_lag",
+    "category": "variable",
+    "section": "§4.2 Table 10 description",
+    "paper_location": "L2001",
+    "paper_quote": "I intersect these quintiles with an independent sort on residual institutional ownership as of December $t - 1$ . Using a six-month time lag for institutional ownership ensures that short-term outperformance of institutional trades does not drive my results."
+  },
+  {
+    "rule_id": "var_rior_definition",
+    "category": "variable",
+    "section": "§4.2 Eq. (7)",
+    "paper_location": "L1991-1997",
+    "paper_quote": "$$ \\log \\frac{IOR_{it}}{1 - IOR_{it}} = \\alpha + \\beta_1 \\log(ME) + \\beta_2 (\\log(ME))^2 + RIOR_{it}. $$"
+  },
+  {
+    "rule_id": "var_rior_threshold",
+    "category": "variable",
+    "section": "§4.2",
+    "paper_location": "L1999",
+    "paper_quote": "I replace institutional ownership ratios below 0.0001 and above 0.9999 with these threshold values."
+  }
+]

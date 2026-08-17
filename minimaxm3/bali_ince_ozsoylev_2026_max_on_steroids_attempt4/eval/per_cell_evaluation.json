@@ -1,0 +1,187 @@
+{
+  "rows": [
+    {
+      "table": "T1",
+      "cell": "P1_RET_RF",
+      "paper": 0.63,
+      "ours": 0.74021567146391,
+      "status": "Match"
+    },
+    {
+      "table": "T1",
+      "cell": "P10_RET_RF",
+      "paper": -0.32,
+      "ours": 0.46976421534894464,
+      "status": "FAIL"
+    },
+    {
+      "table": "T1",
+      "cell": "D10_D1_RET_RF",
+      "paper": -0.95,
+      "ours": -0.27045145611496535,
+      "status": "FAIL"
+    },
+    {
+      "table": "T1",
+      "cell": "D10_D1_CAPM",
+      "paper": -1.41,
+      "ours": -0.3423389560471736,
+      "status": "FAIL"
+    },
+    {
+      "table": "T1",
+      "cell": "D10_D1_FF3",
+      "paper": -1.16,
+      "ours": -0.271481195572978,
+      "status": "FAIL"
+    },
+    {
+      "table": "T1",
+      "cell": "D10_D1_FFC4",
+      "paper": -1.07,
+      "ours": -0.2227956620421343,
+      "status": "FAIL"
+    },
+    {
+      "table": "T1",
+      "cell": "D10_D1_FF5",
+      "paper": -0.59,
+      "ours": -0.08440994929062211,
+      "status": "FAIL"
+    },
+    {
+      "table": "T1",
+      "cell": "D10_D1_FF6",
+      "paper": -0.57,
+      "ours": -0.06258557243986937,
+      "status": "FAIL"
+    },
+    {
+      "table": "T6",
+      "cell": "P1_RET_RF",
+      "paper": 0.71,
+      "ours": 0.74021567146391,
+      "status": "Match"
+    },
+    {
+      "table": "T6",
+      "cell": "P10_RET_RF",
+      "paper": -0.1,
+      "ours": 0.46976421534894464,
+      "status": "FAIL"
+    },
+    {
+      "table": "T6",
+      "cell": "D10_D1_RET_RF",
+      "paper": -0.81,
+      "ours": -0.27045145611496535,
+      "status": "FAIL"
+    },
+    {
+      "table": "T6",
+      "cell": "D10_D1_CAPM",
+      "paper": -1.0,
+      "ours": -0.3423389560471736,
+      "status": "FAIL"
+    },
+    {
+      "table": "T6",
+      "cell": "D10_D1_FF3",
+      "paper": -0.9,
+      "ours": -0.271481195572978,
+      "status": "FAIL"
+    },
+    {
+      "table": "T6",
+      "cell": "D10_D1_FFC4",
+      "paper": -0.95,
+      "ours": -0.2227956620421343,
+      "status": "FAIL"
+    },
+    {
+      "table": "T6",
+      "cell": "D10_D1_FF5",
+      "paper": -0.67,
+      "ours": -0.08440994929062211,
+      "status": "FAIL"
+    },
+    {
+      "table": "T6",
+      "cell": "D10_D1_FF6",
+      "paper": -0.72,
+      "ours": -0.06258557243986937,
+      "status": "FAIL"
+    },
+    {
+      "table": "T2",
+      "cell": "P1_MAX",
+      "paper": 0.01,
+      "ours": 0.010648166616084977,
+      "status": "Match"
+    },
+    {
+      "table": "T2",
+      "cell": "P10_MAX",
+      "paper": 0.071,
+      "ours": 0.06041036479514416,
+      "status": "Match"
+    },
+    {
+      "table": "T2",
+      "cell": "D10_D1_MAX",
+      "paper": 0.061,
+      "ours": 0.049762198179059185,
+      "status": "Match"
+    },
+    {
+      "table": "T2",
+      "cell": "P1_BETA",
+      "paper": 0.581,
+      "ours": 0.5388360944405263,
+      "status": "Match"
+    },
+    {
+      "table": "T2",
+      "cell": "P10_BETA",
+      "paper": 1.043,
+      "ours": 1.1646609018823222,
+      "status": "Match"
+    },
+    {
+      "table": "T2",
+      "cell": "D10_D1_BETA",
+      "paper": 0.462,
+      "ours": 0.6258248074417959,
+      "status": "FAIL"
+    },
+    {
+      "table": "T2",
+      "cell": "P1_IVOL",
+      "paper": 1.628,
+      "ours": 1.577155414893256,
+      "status": "Match"
+    },
+    {
+      "table": "T2",
+      "cell": "P10_IVOL",
+      "paper": 4.033,
+      "ours": 3.7616991588324797,
+      "status": "Match"
+    },
+    {
+      "table": "T2",
+      "cell": "D10_D1_IVOL",
+      "paper": 2.405,
+      "ours": 2.1845437439392237,
+      "status": "Match"
+    }
+  ],
+  "tallies": {
+    "Match": 10,
+    "FAIL": 15,
+    "MISSING": 0,
+    "SKIP": 0
+  },
+  "n_committed": 25,
+  "loss": 0.6
+}

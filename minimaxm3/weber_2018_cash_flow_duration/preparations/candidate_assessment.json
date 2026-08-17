@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Weber (2018) constructs a firm-level cash flow duration measure (Dechow, Sloan, Soliman 2004) using Compustat fundamentals, sorts US common stocks into deciles/quintiles on duration at end of June each year, and reports mean excess returns, CAPM/FF3/FF4/FF5 alphas, Sharpe ratios, and double-sorts with institutional ownership (RIOR) over July 1963–June 2014. The paper has a clear Data section (§2), an empirical methodology section (§3-4), and 12 main-text tables (Tables 1-12) with numerical results. Methodology is operationalized: the duration formula appears explicitly (Eq. 1-2), all parameters are stated (r=0.12, g_ss=0.06, roe_ss=0.12, T=15, AR(ROE)=0.41, AR(BV)=0.24), the delisting return treatment is specified (Shumway 1997 -30% for codes 400-591), the sample is restricted (common stocks excl financials 6000-6999 and utilities 4900-4999 on NYSE/AMEX/NASDAQ), and the rebalancing is annual at end of June. Two minor caveats: (1) the Baker-Wurgler sentiment index (Tables 7, 9) is not present in the ClickHouse catalog and would need to be loaded from a separate source; (2) the Moody's book equity supplement (Davis et al. 2000) is not available. The core methodology (duration sorts, factor-model regressions, double-sorts) is fully replicable.",
+  "block_reasons": []
+}

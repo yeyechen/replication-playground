@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Empirical cross-sectional equity paper using CRSP/Compustat/13F (Jan 1968 - Dec 2022). Methodology: (i) univariate MAX decile sorts with multi-factor alphas, (ii) double-sort MAX^beta construction, (iii) Fama-MacBeth regressions of stock returns on MAX / MAX^beta and 11 control characteristics. Tables 1-13 + 13 appendix tables report decile returns, characteristic summary stats, bivariate/triple sorts, FM coefficients, holding-horizon alphas, and institutional-ownership-tier results. All data, sample, and methodology operationalized. Note: many secondary tables depend on external factor models (SY mispricing, DHS behavioral, PS liquidity, BW sentiment) not present in ClickHouse catalog — this will constrain table selection but does not block replication of the core tables.",
+  "block_reasons": []
+}

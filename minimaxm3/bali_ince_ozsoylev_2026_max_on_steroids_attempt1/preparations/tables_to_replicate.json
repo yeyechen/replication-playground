@@ -1,0 +1,158 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "The value-weighted MAX^beta long-short portfolio earns significant abnormal returns robust to risk and mispricing factors, isolating the idiosyncratic component of MAX.",
+      "paper_location": "L9",
+      "headline": true
+    },
+    {
+      "id": "C2",
+      "claim": "The original MAX anomaly disappears once one controls for mispricing/behavioral factors (SY, DHS); the high-MAX underperformance is a mispricing phenomenon.",
+      "paper_location": "L287"
+    },
+    {
+      "id": "C3",
+      "claim": "MAX^beta-sorted portfolios are neutral to market beta and exhibit lower MIS / CE spreads than univariate MAX sorts.",
+      "paper_location": "L466"
+    },
+    {
+      "id": "C4",
+      "claim": "The MAX^beta anomaly is concentrated among low-institutional-ownership stocks (driven by the short leg) and within high-institutional-ownership stocks (driven by the long leg).",
+      "paper_location": "L598"
+    }
+  ],
+  "budget_flag": "Tables 1 and 6 originally had 110 cells each (11 rows x 9-10 model columns); after dropping FFCPS, FF6PS, SY, DHS columns that depend on third-party factors (PS LIQ, SY, DHS not in ClickHouse catalog) they fall to ~66 cells each. Table 9 Panel B (T4) keeps RET-RF columns and treats FF6PS as [THIRD-PARTY-DATASET] FAIL. Net committed cells under the 350 flag.",
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table 1",
+      "description": "Univariate sorts on MAX: VW excess returns and 5 available model alphas (CAPM/FF3/FFC4/FF5/FF6) for decile portfolios plus 10-1 spread. FFCPS/FF6PS/SY/DHS columns dropped due to missing third-party factors (see data_verification.json).",
+      "replication_meaning": "Demonstrates that the MAX signal is correctly constructed as the average of the 5 highest daily returns, the universe (NYSE/AMEX/NASDAQ common stocks, $5+ price, excl utilities/financials) and 15-day obs requirement are applied, and the value-weighted decile-sort portfolio construction with Newey-West (6 lags) t-stats matches the paper's baseline MAX anomaly. Downstream claims C1 (MAX^beta headline) and C2 (MAX explained by mispricing) both depend on this baseline.",
+      "covers_claims": ["C2"],
+      "paper_quote": "Table 1\n**Univariate sorts on MAX**: This table reports the performance of decile portfolios constructed monthly by sorting stocks based on MAX, defined as the average of the five highest daily returns within a month. Portfolio 1 contains stocks with the lowest MAX, while Portfolio 10 contains stocks with the highest MAX. The reported values are value-weighted average one-month-ahead excess returns (RET - RF), as well as alphas from risk-adjusted models (CAPM, FF3, FFC4, FFCPS, FF5, FF6, and FF6PS) and mispricing-adjusted models (SY and DHS). The final row displays the differences (spreads) in average monthly returns and alphas between Portfolio 10 and Portfolio 1. Newey and West (1987) t-statistics (adjusted with six lags) are reported in parentheses. The sample period spans January 1968 to December 2022, with the exception of the DHS analysis, which begins in July 1972. (L970-972)",
+      "exercises_preprocessing_rules": ["universe_exchanges", "universe_share_codes", "avail_min_15_obs", "universe_min_price", "universe_exclude_utilities", "universe_exclude_financials", "sample_period_main", "var_max", "sort_deciles_vw", "factor_models_set", "factor_data_sources", "fm_newey_west_lags"],
+      "metrics": [
+        {"name": "T1_P1_RET_RF",  "value":  0.63, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L993"},
+        {"name": "T1_P1_CAPM",    "value":  0.24, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L994"},
+        {"name": "T1_P1_FF3",     "value":  0.19, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L995"},
+        {"name": "T1_P1_FFC4",    "value":  0.19, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L996"},
+        {"name": "T1_P1_FF5",     "value":  0.05, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L998"},
+        {"name": "T1_P1_FF6",     "value":  0.06, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L999"},
+        {"name": "T1_P5_RET_RF",  "value":  0.60, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1046"},
+        {"name": "T1_P5_FF3",     "value":  0.02, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L1048", "zero_band": 0.10},
+        {"name": "T1_P5_FF5",     "value":  0.05, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L1052"},
+        {"name": "T1_P5_FF6",     "value":  0.07, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L1053"},
+        {"name": "T1_P9_RET_RF",  "value":  0.22, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L1097"},
+        {"name": "T1_P9_FF3",     "value": -0.38, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L1099"},
+        {"name": "T1_P9_FF5",     "value": -0.08, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L1103"},
+        {"name": "T1_P9_FF6",     "value": -0.07, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L1104"},
+        {"name": "T1_P10_RET_RF", "value": -0.32, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1110"},
+        {"name": "T1_P10_CAPM",   "value": -1.17, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1111"},
+        {"name": "T1_P10_FF3",    "value": -0.97, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1112"},
+        {"name": "T1_P10_FFC4",   "value": -0.88, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1113"},
+        {"name": "T1_P10_FF5",    "value": -0.54, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1115"},
+        {"name": "T1_P10_FF6",    "value": -0.51, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1116"},
+        {"name": "T1_SPREAD_RET_RF",  "value": -0.95, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1123"},
+        {"name": "T1_SPREAD_CAPM",    "value": -1.41, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1124"},
+        {"name": "T1_SPREAD_FF3",     "value": -1.16, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1125"},
+        {"name": "T1_SPREAD_FFC4",    "value": -1.07, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1126"},
+        {"name": "T1_SPREAD_FF5",     "value": -0.59, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1128"},
+        {"name": "T1_SPREAD_FF6",     "value": -0.57, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L1129"}
+      ],
+      "notes": "Partial replication: FFCPS, FF6PS, SY, DHS alpha columns are dropped because the Pastor-Stambaugh LIQ factor and the Stambaugh-Yuan / Daniel-Hirshleifer-Sun factors are not in the ClickHouse catalog (sourced by the paper from third-party websites). The FF6PS SY DHS robustness -- the paper's central mispricing-interpretation test for MAX -- cannot be replicated here. CAPM/FF3/FFC4/FF5/FF6 cells are reproducible and exercise the baseline risk-model portion of the claim."
+    },
+    {
+      "id": "T2",
+      "table_ref": "Table 2 (10-1 spread row only)",
+      "description": "Cross-sectional median characteristics spread (10-1) for MAX-sorted decile portfolios.",
+      "replication_meaning": "Demonstrates that the firm-level characteristics (BETA, MIS, CE, IVOL, INST, E(ISKEW), SIZE, etc.) are correctly constructed and their monotonic spread across MAX deciles matches the paper. Downstream claim C2 (MAX reflects mispricing / equity issuance) depends on the CE and MIS spreads being correctly captured.",
+      "covers_claims": ["C2"],
+      "paper_quote": "Table 2\n**Summary statistics for decile portfolios of stocks sorted by MAX**: ... The final row displays the differences in the reported values for firm-specific characteristics between the highest (Portfolio 10) and lowest (Portfolio 1) MAX deciles, along with Newey and West (1987) t-statistics (adjusted with six lags) in parentheses. The sample period spans April 1980 to December 2022 for INST and E(ISKEW), and January 1968 to December 2022 for all other characteristics. (L1141-1143)",
+      "exercises_preprocessing_rules": ["universe_exchanges", "universe_share_codes", "var_max", "var_beta", "var_mis_score", "var_ce", "var_inst", "var_e_iskew", "var_size", "var_ivol", "var_bm", "var_rev", "var_mom", "var_illiq", "var_roe", "var_ia"],
+      "metrics": [
+        {"name": "T2_SPREAD_MAX",     "value":  0.061, "unit": "ratio",     "tolerance_pct": 10, "paper_location": "L1349"},
+        {"name": "T2_SPREAD_BETA",    "value":  0.462, "unit": "ratio",     "tolerance_pct": 10, "paper_location": "L1350"},
+        {"name": "T2_SPREAD_MIS",     "value": 11.04,  "unit": "rank_index", "tolerance_pct": 15, "paper_location": "L1351"},
+        {"name": "T2_SPREAD_CE",      "value":  0.033, "unit": "ratio",     "tolerance_pct": 15, "paper_location": "L1352"},
+        {"name": "T2_SPREAD_MAXBETA", "value":  0.546, "unit": "ratio",     "tolerance_pct": 15, "paper_location": "L1353"},
+        {"name": "T2_SPREAD_INST",    "value": -0.152, "unit": "fraction",  "tolerance_pct": 15, "paper_location": "L1354"},
+        {"name": "T2_SPREAD_SIZE",    "value": -1493,  "unit": "millions_dollars", "tolerance_pct": 20, "paper_location": "L1356"},
+        {"name": "T2_SPREAD_IVOL",    "value":  2.405, "unit": "ratio",     "tolerance_pct": 15, "paper_location": "L1357"},
+        {"name": "T2_SPREAD_REV",     "value":  0.180, "unit": "ratio",     "tolerance_pct": 15, "paper_location": "L1359"},
+        {"name": "T2_SPREAD_MOM",     "value": -0.052, "unit": "ratio",     "tolerance_pct": 25, "paper_location": "L1360"},
+        {"name": "T2_SPREAD_ILLIQ",   "value":  0.767, "unit": "ratio_scaled", "tolerance_pct": 20, "paper_location": "L1361"},
+        {"name": "T2_SPREAD_ROE",     "value": -0.094, "unit": "ratio",     "tolerance_pct": 20, "paper_location": "L1362"}
+      ],
+      "notes": "Replicates only the 10-1 difference row of Table 2 (12 of 15 characteristics; E(ISKEW), BM, I/A require 60-month rolling FF3 residual skewness / Compustat-only fields that are deprioritized to control the cell count). INST requires 13F institutional holdings data; conditional on availability, the spread is computed over Apr 1980 - Dec 2022."
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table 6",
+      "description": "Portfolio sorts on MAX^beta (beta-neutralized via 10x10 dependent sort): VW excess returns and 5 available model alphas (CAPM/FF3/FFC4/FF5/FF6) for decile portfolios plus 10-1 spread. FFCPS/FF6PS/SY/DHS columns dropped due to missing third-party factors.",
+      "replication_meaning": "Demonstrates that the MAX^beta construction is correctly implemented as a 10x10 dependent double sort (first on beta, then within each beta decile on MAX), with stocks regrouped by MAX rank across beta bins. Headline claim C1 depends on this construction being right -- it is the central contribution of the paper. The within-FF tests (CAPM/FF3/FFC4/FF5/FF6) exercise the robust-to-risk-factors half of the headline claim; the robust-to-mispricing-factors half (SY/DHS) cannot be replicated without the third-party factor data.",
+      "covers_claims": ["C1", "C3"],
+      "paper_quote": "Table 6\n**Portfolio sorts on MAX^beta**: ... the MAX^beta portfolio is constructed using a conditional sorting procedure. First, stocks are sorted into decile portfolios based on their market beta. Then, within each beta-sorted portfolio, stocks are further sorted into decile portfolios based on their MAX. To form the final deciles, we group together all stocks with the same MAX ranking, n, across the different beta portfolios. (L2053-2055)",
+      "exercises_preprocessing_rules": ["universe_exchanges", "universe_share_codes", "avail_min_15_obs", "universe_min_price", "universe_exclude_utilities", "universe_exclude_financials", "sample_period_main", "var_max", "var_beta", "var_max_beta_construction", "sort_max_beta_dependent", "factor_models_set", "factor_data_sources", "fm_newey_west_lags"],
+      "metrics": [
+        {"name": "T3_P1_RET_RF",  "value":  0.71, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2076"},
+        {"name": "T3_P1_CAPM",    "value":  0.18, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2077"},
+        {"name": "T3_P1_FF3",     "value":  0.22, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2078"},
+        {"name": "T3_P1_FFC4",    "value":  0.25, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2079"},
+        {"name": "T3_P1_FF5",     "value":  0.22, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2081"},
+        {"name": "T3_P1_FF6",     "value":  0.24, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2082"},
+        {"name": "T3_P5_RET_RF",  "value":  0.62, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2128"},
+        {"name": "T3_P5_FF3",     "value":  0.06, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L2130", "zero_band": 0.10},
+        {"name": "T3_P5_FF5",     "value":  0.02, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L2134", "zero_band": 0.10},
+        {"name": "T3_P5_FF6",     "value":  0.03, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L2135", "zero_band": 0.10},
+        {"name": "T3_P9_RET_RF",  "value":  0.29, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2180"},
+        {"name": "T3_P9_FF3",     "value": -0.32, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2182"},
+        {"name": "T3_P9_FF5",     "value": -0.17, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2185"},
+        {"name": "T3_P9_FF6",     "value": -0.22, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2186"},
+        {"name": "T3_P10_RET_RF", "value": -0.10, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L2193", "zero_band": 0.10},
+        {"name": "T3_P10_CAPM",   "value": -0.82, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2194"},
+        {"name": "T3_P10_FF3",    "value": -0.68, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2195"},
+        {"name": "T3_P10_FFC4",   "value": -0.70, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2196"},
+        {"name": "T3_P10_FF5",    "value": -0.45, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2198"},
+        {"name": "T3_P10_FF6",    "value": -0.48, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2199"},
+        {"name": "T3_SPREAD_RET_RF", "value": -0.81, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2206"},
+        {"name": "T3_SPREAD_CAPM",   "value": -1.00, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2207"},
+        {"name": "T3_SPREAD_FF3",    "value": -0.90, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2208"},
+        {"name": "T3_SPREAD_FFC4",   "value": -0.95, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2209"},
+        {"name": "T3_SPREAD_FF5",    "value": -0.67, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2211"},
+        {"name": "T3_SPREAD_FF6",    "value": -0.72, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2212"}
+      ],
+      "notes": "Partial replication: FFCPS, FF6PS, SY, DHS alpha columns dropped due to missing third-party factors (see data_verification.json). FF6PS -0.73% and SY -0.62%, DHS -0.46% -- the cells that distinguish MAX^beta from MAX -- cannot be replicated here."
+    },
+    {
+      "id": "T4",
+      "table_ref": "Table 9 Panel B",
+      "description": "MAX^beta-sorted decile portfolios within INST terciles: VW excess returns and (limited) FF6PS alphas for INST1 (lowest), INST2 (mid), INST3 (highest), plus the 10-1 spread per tier.",
+      "replication_meaning": "Demonstrates the heterogeneous skewness preference mechanism: MAX^beta is two-sided -- low-INST stocks show short-leg underperformance (retail overpayment), while high-INST stocks show long-leg outperformance (institutional premium for low skewness). Downstream claim C4 depends on this stratification being correctly implemented with INST terciles computed over Apr 1980 - Dec 2022 (13F data window).",
+      "covers_claims": ["C4"],
+      "paper_quote": "Table 9\n**Institutional holdings, MAX, and MAX^beta**: ... The sample is divided into three subgroups based on the 33rd and 67th percentiles of INST, labeled INST1 (lowest holdings) through INST3 (highest holdings). ... For the controlled MAX^beta portfolios (Panel B), a two-step procedure is used: within each INST tier, stocks are first sorted into decile portfolios based on market beta; then, within each of these beta portfolios, stocks are further sorted into deciles based on MAX. ... Newey and West (1987) t-statistics (adjusted with five lags) are reported in parentheses. The sample period spans April 1980 to December 2022. (L2459-2461)",
+      "exercises_preprocessing_rules": ["universe_exchanges", "universe_share_codes", "avail_min_15_obs", "universe_min_price", "universe_exclude_utilities", "universe_exclude_financials", "sample_period_1980", "var_max", "var_beta", "var_max_beta_construction", "sort_max_beta_dependent", "var_inst", "factor_models_set", "fm_newey_west_lags"],
+      "metrics": [
+        {"name": "T4_P1_INST1_RET_RF",  "value":  0.82, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2502"},
+        {"name": "T4_P1_INST1_FF6PS",   "value":  0.26, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2503"},
+        {"name": "T4_P1_INST2_RET_RF",  "value":  0.85, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2504"},
+        {"name": "T4_P1_INST2_FF6PS",   "value":  0.16, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L2505"},
+        {"name": "T4_P1_INST3_RET_RF",  "value":  0.97, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2506"},
+        {"name": "T4_P1_INST3_FF6PS",   "value":  0.23, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2507"},
+        {"name": "T4_P5_INST1_RET_RF",  "value":  0.43, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2622"},
+        {"name": "T4_P5_INST1_FF6PS",   "value": -0.01, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L2623", "zero_band": 0.10},
+        {"name": "T4_P5_INST2_RET_RF",  "value":  1.08, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2624"},
+        {"name": "T4_P5_INST2_FF6PS",   "value":  0.43, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2625"},
+        {"name": "T4_P5_INST3_RET_RF",  "value":  0.54, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2626"},
+        {"name": "T4_P5_INST3_FF6PS",   "value": -0.30, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2627"},
+        {"name": "T4_SPREAD_INST1_RET_RF", "value": -1.54, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2802"},
+        {"name": "T4_SPREAD_INST1_FF6PS",  "value": -1.44, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2803"},
+        {"name": "T4_SPREAD_INST2_RET_RF", "value": -0.69, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2804"},
+        {"name": "T4_SPREAD_INST2_FF6PS",  "value": -0.51, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2805"},
+        {"name": "T4_SPREAD_INST3_RET_RF", "value": -0.42, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2806"},
+        {"name": "T4_SPREAD_INST3_FF6PS",  "value": -0.37, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2807"}
+      ],
+      "notes": "Partial replication: FF6PS column retained but will FAIL under [THIRD-PARTY-DATASET] marker (Pastor-Stambaugh LIQ factor not in catalog). RET-RF column is fully reproducible. Both legs of the heterogeneity test (C4) remain testable through the RET-RF spread."
+    }
+  ]
+}

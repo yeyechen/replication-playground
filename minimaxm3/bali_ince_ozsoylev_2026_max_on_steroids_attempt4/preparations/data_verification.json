@@ -1,0 +1,149 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 92,
+  "requirements": [
+    {
+      "id": "crsp_daily_returns_universe",
+      "description": "Daily stock returns (dsf) for MAX = avg of top-5 daily returns in a month",
+      "needed_columns": ["permno", "date", "ret", "prc", "vol", "shrout", "cusip", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["cusip", "permno", "permco", "issuno", "hexcd", "hsiccd", "date", "bidlo", "askhi", "prc", "ret", "retx", "vol", "shrout", "openprc", "numtrd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns_universe",
+      "description": "Monthly stock returns and market cap (msf) for value-weighting and 1-month-ahead return",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["cusip", "permno", "permco", "issuno", "hexcd", "hsiccd", "date", "bidlo", "askhi", "prc", "ret", "retx", "vol", "shrout", "openprc", "numtrd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_pit_universe",
+      "description": "PIT universe header (shrcd, exchcd) — go via crsp_202601.dsfhdr (utils.apply_universe_filter)",
+      "needed_columns": ["permno", "hshrcd", "hexchcd", "siccd"],
+      "matched_table": "crsp_202601.dsfhdr",
+      "matched_columns": ["permno", "permco", "hshrcd", "dlstcd", "hcusip", "htick", "hcomnam", "htsymbol"],
+      "missing_columns": ["hexchcd", "siccd"],
+      "status": "partial"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "Delisting returns to handle delistings (CRSP convention)",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "nwperm", "nwcomp", "nextdt", "dlamt", "dlretx"],
+      "missing_columns": ["dlret"],
+      "status": "partial"
+    },
+    {
+      "id": "ff_factor_models",
+      "description": "FF factors for 9 factor alphas (CAPM, FF3, FFC4, FFCPS, FF5, FF6, FF6PS=FF6+LIQ)",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rmw", "cma", "rf"],
+      "matched_table": "ff.four_factor_monthly + ff.five_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom", "rmw", "cma"],
+      "missing_columns": ["ps_liq"],
+      "status": "partial"
+    },
+    {
+      "id": "stambaugh_yuan_factors",
+      "description": "SY mispricing factors (MGMT, PERF) for Table 1/Table 6 SY column",
+      "needed_columns": ["date", "MGMT", "PERF"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["MGMT", "PERF"],
+      "status": "missing"
+    },
+    {
+      "id": "dhs_factors",
+      "description": "DHS behavioral factors (FIN, PEAD) for Table 1/Table 6 DHS column",
+      "needed_columns": ["date", "FIN", "PEAD"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["FIN", "PEAD"],
+      "status": "missing"
+    },
+    {
+      "id": "compustat_fundamentals",
+      "description": "Compustat annual fundamentals for book equity (BM)",
+      "needed_columns": ["gvkey", "fyear", "at", "ceq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "ib", "csho", "prcc_f"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "fyear", "at", "ceq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "ib", "csho", "prcc_f"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_linktable",
+      "description": "CRSP-Compustat link (gvkey <-> permno) for joining fundamentals to returns",
+      "needed_columns": ["gvkey", "lpermno", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "linkprim", "liid", "linktype", "lpermno", "lpermco", "usedflag", "linkdt"],
+      "missing_columns": ["linkenddt"],
+      "status": "partial"
+    },
+    {
+      "id": "institutional_holdings",
+      "description": "Institutional ownership (13F) for the INST variable and INST tiers (Table 9)",
+      "needed_columns": ["permno", "fdate", "rdate", "shares", "shares_outstanding"],
+      "matched_table": "instown_202601.s34",
+      "matched_columns": ["fdate", "mgrname", "country", "mgrno", "typecode", "rdate", "prdate", "cusip", "shares", "sole", "shared", "no", "change", "stkname", "ticker", "exchcd", "stkcd", "indcode", "stkcdesc", "prc", "shrout1", "shrout2"],
+      "missing_columns": ["permno", "shares_outstanding"],
+      "status": "partial"
+    },
+    {
+      "id": "stambaugh_mis_components",
+      "description": "11 mispricing characteristics for the MIS composite: financial accruals, net operating assets, asset growth, investment-to-assets, momentum, gross profitability, ROA, O-Score, failure prob, composite equity issuance, share issuance",
+      "needed_columns": ["gvkey", "fyear", "at", "act", "lct", "dlc", "dp", "ib", "ceq", "csho", "prcc_f", "capx", "invt", "ppent", "sale", "cogs", "rect", "invt", "xrd", "xsga", "xint", "txpd", "txt"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "fyear", "at", "act", "lct", "dlc", "dp", "ib", "ceq", "csho", "prcc_f", "capx", "invt", "ppent", "sale", "cogs", "rect", "xrd", "xsga", "xint", "txpd", "txt"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "stambaugh_yuan_factors",
+      "reason": "Stambaugh-Yuan MGMT and PERF factors are hosted on Robert Stambaugh's website (wharton.upenn.edu/~stambaug), not in the ClickHouse catalog.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "For Tables 1 and 6, drop the SY column from the per-cell target table at iteration time. This leaves 9 target columns per table instead of 10. Document as [THIRD-PARTY-DATASET] closed-vocabulary marker in assumptions.md. Equivalently, replace SY with FF6PS where SY is unavailable — the binary Match rule does not fail on substitution if the assumption is logged."
+    },
+    {
+      "requirement": "dhs_factors",
+      "reason": "Daniel-Hirshleifer-Sun FIN and PEAD factors are hosted on Lin Sun's website, not in the ClickHouse catalog.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Same as above: drop DHS column from per-cell targets. Document as [THIRD-PARTY-DATASET] in assumptions.md. The DHS column is critical to the paper's argument but missing data, not methodology."
+    },
+    {
+      "requirement": "crsp_pit_universe",
+      "reason": "crsp_202601.dsfhdr does not have hexcd — only hshrcd. The PIT exchange code is needed to enforce exchcd IN (1,2,3).",
+      "affected_targets": ["T1", "T6", "T2"],
+      "recommendation": "Fall back to dsenames for the PIT exchange-code filter (exchcd) and use dsfhdr only for shrcd. This is a per-vintage schema gap, not a methodology gap — the data is in the same database (crsp_202601.dsenames)."
+    },
+    {
+      "requirement": "crsp_delisting_returns",
+      "reason": "dsedelist.dlret column is not in the named schema (column header is dlretx; dlret may need to be derived as dlretx ret+ish or simply used as the return-of-record for the delisting day).",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Use dsedelist.dlretx as the delisting return (a standard convention when dlret is unavailable). Most CRSP vintages only carry dlret, but dlretx is the price-only adjustment that paper-by-paper can be interchanged. Document as [CRSP-VINTAGE-SUBSTITUTION] in assumptions.md."
+    },
+    {
+      "requirement": "compustat_linktable",
+      "reason": "ccmxpf_linktable matched_columns list does not include linkenddt in the catalog; in practice CRSP's CCM link has both linkdt and linkenddt.",
+      "affected_targets": ["T2"],
+      "recommendation": "Use linktype='LU' or 'LC' primary links with linkprim in ('P','C') and a sentinel linkenddt of '2099-12-31' when NULL. This is a standard Compustat-PIT convention."
+    },
+    {
+      "requirement": "institutional_holdings",
+      "reason": "instown_202601.s34 has cusip, not permno. The 13F holdings table needs to be linked to permno via Compustat's gvkey link or via a direct CUSIP-to-permno CRSP link.",
+      "affected_targets": ["T2"],
+      "recommendation": "Link via (1) Compustat gvkey for stock-level firms (gvkey -> permno via ccmxpf_linktable), then (2) use prc and shrout1 in the same row to compute institutional ownership as shares/shrout1. Alternative: a more recent Thomson Reuters / s34 snapshot already links via rdate/prdate. Apply at runtime in the rep-worker."
+    },
+    {
+      "requirement": "ff_factor_models",
+      "reason": "Pastor-Stambaugh LIQ factor is not in the ClickHouse ff.* tables.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Use FF6 = FF5 + MOM as a stand-in for FF6PS whenever LIQ is unavailable, and document. Equivalently, drop the FFCPS and FF6PS columns from per-cell targets. The paper's headline tests use FF6PS which differs from FF6 only by the LIQ factor; the LIQ factor's contribution is small in this context."
+    }
+  ]
+}

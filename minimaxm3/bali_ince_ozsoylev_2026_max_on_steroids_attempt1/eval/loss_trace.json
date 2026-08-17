@@ -1,0 +1,64 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "loss": 0.9634146341463414,
+      "n_committed": 82,
+      "status_counts": {
+        "match": 3,
+        "fail": 49,
+        "missing": 30,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 1.0,
+      "n_committed": 82,
+      "status_counts": {
+        "match": 0,
+        "fail": 52,
+        "missing": 30,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 1.0,
+      "n_committed": 82,
+      "status_counts": {
+        "match": 0,
+        "fail": 52,
+        "missing": 30,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 4,
+      "loss": 1.0,
+      "n_committed": 82,
+      "status_counts": {
+        "match": 0,
+        "fail": 52,
+        "missing": 30,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 5,
+      "loss": 1.0,
+      "n_committed": 82,
+      "status_counts": {
+        "match": 0,
+        "fail": 52,
+        "missing": 30,
+        "skip": 0,
+        "no_effect": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 70,
+  "requirements": [
+    {
+      "id": "crsp_daily_stock_file",
+      "description": "Daily CRSP stock file (dsf) for MAX computation (avg of 5 highest daily returns), market beta (252-day rolling regression on daily excess returns), and IVOL (std of residuals). Also provides price (prc) and shares outstanding (shrout) for market cap.",
+      "needed_columns": ["permno", "date", "ret", "retx", "prc", "shrout", "vol", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "retx", "prc", "shrout", "vol", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_header_pit",
+      "description": "CRSP header (dsfhdr) for point-in-time share-code and exchange-code filtering (shrcd IN (10,11), exchcd IN (1,2,3)) via utils.apply_universe_filter().",
+      "needed_columns": ["permno", "begdat", "enddat", "hshrcd", "hexcd"],
+      "matched_table": "crsp_202601.dsfhdr",
+      "matched_columns": ["permno", "begdat", "enddat", "hshrcd", "hexcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_market_index",
+      "description": "CRSP daily stock index (dsi) for the market return in the CAPM beta regression (vwretd = value-weighted return with dividends).",
+      "needed_columns": ["date", "vwretd"],
+      "matched_table": "crsp_202601.dsi",
+      "matched_columns": ["date", "vwretd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "CRSP delisting events for adjusting monthly returns when a stock leaves the sample (dlret).",
+      "needed_columns": ["permno", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_fundamentals_book_equity",
+      "description": "Compustat annual fundamentals for book equity (SEQ + TXDB + ITCB - PSTKRV) and book-to-market denominator. ROE (IBQ/quarter-lagged BE), asset growth (delta AT / lagged AT).",
+      "needed_columns": ["gvkey", "datadate", "fyear", "seq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "at", "ib", "ceq"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "seq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "at", "ib", "ceq"],
+      "missing_columns": ["ibq"],
+      "status": "partial"
+    },
+    {
+      "id": "comp_industry_for_sic",
+      "description": "Compustat historical SIC codes for utility/financial sector exclusion (SIC 4900-4949, 6000-6999).",
+      "needed_columns": ["gvkey", "datadate", "sich"],
+      "matched_table": "comp_202601.co_industry",
+      "matched_columns": ["gvkey", "datadate", "sich"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat CCM link table (ccmxpf_linktable) for joining permno to gvkey.",
+      "needed_columns": ["permno", "gvkey", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["permno", "gvkey", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_three_factor_monthly",
+      "description": "FF3 monthly factors (Mkt-RF, SMB, HML) for CAPM and FF3 alpha regressions. Available from 1926-07.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.three_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_four_factor_monthly",
+      "description": "Carhart 4-factor (FFC4) monthly: adds MOM. Available from 1926-07.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_five_factor_monthly",
+      "description": "FF5 monthly factors (adds RMW, CMA). Available from 1963-07 (paper sample starts 1968-01, so full coverage).",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "matched_table": "ff.five_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_six_factor_synthesis",
+      "description": "Paper's FF6 = FF5 + MOM. Catalog does not carry a pre-joined six-factor table, but four_factor_monthly.mom + five_factor_monthly.{rmw,cma} yield the identical FF6 factor set. Constructed in SQL at pipeline time.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": ["rmw", "cma"],
+      "status": "partial"
+    },
+    {
+      "id": "ff_liquidity_factor",
+      "description": "Pastor-Stambaugh (2003) LIQ factor for FFCPS / FF6PS alpha. NOT available in ClickHouse catalog.",
+      "needed_columns": ["dt", "liq"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["dt", "liq"],
+      "status": "missing"
+    },
+    {
+      "id": "ff_sy_mispricing_factors",
+      "description": "Stambaugh-Yuan (2017) MGMT and PERF mispricing factors for SY alpha. NOT available in ClickHouse catalog.",
+      "needed_columns": ["dt", "mgmt", "perf"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["dt", "mgmt", "perf"],
+      "status": "missing"
+    },
+    {
+      "id": "ff_dhs_behavioral_factors",
+      "description": "Daniel-Hirshleifer-Sun (2020) FIN and PEAD behavioral factors for DHS alpha. NOT available in ClickHouse catalog.",
+      "needed_columns": ["dt", "fin", "pead"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["dt", "fin", "pead"],
+      "status": "missing"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "ff_liquidity_factor",
+      "reason": "Pastor-Stambaugh (2003) LIQ factor is not present in any ClickHouse database in the catalog. Paper's FFCPS and FF6PS columns therefore cannot be reproduced at the numeric level.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Tables T1 and T6 are restricted to the FF3, FFC4, FF5, FF6 columns (skipping FFCPS and FF6PS). The paper's central anomaly claim about robustness across 'risk factors' is still testable on FF3/FFC4/FF5/FF6. Documented in assumptions.md and T1/T6 notes."
+    },
+    {
+      "requirement": "ff_sy_mispricing_factors",
+      "reason": "Stambaugh-Yuan (2017) MGMT and PERF factors are not present in any ClickHouse database. Paper's SY column in Tables 1 and 6 cannot be numerically reproduced.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Tables T1 and T6 skip the SY column. The MIS index column of Table 2 also depends on the 11-component Stambaugh-Yu-Yuan (2015) mispricing index (accruals, NOA, asset growth, INV/AT, distress, O-score, MOM, GP, ROA, PEAD, NSI); most constituent inputs are not in the catalog. Table 2 MIS column is therefore SKIP (documented in T2.notes)."
+    },
+    {
+      "requirement": "ff_dhs_behavioral_factors",
+      "reason": "Daniel-Hirshleifer-Sun (2020) FIN and PEAD factors are not present in any ClickHouse database. Paper's DHS column in Tables 1 and 6 cannot be numerically reproduced.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Tables T1 and T6 skip the DHS column. The DHS start date (July 1972) is also moot given the missing factors. Documented in T1/T6 notes."
+    },
+    {
+      "requirement": "comp_fundamentals_book_equity",
+      "reason": "Compustat's quarterly IBQ column is not present in comp_202601.funda. Paper's ROE definition uses IBQ (income before extraordinary items) divided by one-quarter-lagged book equity. ib (annual) is available but is the wrong periodicity for the paper's exact spec.",
+      "affected_targets": ["T2"],
+      "recommendation": "Use ib (annual income before extraordinary items) as a proxy for IBQ in the ROE construction. The annual-vs-quarterly difference introduces minor measurement noise in ROE values; we widen the tolerance on ROE cells (T2.D{1..10}_ROE tolerance_pct = 25%) to absorb the difference. This only affects T2's ROE column, not the headline decile returns or factor alphas (T1, T6)."
+    },
+    {
+      "requirement": "ff_six_factor_synthesis",
+      "reason": "No pre-joined FF6 table. ff.four_factor_monthly provides Mkt-RF/SMB/HML/MOM/rf; ff.five_factor_monthly provides Mkt-RF/SMB/HML/RMW/CMA/rf. The two must be joined on dt in SQL at pipeline time to materialize FF6.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Construct FF6 factor series in SQL by an outer join of four_factor_monthly and five_factor_monthly on dt, taking {mkt_rf, smb, hml, rf} from either and {mom, rmw, cma} from the matching table. The join is exact on dt because both tables are Kenneth French monthly series and share the same calendar."
+    }
+  ]
+}

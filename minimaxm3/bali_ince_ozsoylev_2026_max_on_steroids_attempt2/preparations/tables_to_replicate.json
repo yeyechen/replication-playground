@@ -1,0 +1,143 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "The MAX anomaly exists in monthly decile portfolios sorted on average-of-five-highest-daily-returns and is robust to standard factor models but disappears under mispricing factor models.",
+      "paper_location": "L269, L285, L287",
+      "headline": true
+    },
+    {
+      "id": "C2",
+      "claim": "MAX^beta, the double-sorted (market-beta x MAX) lottery measure, yields a significant long-short return spread that is robust to all factor models including mispricing/behavioral models.",
+      "paper_location": "L75, L446, L450, L462",
+      "headline": true
+    },
+    {
+      "id": "C3",
+      "claim": "MAX has significant negative predictive power for future one-month excess returns in firm-level Fama-MacBeth regressions after controlling for mispricing and equity issuance.",
+      "paper_location": "L360, L378"
+    },
+    {
+      "id": "C4",
+      "claim": "MAX^beta dummies retain strong negative predictive power in firm-level Fama-MacBeth regressions even with full control set including MIS, CE, IVOL.",
+      "paper_location": "L506, L520, L522"
+    }
+  ],
+  "budget_flag": null,
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table 1",
+      "description": "Univariate decile sorts on MAX: one-month-ahead value-weighted excess returns and risk-adjusted alphas (RET-RF, CAPM, FF3, FFC4, FFCPS, FF5, FF6, FF6PS, SY, DHS) for ten portfolios sorted monthly on MAX (avg of 5 highest daily returns).",
+      "replication_meaning": "Demonstrates correct MAX construction (avg of 5 highest daily returns per month), decile sorting, value-weighting, and the universe/sample filters (shrcd 10/11, exchcd 1/2/3, $5 price floor, SIC exclusions, 15 daily-obs minimum, sample 1968-2022). Establishes baseline MAX anomaly under standard risk-factor models; covers headline claim C1.",
+      "covers_claims": ["C1"],
+      "paper_quote": "Table 1 — Univariate sorts on MAX: This table reports the performance of decile portfolios constructed monthly by sorting stocks based on MAX, defined as the average of the five highest daily returns within a month. Portfolio 1 contains stocks with the lowest MAX, while Portfolio 10 contains stocks with the highest MAX. The reported values are value-weighted average one-month-ahead excess returns (RET – RF), as well as alphas from risk-adjusted models (CAPM, FF3, FFC4, FFCPS, FF5, FF6, and FF6PS) and mispricing-adjusted models (SY and DHS). The final row displays the differences (spreads) in average monthly returns and alphas between Portfolio 10 and Portfolio 1. Newey and West (1987) t-statistics (adjusted with six lags) are reported in parentheses. The sample period spans January 1968 to December 2022, with the exception of the DHS analysis, which begins in July 1972. (L970-972)",
+      "exercises_preprocessing_rules": ["universe_share_codes", "universe_exchanges", "universe_price_floor", "universe_utility_financial_exclusion", "avail_min_daily_obs", "var_max", "factor_models_set", "sort_monthly_decile_vw", "sort_vw_excess_ret_minus_rf", "fm_newey_west_lags"],
+      "metrics": [
+        {"name": "P1_RET_RF", "value": 0.63, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L992"},
+        {"name": "P2_RET_RF", "value": 0.67, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1005"},
+        {"name": "P3_RET_RF", "value": 0.60, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1018"},
+        {"name": "P4_RET_RF", "value": 0.54, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1031"},
+        {"name": "P5_RET_RF", "value": 0.60, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1044"},
+        {"name": "P6_RET_RF", "value": 0.60, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1057"},
+        {"name": "P7_RET_RF", "value": 0.53, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1070"},
+        {"name": "P8_RET_RF", "value": 0.41, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1083"},
+        {"name": "P9_RET_RF", "value": 0.22, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1096"},
+        {"name": "P10_RET_RF", "value": -0.32, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1109"},
+        {"name": "P10_P1_RET_RF_spread", "value": -0.95, "unit": "pct_per_month", "tolerance_pct": 10, "paper_location": "L1122"},
+        {"name": "P1_FF3_alpha", "value": 0.19, "unit": "pct_per_month", "tolerance_pct": 20, "paper_location": "L995"},
+        {"name": "P10_FF3_alpha", "value": -0.97, "unit": "pct_per_month", "tolerance_pct": 20, "paper_location": "L1112"},
+        {"name": "P10_P1_FF3_alpha_spread", "value": -1.16, "unit": "pct_per_month", "tolerance_pct": 20, "paper_location": "L1125"},
+        {"name": "P1_FFC4_alpha", "value": 0.19, "unit": "pct_per_month", "tolerance_pct": 20, "paper_location": "L996"},
+        {"name": "P10_FFC4_alpha", "value": -0.88, "unit": "pct_per_month", "tolerance_pct": 20, "paper_location": "L1113"},
+        {"name": "P10_P1_FFC4_alpha_spread", "value": -1.07, "unit": "pct_per_month", "tolerance_pct": 20, "paper_location": "L1126"},
+        {"name": "P1_FF5_alpha", "value": 0.05, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L998"},
+        {"name": "P10_FF5_alpha", "value": -0.54, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L1115"},
+        {"name": "P10_P1_FF5_alpha_spread", "value": -0.59, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L1128"},
+        {"name": "P1_FF6_alpha", "value": 0.06, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L999"},
+        {"name": "P10_FF6_alpha", "value": -0.51, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L1116"},
+        {"name": "P10_P1_FF6_alpha_spread", "value": -0.57, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L1129"}
+      ],
+      "notes": "FFCPS, FF6PS columns require Pastor-Stambaugh LIQ factor which may be missing in ClickHouse — these cells may fail if LIQ is unavailable. SY and DHS columns (mispricing/behavioral models) may also be missing in ClickHouse. We focus on RET-RF, FF3, FFC4, FF5, FF6 alpha spreads which require only standard FF factors."
+    },
+    {
+      "id": "T6",
+      "table_ref": "Table 6",
+      "description": "MAX^beta decile sorts: conditional double sort (beta decile x MAX decile), regrouped to form MAX^beta deciles. Reports VW one-month-ahead excess returns and risk-adjusted alphas.",
+      "replication_meaning": "Demonstrates the paper's headline methodology: the two-stage (beta-decile then MAX-decile) dependent sort that creates MAX^beta portfolios neutral to market beta. Validates that beta is constant across MAX^beta deciles, that the spread is robust to risk-factor models, and that MAX^beta survives mispricing/behavioral models where MAX does not. Covers headline claim C2.",
+      "covers_claims": ["C2"],
+      "paper_quote": "Table 6 — Portfolio sorts on MAX^beta: This table reports the performance of market beta-neutralized MAX-sorted portfolios (MAX^beta). The portfolios are constructed using a conditional sorting procedure. First, stocks are sorted into decile portfolios based on their market beta. Then, within each beta-sorted portfolio, stocks are further sorted into decile portfolios based on their MAX (defined as the average of the five highest daily returns within a month). To form the final deciles, we group together all stocks with the same MAX ranking, n, across the different beta portfolios; this combined set is defined as the MAX^beta portfolio of rank n. Portfolio 1 (10) contains stocks with the lowest (highest) MAX^beta rank. The reported values are value-weighted average one-month-ahead excess returns (RET – RF), as well as alphas from risk-adjusted models (CAPM, FF3, FFC4, FFCPS, FF5, FF6, and FF6PS) and mispricing-adjusted models (SY and DHS). The final row reports the differences (spreads) in average monthly returns and alphas between Portfolio 10 and Portfolio 1. Newey and West (1987) t-statistics (adjusted with six lags) are reported in parentheses. The sample period spans January 1968 to December 2022, with the exception of the DHS analysis, which begins in July 1972. (L2053-2055)",
+      "exercises_preprocessing_rules": ["universe_share_codes", "universe_exchanges", "universe_price_floor", "universe_utility_financial_exclusion", "avail_min_daily_obs", "var_max", "var_beta_rolling_252", "sort_max_beta_neutralized", "factor_models_set", "sort_vw_excess_ret_minus_rf", "fm_newey_west_lags"],
+      "metrics": [
+        {"name": "P1_RET_RF", "value": 0.71, "unit": "pct_per_month", "tolerance_pct": 15, "paper_location": "L2075"},
+        {"name": "P2_RET_RF", "value": 0.52, "unit": "pct_per_month", "tolerance_pct": 15, "paper_location": "L2088"},
+        {"name": "P3_RET_RF", "value": 0.64, "unit": "pct_per_month", "tolerance_pct": 15, "paper_location": "L2102"},
+        {"name": "P4_RET_RF", "value": 0.57, "unit": "pct_per_month", "tolerance_pct": 15, "paper_location": "L2115"},
+        {"name": "P10_RET_RF", "value": -0.10, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2129"},
+        {"name": "P10_P1_RET_RF_spread", "value": -0.81, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2142"},
+        {"name": "P1_FF3_alpha", "value": 0.22, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2078"},
+        {"name": "P10_FF3_alpha", "value": -0.68, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2132"},
+        {"name": "P10_P1_FF3_alpha_spread", "value": -0.90, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2145"},
+        {"name": "P1_FFC4_alpha", "value": 0.25, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2079"},
+        {"name": "P10_FFC4_alpha", "value": -0.70, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2133"},
+        {"name": "P10_P1_FFC4_alpha_spread", "value": -0.95, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2146"},
+        {"name": "P1_FF5_alpha", "value": 0.22, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2081"},
+        {"name": "P10_FF5_alpha", "value": -0.45, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2135"},
+        {"name": "P10_P1_FF5_alpha_spread", "value": -0.67, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2148"},
+        {"name": "P1_FF6_alpha", "value": 0.24, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2082"},
+        {"name": "P10_FF6_alpha", "value": -0.48, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2136"},
+        {"name": "P10_P1_FF6_alpha_spread", "value": -0.72, "unit": "pct_per_month", "tolerance_pct": 25, "paper_location": "L2149"}
+      ],
+      "notes": "Table 6 is the paper's headline table (claim C2). The paper reports alphas under FF3, FFC4, FF5, FF6 with very similar magnitudes — we replicate these and skip FFCPS/FF6PS/SY/DHS columns if those factors are unavailable. Per-paper text mentions P10 RET-RF = -0.10 (t=-0.42) and the P10-P1 RET-RF spread = -0.81% with t=-3.62 (text L450-458)."
+    },
+    {
+      "id": "T4",
+      "table_ref": "Table 4",
+      "description": "Fama-MacBeth firm-level cross-sectional regressions of one-month-ahead excess returns on MAX and a battery of control variables (MIS, CE, BETA, SIZE, BM, REV, MOM, ILLIQ, ROE, I/A, IVOL).",
+      "replication_meaning": "Demonstrates correct Fama-MacBeth regression methodology: monthly cross-section regression of excess returns on MAX and controls, time-series averaging of slopes, Newey-West(6) t-stats, 1%/99% cross-sectional winsorization, fixed sample where all variables are simultaneously non-missing. Validates that MAX retains significant negative coefficient under MIS/CE controls. Covers claim C3.",
+      "covers_claims": ["C3"],
+      "paper_quote": "Table 4 — Fama-MacBeth (1973) regressions on MAX: This table reports the results of firm-level Fama-MacBeth (1973) cross-sectional regressions of one-month-ahead excess stock returns on MAX and a set of control variables. MAX is defined as the average of the five highest daily returns within a month. The control variables include: the firm-level mispricing index of Stambaugh, Yu, and Yuan (2015) (MIS); composite equity issuance (CE), defined as the 12-month growth in market capitalization minus the 12-month cumulative stock return; market beta (BETA); the natural logarithm of market capitalization (SIZE); the natural logarithm of the book-to-market ratio (BM); excess monthly return during the portfolio formation month (REV); intermediate-term momentum (MOM); Amihud (2002) illiquidity (ILLIQ); return on equity (ROE); asset growth (I/A); and idiosyncratic volatility (IVOL). Newey and West (1987) t-statistics (adjusted with six lags) are reported in parentheses. The last row reports the average adjusted R^2. The sample period spans January 1968 to December 2022. (L1715-1719)",
+      "exercises_preprocessing_rules": ["var_max", "var_size", "var_book_value", "var_bm", "var_mom", "var_rev", "var_illiq", "var_ia", "var_roe", "var_ivol_rolling_252", "var_beta_rolling_252", "var_mis_composite", "var_ce_one_year", "fm_newey_west_lags", "fm_fixed_sample", "winsorize_fm_1pct"],
+      "metrics": [
+        {"name": "Col1_MAX_coef", "value": -0.210, "unit": "coef", "tolerance_pct": 30, "paper_location": "L1737"},
+        {"name": "Col1_MAX_tstat", "value": -6.15, "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L1737"},
+        {"name": "Col2_MAX_coef", "value": -0.113, "unit": "coef", "tolerance_pct": 30, "paper_location": "L1753"},
+        {"name": "Col2_MAX_tstat", "value": -5.40, "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L1753"},
+        {"name": "Col3_MIS_coef", "value": -0.026, "unit": "coef", "tolerance_pct": 30, "paper_location": "L1769"},
+        {"name": "Col3_MIS_tstat", "value": -7.91, "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L1769"},
+        {"name": "Col3_MAX_coef", "value": -0.163, "unit": "coef", "tolerance_pct": 30, "paper_location": "L1769"},
+        {"name": "Col4_CE_coef", "value": -0.017, "unit": "coef", "tolerance_pct": 30, "paper_location": "L1785"},
+        {"name": "Col4_CE_tstat", "value": -4.43, "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L1785"},
+        {"name": "Col4_MAX_coef", "value": -0.187, "unit": "coef", "tolerance_pct": 30, "paper_location": "L1785"},
+        {"name": "Col5_MAX_coef", "value": -0.106, "unit": "coef", "tolerance_pct": 30, "paper_location": "L1801"},
+        {"name": "Col5_MAX_tstat", "value": -5.11, "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L1801"},
+        {"name": "Col6_MAX_coef", "value": -0.110, "unit": "coef", "tolerance_pct": 30, "paper_location": "L1817"},
+        {"name": "Col6_MAX_tstat", "value": -5.23, "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L1817"},
+        {"name": "Col1_R2", "value": 0.015, "unit": "r_squared", "tolerance_pct": 30, "paper_location": "L1841"},
+        {"name": "Col2_R2", "value": 0.075, "unit": "r_squared", "tolerance_pct": 30, "paper_location": "L1843"}
+      ],
+      "notes": "MIS requires constructing 11 component anomalies (Stambaugh-Yuan-Yuan 2015) from Compustat — may be approximated via simplified construction if full anomalies are unavailable. CE requires 12-month market-cap growth minus 12-month return. Controls (BM, IVOL, ROE, I/A, ILLIQ) all required to construct the fixed-sample regression."
+    },
+    {
+      "id": "T8",
+      "table_ref": "Table 8",
+      "description": "Fama-MacBeth firm-level cross-sectional regressions of one-month-ahead excess returns on MAX^beta decile dummies (D2-D10, D1 omitted) and a battery of control variables.",
+      "replication_meaning": "Demonstrates that MAX^beta retains its predictive power at the firm level (D10 coefficient around -1.03% in univariate) even after adding controls including MIS, CE, IVOL. Validates the paper's claim that MAX^beta is a distinct anomaly not absorbed by mispricing controls. Covers claim C4.",
+      "covers_claims": ["C4"],
+      "paper_quote": "Table 8 — Fama-MacBeth (1973) regressions on MAX^beta: This table reports the results of firm-level Fama-MacBeth (1973) cross-sectional regressions of one-month-ahead excess stock returns on dummy variables corresponding to MAX^beta portfolio rankings and a set of control variables. The MAX^beta rankings are determined using a conditional sorting procedure: stocks are first sorted into ten portfolios based on market beta, and then, within each beta portfolio, into ten deciles based on MAX. Stocks with the same MAX ranking (n) across the beta portfolios are assigned to MAX^beta rank n. The regression includes dummy variables for MAX^beta ranks 2 through 10 (Rank 1 serves as the benchmark to avoid multicollinearity). The control variables include: the firm-level mispricing score (MIS) of Stambaugh, Yu, and Yuan (2015); composite equity issuance (CE); market beta (BETA); the natural logarithm of market capitalization (SIZE); the natural logarithm of the book-to-market ratio (BM); excess monthly return during the portfolio formation month (REV); intermediate-term momentum (MOM); Amihud (2002) illiquidity (ILLIQ); return on equity (ROE); asset growth (I/A); and idiosyncratic volatility (IVOL). The final row indicates the control variables included in each specification and the average adjusted R^2. Newey and West (1987) t-statistics (adjusted with six lags) are reported in parentheses. The sample period spans January 1968 to December 2022. (L2326-2332)",
+      "exercises_preprocessing_rules": ["var_max", "var_size", "var_book_value", "var_bm", "var_mom", "var_rev", "var_illiq", "var_ia", "var_roe", "var_ivol_rolling_252", "var_beta_rolling_252", "var_mis_composite", "var_ce_one_year", "sort_max_beta_neutralized", "fm_newey_west_lags", "fm_fixed_sample", "fm_maxbeta_dummies", "winsorize_fm_1pct"],
+      "metrics": [
+        {"name": "Col1_D10_coef", "value": -1.027, "unit": "coef", "tolerance_pct": 30, "paper_location": "L2370"},
+        {"name": "Col1_D10_tstat", "value": -6.61, "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L2370"},
+        {"name": "Col1_D9_coef", "value": -0.566, "unit": "coef", "tolerance_pct": 30, "paper_location": "L2370"},
+        {"name": "Col1_D9_tstat", "value": -4.98, "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L2370"},
+        {"name": "Col2_D10_coef", "value": -0.435, "unit": "coef", "tolerance_pct": 30, "paper_location": "L2397"},
+        {"name": "Col3_D10_coef", "value": -0.890, "unit": "coef", "tolerance_pct": 30, "paper_location": "L2424"},
+        {"name": "Col4_D10_coef", "value": -0.700, "unit": "coef", "tolerance_pct": 30, "paper_location": "L2451"},
+        {"name": "Col5_D10_coef", "value": -0.460, "unit": "coef", "tolerance_pct": 30, "paper_location": "L2478"},
+        {"name": "Col6_D10_coef", "value": -0.420, "unit": "coef", "tolerance_pct": 30, "paper_location": "L2505"}
+      ],
+      "notes": "MAX^beta decile dummies require the same conditional double-sort as Table 6. Same data dependencies as Table 4 plus the double-sort construction. Coefficients are reported in pct per month units (regression on raw excess returns in decimal x 100). We focus on D10 coefficients across specifications since the paper highlights 'the underperformance of the highest MAX^beta portfolio relative to the lowest is 43.5 basis points per month' (text L522)."
+    }
+  ]
+}

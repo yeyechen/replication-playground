@@ -1,0 +1,30 @@
+{
+  "metrics": {
+    "t1_2013_2016_num_inst": {"value": 4002, "unit": "count"},
+    "t1_2013_2016_tot_aum": {"value": 15232.4, "unit": "$B"},
+    "t1_2017_2020_num_inst": {"value": 5231, "unit": "count"},
+    "t1_2017_2020_tot_aum": {"value": 19754.7, "unit": "$B"},
+    "t1_2021_num_inst": {"value": 4838, "unit": "count"},
+    "t1_2021_tot_aum": {"value": 28657.7, "unit": "$B"}
+  },
+  "_missing_metrics": [
+    "t2_2013_2016_avg_pos_hold",
+    "t2_2013_2016_med_pos_hold",
+    "t2_2013_2016_med_cs_size",
+    "t2_2017_2020_avg_pos_hold",
+    "t2_2017_2020_med_pos_hold",
+    "t2_2017_2020_med_cs_size",
+    "t2_2021_avg_pos_hold",
+    "t2_2021_med_pos_hold",
+    "t2_2021_med_cs_size",
+    "t3_d10_q5_alpha",
+    "t3_d5_q5_alpha",
+    "t3_d1_q5_alpha",
+    "t4_d10_alpha",
+    "t4_d5_alpha",
+    "t4_d1_alpha",
+    "t6_d10_alpha",
+    "t6_d5_alpha"
+  ],
+  "_missing_reason": "All metrics in _missing_metrics are MISSING with [COMPUTE-INFEASIBLE] marker — see preparations/assumptions.md A1, A15"
+}

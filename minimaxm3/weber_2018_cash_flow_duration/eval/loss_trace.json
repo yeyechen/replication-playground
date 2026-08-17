@@ -1,0 +1,52 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "loss": 0.7012987012987013,
+      "n_committed": 77,
+      "status_counts": {
+        "match": 23,
+        "fail": 48,
+        "missing": 6,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 0.6493506493506493,
+      "n_committed": 77,
+      "status_counts": {
+        "match": 27,
+        "fail": 50,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 0.6363636363636364,
+      "n_committed": 77,
+      "status_counts": {
+        "match": 28,
+        "fail": 49,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 4,
+      "loss": 0.6363636363636364,
+      "n_committed": 77,
+      "status_counts": {
+        "match": 28,
+        "fail": 49,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    }
+  ]
+}

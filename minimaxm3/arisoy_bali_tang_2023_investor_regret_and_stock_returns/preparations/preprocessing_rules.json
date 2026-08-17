@@ -1,0 +1,191 @@
+[
+  {
+    "rule_id": "factor_models_used",
+    "category": "factor",
+    "section": "§5.1 (footnote 3, 19)",
+    "paper_location": "L53",
+    "paper_quote": "we use the CAPM, the 3-factor model (FF3) of Fama and French (1993), the 4-factor model (FFC) of Fama and French (1993) and Carhart (1997), the 5-factor model (FFCPS) of Fama and French (1993), Carhart (1997), and Pastor and Stambaugh (2003), the 5-factor model (FF5) of Fama and French (2015), the 6-factor model (FF6) of Fama and French (2018), the 7-factor model (FF6PS) of Fama and French (2018) and Pastor and Stambaugh (2003), the q-factor model (Q) of Hou et al. (2015), and the q-factor model (Q+) of Hou et al. (2015) augmented with FFC's HML and UMD factors and Pastor and Stambaugh (2003) liquidity factor."
+  },
+  {
+    "rule_id": "var_reg_definition",
+    "category": "variable",
+    "section": "§3 (Eq. 5)",
+    "paper_location": "L148-152",
+    "paper_quote": "REG_{i,t} = R_{i,t} - max_j[R_{j,t}]"
+  },
+  {
+    "rule_id": "var_reg_industry_peer",
+    "category": "variable",
+    "section": "§3",
+    "paper_location": "L154",
+    "paper_quote": "we use stocks that have the same 3-digit SIC code with stock i as counterfactuals and compare the return of stock i over month t to the maximum return that could have been obtained across these counterfactuals over the same period, that subsequently defines investors' regret."
+  },
+  {
+    "rule_id": "var_reg_sign_flip",
+    "category": "variable",
+    "section": "§3",
+    "paper_location": "L166",
+    "paper_quote": "Since the original values of REG obtained from Eq.(5) are always non-positive, we multiply the original values by −1 when conducting the key asset pricing tests so that higher values of REG correspond to higher levels of regret."
+  },
+  {
+    "rule_id": "sample_accounting_lag",
+    "category": "sample",
+    "section": "§4.1 Data sources",
+    "paper_location": "L174",
+    "paper_quote": "To ensure that the accounting data are available to investors in real time, we use accounting values from the fiscal year ending in calendar year t−1 to run out-of-sample asset pricing tests for the period from July of calendar year t to June of calendar year t+1."
+  },
+  {
+    "rule_id": "delisting_treatment",
+    "category": "delisting",
+    "section": "§4.1 Data sources",
+    "paper_location": "L184-186",
+    "paper_quote": "Market variables are obtained from the Center for Research in Security Prices (CRSP) and accounting variables from COMPUSTAT."
+  },
+  {
+    "rule_id": "universe_share_codes",
+    "category": "universe",
+    "section": "§4.1 Data sources",
+    "paper_location": "L186",
+    "paper_quote": "All tests are based on individual stocks trading on the New York Stock Exchange (NYSE), American Stock Exchange (AMEX), and NASDAQ with share codes 10 and 11."
+  },
+  {
+    "rule_id": "universe_price_screen",
+    "category": "universe",
+    "section": "§4.1 Data sources",
+    "paper_location": "L186",
+    "paper_quote": "we exclude stocks with share prices less than $5 and more than $1,000 from our analysis to ensure that the results are not driven by small and illiquid stocks."
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "§4.1 Data sources (footnote 15)",
+    "paper_location": "L186-201",
+    "paper_quote": "The sample period is from July 1963 to December 2020."
+  },
+  {
+    "rule_id": "sample_observation_counts",
+    "category": "sample",
+    "section": "§4.1 Data sources",
+    "paper_location": "L186",
+    "paper_quote": "The final sample contains an average of 3,036 equity observations per month. Our univariate tests investigating the relation between regret and future equity returns use a total of 2.10 million firm-month observations."
+  },
+  {
+    "rule_id": "var_beta_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L190",
+    "paper_quote": "We estimate the market beta (BETA) of individual stocks using monthly returns over the past five years."
+  },
+  {
+    "rule_id": "var_size_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L190",
+    "paper_quote": "We calculate the natural logarithm of each stock's market capitalization (SIZE)"
+  },
+  {
+    "rule_id": "var_bm_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L190",
+    "paper_quote": "We calculate ... its book-to-market equity (BM) ratio at the end of each month."
+  },
+  {
+    "rule_id": "var_mom_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L190-194",
+    "paper_quote": "we measure the momentum return (MOM) of each stock as its cumulative return during the past 12 months after skipping the most recent month."
+  },
+  {
+    "rule_id": "var_str_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L194",
+    "paper_quote": "We also control for the short-term reversal (STR) effect of Jegadeesh (1990) using the one-month lagged stock return."
+  },
+  {
+    "rule_id": "var_illiq_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L194-198",
+    "paper_quote": "we calculate the Amihud illiquidity measure (ILLIQ), defined as the absolute daily return divided by the daily dollar trading volume averaged over all trading days in each month for each stock."
+  },
+  {
+    "rule_id": "var_coskew_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L198",
+    "paper_quote": "we calculate each stock's co-skewness (COSKEW) following Harvey and Siddique (2000) using monthly return observations over the past five years."
+  },
+  {
+    "rule_id": "var_ivol_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L198-202",
+    "paper_quote": "we calculate idiosyncratic volatility as the standard deviation of the residuals from a regression of daily excess stock returns on the daily excess market return (MKT), size (SMB), and value (HML) factors in each month."
+  },
+  {
+    "rule_id": "var_max_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L202",
+    "paper_quote": "we calculate lottery-like payoffs of a stock by the average of the stock's five highest daily returns observed during the month (MAX)."
+  },
+  {
+    "rule_id": "var_op_definition",
+    "category": "variable",
+    "section": "§4.2 Control variables",
+    "paper_location": "L202",
+    "paper_quote": "we control for the cross-sectional pricing effects of investment (IA) and profitability (OP)."
+  },
+  {
+    "rule_id": "avail_min_obs_daily_monthly",
+    "category": "sample",
+    "section": "§4.2 Control variables (footnote 16)",
+    "paper_location": "L202",
+    "paper_quote": "We require that at least 15 (24) non-missing daily (monthly) return observations exist in a month (over the past five years) when we calculate variables with daily (monthly) data."
+  },
+  {
+    "rule_id": "winsorize_no_explicit_rule",
+    "category": "winsorize",
+    "section": "§4.2 Control variables",
+    "paper_location": "L202",
+    "paper_quote": "Table A.1 in the Online Appendix provides a detailed description of the control variables used in our tests."
+  },
+  {
+    "rule_id": "sort_monthly_rebalance_quintile",
+    "category": "sort",
+    "section": "§5.1 Univariate portfolios",
+    "paper_location": "L218",
+    "paper_quote": "For each month from June 1963 to December 2020, stocks are sorted into quintile portfolios based on their regret measure, REG, where quintile 1 (quintile 5) contains stocks with the lowest (highest) REG."
+  },
+  {
+    "rule_id": "sort_vw_returns_lag1",
+    "category": "sort",
+    "section": "§5.1 Univariate portfolios",
+    "paper_location": "L218",
+    "paper_quote": "Next, we calculate the one-month-ahead value-weighted average portfolio returns, and this procedure is repeated each month until the sample is exhausted."
+  },
+  {
+    "rule_id": "universe_breakpoints_nyse",
+    "category": "universe",
+    "section": "§5.1 (footnote 17)",
+    "paper_location": "L222",
+    "paper_quote": "Our decision to use NYSE breakpoints and value-weighted portfolios follows earlier studies (e.g., Fama and French (1993, 2015, 2018), Hou, Xue, and Zhang (2015), Stambaugh and Yuan (2017), and Daniel, Hirshleifer, and Sun (2020)), showing that this methodology provides a more stringent test than using breakpoints based on all stocks or equal-weighted portfolios."
+  },
+  {
+    "rule_id": "fm_newey_west_lags",
+    "category": "fm",
+    "section": "§5.1 (footnote 18)",
+    "paper_location": "L240",
+    "paper_quote": "Throughout the paper, we calculate t-statistics using the Newey-West (1987) procedure with six lags."
+  },
+  {
+    "rule_id": "fm_spec",
+    "category": "fm",
+    "section": "§5.4 Firm-level cross-sectional regressions (Eq. 6)",
+    "paper_location": "L296-310",
+    "paper_quote": "r_{i,t+1} = λ_{0,t} + λ_{REG,t} REG_{i,t} + λ_{X,t} X_{i,t} + ε_{i,t+1}, where r_{i,t+1} is the excess return of stock i in month t+1, REG_{i,t} is the regret arising from investing in stock i in month t as defined in Eq.(5)"
+  }
+]

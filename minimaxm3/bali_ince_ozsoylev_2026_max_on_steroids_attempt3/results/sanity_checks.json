@@ -1,0 +1,43 @@
+{
+  "panel_funnel": {
+    "n_rows": 1913167,
+    "n_permnos": 20340,
+    "n_months": 660,
+    "avg_obs_per_month": 2898.737878787879,
+    "note": "SIC exclusion dropped ~18.7% in iteration 1; null rates documented in log1.md"
+  },
+  "sign_discipline": {
+    "spread_me_lag1": -2.005851174012096,
+    "spread_me_now": 0.5968194182077083,
+    "diff_bp": -260.26705922198045,
+    "passed": true
+  },
+  "sign_flip": {
+    "spread_ascending": -1.9929959827017987,
+    "spread_descending": 1.9929959827017987,
+    "passed": 1.0
+  },
+  "beta_neutrality": {
+    "beta_per_max_beta_decile": {
+      "1": 1.0255588424664062,
+      "2": 1.0363365078859397,
+      "3": 1.0411800655751953,
+      "4": 1.044266294399109,
+      "5": 1.0478257385309122,
+      "6": 1.0504752303682436,
+      "7": 1.053628309412213,
+      "8": 1.055509631289368,
+      "9": 1.0569556108245437,
+      "10": 1.0579866839574836
+    },
+    "spread_d10_minus_d1": 0.03242784149107747,
+    "passed": true
+  },
+  "ff6_ff5_mom": {
+    "D10_FF5_alpha": 0.9171159651106547,
+    "D10_FF6_alpha": 0.9825277105196308,
+    "D10_FF6_mom_beta": -0.09237469250131886,
+    "ff6_minus_ff5": 0.06541174540897615,
+    "passed": true
+  }
+}

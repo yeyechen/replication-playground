@@ -1,0 +1,128 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 82,
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns and prices for CRSP sample July 1963 to December 2020",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["cusip", "permno", "permco", "issuno", "hexcd", "hsiccd", "date", "bidlo", "askhi", "prc", "vol", "ret", "bid", "ask", "shrout", "cfacpr", "cfacshr", "altprc", "spread", "altprcdt", "retx"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_daily_returns",
+      "description": "Daily stock returns for daily-frequency signals (MAX, IVOL, ILLIQ)",
+      "needed_columns": ["permno", "date", "ret", "prc", "vol"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["cusip", "permno", "permco", "issuno", "hexcd", "hsiccd", "date", "bidlo", "askhi", "prc", "vol", "ret", "bid", "ask", "shrout", "cfacpr", "cfacshr", "openprc", "numtrd", "retx"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_pit_header",
+      "description": "Point-in-time share code and exchange code history for universe filtering (dsfhdr per PAPER_CONVENTIONS)",
+      "needed_columns": ["permno", "begdat", "enddat", "hshrcd", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.dsfhdr",
+      "matched_columns": ["permno", "permco", "hshrcd", "dlstcd", "hcusip", "htick", "hcomnam", "htsymbol", "hnaics", "hprimexc", "htrdstat", "hsecstat", "cusip", "compno", "issuno", "hexcd", "hsiccd", "numnam", "numdis", "numshr", "numdel", "numndi", "begdat", "enddat", "begprc", "endprc", "begret", "endret", "begrtx", "endrtx", "begbidlo", "endbidlo", "begaskhi", "endaskhi", "begvol", "endvol", "begbid", "endbid", "begask", "endask", "begopr", "endopr", "hsicmg", "hsicig"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_sic_history",
+      "description": "SIC code history (3-digit industry peer group for REG construction)",
+      "needed_columns": ["permno", "namedt", "nameendt", "siccd", "hsiccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd", "ncusip", "ticker", "comnam", "shrcls", "tsymbol", "naics", "primexch", "trdstat", "secstat", "permco", "compno", "issuno", "hexcd", "hsiccd", "cusip"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delist",
+      "description": "Delisting returns for Shumway-style adjustment",
+      "needed_columns": ["permno", "dlstdt", "dlret", "dlstcd"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["cusip", "permno", "permco", "issuno", "hexcd", "hsiccd", "dlstdt", "dlstcd", "dlprc", "dlret", "delret", "dlpdt", "dlretx", "nwpermno", "nwcompno", "nextdt", "dlamt", "dlretorig", "dlprcorig"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_fundamentals_annual",
+      "description": "Compustat annual fundamentals for book equity, profitability, asset growth (accounting values from fiscal year t-1)",
+      "needed_columns": ["gvkey", "fyear", "datadate", "at", "ceq", "ib", "csho", "prcc_f", "sale", "cogs", "xsga", "dp", "txdb", "pstk", "pstkrv", "dlc", "dltt", "seq"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "fyear", "datadate", "at", "ceq", "ib", "csho", "prcc_f", "sale", "cogs", "xsga", "dp", "txdb", "pstk", "pstkrv", "dlc", "dltt", "seq", "act", "lct", "invt", "ap", "lt", "che", "ppent", "oancf", "capx", "xint"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ccm_link",
+      "description": "CRSP-Compustat link table (CCM) for joining permno and gvkey",
+      "needed_columns": ["gvkey", "lpermno", "linktype", "linkprim", "linkdt", "linkenddt", "usedflag"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "linkprim", "liid", "linktype", "lpermno", "lpermco", "usedflag", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_three_factor",
+      "description": "Fama-French 3-factor model (Mkt-RF, SMB, HML)",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.three_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_four_factor",
+      "description": "Fama-French + Carhart 4-factor (Mkt-RF, SMB, HML, MOM) — basis for FFC and FFCPS when LIQ unavailable",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_five_factor",
+      "description": "Fama-French 5-factor (Mkt-RF, SMB, HML, RMW, CMA) — basis for FF5 and FF6",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "matched_table": "ff.five_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ps_liq_factor",
+      "description": "Pastor-Stambaugh (2003) liquidity factor — required for FF6PS, FFCPS, and Q+ models",
+      "needed_columns": ["date", "liq"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["date", "liq"],
+      "status": "missing"
+    },
+    {
+      "id": "q_factors",
+      "description": "Hou-Xue-Zhang q-factors (MKT, ME, ROE, I/A, EG) — required for Q and Q+ models",
+      "needed_columns": ["date", "r_me", "r_ia", "r_roe", "r_eg"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["date", "r_me", "r_ia", "r_roe", "r_eg"],
+      "status": "missing"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "ps_liq_factor",
+      "reason": "Pastor-Stambaugh (2003) LIQ factor is not in the ff.five_factor_monthly table or any other table in the ClickHouse catalog. ff database has only FF3/FF4/FF5 factor sets (no LIQ column).",
+      "affected_targets": ["T1", "T2"],
+      "recommendation": "Drop the FF6PS column from Table 1, the FFCPS column from Table 1, and substitute FF5 (no LIQ) where the paper uses FF6PS. For Table 3, substitute FF5 alphas for FF6PS alphas and document the substitution in assumptions.md as [CONVENTION-APPLIED] / [LIQ-MISSING]. The paper's headline (FF6PS alpha 0.57%) is reported in Table 1, but FF5 alpha (0.60%) is also reported and is directly comparable."
+    },
+    {
+      "requirement": "q_factors",
+      "reason": "Hou-Xue-Zhang q-factors (R_ME, R_IA, R_ROE, R_EG) are not in the ClickHouse catalog. The q-factor data library was not loaded into ff. Q and Q+ columns from Table 1 will be uncomputable.",
+      "affected_targets": ["T1"],
+      "recommendation": "Drop the Q and Q+ columns from Table 1. The headline result (0.40% raw spread, 0.57% FF6PS alpha) is captured by the Mean and FF6PS columns; the FF5 and FF6 columns are computable and provide comparable evidence. Document the Q/Q+ drop in assumptions.md as [Q-FACTORS-MISSING] with [CONVENTION-APPLIED] substitution rationale."
+    }
+  ]
+}

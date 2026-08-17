@@ -1,0 +1,560 @@
+{
+  "schema_version": 2,
+  "slug": "weber_2018_cash_flow_duration_and_the_term_structure_of_equity_returns",
+  "tally": {
+    "Match": 28,
+    "FAIL": 49,
+    "MISSING": 0,
+    "SKIP": 0
+  },
+  "total_cells": 77,
+  "hit_rate": 0.36363636363636365,
+  "headline": {
+    "metric": "Mean_D1_minus_D10",
+    "paper": 1.1,
+    "ours": 0.461,
+    "status": "FAIL",
+    "tolerance_pct": 15
+  },
+  "metrics": {
+    "Mean_Dur": {
+      "value": 18.959,
+      "unit": "years",
+      "status": "Match",
+      "target": 18.77,
+      "tolerance_pct": 10
+    },
+    "Std_Dur": {
+      "value": 4.052,
+      "unit": "years",
+      "status": "FAIL",
+      "target": 5.37,
+      "tolerance_pct": 10
+    },
+    "Mean_BM": {
+      "value": 0.708,
+      "unit": "ratio",
+      "status": "Match",
+      "target": 0.67,
+      "tolerance_pct": 10
+    },
+    "Std_BM": {
+      "value": 1.023,
+      "unit": "ratio",
+      "status": "FAIL",
+      "target": 0.53,
+      "tolerance_pct": 10
+    },
+    "Mean_IOR": {
+      "value": 0.381,
+      "unit": "ratio",
+      "status": "FAIL",
+      "target": 0.44,
+      "tolerance_pct": 10
+    },
+    "Std_IOR": {
+      "value": 0.324,
+      "unit": "ratio",
+      "status": "FAIL",
+      "target": 0.23,
+      "tolerance_pct": 10
+    },
+    "Mean_PR": {
+      "value": -0.355,
+      "unit": "ratio",
+      "status": "FAIL",
+      "target": -0.01,
+      "tolerance_pct": 25
+    },
+    "Std_PR": {
+      "value": 2.053,
+      "unit": "ratio",
+      "status": "Match",
+      "target": 2.1,
+      "tolerance_pct": 15
+    },
+    "Mean_ROE": {
+      "value": 0.005,
+      "unit": "ratio",
+      "status": "FAIL",
+      "target": 0.05,
+      "tolerance_pct": 25
+    },
+    "Std_ROE": {
+      "value": 0.644,
+      "unit": "ratio",
+      "status": "FAIL",
+      "target": 0.54,
+      "tolerance_pct": 15
+    },
+    "Mean_Sales_g": {
+      "value": 0.339,
+      "unit": "ratio",
+      "status": "FAIL",
+      "target": 0.22,
+      "tolerance_pct": 15
+    },
+    "Std_Sales_g": {
+      "value": 0.901,
+      "unit": "ratio",
+      "status": "FAIL",
+      "target": 0.59,
+      "tolerance_pct": 15
+    },
+    "Mean_ME": {
+      "value": 1983.144,
+      "unit": "millions_dollars",
+      "status": "Match",
+      "target": 2125,
+      "tolerance_pct": 15
+    },
+    "Std_ME": {
+      "value": 5822.487,
+      "unit": "millions_dollars",
+      "status": "Match",
+      "target": 6197,
+      "tolerance_pct": 15
+    },
+    "Mean_Age": {
+      "value": 17.02,
+      "unit": "years",
+      "status": "Match",
+      "target": 17.59,
+      "tolerance_pct": 10
+    },
+    "Std_Age": {
+      "value": 13.206,
+      "unit": "years",
+      "status": "FAIL",
+      "target": 11.46,
+      "tolerance_pct": 10
+    },
+    "Mean_D1": {
+      "value": 1.632,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.43,
+      "tolerance_pct": 15
+    },
+    "Mean_D2": {
+      "value": 1.34,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.24,
+      "tolerance_pct": 15
+    },
+    "Mean_D3": {
+      "value": 1.139,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.14,
+      "tolerance_pct": 15
+    },
+    "Mean_D4": {
+      "value": 1.04,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.04,
+      "tolerance_pct": 15
+    },
+    "Mean_D5": {
+      "value": 1.006,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.0,
+      "tolerance_pct": 15
+    },
+    "Mean_D6": {
+      "value": 0.875,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 0.97,
+      "tolerance_pct": 15
+    },
+    "Mean_D7": {
+      "value": 0.848,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 0.81,
+      "tolerance_pct": 15
+    },
+    "Mean_D8": {
+      "value": 0.846,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.68,
+      "tolerance_pct": 15
+    },
+    "Mean_D9": {
+      "value": 0.774,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.62,
+      "tolerance_pct": 15
+    },
+    "Mean_D10": {
+      "value": 1.171,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.32,
+      "tolerance_pct": 15
+    },
+    "Mean_D1_minus_D10": {
+      "value": 0.461,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 1.1,
+      "tolerance_pct": 15
+    },
+    "Beta_D1": {
+      "value": 1.052,
+      "unit": "beta",
+      "status": "Match",
+      "target": 1.05,
+      "tolerance_pct": 10
+    },
+    "Beta_D10": {
+      "value": 1.414,
+      "unit": "beta",
+      "status": "Match",
+      "target": 1.41,
+      "tolerance_pct": 10
+    },
+    "Beta_D1_minus_D10": {
+      "value": -0.362,
+      "unit": "beta",
+      "status": "Match",
+      "target": -0.36,
+      "tolerance_pct": 15
+    },
+    "Alpha_D1": {
+      "value": 1.099,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.9,
+      "tolerance_pct": 15
+    },
+    "Alpha_D10": {
+      "value": 0.454,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": -0.39,
+      "tolerance_pct": 15
+    },
+    "Alpha_D1_minus_D10": {
+      "value": 0.645,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 1.29,
+      "tolerance_pct": 15
+    },
+    "Sharpe_D1": {
+      "value": 0.255,
+      "unit": "sharpe_ratio",
+      "status": "Match",
+      "target": 0.23,
+      "tolerance_pct": 15
+    },
+    "Sharpe_D10": {
+      "value": 0.142,
+      "unit": "sharpe_ratio",
+      "status": "FAIL",
+      "target": 0.04,
+      "tolerance_pct": 25
+    },
+    "Sharpe_D1_minus_D10": {
+      "value": 0.093,
+      "unit": "sharpe_ratio",
+      "status": "FAIL",
+      "target": 0.22,
+      "tolerance_pct": 15
+    },
+    "AlphaFF3_D1": {
+      "value": 0.696,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.46,
+      "tolerance_pct": 20
+    },
+    "AlphaFF3_D2": {
+      "value": 0.45,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.34,
+      "tolerance_pct": 20
+    },
+    "AlphaFF3_D3": {
+      "value": 0.275,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 0.26,
+      "tolerance_pct": 20
+    },
+    "AlphaFF3_D4": {
+      "value": 0.205,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 0.18,
+      "tolerance_pct": 20
+    },
+    "AlphaFF3_D5": {
+      "value": 0.203,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 0.17,
+      "tolerance_pct": 20
+    },
+    "AlphaFF3_D6": {
+      "value": 0.115,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.15,
+      "tolerance_pct": 20
+    },
+    "AlphaFF3_D7": {
+      "value": 0.125,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.03,
+      "tolerance_pct": 25
+    },
+    "AlphaFF3_D8": {
+      "value": 0.181,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": -0.03,
+      "tolerance_pct": 25
+    },
+    "AlphaFF3_D9": {
+      "value": 0.174,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": -0.08,
+      "tolerance_pct": 25
+    },
+    "AlphaFF3_D10": {
+      "value": 0.6,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": -0.38,
+      "tolerance_pct": 20
+    },
+    "AlphaFF3_D1_minus_D10": {
+      "value": 0.096,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.84,
+      "tolerance_pct": 15
+    },
+    "AlphaFF4_D1_minus_D10": {
+      "value": 0.203,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.66,
+      "tolerance_pct": 15
+    },
+    "AlphaFF5_D1_minus_D10": {
+      "value": -0.219,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.48,
+      "tolerance_pct": 15
+    },
+    "Mean_D1_minus_D10_1963_1973": {
+      "value": 0.322,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.69,
+      "tolerance_pct": 25
+    },
+    "Mean_D1_minus_D10_1973_1983": {
+      "value": 0.778,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 1.34,
+      "tolerance_pct": 20
+    },
+    "Mean_D1_minus_D10_1983_1993": {
+      "value": 0.67,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 1.37,
+      "tolerance_pct": 20
+    },
+    "Mean_D1_minus_D10_1993_2003": {
+      "value": -0.171,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 1.1,
+      "tolerance_pct": 20
+    },
+    "Mean_D1_minus_D10_2003_2014": {
+      "value": 0.684,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 1.04,
+      "tolerance_pct": 20
+    },
+    "Mean_D1_1963_1973": {
+      "value": 0.713,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 0.91,
+      "tolerance_pct": 25
+    },
+    "Mean_D10_1963_1973": {
+      "value": 0.392,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.23,
+      "tolerance_pct": 30
+    },
+    "Mean_D1_1983_1993": {
+      "value": 1.137,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 0.96,
+      "tolerance_pct": 25
+    },
+    "Mean_D10_1983_1993": {
+      "value": 0.467,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": -0.41,
+      "tolerance_pct": 30
+    },
+    "Mean_D1_2003_2014": {
+      "value": 2.158,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 1.68,
+      "tolerance_pct": 25
+    },
+    "Mean_D10_2003_2014": {
+      "value": 1.474,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.64,
+      "tolerance_pct": 30
+    },
+    "Mean_LowRIOR_LowDur": {
+      "value": 0.844,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.02,
+      "tolerance_pct": 20
+    },
+    "Mean_LowRIOR_HighDur": {
+      "value": 0.264,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": -0.3,
+      "tolerance_pct": 25
+    },
+    "Mean_LowRIOR_D1_minus_D5": {
+      "value": 0.58,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 1.32,
+      "tolerance_pct": 15
+    },
+    "Mean_HighRIOR_LowDur": {
+      "value": 1.14,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.09,
+      "tolerance_pct": 20
+    },
+    "Mean_HighRIOR_HighDur": {
+      "value": 0.848,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 0.94,
+      "tolerance_pct": 25
+    },
+    "Mean_HighRIOR_D1_minus_D5": {
+      "value": 0.2919999999999999,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.15,
+      "tolerance_pct": 30
+    },
+    "LowRIOR_RIOR1_minus_RIOR5_LowDur": {
+      "value": -0.29599999999999993,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": -0.08,
+      "tolerance_pct": 30
+    },
+    "LowRIOR_RIOR1_minus_RIOR5_HighDur": {
+      "value": -0.584,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": -1.24,
+      "tolerance_pct": 20
+    },
+    "RIOR2_LowDur": {
+      "value": 1.173,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.08,
+      "tolerance_pct": 20
+    },
+    "RIOR2_HighDur": {
+      "value": 0.72,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.25,
+      "tolerance_pct": 25
+    },
+    "RIOR2_D1_minus_D5": {
+      "value": 0.45300000000000007,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.83,
+      "tolerance_pct": 20
+    },
+    "RIOR3_LowDur": {
+      "value": 1.132,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.09,
+      "tolerance_pct": 20
+    },
+    "RIOR3_HighDur": {
+      "value": 0.884,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.47,
+      "tolerance_pct": 25
+    },
+    "RIOR3_D1_minus_D5": {
+      "value": 0.2479999999999999,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.62,
+      "tolerance_pct": 20
+    },
+    "RIOR4_LowDur": {
+      "value": 1.164,
+      "unit": "percent_per_month",
+      "status": "Match",
+      "target": 1.04,
+      "tolerance_pct": 20
+    },
+    "RIOR4_HighDur": {
+      "value": 0.934,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.52,
+      "tolerance_pct": 25
+    },
+    "RIOR4_D1_minus_D5": {
+      "value": 0.22999999999999987,
+      "unit": "percent_per_month",
+      "status": "FAIL",
+      "target": 0.52,
+      "tolerance_pct": 25
+    }
+  }
+}

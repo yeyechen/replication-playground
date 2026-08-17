@@ -1,0 +1,158 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 95,
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns, delisting returns, prices, shares outstanding for the July 1963-June 2014 sample period.",
+      "needed_columns": ["permno", "date", "ret", "retx", "prc", "shrout", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "prc", "shrout", "ret", "retx"],
+      "missing_columns": ["dlstcd", "dlret"],
+      "status": "partial"
+    },
+    {
+      "id": "crsp_name_history",
+      "description": "Point-in-time share codes (shrcd), exchange codes (exchcd), and SIC codes (siccd) for the universe filter.",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.msenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_header",
+      "description": "Delisting codes and delisting returns for Shumway (1997) treatment.",
+      "needed_columns": ["permno", "dlstcd"],
+      "matched_table": "crsp_202601.msfhdr",
+      "matched_columns": ["permno", "hshrcd", "dlstcd", "begdat", "enddat"],
+      "missing_columns": ["dlret"],
+      "status": "partial"
+    },
+    {
+      "id": "compustat_fundamentals",
+      "description": "Annual fundamentals for book equity, ROE, sales growth, payout ratio, age, total assets.",
+      "needed_columns": ["gvkey", "fyear", "datadate", "at", "ceq", "ib", "sale", "revt", "pstk", "pstkrv", "pstkl", "itcb", "txditc", "dlc", "dltt", "csho", "prcc_f", "dvc", "tstk"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "fyear", "datadate", "at", "ceq", "ib", "sale", "revt", "pstk", "pstkrv", "pstkl", "itcb", "txditc", "dlc", "dltt", "csho", "prcc_f", "dvc", "tstk"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_sic",
+      "description": "SIC codes for financials (6000-6999) and utilities (4900-4999) exclusion.",
+      "needed_columns": ["gvkey", "sic"],
+      "matched_table": "comp_202601.names",
+      "matched_columns": ["gvkey", "sic", "year1", "year2"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat link table for gvkey <-> permno mapping.",
+      "needed_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linktype", "usedflag"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "linkprim", "liid", "linktype", "lpermno", "lpermco", "usedflag", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_three_factor",
+      "description": "Fama-French three-factor (Mkt-RF, SMB, HML) for Table 3 FF3 alphas.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml"],
+      "matched_table": "ff.three_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_four_factor",
+      "description": "Fama-French four-factor (Mkt-RF, SMB, HML, MOM) for Table 3 FF4 alphas.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_five_factor",
+      "description": "Fama-French five-factor (Mkt-RF, SMB, HML, RMW, CMA) for Table 3 FF5 alphas.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "matched_table": "ff.five_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "institutional_ownership_13f",
+      "description": "Thomson Reuters 13F institutional ownership data for IOR calculation (Table 10).",
+      "needed_columns": ["fdate", "cusip", "shares", "sole", "shared", "no"],
+      "matched_table": "instown_202601.s34",
+      "matched_columns": ["fdate", "mgrname", "country", "mgrno", "typecode", "rdate", "prdate", "cusip", "shares", "sole", "shared", "no", "change", "stkname", "ticker", "exchcd", "stkcd", "indcode", "stkcdesc", "prc", "shrout1", "shrout2"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "baker_wurgler_sentiment",
+      "description": "Baker-Wurgler (2006) sentiment index for Tables 7 and 9 (sentiment-conditional alphas).",
+      "needed_columns": ["date", "sentiment_index"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["date", "sentiment_index"],
+      "status": "missing"
+    },
+    {
+      "id": "ibes_eps_forecast",
+      "description": "I/B/E/S consensus EPS forecasts for Table 8 earnings growth analysis.",
+      "needed_columns": ["ticker", "statpers", "meanest", "measure"],
+      "matched_table": "ibes_202601.statsum_epsus",
+      "matched_columns": ["ticker", "cusip", "oftic", "cname", "statpers", "measure", "fiscalp", "fpi", "estflag", "curcode", "numest", "numup", "numdown", "medest", "meanest", "stdev", "highest", "lowest", "usfirm", "fpedats", "actual", "actdats_act", "acttims_act", "anndats_act", "anntims_act", "curr_act"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ibes_price_target",
+      "description": "I/B/E/S consensus price targets for Table 9 implied return analysis.",
+      "needed_columns": ["ticker", "statpers", "meanptg"],
+      "matched_table": "ibes_202601.ptgsum",
+      "matched_columns": ["ticker", "cusip", "oftic", "cname", "statpers", "numest", "numup4w", "numdown4w", "numup1m", "numdown1m", "meanptg", "medptg", "stdev", "ptghigh", "ptglow", "curr", "usfirm", "measure"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "moodys_book_equity",
+      "description": "Moody's book equity supplement from Davis et al. 2000 (for missing Compustat BE values).",
+      "needed_columns": ["gvkey", "year", "be"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["gvkey", "year", "be"],
+      "status": "missing"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "baker_wurgler_sentiment",
+      "reason": "The Baker-Wurgler (2006) sentiment index is not present in the ClickHouse catalog. Tables 7 and 9 (sentiment-conditional results) cannot be replicated without this data.",
+      "affected_targets": [],
+      "recommendation": "Tables 7 and 9 are not selected in tables_to_replicate.json (avoids the gap). Documented in assumptions.md as [THIRD-PARTY-DATASET]. The replication focuses on Tables 1, 2, 3, 5, and 10 which do not require sentiment data."
+    },
+    {
+      "requirement": "moodys_book_equity",
+      "reason": "The Moody's book equity supplement (Davis et al. 2000) is not present in the ClickHouse catalog. The paper uses it for Compustat BE values that are missing.",
+      "affected_targets": [],
+      "recommendation": "Paper-silent substitution: use Compustat BE only (no Moody's supplement). The paper notes BE is supplemented with hand-collected Moody's data; with a modern Compustat vintage, missingness is much lower. Logged in assumptions.md as [CONVENTION-SKIPPED] (default convention is Compustat-only BE)."
+    },
+    {
+      "requirement": "crsp_monthly_returns",
+      "reason": "The crsp_202601.msf table does not include dlstcd and dlret directly. These are in the msfhdr table.",
+      "affected_targets": ["T1", "T2", "T3", "T4", "T5"],
+      "recommendation": "Paper-silent substitution: join msf to msfhdr on (permno, namedt <= date < nameendt) to obtain dlstcd/dlret for Shumway (1997) delisting treatment. Logged in assumptions.md as [CONVENTION-APPLIED]."
+    },
+    {
+      "requirement": "crsp_delisting_header",
+      "reason": "The crsp_202601.msfhdr table does not include dlret directly. dlret is in msf (with NaN when missing).",
+      "affected_targets": ["T1", "T2", "T3", "T4", "T5"],
+      "recommendation": "Paper-silent substitution: position the dlret join on the msf table and apply the Shumway treatment in-Python after the join. Logged in assumptions.md."
+    }
+  ]
+}

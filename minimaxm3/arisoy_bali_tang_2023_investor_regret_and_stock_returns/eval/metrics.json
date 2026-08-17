@@ -1,0 +1,1370 @@
+{
+  "schema_version": 2,
+  "slug": "arisoy_bali_tang_2023_investor_regret_and_stock_returns",
+  "metrics": {
+    "Q1_REG": {
+      "value": 2.0978124381104646,
+      "unit": "percent"
+    },
+    "Q1_Mean": {
+      "value": 0.4588958234676819,
+      "unit": "percent_per_month"
+    },
+    "Q1_CAPM": {
+      "value": -0.059115431255099375,
+      "unit": "percent_per_month"
+    },
+    "Q1_FF3": {
+      "value": -0.11571879273987543,
+      "unit": "percent_per_month"
+    },
+    "Q1_FFC": {
+      "value": -0.13263698272224062,
+      "unit": "percent_per_month"
+    },
+    "Q1_FF5": {
+      "value": -0.24611069504705238,
+      "unit": "percent_per_month"
+    },
+    "Q1_FF6": {
+      "value": -0.2460131419660155,
+      "unit": "percent_per_month"
+    },
+    "Q1_Mean_t": {
+      "value": 2.645782896576956,
+      "unit": "t_stat"
+    },
+    "Q2_REG": {
+      "value": 12.01820728021482,
+      "unit": "percent"
+    },
+    "Q2_Mean": {
+      "value": 0.45809570576465103,
+      "unit": "percent_per_month"
+    },
+    "Q2_CAPM": {
+      "value": -0.04607336584374687,
+      "unit": "percent_per_month"
+    },
+    "Q2_FF3": {
+      "value": -0.10536919365911859,
+      "unit": "percent_per_month"
+    },
+    "Q2_FFC": {
+      "value": -0.09962111169062501,
+      "unit": "percent_per_month"
+    },
+    "Q2_FF5": {
+      "value": -0.21095305444270818,
+      "unit": "percent_per_month"
+    },
+    "Q2_FF6": {
+      "value": -0.1943123932981471,
+      "unit": "percent_per_month"
+    },
+    "Q2_Mean_t": {
+      "value": 2.7680633018704333,
+      "unit": "t_stat"
+    },
+    "Q3_REG": {
+      "value": 21.071357977451566,
+      "unit": "percent"
+    },
+    "Q3_Mean": {
+      "value": 0.633696384181381,
+      "unit": "percent_per_month"
+    },
+    "Q3_CAPM": {
+      "value": 0.09143980645026246,
+      "unit": "percent_per_month"
+    },
+    "Q3_FF3": {
+      "value": 0.039395892069775236,
+      "unit": "percent_per_month"
+    },
+    "Q3_FFC": {
+      "value": 0.024099129601473604,
+      "unit": "percent_per_month"
+    },
+    "Q3_FF5": {
+      "value": -0.06932034013732725,
+      "unit": "percent_per_month"
+    },
+    "Q3_FF6": {
+      "value": -0.07021185938320187,
+      "unit": "percent_per_month"
+    },
+    "Q3_Mean_t": {
+      "value": 3.7270852127595484,
+      "unit": "t_stat"
+    },
+    "Q4_REG": {
+      "value": 33.27501583501838,
+      "unit": "percent"
+    },
+    "Q4_Mean": {
+      "value": 0.7092519242480532,
+      "unit": "percent_per_month"
+    },
+    "Q4_CAPM": {
+      "value": 0.1272440639416055,
+      "unit": "percent_per_month"
+    },
+    "Q4_FF3": {
+      "value": 0.09302527918928918,
+      "unit": "percent_per_month"
+    },
+    "Q4_FFC": {
+      "value": 0.1245106785434693,
+      "unit": "percent_per_month"
+    },
+    "Q4_FF5": {
+      "value": 0.08346102235369476,
+      "unit": "percent_per_month"
+    },
+    "Q4_FF6": {
+      "value": 0.11170372177287141,
+      "unit": "percent_per_month"
+    },
+    "Q4_Mean_t": {
+      "value": 4.036043031870705,
+      "unit": "t_stat"
+    },
+    "Q5_REG": {
+      "value": 85.0995078673354,
+      "unit": "percent"
+    },
+    "Q5_Mean": {
+      "value": 0.8154499768592295,
+      "unit": "percent_per_month"
+    },
+    "Q5_CAPM": {
+      "value": 0.1888495749030131,
+      "unit": "percent_per_month"
+    },
+    "Q5_FF3": {
+      "value": 0.2603389703079631,
+      "unit": "percent_per_month"
+    },
+    "Q5_FFC": {
+      "value": 0.2780304575896854,
+      "unit": "percent_per_month"
+    },
+    "Q5_FF5": {
+      "value": 0.35895239001730733,
+      "unit": "percent_per_month"
+    },
+    "Q5_FF6": {
+      "value": 0.3632026667949648,
+      "unit": "percent_per_month"
+    },
+    "Q5_Mean_t": {
+      "value": 4.095250928492216,
+      "unit": "t_stat"
+    },
+    "HL_REG": {
+      "value": 83.00169542922494,
+      "unit": "percent"
+    },
+    "HL_Mean": {
+      "value": 0.35655415339154756,
+      "unit": "percent_per_month"
+    },
+    "HL_CAPM": {
+      "value": 0.24796500615811246,
+      "unit": "percent_per_month"
+    },
+    "HL_CAPM_t": {
+      "value": 2.020543231257263,
+      "unit": "t_stat"
+    },
+    "HL_FF3": {
+      "value": 0.3760577630478384,
+      "unit": "percent_per_month"
+    },
+    "HL_FF3_t": {
+      "value": 3.712577732118045,
+      "unit": "t_stat"
+    },
+    "HL_FFC": {
+      "value": 0.41066744031192615,
+      "unit": "percent_per_month"
+    },
+    "HL_FFC_t": {
+      "value": 4.108076394124698,
+      "unit": "t_stat"
+    },
+    "HL_FF5": {
+      "value": 0.6050630850643599,
+      "unit": "percent_per_month"
+    },
+    "HL_FF5_t": {
+      "value": 6.192076740182379,
+      "unit": "t_stat"
+    },
+    "HL_FF6": {
+      "value": 0.6092158087609802,
+      "unit": "percent_per_month"
+    },
+    "HL_FF6_t": {
+      "value": 6.221612899553921,
+      "unit": "t_stat"
+    },
+    "HL_Mean_t": {
+      "value": 3.12242908354721,
+      "unit": "t_stat"
+    },
+    "BETA_Q1": {
+      "value": -0.3204206598802168,
+      "unit": "percent_per_month"
+    },
+    "BETA_Q2": {
+      "value": -0.27434096679424375,
+      "unit": "percent_per_month"
+    },
+    "BETA_Q3": {
+      "value": -0.12941631929067296,
+      "unit": "percent_per_month"
+    },
+    "BETA_Q4": {
+      "value": 0.023782844981555074,
+      "unit": "percent_per_month"
+    },
+    "BETA_Q5": {
+      "value": 0.29204260777651636,
+      "unit": "percent_per_month"
+    },
+    "BETA_HL": {
+      "value": 0.6124632676567331,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q1": {
+      "value": -0.15529617894993716,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q2": {
+      "value": -0.033252336845607924,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q3": {
+      "value": 0.12024069401471693,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q4": {
+      "value": 0.3541001074645491,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q5": {
+      "value": 0.9012340102658202,
+      "unit": "percent_per_month"
+    },
+    "SIZE_HL": {
+      "value": 1.0565301892157573,
+      "unit": "percent_per_month"
+    },
+    "BM_Q1": {
+      "value": -0.3106951014588793,
+      "unit": "percent_per_month"
+    },
+    "BM_Q2": {
+      "value": -0.16746158885907106,
+      "unit": "percent_per_month"
+    },
+    "BM_Q3": {
+      "value": -0.025948261380178424,
+      "unit": "percent_per_month"
+    },
+    "BM_Q4": {
+      "value": 0.024189761951160856,
+      "unit": "percent_per_month"
+    },
+    "BM_Q5": {
+      "value": 0.33240360849403533,
+      "unit": "percent_per_month"
+    },
+    "BM_HL": {
+      "value": 0.6430987099529145,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q1": {
+      "value": -0.32372997701309547,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q2": {
+      "value": -0.2397461800423147,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q3": {
+      "value": -0.10769842653038537,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q4": {
+      "value": 0.06326686910457768,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q5": {
+      "value": 0.3547377703509306,
+      "unit": "percent_per_month"
+    },
+    "MOM_HL": {
+      "value": 0.6784677473640262,
+      "unit": "percent_per_month"
+    },
+    "STR_Q1": {
+      "value": -0.29084300905841454,
+      "unit": "percent_per_month"
+    },
+    "STR_Q2": {
+      "value": -0.20455666516010504,
+      "unit": "percent_per_month"
+    },
+    "STR_Q3": {
+      "value": -0.06487334588908658,
+      "unit": "percent_per_month"
+    },
+    "STR_Q4": {
+      "value": 0.0625363121288724,
+      "unit": "percent_per_month"
+    },
+    "STR_Q5": {
+      "value": 0.3699806603078777,
+      "unit": "percent_per_month"
+    },
+    "STR_HL": {
+      "value": 0.6608236693662922,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q1": {
+      "value": -0.2417842007429433,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q2": {
+      "value": -0.20730139838669912,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q3": {
+      "value": -0.09653302846118123,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q4": {
+      "value": 0.10411359894160581,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q5": {
+      "value": 0.3584359050181603,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_HL": {
+      "value": 0.6002201057611035,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q1": {
+      "value": -0.34145467034883076,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q2": {
+      "value": -0.14671502115300664,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q3": {
+      "value": 0.024917511346960314,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q4": {
+      "value": 0.23282652050779606,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q5": {
+      "value": 0.7649967374148571,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_HL": {
+      "value": 1.1064514077636878,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q1": {
+      "value": -0.31499263692833446,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q2": {
+      "value": -0.21734560331725766,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q3": {
+      "value": -0.09477490418865993,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q4": {
+      "value": 0.024106433980203415,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q5": {
+      "value": 0.3970644005800268,
+      "unit": "percent_per_month"
+    },
+    "IVOL_HL": {
+      "value": 0.7120570375083612,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q1": {
+      "value": -0.31107375456698866,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q2": {
+      "value": -0.20184369017168086,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q3": {
+      "value": -0.12000407530818294,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q4": {
+      "value": 0.025543211383076917,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q5": {
+      "value": 0.31655627491992067,
+      "unit": "percent_per_month"
+    },
+    "MAX_HL": {
+      "value": 0.6276300294869095,
+      "unit": "percent_per_month"
+    },
+    "OP_Q1": {
+      "value": -0.2432150078056691,
+      "unit": "percent_per_month"
+    },
+    "OP_Q2": {
+      "value": -0.21528582005684951,
+      "unit": "percent_per_month"
+    },
+    "OP_Q3": {
+      "value": -0.05581348395550126,
+      "unit": "percent_per_month"
+    },
+    "OP_Q4": {
+      "value": 0.09712215603526668,
+      "unit": "percent_per_month"
+    },
+    "OP_Q5": {
+      "value": 0.4523525691090787,
+      "unit": "percent_per_month"
+    },
+    "OP_HL": {
+      "value": 0.6955675769147478,
+      "unit": "percent_per_month"
+    },
+    "IA_Q1": {
+      "value": -0.2533191638706246,
+      "unit": "percent_per_month"
+    },
+    "IA_Q2": {
+      "value": -0.18822690060428415,
+      "unit": "percent_per_month"
+    },
+    "IA_Q3": {
+      "value": -0.057490649587272964,
+      "unit": "percent_per_month"
+    },
+    "IA_Q4": {
+      "value": 0.10193948566223239,
+      "unit": "percent_per_month"
+    },
+    "IA_Q5": {
+      "value": 0.37521122319160394,
+      "unit": "percent_per_month"
+    },
+    "IA_HL": {
+      "value": 0.6285303870622284,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q1": {
+      "value": -0.10860511196029166,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q2": {
+      "value": -0.1457263537393924,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q3": {
+      "value": -0.10371646999720642,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q4": {
+      "value": 0.03798733014390779,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q5": {
+      "value": 0.3284889612513776,
+      "unit": "percent_per_month"
+    },
+    "SUE_HL": {
+      "value": 0.4370940732116693,
+      "unit": "percent_per_month"
+    },
+    "REG_coef_spec1": {
+      "value": 0.015646723842928076,
+      "unit": "coefficient"
+    },
+    "REG_t_spec1": {
+      "value": 10.086733765356696,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec2": {
+      "value": 0.015798106270419363,
+      "unit": "coefficient"
+    },
+    "REG_t_spec2": {
+      "value": 10.448787244174397,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec3": {
+      "value": 0.015626483839098884,
+      "unit": "coefficient"
+    },
+    "REG_t_spec3": {
+      "value": 10.756779977073204,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec4": {
+      "value": 0.012258940810786767,
+      "unit": "coefficient"
+    },
+    "REG_t_spec4": {
+      "value": 9.1641819662101,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec5": {
+      "value": 0.012424565378727317,
+      "unit": "coefficient"
+    },
+    "REG_t_spec5": {
+      "value": 9.461375711418096,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec6": {
+      "value": 0.007577238488615677,
+      "unit": "coefficient"
+    },
+    "REG_t_spec6": {
+      "value": 4.839022823189343,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec7": {
+      "value": 0.01544171792370092,
+      "unit": "coefficient"
+    },
+    "REG_t_spec7": {
+      "value": 9.976728580454608,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec8": {
+      "value": 0.015804784648124588,
+      "unit": "coefficient"
+    },
+    "REG_t_spec8": {
+      "value": 10.515706814181398,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec9": {
+      "value": 0.015647247662684858,
+      "unit": "coefficient"
+    },
+    "REG_t_spec9": {
+      "value": 10.836991707949432,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec10": {
+      "value": 0.012220464596329368,
+      "unit": "coefficient"
+    },
+    "REG_t_spec10": {
+      "value": 9.288157369262322,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec11": {
+      "value": 0.012411199918557693,
+      "unit": "coefficient"
+    },
+    "REG_t_spec11": {
+      "value": 9.576040811023548,
+      "unit": "t_stat"
+    },
+    "REG_coef_spec12": {
+      "value": 0.0075866921207714735,
+      "unit": "coefficient"
+    },
+    "REG_t_spec12": {
+      "value": 4.874203215789851,
+      "unit": "t_stat"
+    },
+    "Q1_Mean_SE": {
+      "value": 0.17344424747071618,
+      "unit": "percent_per_month"
+    },
+    "Q1_CAPM_SE": {
+      "value": 0.07230599615659358,
+      "unit": "percent_per_month"
+    },
+    "Q1_FF3_SE": {
+      "value": 0.06426633017404267,
+      "unit": "percent_per_month"
+    },
+    "Q1_FFC_SE": {
+      "value": 0.06337801202380271,
+      "unit": "percent_per_month"
+    },
+    "Q1_FF5_SE": {
+      "value": 0.06015506745642989,
+      "unit": "percent_per_month"
+    },
+    "Q1_FF6_SE": {
+      "value": 0.061694660737545204,
+      "unit": "percent_per_month"
+    },
+    "Q2_Mean_SE": {
+      "value": 0.16549321883466572,
+      "unit": "percent_per_month"
+    },
+    "Q2_CAPM_SE": {
+      "value": 0.05483336028324807,
+      "unit": "percent_per_month"
+    },
+    "Q2_FF3_SE": {
+      "value": 0.04682367974186895,
+      "unit": "percent_per_month"
+    },
+    "Q2_FFC_SE": {
+      "value": 0.04705294160164092,
+      "unit": "percent_per_month"
+    },
+    "Q2_FF5_SE": {
+      "value": 0.04484794099042333,
+      "unit": "percent_per_month"
+    },
+    "Q2_FF6_SE": {
+      "value": 0.044519149719271255,
+      "unit": "percent_per_month"
+    },
+    "Q3_Mean_SE": {
+      "value": 0.17002465680471784,
+      "unit": "percent_per_month"
+    },
+    "Q3_CAPM_SE": {
+      "value": 0.055829350617850076,
+      "unit": "percent_per_month"
+    },
+    "Q3_FF3_SE": {
+      "value": 0.048789012217081276,
+      "unit": "percent_per_month"
+    },
+    "Q3_FFC_SE": {
+      "value": 0.051397564834273796,
+      "unit": "percent_per_month"
+    },
+    "Q3_FF5_SE": {
+      "value": 0.04712597789842386,
+      "unit": "percent_per_month"
+    },
+    "Q3_FF6_SE": {
+      "value": 0.04910175620083604,
+      "unit": "percent_per_month"
+    },
+    "Q4_Mean_SE": {
+      "value": 0.17572952484585258,
+      "unit": "percent_per_month"
+    },
+    "Q4_CAPM_SE": {
+      "value": 0.05497247397851263,
+      "unit": "percent_per_month"
+    },
+    "Q4_FF3_SE": {
+      "value": 0.05250029469754276,
+      "unit": "percent_per_month"
+    },
+    "Q4_FFC_SE": {
+      "value": 0.05653227679891193,
+      "unit": "percent_per_month"
+    },
+    "Q4_FF5_SE": {
+      "value": 0.05193760543429333,
+      "unit": "percent_per_month"
+    },
+    "Q4_FF6_SE": {
+      "value": 0.05410172328806235,
+      "unit": "percent_per_month"
+    },
+    "Q5_Mean_SE": {
+      "value": 0.19912088199182967,
+      "unit": "percent_per_month"
+    },
+    "Q5_CAPM_SE": {
+      "value": 0.06772564041756136,
+      "unit": "percent_per_month"
+    },
+    "Q5_FF3_SE": {
+      "value": 0.05746437368907701,
+      "unit": "percent_per_month"
+    },
+    "Q5_FFC_SE": {
+      "value": 0.05902763169924445,
+      "unit": "percent_per_month"
+    },
+    "Q5_FF5_SE": {
+      "value": 0.06045656362760435,
+      "unit": "percent_per_month"
+    },
+    "Q5_FF6_SE": {
+      "value": 0.06103161619165037,
+      "unit": "percent_per_month"
+    },
+    "HL_Mean_SE": {
+      "value": 0.11419127347689417,
+      "unit": "percent_per_month"
+    },
+    "HL_CAPM_SE": {
+      "value": 0.12272195037560205,
+      "unit": "percent_per_month"
+    },
+    "HL_FF3_SE": {
+      "value": 0.10129289948450332,
+      "unit": "percent_per_month"
+    },
+    "HL_FFC_SE": {
+      "value": 0.09996587232390709,
+      "unit": "percent_per_month"
+    },
+    "HL_FF5_SE": {
+      "value": 0.09771569546900329,
+      "unit": "percent_per_month"
+    },
+    "HL_FF6_SE": {
+      "value": 0.097919272477505,
+      "unit": "percent_per_month"
+    },
+    "Q1_Mean_gap_se": {
+      "value": 0.627843385155034,
+      "unit": "ratio"
+    },
+    "Q1_CAPM_gap_se": {
+      "value": 1.5335459662952042,
+      "unit": "ratio"
+    },
+    "Q1_FF3_gap_se": {
+      "value": 1.6226413890090774,
+      "unit": "ratio"
+    },
+    "Q1_FFC_gap_se": {
+      "value": 1.3784436350725027,
+      "unit": "ratio"
+    },
+    "Q1_FF5_gap_se": {
+      "value": 1.3945509248029415,
+      "unit": "ratio"
+    },
+    "Q1_FF6_gap_se": {
+      "value": 1.0371539006623363,
+      "unit": "ratio"
+    },
+    "Q2_Mean_gap_se": {
+      "value": 0.23019496528561792,
+      "unit": "ratio"
+    },
+    "Q2_CAPM_gap_se": {
+      "value": 0.07161031415856425,
+      "unit": "ratio"
+    },
+    "Q2_FF3_gap_se": {
+      "value": 0.1146683406498175,
+      "unit": "ratio"
+    },
+    "Q2_FFC_gap_se": {
+      "value": 0.008052383049347512,
+      "unit": "ratio"
+    },
+    "Q2_FF5_gap_se": {
+      "value": 0.4672021497527036,
+      "unit": "ratio"
+    },
+    "Q2_FF6_gap_se": {
+      "value": 0.32148846930811015,
+      "unit": "ratio"
+    },
+    "Q3_Mean_gap_se": {
+      "value": 0.4334452753286545,
+      "unit": "ratio"
+    },
+    "Q3_CAPM_gap_se": {
+      "value": 1.100492944487493,
+      "unit": "ratio"
+    },
+    "Q3_FF3_gap_se": {
+      "value": 1.2174030457001226,
+      "unit": "ratio"
+    },
+    "Q3_FFC_gap_se": {
+      "value": 1.2471238629330923,
+      "unit": "ratio"
+    },
+    "Q3_FF5_gap_se": {
+      "value": 1.4998025083960465,
+      "unit": "ratio"
+    },
+    "Q3_FF6_gap_se": {
+      "value": 1.421296222712496,
+      "unit": "ratio"
+    },
+    "Q4_Mean_gap_se": {
+      "value": 0.004256972484293682,
+      "unit": "ratio"
+    },
+    "Q4_CAPM_gap_se": {
+      "value": 0.13177620393139,
+      "unit": "ratio"
+    },
+    "Q4_FF3_gap_se": {
+      "value": 0.05762404205001126,
+      "unit": "ratio"
+    },
+    "Q4_FFC_gap_se": {
+      "value": 0.7873498302889154,
+      "unit": "ratio"
+    },
+    "Q4_FF5_gap_se": {
+      "value": 0.8367929555142399,
+      "unit": "ratio"
+    },
+    "Q4_FF6_gap_se": {
+      "value": 1.5101870477922372,
+      "unit": "ratio"
+    },
+    "Q5_Mean_gap_se": {
+      "value": 0.328694691408182,
+      "unit": "ratio"
+    },
+    "Q5_CAPM_gap_se": {
+      "value": 1.0165954057949418,
+      "unit": "ratio"
+    },
+    "Q5_FF3_gap_se": {
+      "value": 1.5720865730958968,
+      "unit": "ratio"
+    },
+    "Q5_FFC_gap_se": {
+      "value": 1.3219310235461166,
+      "unit": "ratio"
+    },
+    "Q5_FF5_gap_se": {
+      "value": 1.471343799247826,
+      "unit": "ratio"
+    },
+    "Q5_FF6_gap_se": {
+      "value": 1.19942205962718,
+      "unit": "ratio"
+    },
+    "HL_Mean_gap_se": {
+      "value": 0.38046555823062467,
+      "unit": "ratio"
+    },
+    "HL_CAPM_gap_se": {
+      "value": 0.34252221149709144,
+      "unit": "ratio"
+    },
+    "HL_FF3_gap_se": {
+      "value": 0.13764278664265733,
+      "unit": "ratio"
+    },
+    "HL_FFC_gap_se": {
+      "value": 0.006676681715571352,
+      "unit": "ratio"
+    },
+    "HL_FF5_gap_se": {
+      "value": 0.05181445048370972,
+      "unit": "ratio"
+    },
+    "HL_FF6_gap_se": {
+      "value": 0.09411639330855343,
+      "unit": "ratio"
+    },
+    "REG_se_spec1": {
+      "value": 0.0015512180857461901,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec1_alt25": {
+      "value": 0.01653475272461176,
+      "unit": "coefficient"
+    },
+    "REG_t_spec1_alt25": {
+      "value": 10.134137631299902,
+      "unit": "t_stat"
+    },
+    "REG_se_spec1_alt25": {
+      "value": 0.0016315895171527144,
+      "unit": "standard_error"
+    },
+    "REG_se_spec2": {
+      "value": 0.001511955971658569,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec2_alt25": {
+      "value": 0.016850989122764264,
+      "unit": "coefficient"
+    },
+    "REG_t_spec2_alt25": {
+      "value": 10.597290193681399,
+      "unit": "t_stat"
+    },
+    "REG_se_spec2_alt25": {
+      "value": 0.0015901224572307752,
+      "unit": "standard_error"
+    },
+    "REG_se_spec3": {
+      "value": 0.001452710185799549,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec3_alt25": {
+      "value": 0.016683397919619886,
+      "unit": "coefficient"
+    },
+    "REG_t_spec3_alt25": {
+      "value": 10.914055073231632,
+      "unit": "t_stat"
+    },
+    "REG_se_spec3_alt25": {
+      "value": 0.0015286158817851706,
+      "unit": "standard_error"
+    },
+    "REG_se_spec4": {
+      "value": 0.0013377015925684988,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec4_alt25": {
+      "value": 0.013084358674829304,
+      "unit": "coefficient"
+    },
+    "REG_t_spec4_alt25": {
+      "value": 9.287049443291302,
+      "unit": "t_stat"
+    },
+    "REG_se_spec4_alt25": {
+      "value": 0.001408882202547233,
+      "unit": "standard_error"
+    },
+    "REG_se_spec5": {
+      "value": 0.0013131880349845119,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec5_alt25": {
+      "value": 0.013216396765491367,
+      "unit": "coefficient"
+    },
+    "REG_t_spec5_alt25": {
+      "value": 9.597653409707041,
+      "unit": "t_stat"
+    },
+    "REG_se_spec5_alt25": {
+      "value": 0.0013770445963514726,
+      "unit": "standard_error"
+    },
+    "REG_se_spec6": {
+      "value": 0.0015658612834608637,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec6_alt25": {
+      "value": 0.00797867517390337,
+      "unit": "coefficient"
+    },
+    "REG_t_spec6_alt25": {
+      "value": 4.791772116778379,
+      "unit": "t_stat"
+    },
+    "REG_se_spec6_alt25": {
+      "value": 0.0016650781755597386,
+      "unit": "standard_error"
+    },
+    "REG_se_spec7": {
+      "value": 0.0015477736814403034,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec7_alt25": {
+      "value": 0.01636170608907968,
+      "unit": "coefficient"
+    },
+    "REG_t_spec7_alt25": {
+      "value": 10.04376032062799,
+      "unit": "t_stat"
+    },
+    "REG_se_spec7_alt25": {
+      "value": 0.0016290418694555884,
+      "unit": "standard_error"
+    },
+    "REG_se_spec8": {
+      "value": 0.0015029693131811532,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec8_alt25": {
+      "value": 0.016880666515037758,
+      "unit": "coefficient"
+    },
+    "REG_t_spec8_alt25": {
+      "value": 10.676764525792088,
+      "unit": "t_stat"
+    },
+    "REG_se_spec8_alt25": {
+      "value": 0.0015810657315012213,
+      "unit": "standard_error"
+    },
+    "REG_se_spec9": {
+      "value": 0.0014438737321545501,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec9_alt25": {
+      "value": 0.016724197446219884,
+      "unit": "coefficient"
+    },
+    "REG_t_spec9_alt25": {
+      "value": 11.00812990704412,
+      "unit": "t_stat"
+    },
+    "REG_se_spec9_alt25": {
+      "value": 0.0015192587285437142,
+      "unit": "standard_error"
+    },
+    "REG_se_spec10": {
+      "value": 0.0013157038700454247,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec10_alt25": {
+      "value": 0.013056942148789436,
+      "unit": "coefficient"
+    },
+    "REG_t_spec10_alt25": {
+      "value": 9.430855237216132,
+      "unit": "t_stat"
+    },
+    "REG_se_spec10_alt25": {
+      "value": 0.0013844918430370985,
+      "unit": "standard_error"
+    },
+    "REG_se_spec11": {
+      "value": 0.001296067985035154,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec11_alt25": {
+      "value": 0.01321504191773627,
+      "unit": "coefficient"
+    },
+    "REG_t_spec11_alt25": {
+      "value": 9.732236845759402,
+      "unit": "t_stat"
+    },
+    "REG_se_spec11_alt25": {
+      "value": 0.0013578627531546789,
+      "unit": "standard_error"
+    },
+    "REG_se_spec12": {
+      "value": 0.0015564989363173424,
+      "unit": "standard_error"
+    },
+    "REG_coef_spec12_alt25": {
+      "value": 0.008013395472646661,
+      "unit": "coefficient"
+    },
+    "REG_t_spec12_alt25": {
+      "value": 4.84086092696638,
+      "unit": "t_stat"
+    },
+    "REG_se_spec12_alt25": {
+      "value": 0.0016553657693422752,
+      "unit": "standard_error"
+    },
+    "BETA_Q1_ff5mom": {
+      "value": -0.3045617104029604,
+      "unit": "percent_per_month"
+    },
+    "BETA_Q2_ff5mom": {
+      "value": -0.23075082155764082,
+      "unit": "percent_per_month"
+    },
+    "BETA_Q3_ff5mom": {
+      "value": -0.09806234622047466,
+      "unit": "percent_per_month"
+    },
+    "BETA_Q4_ff5mom": {
+      "value": 0.0736082367964796,
+      "unit": "percent_per_month"
+    },
+    "BETA_Q5_ff5mom": {
+      "value": 0.3343928451938671,
+      "unit": "percent_per_month"
+    },
+    "BETA_HL_ff5mom": {
+      "value": 0.6389545555968273,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q1_ff5mom": {
+      "value": -0.12701138008195126,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q2_ff5mom": {
+      "value": 0.01324771455907067,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q3_ff5mom": {
+      "value": 0.1735755451401395,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q4_ff5mom": {
+      "value": 0.40856347458871195,
+      "unit": "percent_per_month"
+    },
+    "SIZE_Q5_ff5mom": {
+      "value": 0.9057307095755618,
+      "unit": "percent_per_month"
+    },
+    "SIZE_HL_ff5mom": {
+      "value": 1.0327420896575128,
+      "unit": "percent_per_month"
+    },
+    "BM_Q1_ff5mom": {
+      "value": -0.2960391389937772,
+      "unit": "percent_per_month"
+    },
+    "BM_Q2_ff5mom": {
+      "value": -0.14806936095134374,
+      "unit": "percent_per_month"
+    },
+    "BM_Q3_ff5mom": {
+      "value": -0.023173596190867306,
+      "unit": "percent_per_month"
+    },
+    "BM_Q4_ff5mom": {
+      "value": 0.051062706076289065,
+      "unit": "percent_per_month"
+    },
+    "BM_Q5_ff5mom": {
+      "value": 0.3460643858290267,
+      "unit": "percent_per_month"
+    },
+    "BM_HL_ff5mom": {
+      "value": 0.6421035248228039,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q1_ff5mom": {
+      "value": -0.2842622602541592,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q2_ff5mom": {
+      "value": -0.19175085641534664,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q3_ff5mom": {
+      "value": -0.05457141275665309,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q4_ff5mom": {
+      "value": 0.1501013505368048,
+      "unit": "percent_per_month"
+    },
+    "MOM_Q5_ff5mom": {
+      "value": 0.43299324392609234,
+      "unit": "percent_per_month"
+    },
+    "MOM_HL_ff5mom": {
+      "value": 0.7172555041802515,
+      "unit": "percent_per_month"
+    },
+    "STR_Q1_ff5mom": {
+      "value": -0.28072370095900046,
+      "unit": "percent_per_month"
+    },
+    "STR_Q2_ff5mom": {
+      "value": -0.164817291087765,
+      "unit": "percent_per_month"
+    },
+    "STR_Q3_ff5mom": {
+      "value": -0.050592517947722,
+      "unit": "percent_per_month"
+    },
+    "STR_Q4_ff5mom": {
+      "value": 0.09845941707906467,
+      "unit": "percent_per_month"
+    },
+    "STR_Q5_ff5mom": {
+      "value": 0.3908596780186464,
+      "unit": "percent_per_month"
+    },
+    "STR_HL_ff5mom": {
+      "value": 0.6715833789776469,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q1_ff5mom": {
+      "value": -0.22913906040504967,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q2_ff5mom": {
+      "value": -0.2053440393023956,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q3_ff5mom": {
+      "value": -0.0859872238234646,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q4_ff5mom": {
+      "value": 0.12470327383085006,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_Q5_ff5mom": {
+      "value": 0.37387185018306196,
+      "unit": "percent_per_month"
+    },
+    "COSKEW_HL_ff5mom": {
+      "value": 0.6030109105881115,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q1_ff5mom": {
+      "value": -0.30195626275594295,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q2_ff5mom": {
+      "value": -0.0941185193857555,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q3_ff5mom": {
+      "value": 0.08794733728217108,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q4_ff5mom": {
+      "value": 0.2981147852825679,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_Q5_ff5mom": {
+      "value": 0.7908580849515848,
+      "unit": "percent_per_month"
+    },
+    "ILLIQ_HL_ff5mom": {
+      "value": 1.0928143477075278,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q1_ff5mom": {
+      "value": -0.303974903620807,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q2_ff5mom": {
+      "value": -0.17659803586323197,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q3_ff5mom": {
+      "value": -0.05685200165276198,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q4_ff5mom": {
+      "value": 0.0765252076479896,
+      "unit": "percent_per_month"
+    },
+    "IVOL_Q5_ff5mom": {
+      "value": 0.41262550962398753,
+      "unit": "percent_per_month"
+    },
+    "IVOL_HL_ff5mom": {
+      "value": 0.7166004132447945,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q1_ff5mom": {
+      "value": -0.3050983739141083,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q2_ff5mom": {
+      "value": -0.16888989953978492,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q3_ff5mom": {
+      "value": -0.1085952780834278,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q4_ff5mom": {
+      "value": 0.07371547194648276,
+      "unit": "percent_per_month"
+    },
+    "MAX_Q5_ff5mom": {
+      "value": 0.3408910912280419,
+      "unit": "percent_per_month"
+    },
+    "MAX_HL_ff5mom": {
+      "value": 0.6459894651421503,
+      "unit": "percent_per_month"
+    },
+    "OP_Q1_ff5mom": {
+      "value": -0.24095770983247172,
+      "unit": "percent_per_month"
+    },
+    "OP_Q2_ff5mom": {
+      "value": -0.19736352398479567,
+      "unit": "percent_per_month"
+    },
+    "OP_Q3_ff5mom": {
+      "value": -0.047360316819258494,
+      "unit": "percent_per_month"
+    },
+    "OP_Q4_ff5mom": {
+      "value": 0.12240921115259332,
+      "unit": "percent_per_month"
+    },
+    "OP_Q5_ff5mom": {
+      "value": 0.4542839446158793,
+      "unit": "percent_per_month"
+    },
+    "OP_HL_ff5mom": {
+      "value": 0.6952416544483512,
+      "unit": "percent_per_month"
+    },
+    "IA_Q1_ff5mom": {
+      "value": -0.25066927154217516,
+      "unit": "percent_per_month"
+    },
+    "IA_Q2_ff5mom": {
+      "value": -0.1707056714064531,
+      "unit": "percent_per_month"
+    },
+    "IA_Q3_ff5mom": {
+      "value": -0.05279655152693499,
+      "unit": "percent_per_month"
+    },
+    "IA_Q4_ff5mom": {
+      "value": 0.11314632492598677,
+      "unit": "percent_per_month"
+    },
+    "IA_Q5_ff5mom": {
+      "value": 0.3802309830049519,
+      "unit": "percent_per_month"
+    },
+    "IA_HL_ff5mom": {
+      "value": 0.6309002545471271,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q1_ff5mom": {
+      "value": -0.09686290535340872,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q2_ff5mom": {
+      "value": -0.12756889697428167,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q3_ff5mom": {
+      "value": -0.09768285106148554,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q4_ff5mom": {
+      "value": 0.062081184802020344,
+      "unit": "percent_per_month"
+    },
+    "SUE_Q5_ff5mom": {
+      "value": 0.350605190673777,
+      "unit": "percent_per_month"
+    },
+    "SUE_HL_ff5mom": {
+      "value": 0.4474680960271858,
+      "unit": "percent_per_month"
+    }
+  }
+}

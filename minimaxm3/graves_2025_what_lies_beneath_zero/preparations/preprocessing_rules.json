@@ -1,0 +1,172 @@
+[
+  {
+    "rule_id": "universe_common_stock",
+    "category": "universe",
+    "section": "4.1 Data Description",
+    "paper_location": "L63",
+    "paper_quote": "I apply this methodology to quarterly data from 1984 to 2021, estimating institutional demand for common stocks in each quarter.",
+    "implementation": "filter to common stocks via CRSP share codes (shrcd IN 10,11) — paper silent on exact share code filter; standard convention is 10/11",
+    "convention_marker": "[CONVENTION-APPLIED]"
+  },
+  {
+    "rule_id": "universe_exchange_filter",
+    "category": "universe",
+    "section": "4.1 Data Description",
+    "paper_location": "L473",
+    "paper_quote": "All stock price, return, and market capitalization (via shares outstanding) data are from the CRSP Daily Stock Database.",
+    "implementation": "filter exchcd IN (1,2,3) for NYSE/AMEX/NASDAQ — paper silent, [CONVENTION-APPLIED] per rep/PAPER_CONVENTIONS.md",
+    "convention_marker": "[CONVENTION-APPLIED]"
+  },
+  {
+    "rule_id": "minimum_holdings_filter",
+    "category": "sample",
+    "section": "4.3 Manager Menagerie",
+    "paper_location": "L89",
+    "paper_quote": "Any managers with fewer than twenty-five portfolio holdings are dropped from the analysis due to insufficient data for estimation.",
+    "implementation": "drop institution-quarters where count(positive holdings) < 25"
+  },
+  {
+    "rule_id": "rigid_manager_definition",
+    "category": "sample",
+    "section": "4.3 Manager Menagerie — Definition 1",
+    "paper_location": "L509-L519",
+    "paper_quote": "A manager is 'rigid' or has a 'rigid mandate' at time t if it satisfies either of the following two criteria: (1) The sets of stocks held over each of the past twelve quarters and current quarter overlap by an average of 95% or more with the previous quarter's holdings. (2) The sets of stocks held over each of the past twelve quarters and current quarter overlap by at least 90% or more with the previous quarter's holdings AND EITHER (a) ||w_{j,t-k} - w_{j,t-k-1}||_1 < 0.1 ∀ k OR (b) ||w̃_{j,t-k} - w_{j,t-k-1}||_1 < 0.1 ∀ k.",
+    "implementation": "compute overlap metric between current quarter and each of past 12 quarters' holdings; if average overlap ≥95% or (overlap ≥90% AND (L1 norm of weights < 0.1 for criterion (a) OR cap-weighted L1 norm < 0.1 for criterion (b))) → rigid"
+  },
+  {
+    "rule_id": "consideration_set_dynamic",
+    "category": "sample",
+    "section": "4.3 Manager Menagerie — Definition 3",
+    "paper_location": "L525-L527",
+    "paper_quote": "Dynamic institution j's consideration set H_{j,t} is the union of (1) all assets held by j in the past twelve quarters or current quarter ('recent holdings') and (2) all stocks that share a NAICS code with two or more recent holdings.",
+    "implementation": "recent_holdings = stocks held in past 12 quarters; for each held stock, fetch its NAICS-4 code; expand to all stocks with matching NAICS-4 code where ≥2 holdings in same industry"
+  },
+  {
+    "rule_id": "consideration_set_rigid",
+    "category": "sample",
+    "section": "4.3 Manager Menagerie — Definition 1 followup",
+    "paper_location": "L519",
+    "paper_quote": "For any rigid institution i, we take the consideration set at time t, H_{i,t}, to consist solely of those stocks for which it has positive weights at time t.",
+    "implementation": "rigid_consideration_set = stocks held at time t (no zeros)"
+  },
+  {
+    "rule_id": "scqr_estimation_method",
+    "category": "fm",
+    "section": "3.3 Estimation via SCQR",
+    "paper_location": "L327-L331",
+    "paper_quote": "I use the Sequential Censored Quantile Regression (SCQR) approach of Chen (2018) because it is uniquely computationally tractable, scalable, and consistent. Most importantly, it avoids strong distributional assumptions on institutions' idiosyncratic beliefs",
+    "implementation": "For each institution × quarter: (1) first-stage OLS log P_t = Z_t * Υ_t + v_t using IV; (2) SCQR descending grid from τ=0.99 to τ=0.5, with L_n = max(40, sqrt(n)); (3) at each τ, two-step subsample selection J_0 then J_1, then QR on subsample"
+  },
+  {
+    "rule_id": "median_zero_restriction",
+    "category": "fm",
+    "section": "3.2 Identifying Moment Conditions",
+    "paper_location": "L329-L363",
+    "paper_quote": "investors' idiosyncratic beliefs have a zero median conditional on the included regressors and the control variable. To the best of the author's knowledge, this paper is the first to propose a computationally tractable and scalable approach to censored demand estimation in the presence of endogeneity.",
+    "implementation": "use quantile loss ρ_τ(ε) with τ=0.5 (check loss)"
+  },
+  {
+    "rule_id": "characteristics_set",
+    "category": "variable",
+    "section": "4.2 Linear Characteristics-Based Model",
+    "paper_location": "L477-L479",
+    "paper_quote": "Formally, define x_0(n) to be the log of market capitalization, x_1(n) to be stock n's beta computed using a half year of daily data, x_2(n) to be annual dividends divided by last quarter's book equity, x_3(n) and x_4(n) to be operating profitability and investment according to the definitions of Fama and French (2015), x_5(n) to be the log of last quarter's book equity, x_6(n) to be the control variable, and x_7 to just be the constant term 1.",
+    "implementation": "x_0 = log(P), x_1 = market beta (6-month daily), x_2 = annual_div/book_equity, x_3 = OP (FF2015), x_4 = investment (FF2015), x_5 = log(book_equity), x_6 = control variable (residual from first stage), x_7 = 1"
+  },
+  {
+    "rule_id": "characteristics_winsorization",
+    "category": "winsorize",
+    "section": "4.2 Linear Characteristics-Based Model",
+    "paper_location": "L487",
+    "paper_quote": "Profitability, investment, and six-month daily betas are all winsorized at their respective 1% and 99% levels, while dividend-to-book is winsorized at the 99% level.",
+    "implementation": "winsorize(beta, 1%, 99%); winsorize(OP, 1%, 99%); winsorize(investment, 1%, 99%); winsorize(div_to_book, 99%, 100%)"
+  },
+  {
+    "rule_id": "idiosyncratic_variance_calculation",
+    "category": "variable",
+    "section": "4.2 Linear Characteristics-Based Model",
+    "paper_location": "L489",
+    "paper_quote": "We compute stock n's log excess return variance over the past 126 trading days and subtract the market factor's variance times the square of stock n's market beta.",
+    "implementation": "log_var = var(log(1+R), window=126 days); idio_var = log_var - beta^2 * var(log(1+M), window=126 days)"
+  },
+  {
+    "rule_id": "instrument_construction",
+    "category": "variable",
+    "section": "4.4 Instrument Construction",
+    "paper_location": "L539-L547",
+    "paper_quote": "We consider the total institutional dollar demand for each stock under scenarios where institutions just form 1/N portfolios within their consideration sets (this demand is P̂_t^{EQ}(n)) as well as total institutional dollar demand for each stock if institutions formed book-weighted portfolios within their consideration sets (P̂_t^{BE}(n)). The log price instrument for stock n is therefore z_n = log(1 + P̂_t^{EQ}(n) + P̂_t^{BE}(n)).",
+    "implementation": "For each stock: P̂_EQ = Σ_i [AUM_i / |consideration_set_i|]; P̂_BE = Σ_i [AUM_i * (book_eq_n / Σ_n∈CS book_eq_n)]; z_n = log(1 + P̂_EQ + P̂_BE)"
+  },
+  {
+    "rule_id": "hbi_construction",
+    "category": "variable",
+    "section": "6 Hidden Beliefs and Return Predictability",
+    "paper_location": "L831-L833",
+    "paper_quote": "The HBI for stock n in period t is therefore computed by taking the AUM-weighted average of the hidden belief bounds -z_n' β̃_{i,t} across all institutions i that have stock n in their consideration sets but did not hold the stock during the last three years, including the current period.",
+    "implementation": "HBI(n,t) = Σ_{i∈non_owners(n,t)} AUM_i * (-z_n' β̃_{i,t}) / Σ_{i∈non_owners(n,t)} AUM_i"
+  },
+  {
+    "rule_id": "obi_construction",
+    "category": "variable",
+    "section": "6 Hidden Beliefs and Return Predictability",
+    "paper_location": "L835",
+    "paper_quote": "The OBI for stock n in period t is thus computed by taking the AUM-weighted average of the residuals û_{i,t} = σ_n²(n) w_{i,t}(n) - z_n' β̃_{i,t} across all institutions i that currently hold a position in stock n.",
+    "implementation": "OBI(n,t) = Σ_{i∈owners(n,t)} AUM_i * (σ_n²·w_{i,t}(n) - z_n'β̃_{i,t}) / Σ_{i∈owners(n,t)} AUM_i"
+  },
+  {
+    "rule_id": "size_decile_construction",
+    "category": "sort",
+    "section": "6 Hidden Beliefs and Return Predictability",
+    "paper_location": "L946",
+    "paper_quote": "I divide all stocks into size deciles at the end of every calendar quarter",
+    "implementation": "at end of each quarter, split stocks into 10 size groups by market cap (NYSE breakpoints per FF convention)"
+  },
+  {
+    "rule_id": "size_hbi_quintile_construction",
+    "category": "sort",
+    "section": "6 Hidden Beliefs and Return Predictability",
+    "paper_location": "L946",
+    "paper_quote": "sort the remaining stocks within each size decile into five equal-weighted quintile portfolios based on the HBI from lowest (Q1) to highest (Q5)",
+    "implementation": "within each size decile, split stocks into 5 HBI quintiles by HBI value"
+  },
+  {
+    "rule_id": "three_lag_averaging",
+    "category": "sort",
+    "section": "6 Hidden Beliefs and Return Predictability",
+    "paper_location": "L946-L950",
+    "paper_quote": "I take the returns for a given size × quintile combination to be the average returns of the three corresponding size × quintile portfolios formed at the end of the previous quarter, second prior quarter, and third prior quarter.",
+    "implementation": "for portfolio returns in quarter T, average returns of portfolios formed at end of Q_{T-1}, Q_{T-2}, Q_{T-3}"
+  },
+  {
+    "rule_id": "factor_regression",
+    "category": "factor",
+    "section": "6 Hidden Beliefs and Return Predictability",
+    "paper_location": "L946",
+    "paper_quote": "I regress the daily excess returns (daily returns for all long/short zero cost strategies) against the excess market return factor, the HML and SMB factors of Fama and French (1993), and the momentum (UMD) factor of Carhart (1997)",
+    "implementation": "OLS regression of daily excess returns on [Mkt-RF, SMB, HML, UMD] with Newey-West standard errors"
+  },
+  {
+    "rule_id": "delisting_returns",
+    "category": "delisting",
+    "section": "6 Hidden Beliefs and Return Predictability footnote 24",
+    "paper_location": "L1063",
+    "paper_quote": "Despite the fact that this paper uses CRSP delisting returns to account for delisting events, these returns are nonetheless subject to the 'delisting bias' in CRSP documented by, among others, Shumway (1997)... this paper maintains the CRSP delisting returns when reporting bottom deciles.",
+    "implementation": "use raw CRSP delisting returns (no Shumway adjustment); paper-silent on most other tables, applies only to D1/D2 results"
+  },
+  {
+    "rule_id": "ew_portfolio_weights",
+    "category": "sort",
+    "section": "6 Hidden Beliefs and Return Predictability — Table 3 Note",
+    "paper_location": "L944",
+    "paper_quote": "Stocks are divided into HBI quintiles within each size decile, resulting in 50 equal-weighted portfolios.",
+    "implementation": "equal-weighted average daily return across stocks in each cell"
+  },
+  {
+    "rule_id": "annualization_factor",
+    "category": "factor",
+    "section": "6 Hidden Beliefs and Return Predictability — Table 3 Note",
+    "paper_location": "L944",
+    "paper_quote": "Reported results provide the annualized four-factor alpha and corresponding t-statistic",
+    "implementation": "alpha_annual = daily_alpha * 252; t-stat uses Newey-West adjusted standard errors"
+  }
+]

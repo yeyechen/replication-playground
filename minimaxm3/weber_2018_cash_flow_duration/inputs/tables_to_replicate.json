@@ -1,0 +1,165 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "The term structure of equity returns is downward-sloping: low-duration stocks earn 1.10% per month more than high-duration stocks (D1-D10 spread).",
+      "paper_location": "L43",
+      "headline": true
+    },
+    {
+      "id": "C2",
+      "claim": "Classical factor models explain only ~50% of the duration spread: FF3 alpha = 0.84%, FF4 alpha = 0.66%, FF5 alpha = 0.48% per month.",
+      "paper_location": "L571"
+    },
+    {
+      "id": "C3",
+      "claim": "The duration spread is stable across subperiods (1963-1973, 1973-1983, 1983-1993, 1993-2003, 2003-2014).",
+      "paper_location": "L1146-1300"
+    },
+    {
+      "id": "C4",
+      "claim": "The negative cross-sectional relationship between duration and returns is concentrated within short-sale constrained stocks (low RIOR); the D1-D10 spread is 1.32% per month for low-RIOR stocks but only 0.15% per month for high-RIOR stocks.",
+      "paper_location": "L2010-2013"
+    }
+  ],
+  "budget_flag": null,
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table 1",
+      "description": "Panel A: cross-sectional means and standard deviations of Dur, BM, IOR, PR, ROE, Sales_g, ME, Age (annual averages 1981-2014).",
+      "replication_meaning": "Demonstrates that the duration measure (Dechow et al. 2004 implied duration) is correctly constructed from Compustat fundamentals, and that the sample composition (common stocks excl financials/utilities, above 20th size percentile, July 1981-June 2014), 1% winsorization, and the BM, IOR, PR, ROE, Sales_g, ME, Age variable definitions match the paper. Downstream claims C1, C2, C4 all depend on duration being correctly constructed.",
+      "covers_claims": [],
+      "paper_quote": "This table reports time series averages of annual cross-sectional means and standard deviations for firm characteristics and return predictors in Panel A and contemporaneous correlations of these variables in Panel B. Dur is cash-flow duration; BM is the book-to-market ratio; IOR is the fraction of shares institutions hold; PR is net payout over net income; ROE is return on equity; Sales_g is sales growth; ME is the market capitalization in millions; and Age is the number of years a firm has been on Compustat. ... The sample period is June 1981–June 2014. I only use stocks above the 20th size percentile. (L210)",
+      "exercises_preprocessing_rules": ["var_dur_formula", "var_dur_parameters", "var_book_equity", "var_bm_definition", "var_market_equity", "var_payout_ratio", "var_roe", "var_sales_growth", "var_age", "var_ior", "universe_exclude_financials", "universe_microcap_filter", "winsorize_p1_p99", "avail_two_years_compustat"],
+      "metrics": [
+        {"name": "Mean_Dur", "value": 18.77, "unit": "years", "tolerance_pct": 10, "paper_location": "L232"},
+        {"name": "Std_Dur", "value": 5.37, "unit": "years", "tolerance_pct": 10, "paper_location": "L243"},
+        {"name": "Mean_BM", "value": 0.67, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L233"},
+        {"name": "Std_BM", "value": 0.53, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L244"},
+        {"name": "Mean_IOR", "value": 0.44, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L234"},
+        {"name": "Std_IOR", "value": 0.23, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L245"},
+        {"name": "Mean_PR", "value": -0.01, "unit": "ratio", "tolerance_pct": 25, "paper_location": "L235"},
+        {"name": "Std_PR", "value": 2.10, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L246"},
+        {"name": "Mean_ROE", "value": 0.05, "unit": "ratio", "tolerance_pct": 25, "paper_location": "L236"},
+        {"name": "Std_ROE", "value": 0.54, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L247"},
+        {"name": "Mean_Sales_g", "value": 0.22, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L237"},
+        {"name": "Std_Sales_g", "value": 0.59, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L248"},
+        {"name": "Mean_ME", "value": 2125, "unit": "millions_dollars", "tolerance_pct": 15, "paper_location": "L238"},
+        {"name": "Std_ME", "value": 6197, "unit": "millions_dollars", "tolerance_pct": 15, "paper_location": "L249"},
+        {"name": "Mean_Age", "value": 17.59, "unit": "years", "tolerance_pct": 10, "paper_location": "L239"},
+        {"name": "Std_Age", "value": 11.46, "unit": "years", "tolerance_pct": 10, "paper_location": "L250"}
+      ],
+      "notes": "Panel B correlations are construction-validation only; we replicate the means and std for Panel A. The 1981-2014 sample period follows the paper's "restricted" sample for IOR availability."
+    },
+    {
+      "id": "T2",
+      "table_ref": "Table 2 Panels A and B",
+      "description": "Monthly mean excess returns, CAPM betas, CAPM alphas, and Sharpe ratios for ten duration-sorted deciles (D1=low, D10=high); D1-D10 spread.",
+      "replication_meaning": "Demonstrates correct decile-sort portfolio construction (sort by duration at end of June each year 1963-2013, 10 equal-weighted bins, hold 12 months), with the Shumway (1997) delisting treatment and the sample filters (NYSE/AMEX/NASDAQ common stocks, excl financials/utilities). This is the table that tests the headline claim C1.",
+      "covers_claims": ["C1"],
+      "paper_quote": "At the end of June each year $t$ from 1963 to 2013, I sort stocks into ten deciles based on duration for the fiscal year ending in calendar year $t - 1$ . I rebalance portfolios on an annual basis and weight returns within portfolio equally. ... Panel A reports monthly mean excess returns, time series factor loadings ( $\\beta$ ), and pricing errors ( $\\alpha$ ) for the CAPM for ten portfolios sorted on duration (Dur) with OLS standard errors in parentheses in Panel A. (L339, L376)",
+      "exercises_preprocessing_rules": ["universe_exchanges", "universe_exclude_financials", "delisting_shumway", "delisting_prorate_cohen", "sort_annual_june", "sort_equal_weight", "var_dur_formula", "var_dur_parameters", "avail_two_years_compustat"],
+      "metrics": [
+        {"name": "Mean_D1", "value": 1.43, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L401"},
+        {"name": "Mean_D2", "value": 1.24, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L402"},
+        {"name": "Mean_D3", "value": 1.14, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L403"},
+        {"name": "Mean_D4", "value": 1.04, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L404"},
+        {"name": "Mean_D5", "value": 1.00, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L405"},
+        {"name": "Mean_D6", "value": 0.97, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L406"},
+        {"name": "Mean_D7", "value": 0.81, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L407"},
+        {"name": "Mean_D8", "value": 0.68, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L408"},
+        {"name": "Mean_D9", "value": 0.62, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L409"},
+        {"name": "Mean_D10", "value": 0.32, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L410"},
+        {"name": "Mean_D1_minus_D10", "value": 1.10, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L411"},
+        {"name": "Beta_D1", "value": 1.05, "unit": "beta", "tolerance_pct": 10, "paper_location": "L429"},
+        {"name": "Beta_D10", "value": 1.41, "unit": "beta", "tolerance_pct": 10, "paper_location": "L438"},
+        {"name": "Beta_D1_minus_D10", "value": -0.36, "unit": "beta", "tolerance_pct": 15, "paper_location": "L439"},
+        {"name": "Alpha_D1", "value": 0.90, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L457"},
+        {"name": "Alpha_D10", "value": -0.39, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L466"},
+        {"name": "Alpha_D1_minus_D10", "value": 1.29, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L467"},
+        {"name": "Sharpe_D1", "value": 0.23, "unit": "sharpe_ratio", "tolerance_pct": 15, "paper_location": "L488"},
+        {"name": "Sharpe_D10", "value": 0.04, "unit": "sharpe_ratio", "tolerance_pct": 25, "paper_location": "L497"},
+        {"name": "Sharpe_D1_minus_D10", "value": 0.22, "unit": "sharpe_ratio", "tolerance_pct": 15, "paper_location": "L498"}
+      ],
+      "notes": "Tables 2 Panel A only; we skip Panel C (value-weighted) and Panel D (no delisting) for budget — they are robustness."
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table 3",
+      "description": "FF3, FF4, and FF5 alphas for the ten duration-sorted deciles and the D1-D10 spread.",
+      "replication_meaning": "Demonstrates that the factor models are correctly constructed (FF3 = Mkt-RF + SMB + HML; FF4 = FF3 + Mom; FF5 = FF3 + RMW + CMA), the time-series regressions are correctly estimated, and that the duration spread is not absorbed by classical risk factors. Tests claim C2.",
+      "covers_claims": ["C2"],
+      "paper_quote": "This table reports pricing errors ( $\\alpha$ ) for the Fama and French three-factor model ( $\\alpha_{F\\&F3}$ ), the three-factor model augmented with momentum ( $\\alpha_{F\\&F4}$ ), and the Fama and French five-factor model ( $\\alpha_{F\\&F5}$ ) for ten portfolios sorted on duration (Dur) with OLS standard errors in parentheses. (L595-599)",
+      "exercises_preprocessing_rules": ["factor_ff3", "factor_ff4_add_momentum", "factor_ff5_add_rmw_cma", "sort_annual_june", "sort_equal_weight"],
+      "metrics": [
+        {"name": "AlphaFF3_D1", "value": 0.46, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L621"},
+        {"name": "AlphaFF3_D2", "value": 0.34, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L622"},
+        {"name": "AlphaFF3_D3", "value": 0.26, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L623"},
+        {"name": "AlphaFF3_D4", "value": 0.18, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L624"},
+        {"name": "AlphaFF3_D5", "value": 0.17, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L625"},
+        {"name": "AlphaFF3_D6", "value": 0.15, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L626"},
+        {"name": "AlphaFF3_D7", "value": 0.03, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L627"},
+        {"name": "AlphaFF3_D8", "value": -0.03, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L628"},
+        {"name": "AlphaFF3_D9", "value": -0.08, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L629"},
+        {"name": "AlphaFF3_D10", "value": -0.38, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L630"},
+        {"name": "AlphaFF3_D1_minus_D10", "value": 0.84, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L631"},
+        {"name": "AlphaFF4_D1_minus_D10", "value": 0.66, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L659"},
+        {"name": "AlphaFF5_D1_minus_D10", "value": 0.48, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L687"}
+      ],
+      "notes": "Decile-level FF3 alphas (10 cells) + spread alphas for FF3, FF4, FF5 (13 cells). Decile-level FF4/FF5 alphas are omitted for budget — the spread carries the claim."
+    },
+    {
+      "id": "T4",
+      "table_ref": "Table 5 Panels A-E",
+      "description": "Monthly mean excess returns for the ten duration-sorted deciles in five 10-year subsamples (1963-1973, 1973-1983, 1983-1993, 1993-2003, 2003-2014).",
+      "replication_meaning": "Demonstrates that the duration spread is temporally stable and not driven by a single regime. Tests claim C3. Exercises the same sort/portfolio mechanics as Table 2 but variable window slices — confirms the methodology is correct even if the sample boundary differs.",
+      "covers_claims": ["C3"],
+      "paper_quote": "This table reports monthly mean excess returns with OLS standard errors in parentheses for different subsamples. I sort all common stocks listed on NYSE, AMEX, and NASDAQ at the end of June each year $t$ from 1963 to 2013 into deciles based on duration for all firms with fiscal years ending in year $t-1$ . (L1126)",
+      "exercises_preprocessing_rules": ["sort_annual_june", "sort_equal_weight", "delisting_shumway", "universe_exclude_financials"],
+      "metrics": [
+        {"name": "Mean_D1_minus_D10_1963_1973", "value": 0.69, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L1161"},
+        {"name": "Mean_D1_minus_D10_1973_1983", "value": 1.34, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L1192"},
+        {"name": "Mean_D1_minus_D10_1983_1993", "value": 1.37, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L1223"},
+        {"name": "Mean_D1_minus_D10_1993_2003", "value": 1.10, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L1254"},
+        {"name": "Mean_D1_minus_D10_2003_2014", "value": 1.04, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L1285"},
+        {"name": "Mean_D1_1963_1973", "value": 0.91, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L1151"},
+        {"name": "Mean_D10_1963_1973", "value": 0.23, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L1160"},
+        {"name": "Mean_D1_1983_1993", "value": 0.96, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L1213"},
+        {"name": "Mean_D10_1983_1993", "value": -0.41, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L1222"},
+        {"name": "Mean_D1_2003_2014", "value": 1.68, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L1275"},
+        {"name": "Mean_D10_2003_2014", "value": 0.64, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L1284"}
+      ],
+      "notes": "Replicate the D1-D10 spread in each of 5 subperiods (5 cells) plus selected D1/D10 means for visual spectrum check (6 cells)."
+    },
+    {
+      "id": "T5",
+      "table_ref": "Table 10",
+      "description": "Monthly mean excess returns for 25 portfolios sorted on duration (quintiles) and residual institutional ownership (RIOR) (quintiles), 1981-2013.",
+      "replication_meaning": "Demonstrates that the duration spread is concentrated among short-sale constrained stocks (low RIOR), and that the spread decreases in RIOR. Tests the central mispricing claim C4. Exercises the RIOR construction (Eq. 7) and the double-sort methodology.",
+      "covers_claims": ["C4"],
+      "paper_quote": "Table 10 reports monthly mean excess returns for the 25 portfolios. We see a pronounced downward-sloping term structure of equity returns for stocks with low residual institutional ownership, which are potentially the most short-sale constrained. Low-duration stocks earn an excess return of 1.02% per month. The return decreases monotonically in duration. High-duration stocks earn an excess return of –0.30% per month. The spread in excess returns for the two extreme-duration portfolios is 1.32% per month and highly statistically significant. (L2010-2011)",
+      "exercises_preprocessing_rules": ["universe_exchanges", "universe_exclude_financials", "universe_microcap_filter", "delisting_shumway", "sort_annual_june", "sort_equal_weight", "var_ior", "var_rior_definition", "var_rior_threshold", "var_rior_lag", "avail_ior_history"],
+      "metrics": [
+        {"name": "Mean_LowRIOR_LowDur", "value": 1.02, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2010"},
+        {"name": "Mean_LowRIOR_HighDur", "value": -0.30, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2011"},
+        {"name": "Mean_LowRIOR_D1_minus_D5", "value": 1.32, "unit": "percent_per_month", "tolerance_pct": 15, "paper_location": "L2011"},
+        {"name": "Mean_HighRIOR_LowDur", "value": 1.09, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2113"},
+        {"name": "Mean_HighRIOR_HighDur", "value": 0.94, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2117"},
+        {"name": "Mean_HighRIOR_D1_minus_D5", "value": 0.15, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L2118"},
+        {"name": "LowRIOR_RIOR1_minus_RIOR5_LowDur", "value": -0.08, "unit": "percent_per_month", "tolerance_pct": 30, "paper_location": "L2131"},
+        {"name": "LowRIOR_RIOR1_minus_RIOR5_HighDur", "value": -1.24, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2135"},
+        {"name": "RIOR2_LowDur", "value": 1.08, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2059"},
+        {"name": "RIOR2_HighDur", "value": 0.25, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2063"},
+        {"name": "RIOR2_D1_minus_D5", "value": 0.83, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2064"},
+        {"name": "RIOR3_LowDur", "value": 1.09, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2077"},
+        {"name": "RIOR3_HighDur", "value": 0.47, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2081"},
+        {"name": "RIOR3_D1_minus_D5", "value": 0.62, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2082"},
+        {"name": "RIOR4_LowDur", "value": 1.04, "unit": "percent_per_month", "tolerance_pct": 20, "paper_location": "L2095"},
+        {"name": "RIOR4_HighDur", "value": 0.52, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2099"},
+        {"name": "RIOR4_D1_minus_D5", "value": 0.52, "unit": "percent_per_month", "tolerance_pct": 25, "paper_location": "L2100"}
+      ],
+      "notes": "Partial replication: 17 cells (rows of Dur x RIOR cells for 5 RIOR bins x 2 extreme Dur quintiles + the D1-D5 spread). The full 25-cell grid is encoded as 17 selected cells; the spreadsheet-level structure is documented but not cell-by-cell."
+    }
+  ]
+}

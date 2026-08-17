@@ -1,0 +1,83 @@
+{
+  "slug": "graves_2025_what_lies_beneath_zero_censoring_demand_estimation_and_hidden_belief",
+  "title": "What Lies Beneath Zero: Censoring, Demand Estimation, and Hidden Beliefs",
+  "author": "Daniel Graves",
+  "year": 2025,
+  "institution": "Harvard University",
+  "paper_quote_for_empirical": "I apply this methodology to quarterly data from 1984 to 2021, estimating institutional demand for common stocks in each quarter. Using price data from CRSP, accounting data from Compustat, and quarterly 13F institutional portfolio holding data from Thomson Reuters, I compute quarterly asset characteristics and institutional portfolio weights for common stocks.",
+  "data_sources": [
+    "CRSP Daily Stock Database (price, returns, market cap, shares outstanding)",
+    "Compustat Annual Fundamentals (FF2015 conventions; accounting data, NAICS) — see data_verification.json for matched table",
+    "Thomson Reuters 13F Institutional Holdings Database (s34) — institutional portfolio holdings",
+    "Fama-French factors (Mkt-RF, SMB, HML, UMD via Carhart 1997)"
+  ],
+  "sample_period": "1984Q4 to 2021Q4 (estimation); 1986-2021 (return prediction)",
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "The paper is fully empirical and data-driven. All required data sources (CRSP, Compustat, 13F holdings via Thomson Reuters s34, NAICS) are available in the ClickHouse catalog. The methodology (SCQR estimation, HBI/OBI construction, portfolio sorts) is reproducible from the published specification. However, the full pipeline — running ~248,000 institution × quarter SCQR regressions each involving ~100 LP problems — is computationally prohibitive within a single replication session. A faithful subset replication on a sub-period (2010Q1-2021Q4) and sub-sample (top 100 dynamic institutions by AUM) is achievable and will demonstrate methodological faithfulness.",
+  "block_reasons": [],
+  "replicable_rationale": "The paper is fully empirical and data-driven. All required data sources (CRSP, Compustat, 13F holdings, NAICS) are available in the ClickHouse catalog. The methodology (SCQR estimation, HBI/OBI construction, portfolio sorts) is reproducible from the published specification. However, the full pipeline — running ~248,000 institution × quarter SCQR regressions each involving ~100 LP problems — is computationally prohibitive within a single replication session. A faithful subset replication on a sub-period or sub-institution sample is achievable.",
+  "evidence_of_empirical_claims": [
+    "Table 1: Quarterly AUM by manager type (1984-2021)",
+    "Table 2: Consideration set and holdings statistics",
+    "Table 3: Size × HBI quintile portfolio annualized four-factor alphas",
+    "Table 4: HBI long-short strategy results by size decile",
+    "Table 5: HBI long-short strategy results by quarter lag (0-14)",
+    "Table 6: Size × OBI quintile portfolio annualized four-factor alphas",
+    "Table 7: HBI long-short strategy with 'style box' consideration sets",
+    "Tables 8-13: Various robustness exercises (institution types, mutual fund data, etc.)"
+  ],
+  "key_methodology": {
+    "estimation": "Sequential Censored Quantile Regression (SCQR) — Chen (2018)",
+    "sample_size": "~247,997 institution × date pairs (Section 5, footnote 3 mentions dropping managers with fewer than 25 holdings)",
+    "censored_model": "y_{i,t}(n) = σ_n² · w_{i,t}(n) = max{0, x_n' β̃_{i,t} + ε_{i,t}}",
+    "characteristics": "log market cap, market beta, log book equity, dividend-to-book ratio, operating profitability, investment (FF 2015 / Koijen-Yogo 2019)",
+    "instrument": "log(1 + counterfactual_EQ_price + counterfactual_BE_price) based on equal-weighted and book-equity-weighted portfolios within consideration sets",
+    "consideration_sets": "Rigid managers: held stocks only. Dynamic managers: union of (1) past 12 quarters of holdings and (2) NAICS-4 stocks with ≥2 recent holdings in same industry",
+    "hbi_definition": "AUM-weighted average of -x_n'β̃_{i,t} across non-owners of stock n with n in their consideration set",
+    "obi_definition": "AUM-weighted average of σ_n²·w_{i,t}(n) - x_n'β̃_{i,t} across current owners of stock n"
+  },
+  "expected_difficulty": "EXTREME",
+  "expected_difficulty_rationale": "The paper's central empirical claim rests on running ~248,000 SCQR regressions, each consisting of ~100 LP solves (descending grid from τ=0.99 to τ=0.5). At even modest scale (e.g., 1 sec per LP solve), this is ~7M LP problems — multi-day compute on a single node. A faithful but partial replication focusing on a sub-period (e.g., 2010-2021) or sub-sample (e.g., largest 100 dynamic institutions) is the realistic target.",
+  "blocker_risks": [
+    "Computational cost of full SCQR pipeline (10s of millions of LP solves)",
+    "NAICS-based consideration sets require building NAICS-4 mappings (header changes over time)",
+    "Compustat-CRSP-13F CUSIP linkage must be exact and PIT",
+    "Quarterly AUM by manager type (rigid vs dynamic) requires Definition 1/2 implementation using holding overlap metrics"
+  ],
+  "scope_recommendation": {
+    "approach": "Sub-period + sub-sample partial replication",
+    "sub_period": "2005Q1 to 2021Q4 (most data-rich, most stable methodology)",
+    "sub_sample": "Largest 50-100 dynamic institutions by AUM (reduces estimation cost 1000x while preserving economic content)",
+    "rationale": "This is the only realistic path to demonstrating methodological faithfulness within a single replication session. Document the scope reduction as a paper-silent substitution [THIRD-PARTY-DATASET] / [VINTAGE-DRIFT] in assumptions.md."
+  },
+  "estimated_table_replication_priority": [
+    {
+      "table_id": "Table 1",
+      "feasibility": "high",
+      "reason": "Pure summary statistics — count institutions, AUM. No SCQR needed."
+    },
+    {
+      "table_id": "Table 2",
+      "feasibility": "high",
+      "reason": "Holdings and consideration set size statistics — requires constructing consideration sets but no SCQR."
+    },
+    {
+      "table_id": "Table 3",
+      "feasibility": "medium",
+      "reason": "Size × HBI portfolio sorts — requires full SCQR pipeline + HBI construction."
+    },
+    {
+      "table_id": "Table 4",
+      "feasibility": "medium",
+      "reason": "Long-short strategy regression — built on Table 3 portfolios."
+    },
+    {
+      "table_id": "Table 6",
+      "feasibility": "medium",
+      "reason": "Size × OBI portfolio sorts — built on Table 3 same regression but uses overt beliefs."
+    }
+  ],
+  "verification_verdict": "replicable_with_substantial_scope_reduction",
+  "paper_evidence_for_verdict": "Section 5: 'The main empirical results in Section 6 require the SCQR method to be applied to 247,997 institution × date pairs.' This scale is reproducible in principle but infeasible in a single replication session."
+}

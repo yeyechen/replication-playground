@@ -1,0 +1,158 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 75,
+  "requirements": [
+    {
+      "id": "crsp_daily_returns",
+      "description": "CRSP daily stock returns, prices, volumes for MAX computation",
+      "needed_columns": ["permno", "date", "ret", "prc", "vol", "shrout", "cfacpr", "cfacshr", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "vol", "shrout", "cfacpr", "cfacshr", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns",
+      "description": "CRSP monthly stock returns for portfolio formation and one-month-ahead excess returns",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_names_pit",
+      "description": "CRSP names PIT for shrcd/exchcd/siccd lookups",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.msenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_funda",
+      "description": "Compustat annual fundamentals for book equity, ROA, GP, NOA, accruals, asset growth, INV/AT, net stock issuance",
+      "needed_columns": ["gvkey", "datadate", "fyear", "at", "ceq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "seq", "ib", "revt", "cogs", "xsga", "dp", "capx", "invt", "ppent", "che", "dlc", "dltt", "mib", "csho", "prcc_f", "sale"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "at", "ceq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "seq", "ib", "revt", "cogs", "xsga", "dp", "capx", "invt", "ppent", "che", "dlc", "dltt", "mib", "csho", "prcc_f", "sale"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_fundq",
+      "description": "Compustat quarterly fundamentals for IBQ (ROE numerator) and IB (compustat fundamentals)",
+      "needed_columns": ["gvkey", "datadate", "fdateq", "fqtr", "ibq", "req", "rdq"],
+      "matched_table": "comp_202601.fundq",
+      "matched_columns": ["gvkey", "datadate", "fdateq", "fqtr", "ibq", "req", "rdq"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_crsp_link",
+      "description": "CRSP-Compustat linking table for gvkey/permno mapping",
+      "needed_columns": ["gvkey", "permno", "linkdt", "linkenddt", "linktype", "linkprim"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "permno", "linkdt", "linkenddt", "linktype", "linkprim"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_three_factor",
+      "description": "Fama-French three-factor monthly (Mkt-RF, SMB, HML, RF)",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.three_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_four_factor",
+      "description": "Fama-French-Carhart four-factor (adds MOM)",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_five_factor",
+      "description": "Fama-French five-factor (adds RMW, CMA)",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "matched_table": "ff.five_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_six_factor",
+      "description": "Fama-French six-factor (FF5 + MOM)",
+      "needed_columns": ["date", "mkt_rf", "smb", "hml", "rmw", "cma", "mom", "rf"],
+      "matched_table": "ff.factors_na_2025",
+      "matched_columns": ["date", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "missing_columns": ["mom"],
+      "status": "partial"
+    },
+    {
+      "id": "ff_pastor_stambaugh_liq",
+      "description": "Pastor-Stambaugh (2003) liquidity factor LIQ (needed for FFCPS and FF6PS)",
+      "needed_columns": ["dt", "liq", "rf"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["dt", "liq", "rf"],
+      "status": "missing"
+    },
+    {
+      "id": "sy_mispricing_factors",
+      "description": "Stambaugh-Yuan (2017) MGMT and PERF mispricing factors (needed for SY model)",
+      "needed_columns": ["date", "mgmt", "perf", "mkt_rf", "smb", "rf"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["date", "mgmt", "perf", "mkt_rf", "smb", "rf"],
+      "status": "missing"
+    },
+    {
+      "id": "dhs_behavioral_factors",
+      "description": "Daniel-Hirshleifer-Sun (2020) FIN and PEAD behavioral factors (needed for DHS model)",
+      "needed_columns": ["date", "fin", "pead", "mkt_rf", "rf"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["date", "fin", "pead", "mkt_rf", "rf"],
+      "status": "missing"
+    },
+    {
+      "id": "institutional_ownership",
+      "description": "Institutional ownership data from Thomson Reuters 13F (s34)",
+      "needed_columns": ["fdate", "cusip", "shares", "shrout1", "shrout2"],
+      "matched_table": "instown_202601.s34",
+      "matched_columns": ["fdate", "cusip", "shares", "shrout1", "shrout2"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "ff_pastor_stambaugh_liq",
+      "reason": "No PS_LIQ factor in ClickHouse. FFCPS (FFC4 + LIQ) and FF6PS (FF6 + LIQ) columns of Tables 1 and 6 cannot be replicated without this factor.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Skip FFCPS and FF6PS columns in Tables 1 and 6. Replicate FF3, FFC4, FF5, FF6 alpha columns which only require standard FF factors. Document the substitution in assumptions.md as [MISSING-LIQ-FACTOR]."
+    },
+    {
+      "requirement": "sy_mispricing_factors",
+      "reason": "Stambaugh-Yuan (2017) mispricing factors (MGMT, PERF) are not in ClickHouse; the paper sources them from Robert Stambaugh's website. SY alpha columns of Tables 1 and 6 cannot be replicated.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Skip SY alpha columns. The paper's main claim about MAX vanishing under SY/DHS is not replicable; instead report FF3/FFC4/FF5/FF6 alphas. Document in assumptions.md as [MISSING-SY-FACTORS]."
+    },
+    {
+      "requirement": "dhs_behavioral_factors",
+      "reason": "Daniel-Hirshleifer-Sun (2020) behavioral factors (FIN, PEAD) are not in ClickHouse; the paper sources them from Lin Sun's website. DHS alpha columns cannot be replicated.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Skip DHS alpha columns. Document in assumptions.md as [MISSING-DHS-FACTORS]."
+    },
+    {
+      "requirement": "ff_six_factor",
+      "reason": "FF6 model requires MOM (from Carhart factor) on top of FF5. factors_na_2025 has RMW/CMA but no MOM column. We can still construct FF6 as FF5+MOM by joining with four_factor.",
+      "affected_targets": ["T1", "T6"],
+      "recommendation": "Construct FF6 factors in SQL by joining ff.five_factor with ff.four_factor on date to get the MOM column. Document the join in assumptions.md as [FF6-FROM-JOIN]."
+    }
+  ]
+}

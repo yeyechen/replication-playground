@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Cross-sectional equity paper using CRSP/Compustat (Jan 1968 - Dec 2022). Methodology: sort by MAX (avg of 5 highest daily returns) and a beta-neutralized variant MAX^beta (double sort on beta then MAX), form value-weighted decile portfolios, compute alphas against CAPM/FF3/FFC4/FFCPS/FF5/FF6/FF6PS/SY/DHS factor models, and run Fama-MacBeth cross-sectional regressions. The paper reports ~13 main tables (Tables 1-13) and several Internet Appendix tables (A1-A13) covering univariate/bivariate sorts, summary statistics, mispricing conditioning, persistence tests, firm-level regressions, and long-horizon calendar-time analyses. All data and methodology are operationalized in Section 3.",
+  "block_reasons": []
+}
