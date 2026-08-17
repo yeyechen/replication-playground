@@ -1,0 +1,10 @@
+data/
+__pycache__/
+*.pyc
+.done
+.running
+.failed
+.env
+*_data
+*_test
+docs
