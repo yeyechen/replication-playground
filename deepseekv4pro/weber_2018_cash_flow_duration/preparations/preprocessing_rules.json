@@ -1,0 +1,331 @@
+[
+  {
+    "rule_id": "universe_common_stock_exchanges",
+    "category": "universe",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "I follow standard conventions and restrict my analysis to common stocks of firms incorporated in the United States trading on NYSE, Amex, or Nasdaq."
+  },
+  {
+    "rule_id": "universe_exclude_financials_utilities",
+    "category": "universe",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "I exclude financials ( $6000 \\leq \\text{SIC} < 7000$ ) and utilities ( $4900 \\leq \\text{SIC} < 5000$ )."
+  },
+  {
+    "rule_id": "delisting_for_cause_missing_ret",
+    "category": "delisting",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "If a company is delisted for cause (delisting codes 400–591) and has a missing delisting return, I follow the findings in Shumway (1997) and assume a return of $-30\\%$ ."
+  },
+  {
+    "rule_id": "delisting_prorate",
+    "category": "delisting",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "In some cases, CRSP reports delisting returns several months after the security stopped trading. In these instances, I prorate the delisting return over the intervening period as in Cohen et al. (2009)."
+  },
+  {
+    "rule_id": "var_me_crsp",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L104",
+    "paper_quote": "Market equity (ME) is the total market capitalization at the firm level."
+  },
+  {
+    "rule_id": "var_be_definition",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L106",
+    "paper_quote": "I define book equity (BE) as total stockholders' equity plus deferred taxes and investment tax credit (if available) minus the book value of preferred stock."
+  },
+  {
+    "rule_id": "var_be_preferred_order",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L106",
+    "paper_quote": "Based on availability, I use the redemption value, liquidation value, or par value (in that order) for the book value of preferred stock."
+  },
+  {
+    "rule_id": "var_be_fallback",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L106",
+    "paper_quote": "If these data are not available, I calculate shareholders' equity as the sum of common and preferred equity. If neither of the two are available, I define shareholders' equity as the difference between total assets and total liabilities."
+  },
+  {
+    "rule_id": "avail_moodys_book_equity",
+    "category": "sample",
+    "section": "§2 Data",
+    "paper_location": "L106",
+    "paper_quote": "I supplement the book-equity data with hand-collected book-equity data from Moody's manual used in Davis et al. (2000)."
+  },
+  {
+    "rule_id": "var_bm_timing",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L106",
+    "paper_quote": "The book-to-market (BM) ratio of year $t$ is then the book equity for the fiscal year ending in calendar year $t - 1$ over the market equity as of December $t - 1$ ."
+  },
+  {
+    "rule_id": "var_pr",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "I define the payout ratio (PR) as net payout over net income."
+  },
+  {
+    "rule_id": "var_net_payout",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "Net payout is the sum of ordinary dividends and net purchases of common and preferred stock."
+  },
+  {
+    "rule_id": "var_roe",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "Return on equity (ROE) is the ratio of income before extraordinary items over lagged book equity."
+  },
+  {
+    "rule_id": "var_sales_g",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "Sales growth (Sales_g) is the percentage growth rate in net sales."
+  },
+  {
+    "rule_id": "sample_fiscal_year_t_minus_1",
+    "category": "sample",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "As for the book-to-market ratio, I calculate these numbers for the fiscal year ending in calendar $t - 1$ ."
+  },
+  {
+    "rule_id": "var_age",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "Age is the number of years a firm has been in Compustat."
+  },
+  {
+    "rule_id": "avail_compustat_two_years",
+    "category": "sample",
+    "section": "§2 Data",
+    "paper_location": "L108",
+    "paper_quote": "To alleviate a potential survivorship bias due to backfilling, I require that a firm has at least two years of Compustat data."
+  },
+  {
+    "rule_id": "var_ior",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L110",
+    "paper_quote": "I calculate the institutional ownership ratio (IOR) by first summing the holdings of all reporting institutions at the security level, and then dividing by the total shares outstanding from CRSP."
+  },
+  {
+    "rule_id": "var_ior_zero",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L110",
+    "paper_quote": "If a common stock is on CRSP, but not in the TR-13F database, I assign an institutional ownership ratio of zero."
+  },
+  {
+    "rule_id": "var_ior_carryforward",
+    "category": "variable",
+    "section": "§2 Data",
+    "paper_location": "L110",
+    "paper_quote": "The TR-13F database carries forward institutional reports up to eight quarters. In calculating the institutional ownership ratio, I only keep the holding data as they first appear in the database."
+  },
+  {
+    "rule_id": "factor_ff5_mom_tbill_source",
+    "category": "factor",
+    "section": "§2 Data",
+    "paper_location": "L114",
+    "paper_quote": "The five Fama and French factors, the momentum factor, and the one-month Treasury bill rate come from the Fama and French data library on Ken French's webpage."
+  },
+  {
+    "rule_id": "var_dur_eq1",
+    "category": "variable",
+    "section": "§2.1 Cash flow duration",
+    "paper_location": "L137-138",
+    "paper_quote": "Dur_{i,t} = \\frac{\\sum_{s=1}^{T} s \\times CF_{i,t+s}/(1+r)^s}{P_{i,t}}, \\quad (1)"
+  },
+  {
+    "rule_id": "var_dur_timing",
+    "category": "variable",
+    "section": "§2.1 Cash flow duration",
+    "paper_location": "L141",
+    "paper_quote": "where $Dur_{i,t}$ is the duration of firm $i$ at the end of fiscal year $t$ , $CF_{i,t+s}$ denotes the cash flow at time $t+s$ , $P_{i,t}$ is the current price, and $r$ is the expected return on equity."
+  },
+  {
+    "rule_id": "var_dur_eq2",
+    "category": "variable",
+    "section": "§2.1 Cash flow duration",
+    "paper_location": "L147-153",
+    "paper_quote": "Dur_{i,t} = \\frac{\\sum_{s=1}^{T} s \\times CF_{i,t+s}/(1+r)^s}{P_{i,t}} + \\left(T + \\frac{1+r}{r}\\right) \\times \\frac{P_{i,t} - \\sum_{s=1}^{T} CF_{i,t+s}/(1+r)^s}{P_{i,t}}."
+  },
+  {
+    "rule_id": "var_dur_clean_surplus",
+    "category": "variable",
+    "section": "§2.1 Cash flow duration",
+    "paper_location": "L158-161",
+    "paper_quote": "CF_{i,t+s} = E_{i,t+s} - (BV_{i,t+s} - BV_{i,t+s-1}) \\quad (3)"
+  },
+  {
+    "rule_id": "var_dur_ar_mean_reversion",
+    "category": "variable",
+    "section": "§2.1 Cash flow duration",
+    "paper_location": "L168",
+    "paper_quote": "I model returns on equity and growth in equity as autoregressive processes based on recent findings in the financial statement analysis literature (see Dechow et al., 2004)."
+  },
+  {
+    "rule_id": "var_dur_parameters",
+    "category": "variable",
+    "section": "§2.1 Cash flow duration",
+    "paper_location": "L174",
+    "paper_quote": "ROE has an AR(1) coefficient of 0.41 and BV of 0.24. I assume a discount rate $r$ of 0.12, a steady-state average cost of equity of 0.12, an average long-run nominal growth rate of 0.06, and a detailed forecasting period of 15 years."
+  },
+  {
+    "rule_id": "sample_period_main",
+    "category": "sample",
+    "section": "§2.1 Cash flow duration",
+    "paper_location": "L176",
+    "paper_quote": "My sample period is July 1963 until June 2014."
+  },
+  {
+    "rule_id": "sample_period_restrictions",
+    "category": "sample",
+    "section": "§2.1 Cash flow duration",
+    "paper_location": "L176",
+    "paper_quote": "The sample is restricted from July 1981 until June 2014, when I make use of the institutional ownership data; July 1982–June 2009, when I employ I/B/E/S data on earnings forecasts, realized five year growth, and long term growth forecast; and July 2001–June 2014, when I employ I/B/E/S forecasts on price targets."
+  },
+  {
+    "rule_id": "winsorize_all_1_99",
+    "category": "winsorize",
+    "section": "§2.1 Cash flow duration",
+    "paper_location": "L176",
+    "paper_quote": "To minimize the impact of outliers, I winsorize all variables at the 1% and 99% levels."
+  },
+  {
+    "rule_id": "sample_stats_convention",
+    "category": "sample",
+    "section": "§2.2 Descriptive statistics",
+    "paper_location": "L180",
+    "paper_quote": "I calculate all statistics annually and then average over time."
+  },
+  {
+    "rule_id": "sample_above_20th_size_pct",
+    "category": "sample",
+    "section": "Table 1 description",
+    "paper_location": "L210",
+    "paper_quote": "I only use stocks above the 20th size percentile."
+  },
+  {
+    "rule_id": "sort_annual_june_deciles",
+    "category": "sort",
+    "section": "§3.1 Portfolios sorted on duration",
+    "paper_location": "L339",
+    "paper_quote": "At the end of June each year $t$ from 1963 to 2013, I sort stocks into ten deciles based on duration for the fiscal year ending in calendar year $t - 1$ ."
+  },
+  {
+    "rule_id": "sort_ew",
+    "category": "sort",
+    "section": "§3.1 Portfolios sorted on duration",
+    "paper_location": "L339",
+    "paper_quote": "I rebalance portfolios on an annual basis and weight returns within portfolio equally."
+  },
+  {
+    "rule_id": "fm_paper_uses_time_series_portfolio_regressions",
+    "category": "fm",
+    "section": "§3.1 Portfolios sorted on duration",
+    "paper_location": "L341",
+    "paper_quote": "I regress excess returns at the portfolio level on various risk factors to test whether traditional risk factors can explain the downward-sloping term structure of equity returns,"
+  },
+  {
+    "rule_id": "factor_time_series_eq5",
+    "category": "factor",
+    "section": "§3.1 Portfolios sorted on duration",
+    "paper_location": "L348",
+    "paper_quote": "where $R_{i,t}$ is excess return of portfolio $i$ at time $t$ , $\\alpha_i$ is a model-specific pricing error, and $\\beta_{i,s}$ is the time-series loading of returns on risk factors, $X_{i,s}$ , such as size."
+  },
+  {
+    "rule_id": "sort_excess_returns",
+    "category": "sort",
+    "section": "Table 2 description",
+    "paper_location": "L376",
+    "paper_quote": "Panel A reports monthly mean excess returns, time series factor loadings ( $\\beta$ ), and pricing errors ( $\\alpha$ ) for the CAPM for ten portfolios sorted on duration (Dur) with OLS standard errors in parentheses in Panel A."
+  },
+  {
+    "rule_id": "factor_definitions",
+    "category": "factor",
+    "section": "Table 3 description",
+    "paper_location": "L599",
+    "paper_quote": "Market is the value-weighted return on all NYSE, Amex, and Nasdaq common stocks minus the one-month Treasury bill rate, SMB is the average return on three small portfolios minus the average return on three big portfolios, HML is the average return on two value portfolios minus the average return on two growth portfolios, Mom is the average return on two high prior return portfolios minus the average return on two low prior return portfolios, RMW is the average return on two robust operating profitability portfolios minus the average return on two weak operating profitability portfolios, and CMA is the average return on two conservative investment portfolios minus the average return on two aggressive investment portfolios."
+  },
+  {
+    "rule_id": "var_vol_managed",
+    "category": "variable",
+    "section": "Table 6 description",
+    "paper_location": "L1337",
+    "paper_quote": "Portfolio returns are scaled by the previous months realized variance as in Moreira and Muir (2017)."
+  },
+  {
+    "rule_id": "var_sentiment_high_low",
+    "category": "variable",
+    "section": "§3.5 Variation with investor sentiment",
+    "paper_location": "L1504",
+    "paper_quote": "The mean level of the sentiment index of Baker and Wurgler (2006) determines periods of high and low investor sentiment."
+  },
+  {
+    "rule_id": "sample_period_sentiment",
+    "category": "sample",
+    "section": "Table 7 description",
+    "paper_location": "L1539",
+    "paper_quote": "The sample period is July 1965 to December 2010 due to the availability of the sentiment index."
+  },
+  {
+    "rule_id": "avail_ibes_sample_period",
+    "category": "sample",
+    "section": "Table 8 description",
+    "paper_location": "L1614",
+    "paper_quote": "The sample period is June 1982 to June 2009 due to the availability of the I/B/E/S data."
+  },
+  {
+    "rule_id": "avail_ltg_nonmissing",
+    "category": "sample",
+    "section": "§3.6 Analyst expectations (footnote 16)",
+    "paper_location": "L1796",
+    "paper_quote": "I report results for all firms with nonmissing LTG forecasts for all periods."
+  },
+  {
+    "rule_id": "var_rior",
+    "category": "variable",
+    "section": "§4.2 Descriptive statistics",
+    "paper_location": "L1991-1995",
+    "paper_quote": "\\log \\frac{IOR_{it}}{1 - IOR_{it}} = \\alpha + \\beta_1 \\log(ME) + \\beta_2 (\\log(ME))^2 + RIOR_{it}."
+  },
+  {
+    "rule_id": "var_ior_thresholds",
+    "category": "variable",
+    "section": "§4.2 Descriptive statistics",
+    "paper_location": "L1999",
+    "paper_quote": "I replace institutional ownership ratios below 0.0001 and above 0.9999 with these threshold values. In addition, I also delete the 20% smallest stocks from my sample."
+  },
+  {
+    "rule_id": "sort_double_quintile_rior",
+    "category": "sort",
+    "section": "Table A.9 description",
+    "paper_location": "L2001",
+    "paper_quote": "At the end of June each year, $t$ from 1981 to 2013, I sort all common stocks listed on NYSE, Amex, and Nasdaq above the 20% size percentile into quintiles based on duration for all firms with fiscal years ending in calendar year $t - 1$ . I intersect these quintiles with an independent sort on residual institutional ownership as of December $t - 1$ ."
+  },
+  {
+    "rule_id": "sort_rior_lag",
+    "category": "sort",
+    "section": "Table A.9 description",
+    "paper_location": "L2001",
+    "paper_quote": "Using a six-month time lag for institutional ownership ensures that short-term outperformance of institutional trades does not drive my results (see Chen et al., 2000)."
+  }
+]

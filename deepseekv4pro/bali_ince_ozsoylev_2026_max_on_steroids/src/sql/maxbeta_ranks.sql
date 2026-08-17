@@ -1,0 +1,25 @@
+-- maxbeta_ranks.sql
+-- Purpose: Document the MAX^beta decile-rank construction used by T4/T6/T7.
+-- Tables: data/panel.parquet (already materialized in Python)
+-- Output columns: month, permno, maxbeta_rank (1..10)
+-- Depends on: panel build (Sections 2-4), Assumption 6
+--
+-- The MAX^beta sort (Assumption 6) is a three-step cross-sectional
+-- procedure that cannot be expressed as a single ClickHouse query because
+-- it depends on the already-computed panel columns (beta 252-day, max)
+-- and the quantile helpers. It is implemented in Python in
+-- src/main.py::_maxbeta_rank(), but the logic is documented here for
+-- auditability:
+--
+--   1. Sort all stocks into 10 beta deciles each month (ascending,
+--      all-stock breakpoints — Assumption 2).
+--   2. Within each (month, beta decile), sort stocks into 10 MAX deciles.
+--   3. Regroup all stocks with the same within-beta MAX rank n (across
+--      beta deciles) into final decile n (Assumption 6: "group together
+--      all stocks with the same MAX portfolio ranking, n, across the
+--      different beta portfolio ranks").
+--
+-- Final deciles need not have equal counts. Forward returns for any
+-- portfolio built on these ranks are aggregated by the RETURN month
+-- (formation month + 1) — standing rule from assumptions.md Iteration 6.
+SELECT 'documentation-only' AS note;

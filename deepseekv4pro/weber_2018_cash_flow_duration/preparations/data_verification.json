@@ -1,0 +1,350 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 84.6,
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns, prices and shares outstanding for the CRSP universe 1963-2014 (universe_common_stock_exchanges, var_me_crsp, T2-T6 portfolio returns and T1 ME)",
+      "needed_columns": [
+        "permno",
+        "date",
+        "ret",
+        "prc",
+        "shrout"
+      ],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": [
+        "permno",
+        "date",
+        "ret",
+        "prc",
+        "shrout"
+      ],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_daily_returns",
+      "description": "Daily stock returns for realized variance (var_vol_managed, T6 volatility-managed portfolios)",
+      "needed_columns": [
+        "permno",
+        "date",
+        "ret"
+      ],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": [
+        "permno",
+        "date",
+        "ret"
+      ],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting",
+      "description": "Delisting returns and codes for Shumway -30% substitution and Cohen et al. proration (delisting_for_cause_missing_ret, delisting_prorate, T2 Panel D)",
+      "needed_columns": [
+        "permno",
+        "dlstdt",
+        "dlstcd",
+        "dlret",
+        "dlpdt",
+        "nextdt"
+      ],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": [
+        "permno",
+        "dlstdt",
+        "dlstcd",
+        "dlret",
+        "dlpdt",
+        "nextdt"
+      ],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_pit_security_info",
+      "description": "Point-in-time share codes, exchange codes and SIC codes for the common-stock NYSE/AMEX/Nasdaq universe and the financials/utilities exclusion (universe_common_stock_exchanges, universe_exclude_financials_utilities)",
+      "needed_columns": [
+        "permno",
+        "namedt",
+        "nameendt",
+        "shrcd",
+        "exchcd",
+        "siccd"
+      ],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": [
+        "permno",
+        "namedt",
+        "nameendt",
+        "shrcd",
+        "exchcd",
+        "siccd"
+      ],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_funda_annual",
+      "description": "Annual Compustat fundamentals for book equity, ROE, sales growth, payout and the duration recursion (var_be_*, var_roe, var_sales_g, var_pr, var_dur_clean_surplus, all tables)",
+      "needed_columns": [
+        "gvkey",
+        "datadate",
+        "fyear",
+        "seq",
+        "ceq",
+        "pstk",
+        "pstkrv",
+        "pstkl",
+        "txdb",
+        "itcb",
+        "at",
+        "lt",
+        "ib",
+        "sale",
+        "ni",
+        "dv",
+        "prstkc"
+      ],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": [
+        "gvkey",
+        "datadate",
+        "fyear",
+        "seq",
+        "ceq",
+        "pstk",
+        "pstkrv",
+        "pstkl",
+        "txdb",
+        "itcb",
+        "at",
+        "lt",
+        "ib",
+        "sale",
+        "ni",
+        "dv",
+        "prstkc"
+      ],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ccm_link",
+      "description": "CRSP-Compustat link table for merging funda data onto CRSP permnos (all Compustat-based tables)",
+      "needed_columns": [
+        "gvkey",
+        "lpermno",
+        "linktype",
+        "linkprim",
+        "linkdt",
+        "linkenddt",
+        "usedflag"
+      ],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": [
+        "gvkey",
+        "lpermno",
+        "linktype",
+        "linkprim",
+        "linkdt",
+        "linkenddt",
+        "usedflag"
+      ],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_factors_monthly",
+      "description": "Fama-French 3/4/5 factors, momentum and risk-free rate, monthly, 1963-2014 (factor_ff5_mom_tbill_source, factor_definitions, T3/T6/T11/T12)",
+      "needed_columns": [
+        "dt",
+        "mkt_rf",
+        "smb",
+        "hml",
+        "rmw",
+        "cma",
+        "mom",
+        "rf"
+      ],
+      "matched_table": "ff.five_factor_monthly",
+      "matched_columns": [
+        "dt",
+        "mkt_rf",
+        "smb",
+        "hml",
+        "rmw",
+        "cma",
+        "rf"
+      ],
+      "missing_columns": [
+        "mom"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "institutional_ownership_13f",
+      "description": "Thomson Reuters 13F institutional holdings for IOR and RIOR (var_ior, var_ior_zero, var_ior_carryforward, var_rior, T1 IOR cells, T10-T12)",
+      "needed_columns": [
+        "fdate",
+        "mgrno",
+        "rdate",
+        "prdate",
+        "cusip",
+        "shares"
+      ],
+      "matched_table": "tr_13f_202401.s34",
+      "matched_columns": [
+        "fdate",
+        "mgrno",
+        "rdate",
+        "prdate",
+        "cusip",
+        "shares"
+      ],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ibes_estimates_actuals",
+      "description": "I/B/E/S LTG forecasts, EPS actuals and analyst estimates for Table 8 (avail_ibes_sample_period, avail_ltg_nonmissing, C4)",
+      "needed_columns": [
+        "ticker",
+        "cusip",
+        "measure",
+        "fpi",
+        "value",
+        "statpers",
+        "fpedats",
+        "actdats",
+        "anndats",
+        "medest",
+        "actual"
+      ],
+      "matched_table": "ibes_202601.det_epsus",
+      "matched_columns": [
+        "ticker",
+        "cusip",
+        "measure",
+        "fpi",
+        "value",
+        "fpedats",
+        "actdats",
+        "anndats"
+      ],
+      "missing_columns": [
+        "statpers",
+        "medest",
+        "actual"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "ibes_price_targets",
+      "description": "I/B/E/S consensus price targets for Table 9 Panel A (sample_period_restrictions, C4)",
+      "needed_columns": [
+        "ticker",
+        "cusip",
+        "statpers",
+        "value"
+      ],
+      "matched_table": "ibes_202601.ptgsum",
+      "matched_columns": [
+        "ticker",
+        "cusip"
+      ],
+      "missing_columns": [
+        "statpers",
+        "value"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "baker_wurgler_sentiment",
+      "description": "Baker-Wurgler (2006) investor sentiment index for Table 7 and Table 9 Panels B/C (var_sentiment_high_low, sample_period_sentiment, claim C3)",
+      "needed_columns": [
+        "date",
+        "sentiment_index"
+      ],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": [
+        "date",
+        "sentiment_index"
+      ],
+      "status": "missing"
+    },
+    {
+      "id": "moodys_book_equity",
+      "description": "Hand-collected Moody's manual book equity from Davis et al. (2000) used to supplement Compustat BE (avail_moodys_book_equity; affects BE and therefore the duration recursion for pre-1980 firms with missing Compustat BE)",
+      "needed_columns": [
+        "permno",
+        "fyear",
+        "book_equity"
+      ],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": [
+        "permno",
+        "fyear",
+        "book_equity"
+      ],
+      "status": "missing"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "baker_wurgler_sentiment",
+      "reason": "The Baker-Wurgler (2006) sentiment index (monthly, 1965-2010) is not present anywhere in the ClickHouse catalog (no sentiment tables or columns). Table 7 is therefore not committed, claim C3 is documented as a data limitation, and Table 9 commits Panel A only (Panels B/C need the sentiment split).",
+      "affected_targets": [
+        "T9"
+      ],
+      "recommendation": "Obtain the Baker-Wurgler sentiment index (Jeffrey Wurgler's website) and load it into ClickHouse, or accept the documented exclusion of Table 7 and Table 9 Panels B/C (claim C3 recorded as data-limited in assumptions.md)."
+    },
+    {
+      "requirement": "moodys_book_equity",
+      "reason": "The hand-collected Moody's manual book-equity data used in Davis et al. (2000), which Weber (2018) uses to supplement Compustat book equity, is not in the catalog. The substitution is Compustat-only BE (with the paper's redemption/liquidation/par preferred-stock cascade). This drops firm-years whose BE exists only in Moody's (mainly pre-1980) from BE-dependent variables, including the duration recursion (BV in Eq. 3) and BM.",
+      "affected_targets": [
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T8",
+        "T9",
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "recommendation": "Use Compustat-only BE and document the substitution in assumptions.md with an empirical vintage check (firm-year counts by decade before/after the BE cascade). If Moody's data becomes available, load it and re-run."
+    },
+    {
+      "requirement": "ff_factors_monthly",
+      "reason": "No single table carries all 7 factors; ff.five_factor_monthly has Mkt-RF/SMB/HML/RMW/CMA/RF (1963-07 to 2025-10) and ff.four_factor_monthly has Mkt-RF/SMB/HML/RF/Mom (1926-07 to 2025-10). The substitution is a join on dt of the two tables (Mom from four_factor_monthly).",
+      "affected_targets": [
+        "T3",
+        "T6"
+      ],
+      "recommendation": "Join ff.five_factor_monthly and ff.four_factor_monthly on dt; use Mom from four_factor_monthly for the FF4 (3F+MOM) specification."
+    },
+    {
+      "requirement": "ibes_estimates_actuals",
+      "reason": "det_epsus carries LTG (measure/fpi/value) and EPS detail estimates; actuals live in act_epsus and summary statistics in statsum_epsus. The substitution is a three-table join on ticker+cusip+date keys (documented in assumptions.md).",
+      "affected_targets": [
+        "T8"
+      ],
+      "recommendation": "Join det_epsus (LTG from June statistical periods), act_epsus (realized annual EPS) and statsum_epsus (analyst means for SUE3) by ticker/cusip and period."
+    },
+    {
+      "requirement": "ibes_price_targets",
+      "reason": "ptgsum columns were not enumerated in the catalog snapshot (table exists, 4.4M rows); expected WRDS ptgsum schema (ticker, cusip, statpers, numest, medest/meanest...) will be verified against the live schema at build time. Substitution: ptgdet or the enumerated ptgsum columns.",
+      "affected_targets": [
+        "T9"
+      ],
+      "recommendation": "Verify ptgsum's live columns in ClickHouse at build time and use the consensus (median/mean) target price for June statistical periods; if ptgsum is unusable, fall back to ptgdet detail targets aggregated to consensus."
+    }
+  ]
+}

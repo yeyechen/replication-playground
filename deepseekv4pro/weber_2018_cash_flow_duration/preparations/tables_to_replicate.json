@@ -1,0 +1,5484 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "The term structure of equity returns is downward-sloping: stocks with high cash flow duration earn 1.10% per month lower returns than short-duration stocks in the cross-section (equal-weighted decile sorts, July 1963-June 2014).",
+      "paper_location": "L43",
+      "headline": true
+    },
+    {
+      "id": "C2",
+      "claim": "Factor models can explain only part of the return differential: the D1-D10 strategy earns a FF3 alpha of 0.84%, FF4 (3F+MOM) alpha of 0.66%, and FF5 alpha of 0.48% per month, all highly significant.",
+      "paper_location": "L571",
+      "headline": true
+    },
+    {
+      "id": "C3",
+      "claim": "The duration premium is three times larger after periods of high investor sentiment, and excess returns of high-duration stocks load positively on changes in the Baker-Wurgler sentiment index.",
+      "paper_location": "L72"
+    },
+    {
+      "id": "C4",
+      "claim": "Analysts extrapolate past earnings growth: LTG forecasts are twice as high for high-duration stocks and shrink by more than 50% over five years, while realized growth is similar; high-duration stocks have negative earnings surprises; price-target implied returns do not vary with duration.",
+      "paper_location": "L74"
+    },
+    {
+      "id": "C5",
+      "claim": "The duration premium is concentrated in short-sale constrained stocks (low residual institutional ownership, 1.32%/month) and disappears for unconstrained stocks (0.15%/month, insignificant); the pattern holds within size and book-to-market bins.",
+      "paper_location": "L82"
+    },
+    {
+      "id": "C6",
+      "claim": "The duration premium is robust: stable across 11 parameter variations, an out-of-sample pre-estimation sort, five subsamples, and is even larger for volatility-managed portfolios whose factor-model alphas are essentially unaffected.",
+      "paper_location": "L1110"
+    }
+  ],
+  "budget_flag": "701 committed cells across 11 tables (T1:44, T2:66, T3:33, T4:132, T5:55, T6:55, T8:110, T9:12, T10:66, T11:64, T12:64). Cell-heavy because T4 commits all 12 parameter-variation rows (each an 11-column decile grid), T8 commits all 10 LTG/EG/SUE rows, and T10-T12 commit alpha/mean+SE pairs. Each table is required: T1 validates construction (C1), T2 carries C1, T3 carries C2, T4/T5/T6 carry C6, T8/T9 carry C4, T10-T12 carry C5. Table 7 (sentiment, C3) is a documented skip: the Baker-Wurgler index is absent from the catalog (see data_verification.json). SE rows in T2-T6/T8/T9 are excluded per the substantive-statistic convention; T10-T12 SEs are committed as inference carriers for insignificant cells.",
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table 1",
+      "description": "Summary statistics (Panel A) and contemporaneous correlations (Panel B) for firm characteristics and return predictors, June 1981-June 2014, stocks above the 20th size percentile",
+      "replication_meaning": "Demonstrates that Dur (Dechow et al. 2004 implied equity duration, Eq. 2 with r=0.12, T=15, AR(1) ROE 0.41 / BV growth 0.24), BM, IOR (13F), PR, ROE, Sales_g, ME and Age are correctly constructed from Compustat + CRSP + TR-13F, that the 20th-size-percentile sample composition matches the paper (mean ME ~2125M, mean IOR ~0.44), and that winsorization at 1%/99% is applied. Downstream claim C1 (duration deciles earn a monotone return spread) depends on the Dur construction and sample being correct.",
+      "covers_claims": [],
+      "paper_quote": "Table 1 reports summary statistics in Panel A and cross-sectional correlations for various firm characteristics and return predictors in Panel B. I calculate all statistics annually and then average over time. (L180) The sample period is June 1981-June 2014. I only use stocks above the 20th size percentile. (L210)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "sample_above_20th_size_pct",
+        "sample_stats_convention",
+        "winsorize_all_1_99",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion",
+        "var_bm_timing",
+        "var_be_definition",
+        "var_be_preferred_order",
+        "var_be_fallback",
+        "var_pr",
+        "var_net_payout",
+        "var_roe",
+        "var_sales_g",
+        "var_age",
+        "var_me_crsp",
+        "var_ior",
+        "var_ior_zero",
+        "var_ior_carryforward"
+      ],
+      "metrics": [
+        {
+          "name": "mean_dur",
+          "value": 18.77,
+          "unit": "years",
+          "tolerance_pct": 10,
+          "paper_location": "L232"
+        },
+        {
+          "name": "mean_bm",
+          "value": 0.67,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L233"
+        },
+        {
+          "name": "mean_ior",
+          "value": 0.44,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L234"
+        },
+        {
+          "name": "mean_pr",
+          "value": -0.01,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L235",
+          "zero_band": 0.01,
+          "notes": "paper prints -0.01 at 2-decimal resolution; absolute band +/-0.01 = 2x printing half-width"
+        },
+        {
+          "name": "mean_roe",
+          "value": 0.05,
+          "unit": "ratio",
+          "tolerance_pct": 40,
+          "paper_location": "L236"
+        },
+        {
+          "name": "mean_sales_g",
+          "value": 0.22,
+          "unit": "ratio",
+          "tolerance_pct": 20,
+          "paper_location": "L237"
+        },
+        {
+          "name": "mean_me",
+          "value": 2125,
+          "unit": "millions_usd",
+          "tolerance_pct": 30,
+          "paper_location": "L238"
+        },
+        {
+          "name": "mean_age",
+          "value": 17.59,
+          "unit": "years",
+          "tolerance_pct": 10,
+          "paper_location": "L239"
+        },
+        {
+          "name": "std_dur",
+          "value": 5.37,
+          "unit": "years",
+          "tolerance_pct": 15,
+          "paper_location": "L243"
+        },
+        {
+          "name": "std_bm",
+          "value": 0.53,
+          "unit": "ratio",
+          "tolerance_pct": 20,
+          "paper_location": "L244"
+        },
+        {
+          "name": "std_ior",
+          "value": 0.23,
+          "unit": "ratio",
+          "tolerance_pct": 20,
+          "paper_location": "L245"
+        },
+        {
+          "name": "std_pr",
+          "value": 2.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L246"
+        },
+        {
+          "name": "std_roe",
+          "value": 0.54,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L247"
+        },
+        {
+          "name": "std_sales_g",
+          "value": 0.59,
+          "unit": "ratio",
+          "tolerance_pct": 20,
+          "paper_location": "L248"
+        },
+        {
+          "name": "std_me",
+          "value": 6197,
+          "unit": "millions_usd",
+          "tolerance_pct": 40,
+          "paper_location": "L249"
+        },
+        {
+          "name": "std_age",
+          "value": 11.46,
+          "unit": "years",
+          "tolerance_pct": 15,
+          "paper_location": "L250"
+        },
+        {
+          "name": "corr_dur_bm",
+          "value": -0.7,
+          "unit": "correlation",
+          "tolerance_pct": 20,
+          "paper_location": "L258"
+        },
+        {
+          "name": "corr_dur_ior",
+          "value": -0.08,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L259"
+        },
+        {
+          "name": "corr_dur_pr",
+          "value": -0.1,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L260"
+        },
+        {
+          "name": "corr_dur_roe",
+          "value": -0.39,
+          "unit": "correlation",
+          "tolerance_pct": 20,
+          "paper_location": "L261"
+        },
+        {
+          "name": "corr_dur_sales_g",
+          "value": 0.34,
+          "unit": "correlation",
+          "tolerance_pct": 20,
+          "paper_location": "L262"
+        },
+        {
+          "name": "corr_dur_me",
+          "value": 0.04,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L263"
+        },
+        {
+          "name": "corr_dur_age",
+          "value": -0.19,
+          "unit": "correlation",
+          "tolerance_pct": 30,
+          "paper_location": "L264"
+        },
+        {
+          "name": "corr_bm_ior",
+          "value": -0.01,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L270"
+        },
+        {
+          "name": "corr_bm_pr",
+          "value": 0.08,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L271"
+        },
+        {
+          "name": "corr_bm_roe",
+          "value": -0.04,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L272"
+        },
+        {
+          "name": "corr_bm_sales_g",
+          "value": -0.16,
+          "unit": "correlation",
+          "tolerance_pct": 30,
+          "paper_location": "L273"
+        },
+        {
+          "name": "corr_bm_me",
+          "value": -0.11,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L274"
+        },
+        {
+          "name": "corr_bm_age",
+          "value": 0.11,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L275"
+        },
+        {
+          "name": "corr_ior_pr",
+          "value": 0.06,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L282"
+        },
+        {
+          "name": "corr_ior_roe",
+          "value": 0.18,
+          "unit": "correlation",
+          "tolerance_pct": 30,
+          "paper_location": "L283"
+        },
+        {
+          "name": "corr_ior_sales_g",
+          "value": -0.1,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L284"
+        },
+        {
+          "name": "corr_ior_me",
+          "value": 0.22,
+          "unit": "correlation",
+          "tolerance_pct": 30,
+          "paper_location": "L285"
+        },
+        {
+          "name": "corr_ior_age",
+          "value": 0.26,
+          "unit": "correlation",
+          "tolerance_pct": 30,
+          "paper_location": "L286"
+        },
+        {
+          "name": "corr_pr_roe",
+          "value": -0.05,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L294"
+        },
+        {
+          "name": "corr_pr_sales_g",
+          "value": -0.24,
+          "unit": "correlation",
+          "tolerance_pct": 30,
+          "paper_location": "L295"
+        },
+        {
+          "name": "corr_pr_me",
+          "value": 0.08,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L296"
+        },
+        {
+          "name": "corr_pr_age",
+          "value": 0.2,
+          "unit": "correlation",
+          "tolerance_pct": 30,
+          "paper_location": "L297"
+        },
+        {
+          "name": "corr_roe_sales_g",
+          "value": -0.02,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L306"
+        },
+        {
+          "name": "corr_roe_me",
+          "value": 0.1,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L307"
+        },
+        {
+          "name": "corr_roe_age",
+          "value": 0.09,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L308"
+        },
+        {
+          "name": "corr_sales_g_me",
+          "value": -0.04,
+          "unit": "correlation",
+          "tolerance_pct": 50,
+          "paper_location": "L318"
+        },
+        {
+          "name": "corr_sales_g_age",
+          "value": -0.2,
+          "unit": "correlation",
+          "tolerance_pct": 30,
+          "paper_location": "L319"
+        },
+        {
+          "name": "corr_me_age",
+          "value": 0.3,
+          "unit": "correlation",
+          "tolerance_pct": 20,
+          "paper_location": "L330"
+        }
+      ],
+      "notes": "All cells committed; IOR computed from TR-13F s34 (tr_13f_202401.s34) per the paper's Section 2 procedure (sum holdings by security, divide by CRSP shares outstanding, zero if absent from 13F, carry-forward up to 8 quarters, first-appearance only)."
+    },
+    {
+      "id": "T2",
+      "table_ref": "Table 2",
+      "description": "Mean excess returns, CAPM betas and alphas (Panel A), monthly Sharpe ratios (Panel B), value-weighted returns (Panel C) and no-delisting returns (Panel D) of ten duration-sorted decile portfolios, July 1963-June 2014",
+      "replication_meaning": "Demonstrates correct decile-sort portfolio construction: annual end-of-June sorts on Dur (fiscal year ending t-1) over the full CRSP/Compustat universe 1963-2014, equal-weighting (and value-weighting in Panel C), delisting treatment (Shumway -30% for cause + Cohen et al. proration, Panel D contrast), excess-return computation vs the T-bill rate, and CAPM time-series regression at the portfolio level.",
+      "covers_claims": [
+        "C1"
+      ],
+      "paper_quote": "Panel A reports monthly mean excess returns, time series factor loadings ( $\\beta$ ), and pricing errors ( $\\alpha$ ) for the CAPM for ten portfolios sorted on duration (Dur) with OLS standard errors in parentheses in Panel A. I sort all common stocks listed on NYSE, Amex, and Nasdaq at the end of June each year $t$ from 1963 to 2013 into deciles based on duration for all firms with fiscal years ending in year $t-1$ . I weight returns equally and include delisting returns. (L376-378)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "delisting_for_cause_missing_ret",
+        "delisting_prorate",
+        "sort_annual_june_deciles",
+        "sort_ew",
+        "sort_excess_returns",
+        "sample_period_main",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion",
+        "var_me_crsp"
+      ],
+      "metrics": [
+        {
+          "name": "mean_D1",
+          "value": 1.43,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L401"
+        },
+        {
+          "name": "mean_D2",
+          "value": 1.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L402"
+        },
+        {
+          "name": "mean_D3",
+          "value": 1.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L403"
+        },
+        {
+          "name": "mean_D4",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L404"
+        },
+        {
+          "name": "mean_D5",
+          "value": 1.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L405"
+        },
+        {
+          "name": "mean_D6",
+          "value": 0.97,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L406"
+        },
+        {
+          "name": "mean_D7",
+          "value": 0.81,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L407"
+        },
+        {
+          "name": "mean_D8",
+          "value": 0.68,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L408"
+        },
+        {
+          "name": "mean_D9",
+          "value": 0.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L409"
+        },
+        {
+          "name": "mean_D10",
+          "value": 0.32,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L410"
+        },
+        {
+          "name": "mean_D1D10",
+          "value": 1.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L411",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "beta_capm_D1",
+          "value": 1.05,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L429"
+        },
+        {
+          "name": "beta_capm_D2",
+          "value": 1.06,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L430"
+        },
+        {
+          "name": "beta_capm_D3",
+          "value": 1.08,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L431"
+        },
+        {
+          "name": "beta_capm_D4",
+          "value": 1.1,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L432"
+        },
+        {
+          "name": "beta_capm_D5",
+          "value": 1.13,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L433"
+        },
+        {
+          "name": "beta_capm_D6",
+          "value": 1.15,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L434"
+        },
+        {
+          "name": "beta_capm_D7",
+          "value": 1.19,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L435"
+        },
+        {
+          "name": "beta_capm_D8",
+          "value": 1.26,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L436"
+        },
+        {
+          "name": "beta_capm_D9",
+          "value": 1.39,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L437"
+        },
+        {
+          "name": "beta_capm_D10",
+          "value": 1.41,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L438"
+        },
+        {
+          "name": "beta_capm_D1D10",
+          "value": -0.36,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L439",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "alpha_capm_D1",
+          "value": 0.9,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L457"
+        },
+        {
+          "name": "alpha_capm_D2",
+          "value": 0.71,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L458"
+        },
+        {
+          "name": "alpha_capm_D3",
+          "value": 0.6,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L459"
+        },
+        {
+          "name": "alpha_capm_D4",
+          "value": 0.49,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L460"
+        },
+        {
+          "name": "alpha_capm_D5",
+          "value": 0.43,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L461"
+        },
+        {
+          "name": "alpha_capm_D6",
+          "value": 0.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L462"
+        },
+        {
+          "name": "alpha_capm_D7",
+          "value": 0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L463"
+        },
+        {
+          "name": "alpha_capm_D8",
+          "value": 0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L464"
+        },
+        {
+          "name": "alpha_capm_D9",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L465"
+        },
+        {
+          "name": "alpha_capm_D10",
+          "value": -0.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L466"
+        },
+        {
+          "name": "alpha_capm_D1D10",
+          "value": 1.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L467",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "sharpe_D1",
+          "value": 0.23,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L488"
+        },
+        {
+          "name": "sharpe_D2",
+          "value": 0.21,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L489"
+        },
+        {
+          "name": "sharpe_D3",
+          "value": 0.2,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L490"
+        },
+        {
+          "name": "sharpe_D4",
+          "value": 0.18,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L491"
+        },
+        {
+          "name": "sharpe_D5",
+          "value": 0.17,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L492"
+        },
+        {
+          "name": "sharpe_D6",
+          "value": 0.16,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L493"
+        },
+        {
+          "name": "sharpe_D7",
+          "value": 0.13,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L494"
+        },
+        {
+          "name": "sharpe_D8",
+          "value": 0.11,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L495"
+        },
+        {
+          "name": "sharpe_D9",
+          "value": 0.08,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L496"
+        },
+        {
+          "name": "sharpe_D10",
+          "value": 0.04,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L497"
+        },
+        {
+          "name": "sharpe_D1D10",
+          "value": 0.22,
+          "unit": "sharpe_ratio_monthly",
+          "tolerance_pct": 30,
+          "paper_location": "L498",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "vw_mean_D1",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L505"
+        },
+        {
+          "name": "vw_mean_D2",
+          "value": 0.87,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L506"
+        },
+        {
+          "name": "vw_mean_D3",
+          "value": 0.88,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L507"
+        },
+        {
+          "name": "vw_mean_D4",
+          "value": 0.83,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L508"
+        },
+        {
+          "name": "vw_mean_D5",
+          "value": 0.74,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L509"
+        },
+        {
+          "name": "vw_mean_D6",
+          "value": 0.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L510"
+        },
+        {
+          "name": "vw_mean_D7",
+          "value": 0.55,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L511"
+        },
+        {
+          "name": "vw_mean_D8",
+          "value": 0.55,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L512"
+        },
+        {
+          "name": "vw_mean_D9",
+          "value": 0.43,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L513"
+        },
+        {
+          "name": "vw_mean_D10",
+          "value": -0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L514"
+        },
+        {
+          "name": "vw_mean_D1D10",
+          "value": 1.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L515",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "nodl_mean_D1",
+          "value": 1.49,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L536"
+        },
+        {
+          "name": "nodl_mean_D2",
+          "value": 1.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L537"
+        },
+        {
+          "name": "nodl_mean_D3",
+          "value": 1.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L538"
+        },
+        {
+          "name": "nodl_mean_D4",
+          "value": 1.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L539"
+        },
+        {
+          "name": "nodl_mean_D5",
+          "value": 1.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L540"
+        },
+        {
+          "name": "nodl_mean_D6",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L541"
+        },
+        {
+          "name": "nodl_mean_D7",
+          "value": 0.83,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L542"
+        },
+        {
+          "name": "nodl_mean_D8",
+          "value": 0.7,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L543"
+        },
+        {
+          "name": "nodl_mean_D9",
+          "value": 0.67,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L544"
+        },
+        {
+          "name": "nodl_mean_D10",
+          "value": 0.47,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L545"
+        },
+        {
+          "name": "nodl_mean_D1D10",
+          "value": 1.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L546",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        }
+      ],
+      "notes": "SE rows are not committed as targets (printed diagnostics of the committed means/betas/alphas; per PREP_TABLES_PROMPT worked-example convention committing substantive statistics)."
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table 3",
+      "description": "Fama-French three-factor, four-factor (3F+MOM), and five-factor alphas of the ten duration-sorted portfolios, July 1963-June 2014",
+      "replication_meaning": "Demonstrates correct factor-model regression setup: FF3 (Mkt-RF, SMB, HML), FF4 (+Mom), FF5 (+RMW, CMA) time-series regressions of portfolio excess returns with OLS SEs, using Ken French data-library factors - i.e., that C2 (risk factors cannot explain the duration spread) is tested with the paper's own benchmark models.",
+      "covers_claims": [
+        "C2"
+      ],
+      "paper_quote": "This table reports pricing errors ( $\\alpha$ ) for the Fama and French three-factor model ( $\\alpha_{F\\&F3}$ ), the three-factor model augmented with momentum ( $\\alpha_{F\\&F4}$ ), and the Fama and French five-factor model ( $\\alpha_{F\\&F5}$ ) for ten portfolios sorted on duration (Dur) with OLS standard errors in parentheses. (L599)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "delisting_for_cause_missing_ret",
+        "delisting_prorate",
+        "sort_annual_june_deciles",
+        "sort_ew",
+        "sort_excess_returns",
+        "sample_period_main",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion",
+        "factor_definitions",
+        "factor_ff5_mom_tbill_source",
+        "factor_time_series_eq5"
+      ],
+      "metrics": [
+        {
+          "name": "ff3_alpha_D1",
+          "value": 0.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L621"
+        },
+        {
+          "name": "ff3_alpha_D2",
+          "value": 0.34,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L622"
+        },
+        {
+          "name": "ff3_alpha_D3",
+          "value": 0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L623"
+        },
+        {
+          "name": "ff3_alpha_D4",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L624"
+        },
+        {
+          "name": "ff3_alpha_D5",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L625"
+        },
+        {
+          "name": "ff3_alpha_D6",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L626"
+        },
+        {
+          "name": "ff3_alpha_D7",
+          "value": 0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L627"
+        },
+        {
+          "name": "ff3_alpha_D8",
+          "value": -0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L628"
+        },
+        {
+          "name": "ff3_alpha_D9",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L629"
+        },
+        {
+          "name": "ff3_alpha_D10",
+          "value": -0.38,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L630"
+        },
+        {
+          "name": "ff3_alpha_D1D10",
+          "value": 0.84,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L631",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "ff4_alpha_D1",
+          "value": 0.6,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L649"
+        },
+        {
+          "name": "ff4_alpha_D2",
+          "value": 0.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L650"
+        },
+        {
+          "name": "ff4_alpha_D3",
+          "value": 0.38,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L651"
+        },
+        {
+          "name": "ff4_alpha_D4",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L652"
+        },
+        {
+          "name": "ff4_alpha_D5",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L653"
+        },
+        {
+          "name": "ff4_alpha_D6",
+          "value": 0.32,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L654"
+        },
+        {
+          "name": "ff4_alpha_D7",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L655"
+        },
+        {
+          "name": "ff4_alpha_D8",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L656"
+        },
+        {
+          "name": "ff4_alpha_D9",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L657"
+        },
+        {
+          "name": "ff4_alpha_D10",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L658"
+        },
+        {
+          "name": "ff4_alpha_D1D10",
+          "value": 0.66,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L659",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "ff5_alpha_D1",
+          "value": 0.49,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L677"
+        },
+        {
+          "name": "ff5_alpha_D2",
+          "value": 0.35,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L678"
+        },
+        {
+          "name": "ff5_alpha_D3",
+          "value": 0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L679"
+        },
+        {
+          "name": "ff5_alpha_D4",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L680"
+        },
+        {
+          "name": "ff5_alpha_D5",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L681"
+        },
+        {
+          "name": "ff5_alpha_D6",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L682"
+        },
+        {
+          "name": "ff5_alpha_D7",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L683"
+        },
+        {
+          "name": "ff5_alpha_D8",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L684"
+        },
+        {
+          "name": "ff5_alpha_D9",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L685"
+        },
+        {
+          "name": "ff5_alpha_D10",
+          "value": 0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L686",
+          "zero_band": 0.01,
+          "notes": "paper prints 0.01 at 2-decimal resolution; absolute band +/-0.01 = 2x printing half-width."
+        },
+        {
+          "name": "ff5_alpha_D1D10",
+          "value": 0.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L687",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        }
+      ],
+      "notes": "SE rows are not committed as targets (printed diagnostics of the committed alphas)."
+    },
+    {
+      "id": "T4",
+      "table_ref": "Table 4",
+      "description": "Mean excess returns of the ten duration portfolios for 12 variations of the duration-model parameters (discount rate, AR coefficients, steady states, horizon, pre-estimated AR parameters)",
+      "replication_meaning": "Demonstrates that the duration implementation parameterizes Eq. (2) correctly - the pipeline recomputes Dur for each alternative (r, ar_roe, ar_sg, roe_ss, sg_ss, T) and reproduces the paper's reported premium under each variation, plus the out-of-sample pre-estimation row (expanding-window AR estimates). This tests claim C6's robustness statement, not just the baseline numbers.",
+      "covers_claims": [
+        "C6"
+      ],
+      "paper_quote": "This table reports monthly mean excess returns with OLS standard errors in parentheses for variations of the parameter values used to calculate duration in Section 2. (L724) Overall, over a wide range of parameter values, we find an economically large and statistically significant downward-sloping term structure of equity returns. (L1110)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "delisting_for_cause_missing_ret",
+        "delisting_prorate",
+        "sort_annual_june_deciles",
+        "sort_ew",
+        "sort_excess_returns",
+        "sample_period_main",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion"
+      ],
+      "metrics": [
+        {
+          "name": "t4_r010_D1",
+          "value": 1.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L750"
+        },
+        {
+          "name": "t4_r010_D2",
+          "value": 1.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L751"
+        },
+        {
+          "name": "t4_r010_D3",
+          "value": 1.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L752"
+        },
+        {
+          "name": "t4_r010_D4",
+          "value": 1.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L753"
+        },
+        {
+          "name": "t4_r010_D5",
+          "value": 1.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L754"
+        },
+        {
+          "name": "t4_r010_D6",
+          "value": 0.95,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L755"
+        },
+        {
+          "name": "t4_r010_D7",
+          "value": 0.81,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L756"
+        },
+        {
+          "name": "t4_r010_D8",
+          "value": 0.68,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L757"
+        },
+        {
+          "name": "t4_r010_D9",
+          "value": 0.66,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L758"
+        },
+        {
+          "name": "t4_r010_D10",
+          "value": 0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L759"
+        },
+        {
+          "name": "t4_r010_D1D10",
+          "value": 1.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L760",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_r014_D1",
+          "value": 1.42,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L780"
+        },
+        {
+          "name": "t4_r014_D2",
+          "value": 1.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L781"
+        },
+        {
+          "name": "t4_r014_D3",
+          "value": 1.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L782"
+        },
+        {
+          "name": "t4_r014_D4",
+          "value": 1.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L783"
+        },
+        {
+          "name": "t4_r014_D5",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L784"
+        },
+        {
+          "name": "t4_r014_D6",
+          "value": 0.94,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L785"
+        },
+        {
+          "name": "t4_r014_D7",
+          "value": 0.84,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L786"
+        },
+        {
+          "name": "t4_r014_D8",
+          "value": 0.64,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L787"
+        },
+        {
+          "name": "t4_r014_D9",
+          "value": 0.65,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L788"
+        },
+        {
+          "name": "t4_r014_D10",
+          "value": 0.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L789"
+        },
+        {
+          "name": "t4_r014_D1D10",
+          "value": 1.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L790",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_ar_roe_030_D1",
+          "value": 1.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L810"
+        },
+        {
+          "name": "t4_ar_roe_030_D2",
+          "value": 1.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L811"
+        },
+        {
+          "name": "t4_ar_roe_030_D3",
+          "value": 1.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L812"
+        },
+        {
+          "name": "t4_ar_roe_030_D4",
+          "value": 1.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L813"
+        },
+        {
+          "name": "t4_ar_roe_030_D5",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L814"
+        },
+        {
+          "name": "t4_ar_roe_030_D6",
+          "value": 0.97,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L815"
+        },
+        {
+          "name": "t4_ar_roe_030_D7",
+          "value": 0.8,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L816"
+        },
+        {
+          "name": "t4_ar_roe_030_D8",
+          "value": 0.73,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L817"
+        },
+        {
+          "name": "t4_ar_roe_030_D9",
+          "value": 0.56,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L818"
+        },
+        {
+          "name": "t4_ar_roe_030_D10",
+          "value": 0.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L819"
+        },
+        {
+          "name": "t4_ar_roe_030_D1D10",
+          "value": 1.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L820",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_ar_roe_050_D1",
+          "value": 1.34,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L840"
+        },
+        {
+          "name": "t4_ar_roe_050_D2",
+          "value": 1.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L841"
+        },
+        {
+          "name": "t4_ar_roe_050_D3",
+          "value": 1.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L842"
+        },
+        {
+          "name": "t4_ar_roe_050_D4",
+          "value": 1.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L843"
+        },
+        {
+          "name": "t4_ar_roe_050_D5",
+          "value": 0.97,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L844"
+        },
+        {
+          "name": "t4_ar_roe_050_D6",
+          "value": 0.95,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L845"
+        },
+        {
+          "name": "t4_ar_roe_050_D7",
+          "value": 0.82,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L846"
+        },
+        {
+          "name": "t4_ar_roe_050_D8",
+          "value": 0.65,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L847"
+        },
+        {
+          "name": "t4_ar_roe_050_D9",
+          "value": 0.66,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L848"
+        },
+        {
+          "name": "t4_ar_roe_050_D10",
+          "value": 0.42,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L849"
+        },
+        {
+          "name": "t4_ar_roe_050_D1D10",
+          "value": 0.93,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L850",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_roe_ss_010_D1",
+          "value": 1.4,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L870"
+        },
+        {
+          "name": "t4_roe_ss_010_D2",
+          "value": 1.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L871"
+        },
+        {
+          "name": "t4_roe_ss_010_D3",
+          "value": 1.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L872"
+        },
+        {
+          "name": "t4_roe_ss_010_D4",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L873"
+        },
+        {
+          "name": "t4_roe_ss_010_D5",
+          "value": 1.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L874"
+        },
+        {
+          "name": "t4_roe_ss_010_D6",
+          "value": 0.96,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L875"
+        },
+        {
+          "name": "t4_roe_ss_010_D7",
+          "value": 0.81,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L876"
+        },
+        {
+          "name": "t4_roe_ss_010_D8",
+          "value": 0.67,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L877"
+        },
+        {
+          "name": "t4_roe_ss_010_D9",
+          "value": 0.61,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L878"
+        },
+        {
+          "name": "t4_roe_ss_010_D10",
+          "value": 0.36,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L879"
+        },
+        {
+          "name": "t4_roe_ss_010_D1D10",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L880",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_roe_ss_014_D1",
+          "value": 1.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L900"
+        },
+        {
+          "name": "t4_roe_ss_014_D2",
+          "value": 1.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L901"
+        },
+        {
+          "name": "t4_roe_ss_014_D3",
+          "value": 1.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L902"
+        },
+        {
+          "name": "t4_roe_ss_014_D4",
+          "value": 1.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L903"
+        },
+        {
+          "name": "t4_roe_ss_014_D5",
+          "value": 0.99,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L904"
+        },
+        {
+          "name": "t4_roe_ss_014_D6",
+          "value": 0.95,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L905"
+        },
+        {
+          "name": "t4_roe_ss_014_D7",
+          "value": 0.82,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L906"
+        },
+        {
+          "name": "t4_roe_ss_014_D8",
+          "value": 0.7,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L907"
+        },
+        {
+          "name": "t4_roe_ss_014_D9",
+          "value": 0.65,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L908"
+        },
+        {
+          "name": "t4_roe_ss_014_D10",
+          "value": 0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L909"
+        },
+        {
+          "name": "t4_roe_ss_014_D1D10",
+          "value": 1.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L910",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_ar_sg_020_D1",
+          "value": 1.42,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L930"
+        },
+        {
+          "name": "t4_ar_sg_020_D2",
+          "value": 1.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L931"
+        },
+        {
+          "name": "t4_ar_sg_020_D3",
+          "value": 1.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L932"
+        },
+        {
+          "name": "t4_ar_sg_020_D4",
+          "value": 1.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L933"
+        },
+        {
+          "name": "t4_ar_sg_020_D5",
+          "value": 1.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L934"
+        },
+        {
+          "name": "t4_ar_sg_020_D6",
+          "value": 0.95,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L935"
+        },
+        {
+          "name": "t4_ar_sg_020_D7",
+          "value": 0.8,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L936"
+        },
+        {
+          "name": "t4_ar_sg_020_D8",
+          "value": 0.7,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L937"
+        },
+        {
+          "name": "t4_ar_sg_020_D9",
+          "value": 0.63,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L938"
+        },
+        {
+          "name": "t4_ar_sg_020_D10",
+          "value": 0.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L939"
+        },
+        {
+          "name": "t4_ar_sg_020_D1D10",
+          "value": 1.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L940",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_ar_sg_030_D1",
+          "value": 1.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L960"
+        },
+        {
+          "name": "t4_ar_sg_030_D2",
+          "value": 1.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L961"
+        },
+        {
+          "name": "t4_ar_sg_030_D3",
+          "value": 1.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L962"
+        },
+        {
+          "name": "t4_ar_sg_030_D4",
+          "value": 1.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L963"
+        },
+        {
+          "name": "t4_ar_sg_030_D5",
+          "value": 1.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L964"
+        },
+        {
+          "name": "t4_ar_sg_030_D6",
+          "value": 0.97,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L965"
+        },
+        {
+          "name": "t4_ar_sg_030_D7",
+          "value": 0.81,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L966"
+        },
+        {
+          "name": "t4_ar_sg_030_D8",
+          "value": 0.67,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L967"
+        },
+        {
+          "name": "t4_ar_sg_030_D9",
+          "value": 0.59,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L968"
+        },
+        {
+          "name": "t4_ar_sg_030_D10",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L969"
+        },
+        {
+          "name": "t4_ar_sg_030_D1D10",
+          "value": 1.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L970",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_sg_ss_008_D1",
+          "value": 1.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L990"
+        },
+        {
+          "name": "t4_sg_ss_008_D2",
+          "value": 1.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L991"
+        },
+        {
+          "name": "t4_sg_ss_008_D3",
+          "value": 1.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L992"
+        },
+        {
+          "name": "t4_sg_ss_008_D4",
+          "value": 1.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L993"
+        },
+        {
+          "name": "t4_sg_ss_008_D5",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L994"
+        },
+        {
+          "name": "t4_sg_ss_008_D6",
+          "value": 0.96,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L995"
+        },
+        {
+          "name": "t4_sg_ss_008_D7",
+          "value": 0.81,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L996"
+        },
+        {
+          "name": "t4_sg_ss_008_D8",
+          "value": 0.71,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L997"
+        },
+        {
+          "name": "t4_sg_ss_008_D9",
+          "value": 0.64,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L998"
+        },
+        {
+          "name": "t4_sg_ss_008_D10",
+          "value": 0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L999"
+        },
+        {
+          "name": "t4_sg_ss_008_D1D10",
+          "value": 1.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1000",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_sg_ss_004_D1",
+          "value": 1.4,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1020"
+        },
+        {
+          "name": "t4_sg_ss_004_D2",
+          "value": 1.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1021"
+        },
+        {
+          "name": "t4_sg_ss_004_D3",
+          "value": 1.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1022"
+        },
+        {
+          "name": "t4_sg_ss_004_D4",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1023"
+        },
+        {
+          "name": "t4_sg_ss_004_D5",
+          "value": 0.97,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1024"
+        },
+        {
+          "name": "t4_sg_ss_004_D6",
+          "value": 0.96,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1025"
+        },
+        {
+          "name": "t4_sg_ss_004_D7",
+          "value": 0.82,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1026"
+        },
+        {
+          "name": "t4_sg_ss_004_D8",
+          "value": 0.67,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1027"
+        },
+        {
+          "name": "t4_sg_ss_004_D9",
+          "value": 0.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1028"
+        },
+        {
+          "name": "t4_sg_ss_004_D10",
+          "value": 0.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1029"
+        },
+        {
+          "name": "t4_sg_ss_004_D1D10",
+          "value": 1.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1030",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_horizon_10_D1",
+          "value": 1.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1050"
+        },
+        {
+          "name": "t4_horizon_10_D2",
+          "value": 1.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1051"
+        },
+        {
+          "name": "t4_horizon_10_D3",
+          "value": 1.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1052"
+        },
+        {
+          "name": "t4_horizon_10_D4",
+          "value": 1.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1053"
+        },
+        {
+          "name": "t4_horizon_10_D5",
+          "value": 0.96,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1054"
+        },
+        {
+          "name": "t4_horizon_10_D6",
+          "value": 0.94,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1055"
+        },
+        {
+          "name": "t4_horizon_10_D7",
+          "value": 0.83,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1056"
+        },
+        {
+          "name": "t4_horizon_10_D8",
+          "value": 0.67,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1057"
+        },
+        {
+          "name": "t4_horizon_10_D9",
+          "value": 0.6,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1058"
+        },
+        {
+          "name": "t4_horizon_10_D10",
+          "value": 0.41,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1059"
+        },
+        {
+          "name": "t4_horizon_10_D1D10",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1060",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t4_preest_D1",
+          "value": 1.36,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1080"
+        },
+        {
+          "name": "t4_preest_D2",
+          "value": 1.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1081"
+        },
+        {
+          "name": "t4_preest_D3",
+          "value": 1.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1082"
+        },
+        {
+          "name": "t4_preest_D4",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1083"
+        },
+        {
+          "name": "t4_preest_D5",
+          "value": 0.96,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1084"
+        },
+        {
+          "name": "t4_preest_D6",
+          "value": 0.9,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1085"
+        },
+        {
+          "name": "t4_preest_D7",
+          "value": 0.74,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1086"
+        },
+        {
+          "name": "t4_preest_D8",
+          "value": 0.61,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1087"
+        },
+        {
+          "name": "t4_preest_D9",
+          "value": 0.59,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1088"
+        },
+        {
+          "name": "t4_preest_D10",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1089"
+        },
+        {
+          "name": "t4_preest_D1D10",
+          "value": 1.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1090",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        }
+      ],
+      "notes": "SE rows are not committed as targets. Row (12) 'pre-estimation' (paper L1112: 'row (12) of Table 4 reports excess returns for an out-of-sample sort') uses expanding-window pre-estimation of the AR parameters; committed as printed."
+    },
+    {
+      "id": "T5",
+      "table_ref": "Table 5",
+      "description": "Mean excess returns of the ten duration portfolios in five 10/11-year subsamples (July 1963-June 2014)",
+      "replication_meaning": "Demonstrates temporal robustness: the duration premium must be positive in every subperiod (paper: 0.69, 1.34, 1.37, 1.10, 1.04 %/month), which verifies the pipeline is not driven by a single era and that the sort conventions hold throughout the sample.",
+      "covers_claims": [
+        "C6"
+      ],
+      "paper_quote": "This table reports monthly mean excess returns with OLS standard errors in parentheses for different subsamples. I sort all common stocks listed on NYSE, AMEX, and NASDAQ at the end of June each year $t$ from 1963 to 2013 into deciles based on duration for all firms with fiscal years ending in year $t-1$ . (L1126)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "delisting_for_cause_missing_ret",
+        "delisting_prorate",
+        "sort_annual_june_deciles",
+        "sort_ew",
+        "sort_excess_returns",
+        "sample_period_main",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion"
+      ],
+      "metrics": [
+        {
+          "name": "t5_a_63673_D1",
+          "value": 0.91,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1151"
+        },
+        {
+          "name": "t5_a_63673_D2",
+          "value": 0.82,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1152"
+        },
+        {
+          "name": "t5_a_63673_D3",
+          "value": 0.73,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1153"
+        },
+        {
+          "name": "t5_a_63673_D4",
+          "value": 0.73,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1154"
+        },
+        {
+          "name": "t5_a_63673_D5",
+          "value": 0.51,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1155"
+        },
+        {
+          "name": "t5_a_63673_D6",
+          "value": 0.43,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1156"
+        },
+        {
+          "name": "t5_a_63673_D7",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1157"
+        },
+        {
+          "name": "t5_a_63673_D8",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1158"
+        },
+        {
+          "name": "t5_a_63673_D9",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1159"
+        },
+        {
+          "name": "t5_a_63673_D10",
+          "value": 0.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1160"
+        },
+        {
+          "name": "t5_a_63673_D1D10",
+          "value": 0.69,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1161",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t5_b_73783_D1",
+          "value": 2.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1182"
+        },
+        {
+          "name": "t5_b_73783_D2",
+          "value": 1.87,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1183"
+        },
+        {
+          "name": "t5_b_73783_D3",
+          "value": 1.78,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1184"
+        },
+        {
+          "name": "t5_b_73783_D4",
+          "value": 1.66,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1185"
+        },
+        {
+          "name": "t5_b_73783_D5",
+          "value": 1.63,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1186"
+        },
+        {
+          "name": "t5_b_73783_D6",
+          "value": 1.7,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1187"
+        },
+        {
+          "name": "t5_b_73783_D7",
+          "value": 1.54,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1188"
+        },
+        {
+          "name": "t5_b_73783_D8",
+          "value": 1.4,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1189"
+        },
+        {
+          "name": "t5_b_73783_D9",
+          "value": 1.35,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1190"
+        },
+        {
+          "name": "t5_b_73783_D10",
+          "value": 0.83,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1191"
+        },
+        {
+          "name": "t5_b_73783_D1D10",
+          "value": 1.34,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1192",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t5_c_83893_D1",
+          "value": 0.96,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1213"
+        },
+        {
+          "name": "t5_c_83893_D2",
+          "value": 0.79,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1214"
+        },
+        {
+          "name": "t5_c_83893_D3",
+          "value": 0.66,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1215"
+        },
+        {
+          "name": "t5_c_83893_D4",
+          "value": 0.49,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1216"
+        },
+        {
+          "name": "t5_c_83893_D5",
+          "value": 0.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1217"
+        },
+        {
+          "name": "t5_c_83893_D6",
+          "value": 0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1218"
+        },
+        {
+          "name": "t5_c_83893_D7",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1219"
+        },
+        {
+          "name": "t5_c_83893_D8",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1220"
+        },
+        {
+          "name": "t5_c_83893_D9",
+          "value": -0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1221"
+        },
+        {
+          "name": "t5_c_83893_D10",
+          "value": -0.41,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1222"
+        },
+        {
+          "name": "t5_c_83893_D1D10",
+          "value": 1.37,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1223",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t5_d_93903_D1",
+          "value": 1.38,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1244"
+        },
+        {
+          "name": "t5_d_93903_D2",
+          "value": 1.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1245"
+        },
+        {
+          "name": "t5_d_93903_D3",
+          "value": 1.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1246"
+        },
+        {
+          "name": "t5_d_93903_D4",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1247"
+        },
+        {
+          "name": "t5_d_93903_D5",
+          "value": 1.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1248"
+        },
+        {
+          "name": "t5_d_93903_D6",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1249"
+        },
+        {
+          "name": "t5_d_93903_D7",
+          "value": 0.9,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1250"
+        },
+        {
+          "name": "t5_d_93903_D8",
+          "value": 0.83,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1251"
+        },
+        {
+          "name": "t5_d_93903_D9",
+          "value": 0.74,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1252"
+        },
+        {
+          "name": "t5_d_93903_D10",
+          "value": 0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1253"
+        },
+        {
+          "name": "t5_d_93903_D1D10",
+          "value": 1.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1254",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "t5_e_03014_D1",
+          "value": 1.68,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1275"
+        },
+        {
+          "name": "t5_e_03014_D2",
+          "value": 1.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1276"
+        },
+        {
+          "name": "t5_e_03014_D3",
+          "value": 1.37,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1277"
+        },
+        {
+          "name": "t5_e_03014_D4",
+          "value": 1.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1278"
+        },
+        {
+          "name": "t5_e_03014_D5",
+          "value": 1.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1279"
+        },
+        {
+          "name": "t5_e_03014_D6",
+          "value": 1.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1280"
+        },
+        {
+          "name": "t5_e_03014_D7",
+          "value": 1.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1281"
+        },
+        {
+          "name": "t5_e_03014_D8",
+          "value": 0.94,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1282"
+        },
+        {
+          "name": "t5_e_03014_D9",
+          "value": 0.95,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1283"
+        },
+        {
+          "name": "t5_e_03014_D10",
+          "value": 0.64,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1284"
+        },
+        {
+          "name": "t5_e_03014_D1D10",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L1285",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        }
+      ],
+      "notes": "SE rows are not committed as targets."
+    },
+    {
+      "id": "T6",
+      "table_ref": "Table 6",
+      "description": "Mean returns and CAPM/FF3/FF4/FF5 alphas of the ten duration portfolios with returns scaled by the previous month's realized variance (Moreira and Muir 2017 volatility management)",
+      "replication_meaning": "Demonstrates the volatility-managed variant: portfolio returns scaled by lagged realized variance (computed from CRSP daily data), producing the paper's larger spread (1.46%/month raw, 1.58% CAPM-adjusted) and alphas that factor models cannot reduce - the second half of claim C6.",
+      "covers_claims": [
+        "C6"
+      ],
+      "paper_quote": "This table reports mean returns and pricing errors ( $\\alpha$ ) for the CAPM ( $\\alpha_{CAPM}$ ), the Fama and French three-factor model ( $\\alpha_{F\\&F3}$ ), the three-factor model augmented with momentum ( $\\alpha_{F\\&F4}$ ), and the Fama and French five-factor model ( $\\alpha_{F\\&F5}$ ) for ten portfolios sorted on duration (Dur) with OLS standard errors in parentheses. Portfolio returns are scaled by the previous months realized variance as in Moreira and Muir (2017). (L1337)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "delisting_for_cause_missing_ret",
+        "delisting_prorate",
+        "sort_annual_june_deciles",
+        "sort_ew",
+        "sort_excess_returns",
+        "sample_period_main",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion",
+        "var_vol_managed"
+      ],
+      "metrics": [
+        {
+          "name": "vm_mean_D1",
+          "value": 1.99,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1359"
+        },
+        {
+          "name": "vm_mean_D2",
+          "value": 1.68,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1360"
+        },
+        {
+          "name": "vm_mean_D3",
+          "value": 1.6,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1361"
+        },
+        {
+          "name": "vm_mean_D4",
+          "value": 1.5,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1362"
+        },
+        {
+          "name": "vm_mean_D5",
+          "value": 1.53,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1363"
+        },
+        {
+          "name": "vm_mean_D6",
+          "value": 1.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1364"
+        },
+        {
+          "name": "vm_mean_D7",
+          "value": 1.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1365"
+        },
+        {
+          "name": "vm_mean_D8",
+          "value": 1.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1366"
+        },
+        {
+          "name": "vm_mean_D9",
+          "value": 1.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1367"
+        },
+        {
+          "name": "vm_mean_D10",
+          "value": 0.99,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1368"
+        },
+        {
+          "name": "vm_mean_D1D10",
+          "value": 1.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 20,
+          "paper_location": "L1369",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "vm_alpha_capm_D1",
+          "value": 1.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1387"
+        },
+        {
+          "name": "vm_alpha_capm_D2",
+          "value": 1.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1388"
+        },
+        {
+          "name": "vm_alpha_capm_D3",
+          "value": 1.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1389"
+        },
+        {
+          "name": "vm_alpha_capm_D4",
+          "value": 1.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1390"
+        },
+        {
+          "name": "vm_alpha_capm_D5",
+          "value": 1.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1391"
+        },
+        {
+          "name": "vm_alpha_capm_D6",
+          "value": 1.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1392"
+        },
+        {
+          "name": "vm_alpha_capm_D7",
+          "value": 0.87,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1393"
+        },
+        {
+          "name": "vm_alpha_capm_D8",
+          "value": 0.67,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1394"
+        },
+        {
+          "name": "vm_alpha_capm_D9",
+          "value": 0.65,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1395"
+        },
+        {
+          "name": "vm_alpha_capm_D10",
+          "value": 0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1396"
+        },
+        {
+          "name": "vm_alpha_capm_D1D10",
+          "value": 1.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1397",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "vm_alpha_ff3_D1",
+          "value": 1.36,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1415"
+        },
+        {
+          "name": "vm_alpha_ff3_D2",
+          "value": 1.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1416"
+        },
+        {
+          "name": "vm_alpha_ff3_D3",
+          "value": 1.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1417"
+        },
+        {
+          "name": "vm_alpha_ff3_D4",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1418"
+        },
+        {
+          "name": "vm_alpha_ff3_D5",
+          "value": 0.99,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1419"
+        },
+        {
+          "name": "vm_alpha_ff3_D6",
+          "value": 0.9,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "vm_alpha_ff3_D7",
+          "value": 0.76,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1421"
+        },
+        {
+          "name": "vm_alpha_ff3_D8",
+          "value": 0.61,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1422"
+        },
+        {
+          "name": "vm_alpha_ff3_D9",
+          "value": 0.55,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1423"
+        },
+        {
+          "name": "vm_alpha_ff3_D10",
+          "value": 0.34,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1424"
+        },
+        {
+          "name": "vm_alpha_ff3_D1D10",
+          "value": 1.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1425",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "vm_alpha_ff4_D1",
+          "value": 1.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1443"
+        },
+        {
+          "name": "vm_alpha_ff4_D2",
+          "value": 1.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1444"
+        },
+        {
+          "name": "vm_alpha_ff4_D3",
+          "value": 0.92,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1445"
+        },
+        {
+          "name": "vm_alpha_ff4_D4",
+          "value": 0.87,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1446"
+        },
+        {
+          "name": "vm_alpha_ff4_D5",
+          "value": 0.85,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1447"
+        },
+        {
+          "name": "vm_alpha_ff4_D6",
+          "value": 0.79,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1448"
+        },
+        {
+          "name": "vm_alpha_ff4_D7",
+          "value": 0.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1449"
+        },
+        {
+          "name": "vm_alpha_ff4_D8",
+          "value": 0.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1450"
+        },
+        {
+          "name": "vm_alpha_ff4_D9",
+          "value": 0.4,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1451"
+        },
+        {
+          "name": "vm_alpha_ff4_D10",
+          "value": 0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1452"
+        },
+        {
+          "name": "vm_alpha_ff4_D1D10",
+          "value": 1.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1453",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        },
+        {
+          "name": "vm_alpha_ff5_D1",
+          "value": 1.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1471"
+        },
+        {
+          "name": "vm_alpha_ff5_D2",
+          "value": 0.95,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1472"
+        },
+        {
+          "name": "vm_alpha_ff5_D3",
+          "value": 0.87,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1473"
+        },
+        {
+          "name": "vm_alpha_ff5_D4",
+          "value": 0.84,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1474"
+        },
+        {
+          "name": "vm_alpha_ff5_D5",
+          "value": 0.85,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1475"
+        },
+        {
+          "name": "vm_alpha_ff5_D6",
+          "value": 0.76,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1476"
+        },
+        {
+          "name": "vm_alpha_ff5_D7",
+          "value": 0.61,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1477"
+        },
+        {
+          "name": "vm_alpha_ff5_D8",
+          "value": 0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1478"
+        },
+        {
+          "name": "vm_alpha_ff5_D9",
+          "value": 0.37,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1479"
+        },
+        {
+          "name": "vm_alpha_ff5_D10",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1480"
+        },
+        {
+          "name": "vm_alpha_ff5_D1D10",
+          "value": 1.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1481",
+          "notes": "spread is D1 - D10 (low minus high duration) per Table 2 column header 'D1-D10', L393"
+        }
+      ],
+      "notes": "SE rows are not committed as targets."
+    },
+    {
+      "id": "T8",
+      "table_ref": "Table 8",
+      "description": "Long-term growth forecasts (Panel A), realized five-year EPS growth (Panel B) and standardized earnings surprises (Panel C) of ten duration-sorted portfolios, June 1982-June 2009",
+      "replication_meaning": "Demonstrates the analyst-expectations mechanism (claim C4) with I/B/E/S data: LTG forecasts from June statistical periods rise with duration and shrink over t+1..t+4; realized EPS growth over t-6:t-1 vs t:t+5 shows the extrapolation gap; SUE1/SUE2/SUE3 medians fall with duration. Also exercises the IBES-permno linking and the annual June sort restricted to firms with nonmissing LTG for all periods.",
+      "covers_claims": [
+        "C4"
+      ],
+      "paper_quote": "This table reports time series averages of long-term earnings growth (LTG) forecasts in Panel A, mean realized five-year growth in earnings per share (EG) in Panel B, and standardized earnings surprising (SUE) following Livnat and Mendenhall (2006) in Panel C for ten portfolios sorted on duration. I sort all common stocks listed on NYSE, Amex, and Nasdaq at the end of June each year t from 1982 to 2009 into deciles based on duration for all firms with fiscal years ending in year $t-1$ . (L1614)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "sort_annual_june_deciles",
+        "sort_ew",
+        "avail_ibes_sample_period",
+        "avail_ltg_nonmissing",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion"
+      ],
+      "metrics": [
+        {
+          "name": "t8_ltg_t_D1",
+          "value": 13.08,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1639"
+        },
+        {
+          "name": "t8_ltg_t_D2",
+          "value": 13.53,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1640"
+        },
+        {
+          "name": "t8_ltg_t_D3",
+          "value": 14.3,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1641"
+        },
+        {
+          "name": "t8_ltg_t_D4",
+          "value": 15.12,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1642"
+        },
+        {
+          "name": "t8_ltg_t_D5",
+          "value": 15.34,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1643"
+        },
+        {
+          "name": "t8_ltg_t_D6",
+          "value": 16.29,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1644"
+        },
+        {
+          "name": "t8_ltg_t_D7",
+          "value": 16.92,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1645"
+        },
+        {
+          "name": "t8_ltg_t_D8",
+          "value": 18.22,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1646"
+        },
+        {
+          "name": "t8_ltg_t_D9",
+          "value": 20.15,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1647"
+        },
+        {
+          "name": "t8_ltg_t_D10",
+          "value": 25.73,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1648"
+        },
+        {
+          "name": "t8_ltg_t_D1D10",
+          "value": -12.65,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1649",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        },
+        {
+          "name": "t8_ltg_t1_D1",
+          "value": 12.96,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1653"
+        },
+        {
+          "name": "t8_ltg_t1_D2",
+          "value": 13.41,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1654"
+        },
+        {
+          "name": "t8_ltg_t1_D3",
+          "value": 14.07,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1655"
+        },
+        {
+          "name": "t8_ltg_t1_D4",
+          "value": 14.61,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1656"
+        },
+        {
+          "name": "t8_ltg_t1_D5",
+          "value": 15.01,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1657"
+        },
+        {
+          "name": "t8_ltg_t1_D6",
+          "value": 15.67,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1658"
+        },
+        {
+          "name": "t8_ltg_t1_D7",
+          "value": 16.3,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1659"
+        },
+        {
+          "name": "t8_ltg_t1_D8",
+          "value": 17.29,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1660"
+        },
+        {
+          "name": "t8_ltg_t1_D9",
+          "value": 18.98,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1661"
+        },
+        {
+          "name": "t8_ltg_t1_D10",
+          "value": 23.44,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1662"
+        },
+        {
+          "name": "t8_ltg_t1_D1D10",
+          "value": -10.48,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1663",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        },
+        {
+          "name": "t8_ltg_t2_D1",
+          "value": 12.92,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1667"
+        },
+        {
+          "name": "t8_ltg_t2_D2",
+          "value": 13.34,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1668"
+        },
+        {
+          "name": "t8_ltg_t2_D3",
+          "value": 13.95,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1669"
+        },
+        {
+          "name": "t8_ltg_t2_D4",
+          "value": 14.34,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1670"
+        },
+        {
+          "name": "t8_ltg_t2_D5",
+          "value": 14.54,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1671"
+        },
+        {
+          "name": "t8_ltg_t2_D6",
+          "value": 15.26,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1672"
+        },
+        {
+          "name": "t8_ltg_t2_D7",
+          "value": 15.84,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "t8_ltg_t2_D8",
+          "value": 16.55,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1674"
+        },
+        {
+          "name": "t8_ltg_t2_D9",
+          "value": 17.87,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1675"
+        },
+        {
+          "name": "t8_ltg_t2_D10",
+          "value": 21.5,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1676"
+        },
+        {
+          "name": "t8_ltg_t2_D1D10",
+          "value": -8.58,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1677",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        },
+        {
+          "name": "t8_ltg_t3_D1",
+          "value": 12.83,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1681"
+        },
+        {
+          "name": "t8_ltg_t3_D2",
+          "value": 13.11,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1682"
+        },
+        {
+          "name": "t8_ltg_t3_D3",
+          "value": 13.72,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1683"
+        },
+        {
+          "name": "t8_ltg_t3_D4",
+          "value": 14.03,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1684"
+        },
+        {
+          "name": "t8_ltg_t3_D5",
+          "value": 14.18,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1685"
+        },
+        {
+          "name": "t8_ltg_t3_D6",
+          "value": 14.87,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "t8_ltg_t3_D7",
+          "value": 15.3,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1687"
+        },
+        {
+          "name": "t8_ltg_t3_D8",
+          "value": 15.77,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1688"
+        },
+        {
+          "name": "t8_ltg_t3_D9",
+          "value": 17.08,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1689"
+        },
+        {
+          "name": "t8_ltg_t3_D10",
+          "value": 19.96,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1690"
+        },
+        {
+          "name": "t8_ltg_t3_D1D10",
+          "value": -7.13,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1691",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        },
+        {
+          "name": "t8_ltg_t4_D1",
+          "value": 12.92,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1695"
+        },
+        {
+          "name": "t8_ltg_t4_D2",
+          "value": 12.75,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1696"
+        },
+        {
+          "name": "t8_ltg_t4_D3",
+          "value": 13.37,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1697"
+        },
+        {
+          "name": "t8_ltg_t4_D4",
+          "value": 13.68,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1698"
+        },
+        {
+          "name": "t8_ltg_t4_D5",
+          "value": 13.82,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1699"
+        },
+        {
+          "name": "t8_ltg_t4_D6",
+          "value": 14.33,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1700"
+        },
+        {
+          "name": "t8_ltg_t4_D7",
+          "value": 14.82,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1701"
+        },
+        {
+          "name": "t8_ltg_t4_D8",
+          "value": 15.19,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1702"
+        },
+        {
+          "name": "t8_ltg_t4_D9",
+          "value": 16.31,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1703"
+        },
+        {
+          "name": "t8_ltg_t4_D10",
+          "value": 18.75,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1704"
+        },
+        {
+          "name": "t8_ltg_t4_D1D10",
+          "value": -5.83,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L1705",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        },
+        {
+          "name": "t8_eg_t6_t1_D1",
+          "value": 6.95,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1712"
+        },
+        {
+          "name": "t8_eg_t6_t1_D2",
+          "value": 7.91,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1713"
+        },
+        {
+          "name": "t8_eg_t6_t1_D3",
+          "value": 10.47,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1714"
+        },
+        {
+          "name": "t8_eg_t6_t1_D4",
+          "value": 10.53,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1715"
+        },
+        {
+          "name": "t8_eg_t6_t1_D5",
+          "value": 13.14,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1716"
+        },
+        {
+          "name": "t8_eg_t6_t1_D6",
+          "value": 16.15,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "t8_eg_t6_t1_D7",
+          "value": 16.81,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1718"
+        },
+        {
+          "name": "t8_eg_t6_t1_D8",
+          "value": 20.43,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1719"
+        },
+        {
+          "name": "t8_eg_t6_t1_D9",
+          "value": 23.5,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1720"
+        },
+        {
+          "name": "t8_eg_t6_t1_D10",
+          "value": 30.56,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1721"
+        },
+        {
+          "name": "t8_eg_t6_t1_D1D10",
+          "value": -23.6,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1722",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        },
+        {
+          "name": "t8_eg_t_t5_D1",
+          "value": 10.11,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1726"
+        },
+        {
+          "name": "t8_eg_t_t5_D2",
+          "value": 7.37,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1727"
+        },
+        {
+          "name": "t8_eg_t_t5_D3",
+          "value": 9.0,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1728"
+        },
+        {
+          "name": "t8_eg_t_t5_D4",
+          "value": 8.46,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1729"
+        },
+        {
+          "name": "t8_eg_t_t5_D5",
+          "value": 8.74,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1730"
+        },
+        {
+          "name": "t8_eg_t_t5_D6",
+          "value": 9.74,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1731"
+        },
+        {
+          "name": "t8_eg_t_t5_D7",
+          "value": 8.71,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1732"
+        },
+        {
+          "name": "t8_eg_t_t5_D8",
+          "value": 9.17,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1733"
+        },
+        {
+          "name": "t8_eg_t_t5_D9",
+          "value": 9.93,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1734"
+        },
+        {
+          "name": "t8_eg_t_t5_D10",
+          "value": 10.85,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1735"
+        },
+        {
+          "name": "t8_eg_t_t5_D1D10",
+          "value": -0.74,
+          "unit": "percent",
+          "tolerance_pct": 30,
+          "paper_location": "L1736",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        },
+        {
+          "name": "t8_sue1_D1",
+          "value": 0.23,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1743"
+        },
+        {
+          "name": "t8_sue1_D2",
+          "value": 0.18,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1744",
+          "notes": "paper prints '0.18%' (L1744, stray percent sign); encoded as 0.18."
+        },
+        {
+          "name": "t8_sue1_D3",
+          "value": 0.21,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1745"
+        },
+        {
+          "name": "t8_sue1_D4",
+          "value": 0.26,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1746"
+        },
+        {
+          "name": "t8_sue1_D5",
+          "value": 0.28,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1747"
+        },
+        {
+          "name": "t8_sue1_D6",
+          "value": 0.24,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1748"
+        },
+        {
+          "name": "t8_sue1_D7",
+          "value": 0.15,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1749"
+        },
+        {
+          "name": "t8_sue1_D8",
+          "value": 0.03,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1750"
+        },
+        {
+          "name": "t8_sue1_D9",
+          "value": -0.11,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1751"
+        },
+        {
+          "name": "t8_sue1_D10",
+          "value": -0.47,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1752"
+        },
+        {
+          "name": "t8_sue1_D1D10",
+          "value": 0.7,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1753",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        },
+        {
+          "name": "t8_sue2_D1",
+          "value": 0.18,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1757"
+        },
+        {
+          "name": "t8_sue2_D2",
+          "value": 0.15,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1758"
+        },
+        {
+          "name": "t8_sue2_D3",
+          "value": 0.19,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1759"
+        },
+        {
+          "name": "t8_sue2_D4",
+          "value": 0.26,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1760"
+        },
+        {
+          "name": "t8_sue2_D5",
+          "value": 0.28,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1761"
+        },
+        {
+          "name": "t8_sue2_D6",
+          "value": 0.21,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1762"
+        },
+        {
+          "name": "t8_sue2_D7",
+          "value": 0.14,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1763"
+        },
+        {
+          "name": "t8_sue2_D8",
+          "value": 0.02,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1764"
+        },
+        {
+          "name": "t8_sue2_D9",
+          "value": -0.11,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1765"
+        },
+        {
+          "name": "t8_sue2_D10",
+          "value": -0.46,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1766"
+        },
+        {
+          "name": "t8_sue2_D1D10",
+          "value": 0.64,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1767",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        },
+        {
+          "name": "t8_sue3_D1",
+          "value": 0.038,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1771"
+        },
+        {
+          "name": "t8_sue3_D2",
+          "value": 0.022,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1772"
+        },
+        {
+          "name": "t8_sue3_D3",
+          "value": 0.03,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1773"
+        },
+        {
+          "name": "t8_sue3_D4",
+          "value": 0.018,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1774"
+        },
+        {
+          "name": "t8_sue3_D5",
+          "value": 0.028,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1775"
+        },
+        {
+          "name": "t8_sue3_D6",
+          "value": 0.02,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1776"
+        },
+        {
+          "name": "t8_sue3_D7",
+          "value": 0.029,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1777"
+        },
+        {
+          "name": "t8_sue3_D8",
+          "value": 0.014,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1778"
+        },
+        {
+          "name": "t8_sue3_D9",
+          "value": 0.0,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1779",
+          "zero_band": 0.005,
+          "notes": "SUE3 printed at 4 decimals; cell is 0.0000 - absolute band +/-0.005 in SUE percent units (2x the two-decimal printing half-width used by SUE1/SUE2 rows)."
+        },
+        {
+          "name": "t8_sue3_D10",
+          "value": 0.0,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1780",
+          "zero_band": 0.005,
+          "notes": "SUE3 printed at 4 decimals; cell is 0.0000 - absolute band +/-0.005 in SUE percent units (2x the two-decimal printing half-width used by SUE1/SUE2 rows)."
+        },
+        {
+          "name": "t8_sue3_D1D10",
+          "value": 0.038,
+          "unit": "percent",
+          "tolerance_pct": 40,
+          "paper_location": "L1781",
+          "notes": "spread is D1 - D10 (low minus high) per Table 8 column header 'D1-D10', L1617"
+        }
+      ],
+      "notes": "I/B/E/S via ibes_202601 (det_epsus for LTG, act_epsus for realized growth, statsum/det for SUE). The paper reports 'time series averages' of annual portfolio statistics; exact SUE construction follows Livnat and Mendenhall (2006) as cited."
+    },
+    {
+      "id": "T9",
+      "table_ref": "Table 9 (Panel A)",
+      "description": "Analyst twelve-month-ahead price targets scaled by book equity (PTB) and current price minus one (PTP) for five duration portfolios, July 2001-June 2014",
+      "replication_meaning": "Demonstrates the price-target leg of claim C4: PTB rises monotonically with duration (1.78 to 8.11) while PTP (implied returns) is flat (16.8 to 16.9), using I/B/E/S price-target consensus data (ptgsum/ptgdet) from June statistical periods joined to the duration sorts.",
+      "covers_claims": [
+        "C4"
+      ],
+      "paper_quote": "This table reports time series averages of analysts twelve-months ahead price target scaled by the book value of equity (PTB) and by the market price minus one (PTP) in Panel A, mean price-target implied expected excess returns following periods of high and low investor sentiment Panel B, and benchmark-adjusted mean price-target implied expected excess returns following periods of high and low investor sentiment Panel C for five portfolios sorted on duration. (L1810)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "sort_annual_june_deciles",
+        "sort_ew",
+        "sample_period_restrictions",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion",
+        "var_bm_timing",
+        "var_be_definition"
+      ],
+      "metrics": [
+        {
+          "name": "t9_ptb_D1",
+          "value": 1.78,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1830"
+        },
+        {
+          "name": "t9_ptb_D2",
+          "value": 2.75,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1831"
+        },
+        {
+          "name": "t9_ptb_D3",
+          "value": 3.18,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1832"
+        },
+        {
+          "name": "t9_ptb_D4",
+          "value": 3.86,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1833"
+        },
+        {
+          "name": "t9_ptb_D5",
+          "value": 8.11,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1834"
+        },
+        {
+          "name": "t9_ptb_D1D5",
+          "value": -6.33,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1835",
+          "notes": "spread is D1 - D5 (low minus high) per Table 9 column header 'D1-D5', L1822"
+        },
+        {
+          "name": "t9_ptp_D1",
+          "value": 16.83,
+          "unit": "percent",
+          "tolerance_pct": 15,
+          "paper_location": "L1839"
+        },
+        {
+          "name": "t9_ptp_D2",
+          "value": 15.83,
+          "unit": "percent",
+          "tolerance_pct": 15,
+          "paper_location": "L1840"
+        },
+        {
+          "name": "t9_ptp_D3",
+          "value": 14.92,
+          "unit": "percent",
+          "tolerance_pct": 15,
+          "paper_location": "L1841"
+        },
+        {
+          "name": "t9_ptp_D4",
+          "value": 14.66,
+          "unit": "percent",
+          "tolerance_pct": 15,
+          "paper_location": "L1842"
+        },
+        {
+          "name": "t9_ptp_D5",
+          "value": 16.85,
+          "unit": "percent",
+          "tolerance_pct": 15,
+          "paper_location": "L1843"
+        },
+        {
+          "name": "t9_ptp_D1D5",
+          "value": -0.03,
+          "unit": "percent",
+          "tolerance_pct": 15,
+          "paper_location": "L1844",
+          "notes": "spread is D1 - D5 (low minus high) per Table 9 column header 'D1-D5', L1822 paper prints -0.03 at 2-decimal resolution; absolute band +/-0.01 = 2x printing half-width.",
+          "zero_band": 0.01
+        }
+      ],
+      "notes": "Panel A only: Panels B and C require the Baker-Wurgler sentiment index, which is absent from the catalog (see data_verification.json limitation for claim C3)."
+    },
+    {
+      "id": "T10",
+      "table_ref": "Table 10",
+      "description": "Mean excess returns of 25 portfolios sorted on duration quintiles and residual institutional ownership quintiles (1981-2013 sorts, above 20th size percentile)",
+      "replication_meaning": "Demonstrates the short-sale-constraints mechanism (claim C5, Hypothesis 1+2): with IOR from TR-13F and RIOR from the Nagel (2005) logit-on-log-size regression (Eq. 7), the D1-D5 spread decreases monotonically in RIOR (1.32% low-RIOR vs 0.15% high-RIOR), and the RIOR1-RIOR5 spread is concentrated in high-duration stocks (-1.24%).",
+      "covers_claims": [
+        "C5"
+      ],
+      "paper_quote": "This table reports monthly mean excess returns for twenty-five portfolios sorted on duration (Dur) and residual institutional ownership (RIOR) with OLS standard errors in parentheses. I sort all common stocks listed on NYSE, Amex, and Nasdaq at the end of June each year $t$ from 1981 to 2013 into quintiles based on duration for all firms with fiscal years ending in year $t-1$. I intersect these quintiles with an independent sort on residual institutional ownership as of December $t-1$. (L2033)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "delisting_for_cause_missing_ret",
+        "delisting_prorate",
+        "sort_double_quintile_rior",
+        "sort_rior_lag",
+        "sort_ew",
+        "sample_above_20th_size_pct",
+        "sample_period_restrictions",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion",
+        "var_ior",
+        "var_ior_zero",
+        "var_ior_carryforward",
+        "var_ior_thresholds",
+        "var_rior"
+      ],
+      "metrics": [
+        {
+          "name": "t10_lowrior_D1",
+          "value": 1.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2011",
+          "notes": "value taken from prose L2011 (Low RIOR row missing from the table extraction; SE from table header L2048)"
+        },
+        {
+          "name": "t10_lowrior_D1_se",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2048"
+        },
+        {
+          "name": "t10_lowrior_D5",
+          "value": -0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2011",
+          "notes": "value taken from prose L2011 (Low RIOR row missing from the table extraction; SE from table header L2052)"
+        },
+        {
+          "name": "t10_lowrior_D5_se",
+          "value": 0.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2052"
+        },
+        {
+          "name": "t10_lowrior_D1D5",
+          "value": 1.32,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2011",
+          "notes": "value taken from prose L2011 (Low RIOR row missing from the table extraction; SE from table header L2053); spread is D1 - D5 (low minus high)"
+        },
+        {
+          "name": "t10_lowrior_D1D5_se",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2053"
+        },
+        {
+          "name": "t10_rior2_D1",
+          "value": 1.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2059"
+        },
+        {
+          "name": "t10_rior2_D1_se",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2068"
+        },
+        {
+          "name": "t10_rior2_D2",
+          "value": 0.96,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2060"
+        },
+        {
+          "name": "t10_rior2_D2_se",
+          "value": 0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2069"
+        },
+        {
+          "name": "t10_rior2_D3",
+          "value": 0.85,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2061"
+        },
+        {
+          "name": "t10_rior2_D3_se",
+          "value": 0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2070"
+        },
+        {
+          "name": "t10_rior2_D4",
+          "value": 0.73,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2062"
+        },
+        {
+          "name": "t10_rior2_D4_se",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2071"
+        },
+        {
+          "name": "t10_rior2_D5",
+          "value": 0.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2063",
+          "insignificant": true,
+          "inference_cell": "t10_rior2_D5_se",
+          "notes": "paper-implied |t| = 0.60 < 1.96 (value/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t10_rior2_D5_se",
+          "value": 0.42,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2072"
+        },
+        {
+          "name": "t10_rior2_D1D5",
+          "value": 0.83,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2064",
+          "notes": "spread is D1 - D5 (low minus high) per Table 10 column header 'D1-D5', L2045"
+        },
+        {
+          "name": "t10_rior2_D1D5_se",
+          "value": 0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2073"
+        },
+        {
+          "name": "t10_rior3_D1",
+          "value": 1.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2077"
+        },
+        {
+          "name": "t10_rior3_D1_se",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2086"
+        },
+        {
+          "name": "t10_rior3_D2",
+          "value": 0.97,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2078"
+        },
+        {
+          "name": "t10_rior3_D2_se",
+          "value": 0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2087"
+        },
+        {
+          "name": "t10_rior3_D3",
+          "value": 0.95,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2079"
+        },
+        {
+          "name": "t10_rior3_D3_se",
+          "value": 0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2088"
+        },
+        {
+          "name": "t10_rior3_D4",
+          "value": 0.78,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2080"
+        },
+        {
+          "name": "t10_rior3_D4_se",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2089"
+        },
+        {
+          "name": "t10_rior3_D5",
+          "value": 0.47,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2081",
+          "insignificant": true,
+          "inference_cell": "t10_rior3_D5_se",
+          "notes": "paper-implied |t| = 1.12 < 1.96 (value/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t10_rior3_D5_se",
+          "value": 0.42,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2090"
+        },
+        {
+          "name": "t10_rior3_D1D5",
+          "value": 0.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2082",
+          "notes": "spread is D1 - D5 (low minus high) per Table 10 column header 'D1-D5', L2045"
+        },
+        {
+          "name": "t10_rior3_D1D5_se",
+          "value": 0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2091"
+        },
+        {
+          "name": "t10_rior4_D1",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2095"
+        },
+        {
+          "name": "t10_rior4_D1_se",
+          "value": 0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2104"
+        },
+        {
+          "name": "t10_rior4_D2",
+          "value": 1.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2096"
+        },
+        {
+          "name": "t10_rior4_D2_se",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2105"
+        },
+        {
+          "name": "t10_rior4_D3",
+          "value": 0.91,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2097"
+        },
+        {
+          "name": "t10_rior4_D3_se",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2106"
+        },
+        {
+          "name": "t10_rior4_D4",
+          "value": 0.64,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2098"
+        },
+        {
+          "name": "t10_rior4_D4_se",
+          "value": 0.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2107"
+        },
+        {
+          "name": "t10_rior4_D5",
+          "value": 0.52,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2099",
+          "insignificant": true,
+          "inference_cell": "t10_rior4_D5_se",
+          "notes": "paper-implied |t| = 1.21 < 1.96 (value/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t10_rior4_D5_se",
+          "value": 0.43,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2108"
+        },
+        {
+          "name": "t10_rior4_D1D5",
+          "value": 0.52,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2100",
+          "notes": "spread is D1 - D5 (low minus high) per Table 10 column header 'D1-D5', L2045"
+        },
+        {
+          "name": "t10_rior4_D1D5_se",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2109"
+        },
+        {
+          "name": "t10_highrior_D1",
+          "value": 1.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2113"
+        },
+        {
+          "name": "t10_highrior_D1_se",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2122"
+        },
+        {
+          "name": "t10_highrior_D2",
+          "value": 1.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2114"
+        },
+        {
+          "name": "t10_highrior_D2_se",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2123"
+        },
+        {
+          "name": "t10_highrior_D3",
+          "value": 0.93,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2115"
+        },
+        {
+          "name": "t10_highrior_D3_se",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2124"
+        },
+        {
+          "name": "t10_highrior_D4",
+          "value": 0.76,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2116"
+        },
+        {
+          "name": "t10_highrior_D4_se",
+          "value": 0.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2125"
+        },
+        {
+          "name": "t10_highrior_D5",
+          "value": 0.94,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2117"
+        },
+        {
+          "name": "t10_highrior_D5_se",
+          "value": 0.42,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2126"
+        },
+        {
+          "name": "t10_highrior_D1D5",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2118",
+          "insignificant": true,
+          "inference_cell": "t10_highrior_D1D5_se",
+          "notes": "spread is D1 - D5 (low minus high) per Table 10 column header 'D1-D5', L2045"
+        },
+        {
+          "name": "t10_highrior_D1D5_se",
+          "value": 0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2127"
+        },
+        {
+          "name": "t10_r1r5_D1",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2131",
+          "insignificant": true,
+          "inference_cell": "t10_r1r5_D1_se",
+          "notes": "paper-implied |t| = 0.62 < 1.96 (value/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t10_r1r5_D1_se",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2140"
+        },
+        {
+          "name": "t10_r1r5_D2",
+          "value": -0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2132",
+          "insignificant": true,
+          "inference_cell": "t10_r1r5_D2_se",
+          "notes": "paper-implied |t| = 1.31 < 1.96 (value/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t10_r1r5_D2_se",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2141"
+        },
+        {
+          "name": "t10_r1r5_D3",
+          "value": -0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2133",
+          "insignificant": true,
+          "inference_cell": "t10_r1r5_D3_se",
+          "notes": "paper-implied |t| = 1.50 < 1.96 (value/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t10_r1r5_D3_se",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2142"
+        },
+        {
+          "name": "t10_r1r5_D4",
+          "value": -0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2134"
+        },
+        {
+          "name": "t10_r1r5_D4_se",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2143"
+        },
+        {
+          "name": "t10_r1r5_D5",
+          "value": -1.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2135"
+        },
+        {
+          "name": "t10_r1r5_D5_se",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2144"
+        },
+        {
+          "name": "t10_r1r5_D1D5",
+          "value": 1.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 25,
+          "paper_location": "L2136",
+          "notes": "spread is D1 - D5 (low minus high) per Table 10 column header 'D1-D5', L2045"
+        },
+        {
+          "name": "t10_r1r5_D1D5_se",
+          "value": 0.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2145"
+        }
+      ],
+      "notes": "Means and SEs committed (SEs are the inference carriers for insignificant cells). Low-RIOR D2/D3/D4 values are absent from the paper extraction (row lost in OCR: the row label sits in the table header with only its SE row); those 3 cells + their SEs are uncommitted. Prose L2011 supplies D1=1.02, D5=-0.30, D1-D5=1.32."
+    },
+    {
+      "id": "T11",
+      "table_ref": "Table 11",
+      "description": "FF3 alphas of nine portfolios sorted on duration tertiles and residual institutional ownership tertiles, conditional on size (small Panel I, large Panel II), 1981-2013",
+      "replication_meaning": "Demonstrates the size-robustness leg of claim C5: within small and large stocks separately (size split before duration tertiles), the duration spread is concentrated in low-RIOR portfolios (1.45%/month small, 0.72% large) and the RIOR1-RIOR3 spread is large for high-duration stocks (-1.13% small, -0.36% large).",
+      "covers_claims": [
+        "C5"
+      ],
+      "paper_quote": "This table reports pricing errors ( $\\alpha$ ) for the Fama and French three-factor model for nine portfolios sorted on duration (Dur) and residual institutional ownership (RIOR) with OLS standard errors in parentheses, separately for small stocks in Panel I and large stocks in Panel II. I sort all common stocks listed on NYSE, Amex, and Nasdaq at the end of June each year $t$ from 1981 to 2013 into two baskets based on size, and within each bin I sort stocks into tertiles based on duration for all firms with fiscal years ending in year $t-1$ . (L2184)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "delisting_for_cause_missing_ret",
+        "delisting_prorate",
+        "sort_double_quintile_rior",
+        "sort_rior_lag",
+        "sort_ew",
+        "sample_above_20th_size_pct",
+        "sample_period_restrictions",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion",
+        "var_ior",
+        "var_ior_zero",
+        "var_ior_carryforward",
+        "var_ior_thresholds",
+        "var_rior",
+        "factor_definitions",
+        "factor_ff5_mom_tbill_source"
+      ],
+      "metrics": [
+        {
+          "name": "t11_lowrior_s_D1",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2207"
+        },
+        {
+          "name": "t11_lowrior_s_D1_se",
+          "value": 0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2207"
+        },
+        {
+          "name": "t11_lowrior_s_D2",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2208",
+          "insignificant": true,
+          "inference_cell": "t11_lowrior_s_D2_se",
+          "notes": "paper-implied |t| = 1.50 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_lowrior_s_D2_se",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2208"
+        },
+        {
+          "name": "t11_lowrior_s_D3",
+          "value": -0.47,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2209",
+          "insignificant": true,
+          "inference_cell": "t11_lowrior_s_D3_se",
+          "notes": "paper-implied |t| = 1.57 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_lowrior_s_D3_se",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2209"
+        },
+        {
+          "name": "t11_lowrior_s_D1D3",
+          "value": 1.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2210"
+        },
+        {
+          "name": "t11_lowrior_s_D1D3_se",
+          "value": 0.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2210"
+        },
+        {
+          "name": "t11_lowrior_l_D1",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2211",
+          "insignificant": true,
+          "inference_cell": "t11_lowrior_l_D1_se",
+          "notes": "paper-implied |t| = 1.75 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_lowrior_l_D1_se",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2211"
+        },
+        {
+          "name": "t11_lowrior_l_D2",
+          "value": 0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2212",
+          "insignificant": true,
+          "inference_cell": "t11_lowrior_l_D2_se",
+          "notes": "paper-implied |t| = 0.50 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_lowrior_l_D2_se",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2212"
+        },
+        {
+          "name": "t11_lowrior_l_D3",
+          "value": -0.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2213"
+        },
+        {
+          "name": "t11_lowrior_l_D3_se",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2213"
+        },
+        {
+          "name": "t11_lowrior_l_D1D3",
+          "value": 0.72,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2214"
+        },
+        {
+          "name": "t11_lowrior_l_D1D3_se",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2214"
+        },
+        {
+          "name": "t11_rior2_s_D1",
+          "value": 0.59,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2218"
+        },
+        {
+          "name": "t11_rior2_s_D1_se",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2218"
+        },
+        {
+          "name": "t11_rior2_s_D2",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2219"
+        },
+        {
+          "name": "t11_rior2_s_D2_se",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2219"
+        },
+        {
+          "name": "t11_rior2_s_D3",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2220",
+          "insignificant": true,
+          "inference_cell": "t11_rior2_s_D3_se",
+          "notes": "paper-implied |t| = 0.56 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_rior2_s_D3_se",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2220"
+        },
+        {
+          "name": "t11_rior2_s_D1D3",
+          "value": 0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2221"
+        },
+        {
+          "name": "t11_rior2_s_D1D3_se",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2221"
+        },
+        {
+          "name": "t11_rior2_l_D1",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2222",
+          "insignificant": true,
+          "inference_cell": "t11_rior2_l_D1_se",
+          "notes": "paper-implied |t| = 0.67 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_rior2_l_D1_se",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2222"
+        },
+        {
+          "name": "t11_rior2_l_D2",
+          "value": 0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2223",
+          "insignificant": true,
+          "inference_cell": "t11_rior2_l_D2_se",
+          "notes": "paper-implied |t| = 0.38 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_rior2_l_D2_se",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2223"
+        },
+        {
+          "name": "t11_rior2_l_D3",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2224",
+          "insignificant": true,
+          "inference_cell": "t11_rior2_l_D3_se",
+          "notes": "paper-implied |t| = 0.73 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_rior2_l_D3_se",
+          "value": 0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2224"
+        },
+        {
+          "name": "t11_rior2_l_D1D3",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2225",
+          "insignificant": true,
+          "inference_cell": "t11_rior2_l_D1D3_se",
+          "notes": "paper-implied |t| = 0.18 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_rior2_l_D1D3_se",
+          "value": 0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2225"
+        },
+        {
+          "name": "t11_highrior_s_D1",
+          "value": 0.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2229"
+        },
+        {
+          "name": "t11_highrior_s_D1_se",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2229"
+        },
+        {
+          "name": "t11_highrior_s_D2",
+          "value": 0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2230"
+        },
+        {
+          "name": "t11_highrior_s_D2_se",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2230"
+        },
+        {
+          "name": "t11_highrior_s_D3",
+          "value": 0.65,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2231"
+        },
+        {
+          "name": "t11_highrior_s_D3_se",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2231"
+        },
+        {
+          "name": "t11_highrior_s_D1D3",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2232",
+          "insignificant": true,
+          "inference_cell": "t11_highrior_s_D1D3_se",
+          "notes": "paper-implied |t| = 0.28 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_highrior_s_D1D3_se",
+          "value": 0.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2232"
+        },
+        {
+          "name": "t11_highrior_l_D1",
+          "value": -0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2233",
+          "insignificant": true,
+          "inference_cell": "t11_highrior_l_D1_se",
+          "notes": "paper-implied |t| = 0.20 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_highrior_l_D1_se",
+          "value": 0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2233"
+        },
+        {
+          "name": "t11_highrior_l_D2",
+          "value": 0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2234",
+          "insignificant": true,
+          "inference_cell": "t11_highrior_l_D2_se",
+          "notes": "paper-implied |t| = 0.40 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_highrior_l_D2_se",
+          "value": 0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2234"
+        },
+        {
+          "name": "t11_highrior_l_D3",
+          "value": -0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2235",
+          "insignificant": true,
+          "inference_cell": "t11_highrior_l_D3_se",
+          "notes": "paper-implied |t| = 1.83 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_highrior_l_D3_se",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2235"
+        },
+        {
+          "name": "t11_highrior_l_D1D3",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2236",
+          "insignificant": true,
+          "inference_cell": "t11_highrior_l_D1D3_se",
+          "notes": "paper-implied |t| = 1.54 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_highrior_l_D1D3_se",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2236"
+        },
+        {
+          "name": "t11_r1r3_s_D1",
+          "value": 0.4,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2240"
+        },
+        {
+          "name": "t11_r1r3_s_D1_se",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2240"
+        },
+        {
+          "name": "t11_r1r3_s_D2",
+          "value": -0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2241",
+          "insignificant": true,
+          "inference_cell": "t11_r1r3_s_D2_se",
+          "notes": "paper-implied |t| = 0.87 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_r1r3_s_D2_se",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2241"
+        },
+        {
+          "name": "t11_r1r3_s_D3",
+          "value": -1.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2242"
+        },
+        {
+          "name": "t11_r1r3_s_D3_se",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2242"
+        },
+        {
+          "name": "t11_r1r3_s_D1D3",
+          "value": 1.52,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2243"
+        },
+        {
+          "name": "t11_r1r3_s_D1D3_se",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2243"
+        },
+        {
+          "name": "t11_r1r3_l_D1",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2244",
+          "insignificant": true,
+          "inference_cell": "t11_r1r3_l_D1_se",
+          "notes": "paper-implied |t| = 1.78 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_r1r3_l_D1_se",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2244"
+        },
+        {
+          "name": "t11_r1r3_l_D2",
+          "value": 0.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2245",
+          "insignificant": true,
+          "inference_cell": "t11_r1r3_l_D2_se",
+          "notes": "paper-implied |t| = 0.00 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t11_r1r3_l_D2_se",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2245"
+        },
+        {
+          "name": "t11_r1r3_l_D3",
+          "value": -0.36,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2246"
+        },
+        {
+          "name": "t11_r1r3_l_D3_se",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2246"
+        },
+        {
+          "name": "t11_r1r3_l_D1D3",
+          "value": 0.52,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2247"
+        },
+        {
+          "name": "t11_r1r3_l_D1D3_se",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2247"
+        }
+      ],
+      "notes": "Alpha/SE pairs committed (SEs are the inference carriers for insignificant cells)."
+    },
+    {
+      "id": "T12",
+      "table_ref": "Table 12",
+      "description": "FF3 alphas of nine portfolios sorted on duration tertiles and residual institutional ownership tertiles, conditional on book-to-market (growth Panel I, value Panel II), 1981-2013",
+      "replication_meaning": "Demonstrates the book-to-market-robustness leg of claim C5: within growth and value stocks separately, the duration spread is concentrated in low-RIOR portfolios (0.95% growth, 0.63% value) and the RIOR1-RIOR3 spread is negative for high-duration stocks (-1.05% growth).",
+      "covers_claims": [
+        "C5"
+      ],
+      "paper_quote": "This table reports pricing errors ( $\\alpha$ ) for the Fama and French three-factor model for nine portfolios sorted on duration (Dur) and residual institutional ownership (RIOR) with OLS standard errors in parentheses, separately for growth stocks in Panel I and value stocks in Panel II. I sort all common stocks listed on NYSE, Amex, and Nasdaq at the end of June each year $t$ from 1981 to 2013 into two baskets based on book-to-market, and within each bin I sort stocks into tertiles based on duration for all firms with fiscal years ending in year $t-1$ . (L2256)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock_exchanges",
+        "universe_exclude_financials_utilities",
+        "delisting_for_cause_missing_ret",
+        "delisting_prorate",
+        "sort_double_quintile_rior",
+        "sort_rior_lag",
+        "sort_ew",
+        "sample_above_20th_size_pct",
+        "sample_period_restrictions",
+        "avail_compustat_two_years",
+        "avail_moodys_book_equity",
+        "var_dur_eq2",
+        "var_dur_parameters",
+        "var_dur_clean_surplus",
+        "var_dur_ar_mean_reversion",
+        "var_bm_timing",
+        "var_be_definition",
+        "var_be_preferred_order",
+        "var_be_fallback",
+        "var_ior",
+        "var_ior_zero",
+        "var_ior_carryforward",
+        "var_ior_thresholds",
+        "var_rior",
+        "factor_definitions",
+        "factor_ff5_mom_tbill_source"
+      ],
+      "metrics": [
+        {
+          "name": "t12_lowrior_s_D1",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2279",
+          "insignificant": true,
+          "inference_cell": "t12_lowrior_s_D1_se",
+          "notes": "paper-implied |t| = 0.43 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_lowrior_s_D1_se",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2279"
+        },
+        {
+          "name": "t12_lowrior_s_D2",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2280",
+          "insignificant": true,
+          "inference_cell": "t12_lowrior_s_D2_se",
+          "notes": "paper-implied |t| = 0.57 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_lowrior_s_D2_se",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2280"
+        },
+        {
+          "name": "t12_lowrior_s_D3",
+          "value": -0.9,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2281"
+        },
+        {
+          "name": "t12_lowrior_s_D3_se",
+          "value": 0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2281"
+        },
+        {
+          "name": "t12_lowrior_s_D1D3",
+          "value": 0.95,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2282"
+        },
+        {
+          "name": "t12_lowrior_s_D1D3_se",
+          "value": 0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2282"
+        },
+        {
+          "name": "t12_lowrior_l_D1",
+          "value": 0.81,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2283"
+        },
+        {
+          "name": "t12_lowrior_l_D1_se",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2283"
+        },
+        {
+          "name": "t12_lowrior_l_D2",
+          "value": 0.4,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2284"
+        },
+        {
+          "name": "t12_lowrior_l_D2_se",
+          "value": 0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2284"
+        },
+        {
+          "name": "t12_lowrior_l_D3",
+          "value": 0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2285",
+          "insignificant": true,
+          "inference_cell": "t12_lowrior_l_D3_se",
+          "notes": "paper-implied |t| = 0.95 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_lowrior_l_D3_se",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2285"
+        },
+        {
+          "name": "t12_lowrior_l_D1D3",
+          "value": 0.63,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2286"
+        },
+        {
+          "name": "t12_lowrior_l_D1D3_se",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2286"
+        },
+        {
+          "name": "t12_rior_s_D1",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2290",
+          "insignificant": true,
+          "inference_cell": "t12_rior_s_D1_se",
+          "notes": "paper-implied |t| = 1.88 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_rior_s_D1_se",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2290"
+        },
+        {
+          "name": "t12_rior_s_D2",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2291",
+          "insignificant": true,
+          "inference_cell": "t12_rior_s_D2_se",
+          "notes": "paper-implied |t| = 0.75 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_rior_s_D2_se",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2291"
+        },
+        {
+          "name": "t12_rior_s_D3",
+          "value": -0.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2292",
+          "insignificant": true,
+          "inference_cell": "t12_rior_s_D3_se",
+          "notes": "paper-implied |t| = 1.50 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_rior_s_D3_se",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2292"
+        },
+        {
+          "name": "t12_rior_s_D1D3",
+          "value": 0.47,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2293"
+        },
+        {
+          "name": "t12_rior_s_D1D3_se",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2293"
+        },
+        {
+          "name": "t12_rior_l_D1",
+          "value": 0.36,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2294"
+        },
+        {
+          "name": "t12_rior_l_D1_se",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2294"
+        },
+        {
+          "name": "t12_rior_l_D2",
+          "value": 0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2295"
+        },
+        {
+          "name": "t12_rior_l_D2_se",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2295"
+        },
+        {
+          "name": "t12_rior_l_D3",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2296",
+          "insignificant": true,
+          "inference_cell": "t12_rior_l_D3_se",
+          "notes": "paper-implied |t| = 1.93 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_rior_l_D3_se",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2296"
+        },
+        {
+          "name": "t12_rior_l_D1D3",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2297",
+          "insignificant": true,
+          "inference_cell": "t12_rior_l_D1D3_se",
+          "notes": "paper-implied |t| = 0.58 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_rior_l_D1D3_se",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2297"
+        },
+        {
+          "name": "t12_highrior_s_D1",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2301",
+          "insignificant": true,
+          "inference_cell": "t12_highrior_s_D1_se",
+          "notes": "paper-implied |t| = 0.89 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_highrior_s_D1_se",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2301"
+        },
+        {
+          "name": "t12_highrior_s_D2",
+          "value": -0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2302",
+          "insignificant": true,
+          "inference_cell": "t12_highrior_s_D2_se",
+          "notes": "paper-implied |t| = 1.11 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_highrior_s_D2_se",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2302"
+        },
+        {
+          "name": "t12_highrior_s_D3",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2303",
+          "insignificant": true,
+          "inference_cell": "t12_highrior_s_D3_se",
+          "notes": "paper-implied |t| = 0.71 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_highrior_s_D3_se",
+          "value": 0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2303"
+        },
+        {
+          "name": "t12_highrior_s_D1D3",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2304",
+          "insignificant": true,
+          "inference_cell": "t12_highrior_s_D1D3_se",
+          "notes": "paper-implied |t| = 0.32 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_highrior_s_D1D3_se",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2304"
+        },
+        {
+          "name": "t12_highrior_l_D1",
+          "value": 0.53,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2305"
+        },
+        {
+          "name": "t12_highrior_l_D1_se",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2305"
+        },
+        {
+          "name": "t12_highrior_l_D2",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2306",
+          "insignificant": true,
+          "inference_cell": "t12_highrior_l_D2_se",
+          "notes": "paper-implied |t| = 1.50 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_highrior_l_D2_se",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2306"
+        },
+        {
+          "name": "t12_highrior_l_D3",
+          "value": 0.38,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2307"
+        },
+        {
+          "name": "t12_highrior_l_D3_se",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2307"
+        },
+        {
+          "name": "t12_highrior_l_D1D3",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2308",
+          "insignificant": true,
+          "inference_cell": "t12_highrior_l_D1D3_se",
+          "notes": "paper-implied |t| = 0.93 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_highrior_l_D1D3_se",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2308"
+        },
+        {
+          "name": "t12_r1r3_s_D1",
+          "value": -0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2312",
+          "insignificant": true,
+          "inference_cell": "t12_r1r3_s_D1_se",
+          "notes": "paper-implied |t| = 0.14 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_r1r3_s_D1_se",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2312"
+        },
+        {
+          "name": "t12_r1r3_s_D2",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2313",
+          "insignificant": true,
+          "inference_cell": "t12_r1r3_s_D2_se",
+          "notes": "paper-implied |t| = 0.15 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_r1r3_s_D2_se",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2313"
+        },
+        {
+          "name": "t12_r1r3_s_D3",
+          "value": -1.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2314"
+        },
+        {
+          "name": "t12_r1r3_s_D3_se",
+          "value": 0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2314"
+        },
+        {
+          "name": "t12_r1r3_s_D1D3",
+          "value": 1.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2315"
+        },
+        {
+          "name": "t12_r1r3_s_D1D3_se",
+          "value": 0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2315"
+        },
+        {
+          "name": "t12_r1r3_l_D1",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2316"
+        },
+        {
+          "name": "t12_r1r3_l_D1_se",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2316"
+        },
+        {
+          "name": "t12_r1r3_l_D2",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2317"
+        },
+        {
+          "name": "t12_r1r3_l_D2_se",
+          "value": 0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2317"
+        },
+        {
+          "name": "t12_r1r3_l_D3",
+          "value": -0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2318",
+          "insignificant": true,
+          "inference_cell": "t12_r1r3_l_D3_se",
+          "notes": "paper-implied |t| = 1.43 < 1.96 (alpha/SE); magnitude untestable - inference carried by the paired SE cell"
+        },
+        {
+          "name": "t12_r1r3_l_D3_se",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2318"
+        },
+        {
+          "name": "t12_r1r3_l_D1D3",
+          "value": 0.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2319"
+        },
+        {
+          "name": "t12_r1r3_l_D1D3_se",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L2319"
+        }
+      ],
+      "notes": "Alpha/SE pairs committed (SEs are the inference carriers for insignificant cells)."
+    }
+  ]
+}

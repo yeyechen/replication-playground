@@ -1,0 +1,155 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 69,
+  "requirements": [
+    {
+      "id": "crsp_daily_returns",
+      "description": "Daily stock returns/prices/volume/shares for MAX, BETA (252-day), IVOL, ILLIQ, REV, MOM, CE, turnover, price>=5 filter (motivated by rules var_max, var_beta_252d, var_illiq, var_ivol, universe_price_above_5, avail_min_15_daily_observations)",
+      "needed_columns": ["permno", "date", "ret", "prc", "vol", "shrout", "cfacpr", "cfacshr"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "vol", "shrout", "cfacpr", "cfacshr"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly returns and month-end ME for VW portfolio returns and one-month-ahead excess returns (rule sort_excess_returns_rf, var_size)",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_names_pit",
+      "description": "Point-in-time share codes / exchange codes / SIC for the universe filters (shrcd 10/11, NYSE/AMEX/NASDAQ, SIC 4900-4949 and 6000-6999 exclusions; rules universe_exchanges_sharecodes, universe_sic_exclusions)",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd", "ncusip"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd", "ncusip"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "Delisting returns for the delisting-return convention (paper silent on delisting; Shumway 1997 substitution applied per default convention — rule delisting_paper_silent)",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat merge link for Compustat-based variables (BM, ROE, I/A, MIS anomalies, CE; rules var_bm, var_roe, var_ia, var_mis)",
+      "needed_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linkprim", "linktype"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linkprim", "linktype"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_annual_fundamentals",
+      "description": "Annual fundamentals for book equity (SEQ+TXDB+ITCB-pref), BM, accruals, NOA, asset growth, INV/AT, gross profitability, O-score, I/A (rules var_book_equity, var_bm, var_accruals, var_noa, var_ag_syy, var_inv_at, var_gp, var_oscore, var_ia)",
+      "needed_columns": ["gvkey", "datadate", "fyear", "at", "seq", "ceq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "revt", "cogs", "xsga", "xint", "act", "lct", "che", "dlc", "dltt", "ppent", "invt", "dp", "ib", "oancf", "sstk", "prstkc", "ni", "lt", "csho"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "at", "seq", "ceq", "txdb", "itcb", "pstkrv", "pstkl", "pstk", "revt", "cogs", "xsga", "xint", "act", "lct", "che", "dlc", "dltt", "ppent", "invt", "dp", "ib", "oancf", "sstk", "prstkc", "ni", "lt", "csho"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_quarterly_fundamentals",
+      "description": "Quarterly fundamentals for ROE (ibq / one-quarter-lagged book equity) and CHS (2008) distress inputs (rules var_roe, var_distress)",
+      "needed_columns": ["gvkey", "datadate", "fyearq", "fqtr", "atq", "ibq", "seqq", "ceqq", "ltq", "dlcq", "actq", "lctq", "cheq", "ppentq", "invtq", "dpq", "niq", "prccq", "cshoq"],
+      "matched_table": "comp_202601.fundq",
+      "matched_columns": ["gvkey", "datadate", "fyearq", "fqtr", "atq", "ibq", "seqq", "ceqq", "ltq", "dlcq", "actq", "lctq", "cheq", "ppentq", "invtq", "dpq", "niq", "prccq", "cshoq"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_factors_monthly",
+      "description": "Fama-French monthly factors for CAPM/FF3/FFC4/FF5/FF6 model alphas (rules factor_models_risk, factor_sources); Mkt-RF/SMB/HML/RF/MOM from four_factor_monthly, RMW/CMA from five_factor_monthly",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom", "rmw", "cma"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "missing_columns": ["rmw", "cma"],
+      "status": "partial"
+    },
+    {
+      "id": "ps_liquidity_factor",
+      "description": "Pastor-Stambaugh (2003) traded liquidity factor (LIQ_V, 10-1 portfolio return) for FFCPS/FF6PS models (rules factor_models_risk, factor_ff6ps_composition)",
+      "needed_columns": ["month", "liq_v"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["month", "liq_v"],
+      "status": "missing"
+    },
+    {
+      "id": "sy_mispricing_factors",
+      "description": "Stambaugh-Yuan (2017) M4 mispricing factors (MKTRF, SMB, MGMT, PERF, RF) for SY alphas (rule factor_models_mispricing)",
+      "needed_columns": ["yyyymm", "mktrf", "smb", "mgmt", "perf", "rf"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["yyyymm", "mktrf", "smb", "mgmt", "perf", "rf"],
+      "status": "missing"
+    },
+    {
+      "id": "dhs_behavioral_factors",
+      "description": "Daniel-Hirshleifer-Sun (2020) behavioral factors (FIN, PEAD) for DHS alphas in Tables 1 and 6 (rules factor_models_mispricing, avail_dhs_1972_2022)",
+      "needed_columns": ["date", "fin", "pead", "mktrf"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["date", "fin", "pead", "mktrf"],
+      "status": "missing"
+    },
+    {
+      "id": "thomson_13f_institutional_holdings",
+      "description": "Thomson Reuters 13F holdings for INST and delta-INST (rules var_inst, var_dinst, sort_inst_tiers); coverage confirmed 1980-03-31 to 2023-06-30, spanning the paper's April 1980-December 2022 INST sample",
+      "needed_columns": ["fdate", "cusip", "shares", "shrout1", "shrout2", "mgrno"],
+      "matched_table": "tr_13f_202401.s34",
+      "matched_columns": ["fdate", "cusip", "shares", "shrout1", "shrout2", "mgrno"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "bw_sentiment_index",
+      "description": "Baker-Wurgler (2006) investor sentiment index for the sentiment-state conditioning in Table A7 (rules sort_sentiment_issuance_states, sort_sentiment_regime_a1)",
+      "needed_columns": ["date", "sentiment_index"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["date", "sentiment_index"],
+      "status": "missing"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "ff_factors_monthly",
+      "reason": "RMW and CMA live in ff.five_factor_monthly (1963-07 onward), not in ff.four_factor_monthly; two tables must be joined to assemble FF6.",
+      "affected_targets": ["T1", "T3"],
+      "recommendation": "Join ff.four_factor_monthly (mkt_rf, smb, hml, rf, mom) with ff.five_factor_monthly (rmw, cma) on dt to assemble FF6 and FF6PS."
+    },
+    {
+      "requirement": "ps_liquidity_factor",
+      "reason": "Pastor-Stambaugh LIQ factor is not in ClickHouse; user-provided file inputs/liq_data_1962_2024.txt contains the traded LIQ_V factor with first valid month 1968-01 (paper sample starts Jan 1968 - aligned) through Dec 2024.",
+      "affected_targets": ["T1", "T3", "T5", "T7", "T8", "T9"],
+      "recommendation": "Load the traded LIQ_V column from inputs/liq_data_1962_2024.txt (parse Month YYYYMM, drop -99 sentinel values) and append it to the FF6 factor set for FFCPS/FF6PS; record the file provenance in assumptions.md."
+    },
+    {
+      "requirement": "sy_mispricing_factors",
+      "reason": "SY M4 factors are not in ClickHouse; user-provided inputs/M4.csv (MKTRF, SMB, MGMT, PERF, RF) covers 1963-01 through 2016-12 only, versus the paper's Jan 1968-Dec 2022 SY estimation window.",
+      "affected_targets": ["T1", "T3"],
+      "recommendation": "Load inputs/M4.csv and estimate SY alphas on the Jan 1968-Dec 2016 subperiod; document the 2017-2022 coverage gap with the [THIRD-PARTY-DATASET] marker in assumptions.md."
+    },
+    {
+      "requirement": "dhs_behavioral_factors",
+      "reason": "FIN and PEAD factors are neither in ClickHouse nor among the provided files (they are published on Lin Sun's website).",
+      "affected_targets": ["T1", "T3"],
+      "recommendation": "Evaluate the DHS columns of Tables 1 and 6 as SKIP (no factor data); obtain FIN/PEAD from Lin Sun's website to close the gap."
+    },
+    {
+      "requirement": "bw_sentiment_index",
+      "reason": "Baker-Wurgler (2006) sentiment index is neither in ClickHouse nor among the provided files.",
+      "affected_targets": ["T9"],
+      "recommendation": "Table A7 sentiment columns are excluded from the committed metrics of T9 (see T9 notes in tables_to_replicate.json); only the aggregate-issuance columns are replicated."
+    }
+  ]
+}

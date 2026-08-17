@@ -1,0 +1,52 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "loss": 0.31666666666666665,
+      "n_committed": 660,
+      "status_counts": {
+        "match": 451,
+        "fail": 209,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 41
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 0.2863636363636364,
+      "n_committed": 660,
+      "status_counts": {
+        "match": 471,
+        "fail": 189,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 41
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 0.2863636363636364,
+      "n_committed": 660,
+      "status_counts": {
+        "match": 471,
+        "fail": 189,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 41
+      }
+    },
+    {
+      "iteration": 4,
+      "loss": 0.2863636363636364,
+      "n_committed": 660,
+      "status_counts": {
+        "match": 471,
+        "fail": 189,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 41
+      }
+    }
+  ]
+}

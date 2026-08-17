@@ -1,0 +1,18 @@
+-- triple_sorts.sql
+-- Purpose: Document the T7 triple-sort construction (issuance/mispricing
+--   controlled MAX and MAX^beta deciles).
+-- Tables: data/panel.parquet
+-- Output columns: month, permno, iss_decile, mis_decile, maxbeta_rank
+-- Depends on: panel build, maxbeta_ranks.sql
+--
+-- Panel A (issuance): monthly, sort all stocks into 10 iss_idx deciles
+--   (ascending, all-stock). Within each iss decile, sort into 10 MAX
+--   deciles (MAX column), or 10 beta deciles then 10 MAX deciles within
+--   (MAX^beta column). Regroup by within-iss max rank across iss deciles,
+--   and by within-iss-beta max rank (Assumption 6).
+--
+-- Panel B (mispricing): identical, with mis as the outer control.
+--
+-- Portfolios aggregated by return month (formation month + 1); FF6PS
+-- alphas regression with HAC(6).
+SELECT 'documentation-only' AS note;

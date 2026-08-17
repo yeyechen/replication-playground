@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Bali, Ince & Ozsoylev 'MAX on Steroids' is a cross-sectional US equity paper: CRSP daily/monthly sample Jan 1968-Dec 2022, MAX (average of five highest daily returns in a month) and the beta-neutralized MAX^beta (double sort on 252-day market beta, then MAX within beta deciles), decile portfolio sorts with VW returns, alphas from 9 factor models (CAPM, FF3, FFC4, FFCPS, FF5, FF6, FF6PS, SY4, DHS), Fama-MacBeth regressions, and calendar-time holding-horizon portfolios. Data section (Section 3), operationalized variables (Section 3.2-3.5), and 13 main tables plus 13 appendix tables of numerical results (e.g., Table 1: 10-1 MAX VW spread -0.95%/month t=-3.08; Table 6: MAX^beta spread -0.81% t=-3.62) are all present. Data requirements (CRSP, Compustat, FF factors, PS liquidity, SY mispricing factors) are covered in ClickHouse plus the user-provided factor files in inputs/.",
+  "block_reasons": []
+}

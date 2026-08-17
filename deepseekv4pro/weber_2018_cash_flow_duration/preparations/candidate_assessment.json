@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Weber (2018, JFE 128: 486-503) is an empirical cross-sectional asset-pricing paper. Section 2 (Data) specifies all data sources (CRSP monthly stock file, Compustat, TR-13F, I/B/E/S, Ken French's data library) and the sample period (July 1963-June 2014). Section 2.1 operationalizes the key variable, cash flow duration (Dur), as the Dechow et al. (2004) implied equity duration with explicit formulas (Eqs. 1-4) and fully specified parameters (r = 0.12, T = 15, ROE AR(1) coefficient 0.41 reverting to 0.12, book-equity growth AR(1) coefficient 0.24 reverting to 0.06). The empirical core (Tables 2-6) is annual June sorts of all NYSE/Amex/Nasdaq common stocks into duration deciles with equal-weighted returns, CAPM/FF3/FF4/FF5 alphas, subsample and volatility-managed robustness checks. Tables 1, 7-12 use TR-13F institutional ownership, I/B/E/S analyst data, and the Baker-Wurgler sentiment index, which may be unavailable in ClickHouse; the CRSP/Compustat core (Tables 2-6) is fully operationalized with numerical targets (e.g., Table 2 D1-D10 mean excess return 1.10%/month, CAPM alpha 1.29%, FF3 alpha 0.84%, FF4 0.66%, FF5 0.48%).",
+  "block_reasons": []
+}
