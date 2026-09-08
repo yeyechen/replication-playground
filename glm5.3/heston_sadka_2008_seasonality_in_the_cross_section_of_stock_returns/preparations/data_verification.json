@@ -1,0 +1,69 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns, prices, shares, volume for NYSE/AMEX universe Jan 1945 - Dec 2002 (motivates rules universe_exchanges, sample_returns_from_1945, sample_strategy_period, var_return_definition)",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "vol", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "vol", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_pit",
+      "description": "Point-in-time share/exchange codes and historical SIC for the NYSE/AMEX common-stock filter (motivates universe_exchanges; PIT pattern per sample_survivorship_avoidance)",
+      "needed_columns": ["permno", "namedt", "nameenddt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameenddt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff3_monthly_factors",
+      "description": "Monthly Fama-French three factors plus risk-free rate for Table 3 alphas (motivates factor_ff3_alpha)",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_distributions",
+      "description": "Cash-dividend declaration dates (Panel B event months) and ex-dates (Panel C event months) for Table 8 (motivates sample_table8_compustat, sort_table8_event_split)",
+      "needed_columns": ["permno", "distcd", "divamt", "dclrdt", "exdt"],
+      "matched_table": "crsp_202601.msedist",
+      "matched_columns": ["permno", "distcd", "divamt", "dclrdt", "exdt", "rcrddt", "paydt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_quarterly_report_dates",
+      "description": "Quarterly earnings-announcement dates (rdq) for Table 8 Panel A event months (motivates sample_table8_compustat, sort_table8_event_split)",
+      "needed_columns": ["gvkey", "datadate", "rdq"],
+      "matched_table": "comp_202601.fundq",
+      "matched_columns": ["gvkey", "datadate", "rdq", "fqtr", "fyearq"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_annual_fiscal_dates",
+      "description": "Annual fiscal-period end dates for Table 8 Panel D fiscal-year-end event months (motivates sample_table8_compustat)",
+      "needed_columns": ["gvkey", "datadate", "fyear"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "indfmt", "consol", "popsrc"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ccm_link",
+      "description": "Compustat-CRSP link to map gvkey event months onto CRSP permnos for Table 8 (motivates sample_table8_compustat)",
+      "needed_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linktype", "linkprim"],
+      "matched_table": "crsp_202601.ccmxpf_lnkhist",
+      "matched_columns": ["gvkey", "lpermno", "lpermco", "linkdt", "linkenddt", "linktype", "linkprim"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

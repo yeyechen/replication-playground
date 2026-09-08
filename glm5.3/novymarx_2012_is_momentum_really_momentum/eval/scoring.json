@@ -1,0 +1,8268 @@
+{
+  "schema_version": 3,
+  "slug": "novymarx_2012_is_momentum_really_momentum",
+  "iteration": 2,
+  "loss_form": "binary_match",
+  "warnings": [
+    "loss_function.json is missing \u2014 the loss is computed from status counts (per-cell extensions default to None)."
+  ],
+  "cells": [
+    {
+      "cell": "r127_late",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.93,
+      "ours": 0.7910542383083913,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.14940404482968683,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_late_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 5.17,
+      "ours": 4.391981416507369,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.15048715348019934,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_third",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 1.24,
+      "ours": 1.1592404196229957,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.06512869385242279,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_third_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 5.29,
+      "ours": 4.860265132398527,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08123532468836922,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_fourth",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.61,
+      "ours": 0.4228680569937866,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3067736770593662,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_fourth_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 2.26,
+      "ours": 1.5753600455072498,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3029380329613938,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r62_late",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.36,
+      "ours": 0.2330924042171711,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.352521099396747,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "r62_late_t",
+      "notes": null
+    },
+    {
+      "cell": "r62_late_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 1.32,
+      "ours": 0.8611275987714265,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.34763060699134357,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r62_third",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.37,
+      "ours": 0.35285872077222197,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.04632778169669737,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "r62_third_t",
+      "notes": null
+    },
+    {
+      "cell": "r62_third_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 1.0,
+      "ours": 0.9976312131335603,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0023687868664397094,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r62_fourth",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.36,
+      "ours": 0.11332608766212017,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6852053120496662,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "r62_fourth_t",
+      "notes": null
+    },
+    {
+      "cell": "r62_fourth_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.87,
+      "ours": 0.27612195230764985,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.682618445623391,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_late",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -6.1,
+      "ours": -6.3860858303813215,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0468993164559544,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_late_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -13.8,
+      "ours": -14.216924916104249,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.03021195044233683,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_third",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -8.18,
+      "ours": -8.440532449947936,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.031849932756471425,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_third_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -13.8,
+      "ours": -14.17724474329599,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.027336575601158646,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_fourth",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -4.02,
+      "ours": -4.331639210814709,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.07752219174495256,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_fourth_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -6.36,
+      "ours": -6.679029227083335,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.05016182815775704,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logme_late",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -0.09,
+      "ours": -0.12169699184668012,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.35218879829644584,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logme_late_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -2.29,
+      "ours": -2.91002816906705,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.2707546589812446,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logme_third",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -0.04,
+      "ours": -0.0448553164784442,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.12138291196110498,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "logme_third_t",
+      "notes": null
+    },
+    {
+      "cell": "logme_third_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -0.68,
+      "ours": -0.7827780832872367,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.15114424012828925,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logme_fourth",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -0.15,
+      "ours": -0.19853866721491598,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3235911147661066,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logme_fourth_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": -2.52,
+      "ours": -3.273306915498495,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.298931315674006,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logbm_late",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.31,
+      "ours": 0.2790671596478388,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09978335597471356,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logbm_late_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 5.39,
+      "ours": 4.997152336216787,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.07288453873528998,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logbm_third",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.48,
+      "ours": 0.44432723342780844,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0743182636920657,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logbm_third_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 5.47,
+      "ours": 5.22595410556144,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.044615337191692785,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "logbm_fourth",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.14,
+      "ours": 0.11380708586786913,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1870922438009349,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "logbm_fourth_t",
+      "notes": null
+    },
+    {
+      "cell": "logbm_fourth_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 1.9,
+      "ours": 1.6010035836897993,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.15736653490010558,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "diff_late",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.57,
+      "ours": 0.5579618340912201,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.021119589313648806,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "diff_late_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 2.42,
+      "ours": 2.401383255490518,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.007692869632017277,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "diff_third",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.88,
+      "ours": 0.8063816988507739,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08365716039684781,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "diff_third_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 2.96,
+      "ours": 2.8233866494439437,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.046153158971640636,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "diff_fourth",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.25,
+      "ours": 0.30954196933166667,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.23816787732666667,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "diff_fourth_t",
+      "notes": null
+    },
+    {
+      "cell": "diff_fourth_t",
+      "table": "T1",
+      "group": "descriptive",
+      "paper": 0.69,
+      "ours": 0.8446184840432656,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.22408475948299367,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s1",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 1.2,
+      "ours": 1.1703039242569113,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.024746729785907196,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s1_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 5.79,
+      "ours": 5.505669333430911,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.049107196298633755,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s2",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 1.36,
+      "ours": 1.3605428506088104,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.00039915485941935223,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s2_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 6.64,
+      "ours": 6.561841030911746,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.01177092907955623,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s3",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 1.56,
+      "ours": 1.6066446755682924,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.029900433056597644,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s3_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 8.07,
+      "ours": 8.32774115196822,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.03193818487834206,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s4",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.54,
+      "ours": 0.8067231185735798,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.49393170106218476,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s4_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 3.78,
+      "ours": 5.192883933192432,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.37377881830487625,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s5",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.67,
+      "ours": 0.6659446533081493,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.006052756256493586,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s5_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 2.88,
+      "ours": 2.9376591743119373,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.020020546636089397,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s6",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.99,
+      "ours": 0.9664520908643911,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.023785766803645345,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s6_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 4.61,
+      "ours": 4.552658119857032,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.01243858571430984,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s7",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 1.16,
+      "ours": 1.107915726352668,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.04490023590287235,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s7_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 5.54,
+      "ours": 5.313869052330877,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.04081786059009442,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "intercept_s8",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.05,
+      "ours": 0.05755572937824053,
+      "tolerance_pct": 60.0,
+      "rel_err": 2.1511145875648108,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "intercept_s8_t",
+      "notes": null
+    },
+    {
+      "cell": "intercept_s8_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.37,
+      "ours": 0.4074653960979813,
+      "tolerance_pct": 50.0,
+      "rel_err": 2.1012578272918416,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s2",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.25,
+      "ours": -0.3052673072891855,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.221069229156742,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s2_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -6.74,
+      "ours": -8.125770434747963,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.2056039220694307,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s3",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.15,
+      "ours": -0.20461909160658004,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3641272773772003,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s3_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -3.92,
+      "ours": -5.432920792780506,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.38594918183176186,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s4",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.07,
+      "ours": -0.03280759366333708,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.468679909476244,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s4_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 2.43,
+      "ours": -1.076904074048501,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.4431704008430044,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s6",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.52,
+      "ours": -0.48220991382950507,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.07267324263556721,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s6_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -13.3,
+      "ours": -12.53694197365554,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.05737278393567368,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s7",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.41,
+      "ours": -0.40066066676095635,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.022778861558642987,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s7_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -9.95,
+      "ours": -9.84375221058724,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.010678169790227027,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s8",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.15,
+      "ours": -0.1750586400599444,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.16705760039962936,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "mkt_s8_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -5.44,
+      "ours": -6.319813327231412,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.16173039103518588,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "smb_s3",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.04,
+      "ours": 0.025392549978295313,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.634813749457383,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "smb_s3_t",
+      "notes": null
+    },
+    {
+      "cell": "smb_s3_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.6,
+      "ours": 0.3965217050248124,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.6608695083746872,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "smb_s4",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.03,
+      "ours": 0.06962852466298275,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.320950822099425,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "smb_s4_t",
+      "notes": null
+    },
+    {
+      "cell": "smb_s4_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.68,
+      "ours": 1.3794945601713864,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.028668470840274,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "smb_s7",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.24,
+      "ours": -0.11813733944301949,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.5077610856540854,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "smb_s7_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -3.67,
+      "ours": -1.7070434574965767,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.5348655429164642,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "smb_s8",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.16,
+      "ours": -0.06005202116439673,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6246748677225205,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "smb_s8_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -3.81,
+      "ours": -1.3085143374808939,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6565579166716814,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "hml_s3",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.64,
+      "ours": -0.7476868576620241,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1682607150969127,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "hml_s3_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -11.7,
+      "ours": -13.010469188411978,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.11200591353948537,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "hml_s4",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.19,
+      "ours": -0.4807968218177558,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.5305095885145041,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "hml_s4_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -4.62,
+      "ours": -10.333365695464204,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.2366592414424684,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "hml_s7",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -0.44,
+      "ours": -0.4206002177236123,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.04409041426451755,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "hml_s7_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": -7.5,
+      "ours": -6.772350818473688,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0970198908701749,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "hml_s8",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.09,
+      "ours": -0.07015258346421448,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.779473149602383,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "hml_s8_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 2.08,
+      "ours": -1.6582191934501322,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.7972207660817943,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "umd_s4",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.99,
+      "ours": 0.897087995568057,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09385050952721519,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "umd_s4_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 30.4,
+      "ours": 24.80235613222648,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.18413302196623424,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "umd_s8",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 1.18,
+      "ours": 1.177947182534659,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.001739675818085523,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "umd_s8_t",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 37.2,
+      "ours": 35.81803605023821,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0371495685419836,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r2_s2",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.042,
+      "ours": 0.060658990579605,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.4442616804667856,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r2_s3",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.156,
+      "ours": 0.1946139619464864,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.24752539709286148,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r2_s4",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.56,
+      "ours": 0.5002909808424525,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.10662324849562063,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r2_s6",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.15,
+      "ours": 0.1342660610749592,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.10489292616693865,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r2_s7",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.204,
+      "ours": 0.17298339771773763,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.15204216805030568,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r2_s8",
+      "table": "T2",
+      "group": "descriptive",
+      "paper": 0.665,
+      "ours": 0.6367675087003807,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.042454874134765945,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_er_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 1.2,
+      "ours": 1.1703039242569113,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.024746729785907196,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_er_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 5.79,
+      "ours": 5.505669333430911,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.049107196298633755,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_er_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.99,
+      "ours": 0.9440780463684575,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.04638581174903283,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_er_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 2.89,
+      "ours": 2.701120303240216,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0653562964566727,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_er_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 1.42,
+      "ours": 1.3965298021453654,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.016528308348334193,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_er_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 6.01,
+      "ours": 5.771508493529411,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.03968244700009797,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_int_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 1.24,
+      "ours": 1.2631881364080975,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.01870011000653022,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_int_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 6.62,
+      "ours": 6.849953861740234,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.034736232891274005,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_int_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 1.11,
+      "ours": 1.1279416600032293,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.016163657660566814,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_int_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 3.64,
+      "ours": 3.7944325788942557,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.042426532663257015,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_int_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 1.3,
+      "ours": 1.328282172248861,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.02175551711450836,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_int_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 6.13,
+      "ours": 6.149367303099983,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.003159429543227283,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_mkt_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.04,
+      "ours": -0.08041332151939651,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.0103330379849127,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_mkt_whole_t",
+      "notes": null
+    },
+    {
+      "cell": "A_mkt_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.95,
+      "ours": -2.162934545354339,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.2767732056361463,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_mkt_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.01,
+      "ours": -0.09692415542715768,
+      "tolerance_pct": 50.0,
+      "rel_err": 8.692415542715768,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_mkt_early_t",
+      "notes": null
+    },
+    {
+      "cell": "A_mkt_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.22,
+      "ours": -1.62093003364265,
+      "tolerance_pct": 50.0,
+      "rel_err": 6.3678637892847725,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_mkt_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.0,
+      "ours": 0.010638522636342648,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.021277045272685296,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_mkt_late_t",
+      "notes": null
+    },
+    {
+      "cell": "A_mkt_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.09,
+      "ours": 0.21403180104891156,
+      "tolerance_pct": 50.0,
+      "rel_err": 3.3781311227656845,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_smb_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.03,
+      "ours": 0.062015409267664114,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.0671803089221372,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_smb_whole_t",
+      "notes": null
+    },
+    {
+      "cell": "A_smb_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.51,
+      "ours": 1.0258079431499767,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.0113881238234836,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_smb_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.14,
+      "ours": 0.22863809100505791,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6331292214646992,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_smb_early_t",
+      "notes": null
+    },
+    {
+      "cell": "A_smb_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 1.47,
+      "ours": 2.2242967854275006,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.5131270649166672,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_smb_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.06,
+      "ours": -0.04814986648032932,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.19750222532784467,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_smb_late_t",
+      "notes": null
+    },
+    {
+      "cell": "A_smb_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.88,
+      "ours": -0.6963059198921683,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.2087432728498088,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_hml_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.52,
+      "ours": -0.6172997788316327,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.18711495929160124,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_hml_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -9.63,
+      "ours": -11.143064446641413,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.15711988023275303,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_hml_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.7,
+      "ours": -0.7779855882452844,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.11140798320754923,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_hml_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -7.6,
+      "ours": -8.232709951056954,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08325130934959925,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_hml_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.4,
+      "ours": -0.45829951528217694,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1457487882054423,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_hml_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -5.49,
+      "ours": -6.070847835722699,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10580106297316912,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_mom_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.28,
+      "ours": 0.3100024045067732,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.107151444667047,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_mom_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 9.9,
+      "ours": 11.260827441063133,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.13745731727910435,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_mom_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.21,
+      "ours": 0.2597584610708501,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.23694505271833385,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_mom_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 4.78,
+      "ours": 6.016189674042081,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.2586170866196821,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_mom_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.36,
+      "ours": 0.36588655813602733,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.01635155037785373,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_mom_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 10.8,
+      "ours": 11.009848117787532,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.01943038127662331,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_r2_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.23,
+      "ours": 0.2842953442800501,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.23606671426108733,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_r2_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.24,
+      "ours": 0.3106634731608654,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.29443113817027255,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_r2_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.238,
+      "ours": 0.2532477436365561,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.06406614973342908,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_er_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.67,
+      "ours": 0.6659446533081493,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.006052756256493586,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_er_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 2.88,
+      "ours": 2.9376591743119373,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.020020546636089397,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_er_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.54,
+      "ours": 0.5929963732657023,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.09814143197352274,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "B_er_early_t",
+      "notes": null
+    },
+    {
+      "cell": "B_er_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 1.47,
+      "ours": 1.691387487995492,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1506037333302667,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_er_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.8,
+      "ours": 0.7388929333505964,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.0763838333117546,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_er_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 2.8,
+      "ours": 2.5674884255348767,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08303984802325828,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_int_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.65,
+      "ours": 0.5262259689592503,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.19042158621653799,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_int_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 3.18,
+      "ours": 2.5894494849231555,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.18570770914366183,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_int_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.9,
+      "ours": 0.7871429569830377,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.12539671446329145,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_int_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 2.94,
+      "ours": 2.625550801768673,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10695550960249221,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_int_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.15,
+      "ours": 0.07796593661034419,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.480227089264372,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "B_int_late_t",
+      "notes": null
+    },
+    {
+      "cell": "B_int_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.58,
+      "ours": 0.28804214256748994,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.5033756162629484,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mkt_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.36,
+      "ours": -0.3265778085131657,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09283942079676191,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mkt_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -9.12,
+      "ours": -8.38907125574026,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08014569564251522,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mkt_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.39,
+      "ours": -0.36387377155490086,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.06699032934640808,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mkt_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -6.6,
+      "ours": -6.298830175758869,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0456317915516864,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mkt_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.26,
+      "ours": -0.2602380390870598,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0009155349502298904,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mkt_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -4.5,
+      "ours": -4.416847315267132,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.018478374385081747,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_smb_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.23,
+      "ours": -0.12733077621288286,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.446387929509205,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_smb_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -3.66,
+      "ours": -1.9516049091086645,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.4667746149976327,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_smb_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.37,
+      "ours": -0.25753710978448185,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.30395375733923824,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_smb_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -3.9,
+      "ours": -2.505885146045074,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3574653471679297,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_smb_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.03,
+      "ours": 0.018021071576112907,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.6007023858704303,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "B_smb_late_t",
+      "notes": null
+    },
+    {
+      "cell": "B_smb_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.37,
+      "ours": 0.21559159618220347,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.582679989681631,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_hml_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.24,
+      "ours": -0.14989830494016992,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.37542372941595864,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_hml_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -3.95,
+      "ours": -2.3684774217601468,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.4003854628455325,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_hml_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -0.32,
+      "ours": -0.21291478164486824,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.33464130735978675,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_hml_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": -3.31,
+      "ours": -2.121163967768474,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.35916496442040063,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_hml_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.02,
+      "ours": 0.04909865225718223,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.4549326128591116,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "B_hml_late_t",
+      "notes": null
+    },
+    {
+      "cell": "B_hml_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.25,
+      "ours": 0.5195775663013494,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.0783102652053977,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mom_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.32,
+      "ours": 0.36205252240210883,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1314141325065901,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mom_whole_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 9.9,
+      "ours": 11.260827441063157,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.13745731727910668,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mom_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.21,
+      "ours": 0.2603524473646197,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.23977355887914154,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mom_early_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 4.78,
+      "ours": 6.016189674042077,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.2586170866196813,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mom_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.53,
+      "ours": 0.5341616517366431,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.007852173088005789,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_mom_late_t",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 10.8,
+      "ours": 11.009848117787536,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.01943038127662364,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_r2_whole",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.274,
+      "ours": 0.26507338761218946,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.03257887732777577,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_r2_early",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.336,
+      "ours": 0.31335328170952015,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.06740094729309486,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "B_r2_late",
+      "table": "T3",
+      "group": "descriptive",
+      "paper": 0.229,
+      "ours": 0.2293121798083546,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.0013632306041685644,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.03,
+      "ours": -0.1014031437796351,
+      "tolerance_pct": 60.0,
+      "rel_err": 2.380104792654503,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_RR1_IR1_t",
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.1,
+      "ours": -0.3127507440777872,
+      "tolerance_pct": 50.0,
+      "rel_err": 2.1275074407778716,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.39,
+      "ours": 0.3416259806163296,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.12403594713761645,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_RR1_IR2_t",
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.28,
+      "ours": 1.1371750077322451,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.11158202520918352,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.38,
+      "ours": 0.33010073160709547,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.13131386419185404,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_RR1_IR3_t",
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.45,
+      "ours": 1.299747763223117,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10362223225991934,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.51,
+      "ours": 0.4771124057180714,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.06448547898417374,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.08,
+      "ours": 1.8884561244085807,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09208840172664394,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.96,
+      "ours": 0.9168856720497214,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.044910758281540196,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 3.4,
+      "ours": 3.2056732576181406,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.057154924229958624,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_SP",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.99,
+      "ours": 1.0182888158293564,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.028574561443794326,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR1_SP_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 5.15,
+      "ours": 5.294695905669334,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.028096292362977428,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.25,
+      "ours": 0.23753577496260428,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.04985690014958288,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_RR2_IR1_t",
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.92,
+      "ours": 0.8891031350086174,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.03358354890367681,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.57,
+      "ours": 0.5134002777806737,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.09929775827951982,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.43,
+      "ours": 2.156450819007814,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.11257167942065274,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.56,
+      "ours": 0.5946997492659314,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.061963837974877374,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.65,
+      "ours": 2.7982425164225155,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.055940572234911556,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.84,
+      "ours": 0.8088047924077212,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.03713715189556998,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 3.82,
+      "ours": 3.62732238843958,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.050439165329952844,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.95,
+      "ours": 0.9761591310664415,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.027535927438359496,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 4.21,
+      "ours": 4.198890493383572,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.002638837676111206,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_SP",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.7,
+      "ours": 0.7386233561038372,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.05517622300548182,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR2_SP_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 4.13,
+      "ours": 4.2853194416485225,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.03760761298995705,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.12,
+      "ours": 0.13002533453599252,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.08354445446660438,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_RR3_IR1_t",
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.5,
+      "ours": 0.5201878110064986,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.04037562201299716,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.44,
+      "ours": 0.40286528269105487,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.08439708479305712,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.2,
+      "ours": 1.9503221396510386,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.11348993652225524,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.72,
+      "ours": 0.7247704464901823,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.006625620125253227,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 3.54,
+      "ours": 3.5145025474346467,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0072026702162014955,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.83,
+      "ours": 0.8236548331542912,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.007644779332179203,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 4.53,
+      "ours": 4.391730488875194,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.030523070888478294,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.16,
+      "ours": 1.1839978888877016,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.02068783524801872,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 5.6,
+      "ours": 5.52826803839682,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.012809278857710708,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_SP",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.04,
+      "ours": 1.0539725543517093,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.013435148415105095,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR3_SP_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 5.99,
+      "ours": 5.8240402558285815,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.027706134252323652,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.12,
+      "ours": 0.19396282023790065,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.6163568353158388,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_RR4_IR1_t",
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.53,
+      "ours": 0.7885476791451783,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.48782580970788353,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.55,
+      "ours": 0.5104289899691065,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.07194729096526105,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.81,
+      "ours": 2.5821985033632804,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08106814826929526,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.61,
+      "ours": 0.6189193916094704,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.014621953458148226,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 3.37,
+      "ours": 3.2785700739666375,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.027130541849662505,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.87,
+      "ours": 0.9021169984822596,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.03691609020949376,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 5.01,
+      "ours": 5.047604803438825,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.007505948790184586,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.08,
+      "ours": 1.1637868360059767,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.07758040370923758,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 5.31,
+      "ours": 5.550254877904137,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.04524573971829325,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_SP",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.96,
+      "ours": 0.9698240157680761,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.010233349758412627,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR4_SP_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 5.5,
+      "ours": 5.1839772152701435,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.05745868813270117,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.38,
+      "ours": 0.47674519990609493,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.25459263133182874,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_RR5_IR1_t",
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.61,
+      "ours": 1.9436686292803302,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.207247595826292,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.67,
+      "ours": 0.7099387126250503,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.059610018843358537,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 3.27,
+      "ours": 3.3082665152072597,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.011702298228519772,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.91,
+      "ours": 0.8658193071581992,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.04855021191406683,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 4.66,
+      "ours": 4.339378013680435,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.06880300135612977,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.95,
+      "ours": 0.9819669977609295,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.03364947132729431,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 5.01,
+      "ours": 5.059136890334123,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.00980776254174124,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.3,
+      "ours": 1.3383036881163994,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.029464375474153377,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 6.03,
+      "ours": 5.939486283242622,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.015010566626430912,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_SP",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.92,
+      "ours": 0.8615584882103045,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.0635233823801039,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_RR5_SP_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 5.31,
+      "ours": 4.782665298141555,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09930973669650564,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.41,
+      "ours": 0.5781483436857299,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.41011791142860954,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.97,
+      "ours": 2.853284020867962,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.44836752328322943,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.29,
+      "ours": 0.36831273200872067,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.2700439034783472,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_SP_IR2_t",
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.33,
+      "ours": 1.7670842727387046,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3286347915328605,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.53,
+      "ours": 0.5357185755511036,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.010789765190761424,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.69,
+      "ours": 2.91520727473325,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08372017648076212,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.44,
+      "ours": 0.5048545920428583,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.14739680009740527,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.38,
+      "ours": 2.6972486984863,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.13329777247323535,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.34,
+      "ours": 0.42141801606667845,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.23946475313728946,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "A_SP_IR5_t",
+      "notes": null
+    },
+    {
+      "cell": "A_SP_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.63,
+      "ours": 2.01980273000948,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.23914277914692023,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.4,
+      "ours": -0.4686823395955994,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.17170584898899846,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -3.67,
+      "ours": -3.980027918322955,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08447627202260362,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.03,
+      "ours": -0.08492604362272395,
+      "tolerance_pct": 60.0,
+      "rel_err": 3.830868120757465,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR1_IR2_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.24,
+      "ours": -0.6993398622154761,
+      "tolerance_pct": 50.0,
+      "rel_err": 3.9139160925644836,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.05,
+      "ours": -0.08221199296402669,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.6442398592805337,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR1_IR3_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.49,
+      "ours": -0.7868564157729122,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6058294199447188,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.01,
+      "ours": 0.0005629495185430661,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.9437050481456933,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR1_IR4_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.1,
+      "ours": 0.005102950926984816,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.9489704907301518,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.18,
+      "ours": 0.24192273281475624,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.34401518230420136,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR1_IR5_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.31,
+      "ours": 1.7829260153446433,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.36101222545392614,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_SP",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.58,
+      "ours": 0.41747231187517897,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.2802201519393466,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR1_SP_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 3.36,
+      "ours": 2.3498183946773037,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3006492872984215,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.14,
+      "ours": -0.14583141220556428,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.04165294432545905,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR2_IR1_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -1.59,
+      "ours": -1.4963549909015301,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.058896232137402485,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.17,
+      "ours": 0.06146949196669394,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.6384147531370945,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.17,
+      "ours": 0.7001981188891194,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6773280558114657,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.08,
+      "ours": 0.10238276373236857,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.2797845466546071,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR2_IR3_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.03,
+      "ours": 1.3031408065410253,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.2651852490689565,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.21,
+      "ours": 0.18224868547306208,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.13214911679494243,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.25,
+      "ours": 1.9096017840560857,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.151288095975073,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.12,
+      "ours": 0.19934096991564293,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.6611747492970245,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR2_IR5_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.14,
+      "ours": 1.8499529906907626,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6227657813076866,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_SP",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.26,
+      "ours": 0.052039621586030205,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.7998476092844993,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR2_SP_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR2_SP_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.83,
+      "ours": 0.3467688633168358,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.8105088178596526,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.31,
+      "ours": -0.3298504424854089,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.06403368543680292,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -3.13,
+      "ours": -3.1787128569047973,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.015563213068625377,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.02,
+      "ours": -0.09407504377045867,
+      "tolerance_pct": 60.0,
+      "rel_err": 3.703752188522933,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR3_IR2_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.27,
+      "ours": -1.1541966113022986,
+      "tolerance_pct": 50.0,
+      "rel_err": 3.274802264082587,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.15,
+      "ours": 0.0925283574232626,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.383144283844916,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.99,
+      "ours": 1.1514271790668247,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.4213933773533544,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.12,
+      "ours": 0.13524490304709263,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.127040858725772,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR3_IR4_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.59,
+      "ours": 1.6689309905479555,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.04964213242009772,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.22,
+      "ours": 0.31753837582265276,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.44335625373933074,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 2.41,
+      "ours": 3.172607656733491,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.316434712337548,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_SP",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.53,
+      "ours": 0.3542560577728851,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.3315923438247451,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR3_SP_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 3.68,
+      "ours": 2.2697919834494757,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.383208700149599,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.42,
+      "ours": -0.39892614530992915,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.05017584450016866,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR1_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -3.73,
+      "ours": -3.186219236110689,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.14578572758426564,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.02,
+      "ours": -0.07989341147825804,
+      "tolerance_pct": 60.0,
+      "rel_err": 2.994670573912902,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR4_IR2_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR2_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.29,
+      "ours": -0.9497205921239987,
+      "tolerance_pct": 50.0,
+      "rel_err": 2.2748985935310304,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.12,
+      "ours": -0.10837693730300453,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.09685885580829555,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR4_IR3_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR3_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -1.71,
+      "ours": -1.4458218840327481,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1544901262966385,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.07,
+      "ours": 0.12638207025960857,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.8054581465658366,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR4_IR4_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR4_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 1.11,
+      "ours": 1.8852819298011656,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6984521890100589,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.05,
+      "ours": 0.22406621291395654,
+      "tolerance_pct": 60.0,
+      "rel_err": 3.4813242582791304,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "D_RR4_IR5_t",
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_IR5_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.52,
+      "ours": 2.3781052485263703,
+      "tolerance_pct": 50.0,
+      "rel_err": 3.5732793240891736,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_SP",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.46,
+      "ours": 0.3298595976887089,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.28291391806802413,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR4_SP_t",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 3.18,
+      "ours": 2.0051790673626106,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.369440544854525,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR5_IR1",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.42,
+      "ours": -0.35241574597524694,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.1609148905351263,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR5_IR2",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.12,
+      "ours": -0.1178968261665496,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.0175264486120866,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR5_IR3",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.09,
+      "ours": -0.07619776594869627,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.15335815612559692,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR5_IR4",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": -0.03,
+      "ours": 0.056987944653380446,
+      "tolerance_pct": 60.0,
+      "rel_err": 2.8995981551126815,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "D_RR5_IR5",
+      "table": "T4",
+      "group": "descriptive",
+      "paper": 0.12,
+      "ours": 0.2267695060705969,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.8897458839216409,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q1",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 1.07,
+      "ours": 1.101996360181587,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.02990314035662328,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q1_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 4.58,
+      "ours": 4.660625325539394,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.01760378286886333,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q2",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.77,
+      "ours": 0.683981159993747,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.11171277922890005,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q2_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 3.67,
+      "ours": 3.2349686777204374,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.11853714503530315,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q3",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.95,
+      "ours": 0.931442280187747,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.019534441907634696,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q3_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 4.2,
+      "ours": 4.035329971312746,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.03920714968744153,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q4",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.95,
+      "ours": 1.009861790015481,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.06301241054261156,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q4_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 4.69,
+      "ours": 5.021958199266949,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.07077999984369912,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q5",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 1.3,
+      "ours": 1.3005482589488704,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.0004217376529771841,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond127_q5_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 6.35,
+      "ours": 6.247725353600724,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.016106243527445017,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q1",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.26,
+      "ours": 0.26237904732144224,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.009150182005547035,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "er_cond62_q1_t",
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q1_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.97,
+      "ours": 0.9887883027772366,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.01936938430642953,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q2",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.26,
+      "ours": 0.1502488583774935,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.4221197754711789,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "er_cond62_q2_t",
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q2_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 1.02,
+      "ours": 0.5955886838518483,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.4160895256354429,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q3",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.29,
+      "ours": 0.13739167372383182,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.5262356078488558,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "er_cond62_q3_t",
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q3_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 1.17,
+      "ours": 0.5466930931356604,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.5327409460378971,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q4",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.39,
+      "ours": 0.4072791639871275,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.04430554868494225,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "er_cond62_q4_t",
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q4_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 1.73,
+      "ours": 1.7831144819398284,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.03070201268198172,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q5",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.49,
+      "ours": 0.46093094608872553,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.05932459981892746,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "er_cond62_q5_t",
+      "notes": null
+    },
+    {
+      "cell": "er_cond62_q5_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 1.93,
+      "ours": 1.785253255819814,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.07499831304672848,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q1",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.15,
+      "ours": 0.21848781948012294,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.45658546320081966,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "alpha_cond127_q1_t",
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q1_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.84,
+      "ours": 1.1766443231692771,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.40076705139199664,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q2",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.15,
+      "ours": -0.23988415982108008,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.5992277321405339,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "alpha_cond127_q2_t",
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q2_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.93,
+      "ours": -1.5531768660258625,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6700826516407122,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q3",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.03,
+      "ours": 0.01941354495481615,
+      "tolerance_pct": 60.0,
+      "rel_err": 1.6471181651605382,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "alpha_cond127_q3_t",
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q3_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.18,
+      "ours": 0.11615756739355004,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.6453198188530558,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q4",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.04,
+      "ours": 0.08867041042229848,
+      "tolerance_pct": 60.0,
+      "rel_err": 1.216760260557462,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "alpha_cond127_q4_t",
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q4_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.29,
+      "ours": 0.6292200944183974,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.1697244635117154,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q5",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.39,
+      "ours": 0.43177833492956075,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.1071239357168224,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond127_q5_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 2.8,
+      "ours": 3.069372840466578,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09620458588092082,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q1",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.17,
+      "ours": -0.15569802323743068,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.08412927507393726,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "alpha_cond62_q1_t",
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q1_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.65,
+      "ours": -0.6029234471985849,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.07242546584833091,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q2",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.05,
+      "ours": -0.18271678631643634,
+      "tolerance_pct": 60.0,
+      "rel_err": 2.654335726328727,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "alpha_cond62_q2_t",
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q2_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.21,
+      "ours": -0.7431833269458878,
+      "tolerance_pct": 50.0,
+      "rel_err": 2.538968223551847,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q3",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.2,
+      "ours": -0.29561077002005604,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.4780538501002801,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "alpha_cond62_q3_t",
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q3_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": -0.82,
+      "ours": -1.1782123975578986,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.4368443872657301,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q4",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.01,
+      "ours": 0.025002317562065772,
+      "tolerance_pct": 60.0,
+      "rel_err": 1.5002317562065772,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "alpha_cond62_q4_t",
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q4_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.06,
+      "ours": 0.10767266484396561,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.7945444140660936,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q5",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.07,
+      "ours": 0.05759249221200704,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.17725011125704238,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "alpha_cond62_q5_t",
+      "notes": null
+    },
+    {
+      "cell": "alpha_cond62_q5_t",
+      "table": "T5",
+      "group": "descriptive",
+      "paper": 0.28,
+      "ours": 0.22644273848133753,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1912759339952232,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_nfirms_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1772,
+      "ours": 1758.8253968253969,
+      "tolerance_pct": 15.0,
+      "rel_err": 0.007434877638037887,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_nfirms_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 653.6,
+      "ours": 619.4751984126984,
+      "tolerance_pct": 15.0,
+      "rel_err": 0.052210528744341476,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_nfirms_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 481.9,
+      "ours": 486.33730158730157,
+      "tolerance_pct": 15.0,
+      "rel_err": 0.009207930249640154,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_nfirms_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 385.1,
+      "ours": 405.24305555555554,
+      "tolerance_pct": 15.0,
+      "rel_err": 0.052306038835511603,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_nfirms_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 336.6,
+      "ours": 368.9434523809524,
+      "tolerance_pct": 15.0,
+      "rel_err": 0.09608868800045271,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pfirms_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 38.1,
+      "ours": 37.878078789546684,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.005824703686438767,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pfirms_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 18.6,
+      "ours": 18.15152561385292,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.024111526136939766,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pfirms_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 15.7,
+      "ours": 15.821359917043642,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.007729931021888076,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pfirms_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 14.2,
+      "ours": 14.375344748665492,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.012348221737006558,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pfirms_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 13.5,
+      "ours": 13.773690930891261,
+      "tolerance_pct": 20.0,
+      "rel_err": 0.02027340228824157,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_totcap_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 57.2,
+      "ours": 56.387608874025624,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.014202642062489147,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_totcap_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 102.8,
+      "ours": 92.74045154419738,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.09785552972570635,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_totcap_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 183.8,
+      "ours": 168.16879249707068,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.0850446545317156,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_totcap_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 370.1,
+      "ours": 346.91685948421963,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.06264020674352984,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_totcap_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 2668,
+      "ours": 2726.178788867575,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.021806142753963604,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pcap_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.7,
+      "ours": 1.6440153863336229,
+      "tolerance_pct": 25.0,
+      "rel_err": 0.032932125686104166,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pcap_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 3.0,
+      "ours": 2.765127195917254,
+      "tolerance_pct": 25.0,
+      "rel_err": 0.07829093469424864,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pcap_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.5,
+      "ours": 5.262106691835848,
+      "tolerance_pct": 25.0,
+      "rel_err": 0.04325332875711849,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pcap_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 12.0,
+      "ours": 11.61081068345662,
+      "tolerance_pct": 25.0,
+      "rel_err": 0.032432443045281666,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_pcap_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 77.9,
+      "ours": 78.71794004245665,
+      "tolerance_pct": 25.0,
+      "rel_err": 0.010499872175309895,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_avecap_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 19.6,
+      "ours": 19.20298697062874,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.020255766804656232,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_avecap_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 87.3,
+      "ours": 82.60640343084069,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.05376399277387527,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_avecap_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 218.6,
+      "ours": 197.90760770946113,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.0946587021525108,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_avecap_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 577.3,
+      "ours": 510.8969292107977,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.11502350734315309,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pa_avecap_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 4694,
+      "ours": 4320.455361624021,
+      "tolerance_pct": 30.0,
+      "rel_err": 0.07957917306688944,
+      "status": "Match",
+      "flags": [],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.83,
+      "ours": 0.746968685775417,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.1000377279814253,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q1_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.17,
+      "ours": 4.693561588669921,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09215443159189154,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.85,
+      "ours": 0.8880461375245386,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.04476016179357491,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q2_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 6.39,
+      "ours": 6.089116192462097,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.047086667846307204,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.0,
+      "ours": 0.9359074411642626,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.06409255883573739,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q3_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 6.53,
+      "ours": 5.897991510829561,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09678537353299221,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.87,
+      "ours": 0.8780902372452801,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.009299123270436931,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q4_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.1,
+      "ours": 4.835115617432464,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0519381142289285,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.82,
+      "ours": 0.8425950049231261,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.02755488405259288,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m127_q5_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 4.66,
+      "ours": 4.800681396765815,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.030189140936870106,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.53,
+      "ours": 0.4183273127187899,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.21070318354945303,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q1_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 2.99,
+      "ours": 2.28295871036607,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.23646865874044495,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.73,
+      "ours": 0.7441538768873542,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.01938887244843049,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q2_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 4.22,
+      "ours": 4.272342329510448,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.012403395618589715,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.52,
+      "ours": 0.6317322005940168,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.21486961652695535,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q3_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 2.7,
+      "ours": 3.243621227007471,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.20134119518795218,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.53,
+      "ours": 0.4941929437275349,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.06756048353295303,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q4_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 2.85,
+      "ours": 2.6156013738907946,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08224513196814227,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.24,
+      "ours": 0.28468562157277844,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.18619008988657687,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "pb_m62_q5_t",
+      "notes": null
+    },
+    {
+      "cell": "pb_m62_q5_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.25,
+      "ours": 1.5004418351899484,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.20035346815195876,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.8,
+      "ours": 0.8033104899396092,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.004138112424511425,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q1_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.17,
+      "ours": 5.28719019548917,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.022667349224210764,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.84,
+      "ours": 0.895698536995034,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.06630778213694527,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q2_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 6.69,
+      "ours": 6.6153633867840576,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.011156444426897285,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.1,
+      "ours": 1.0250916398994694,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.06809850918230063,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q3_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 7.72,
+      "ours": 6.939689720397663,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10107646108838561,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.94,
+      "ours": 0.9787917622378868,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.041267832167964716,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q4_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 6.28,
+      "ours": 6.201984150025044,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.012422906046967502,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.93,
+      "ours": 0.9707677731757024,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.043836315242690695,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m127_q5_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.58,
+      "ours": 5.882214053821127,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.054160224699126756,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.63,
+      "ours": 0.48324787816599374,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.23293987592699408,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q1_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 3.92,
+      "ours": 2.8566142881304284,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.2712718652728499,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.79,
+      "ours": 0.74889821601306,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.052027574667012765,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q2_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.02,
+      "ours": 4.718270194243386,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.06010553899534131,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.63,
+      "ours": 0.7215708921540975,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.14535062246682148,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q3_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 3.58,
+      "ours": 4.039542329395106,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.12836377916064406,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.51,
+      "ours": 0.44765113118342326,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.12225268395407206,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q4_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 3.12,
+      "ours": 2.661098177930664,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.14708391732991544,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.4,
+      "ours": 0.3607045440895027,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.09823863977624331,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pc_m62_q5_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 2.25,
+      "ours": 2.010603177864598,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10639858761573429,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.09,
+      "ours": 1.021862093415603,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.06251184090311651,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q1_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 6.95,
+      "ours": 6.279563004299836,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09646575477700209,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.02,
+      "ours": 0.9932978065329122,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.02617862104616451,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q2_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 6.6,
+      "ours": 6.149436729432424,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.06826716220720838,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.05,
+      "ours": 1.0205753632632302,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.028023463558828447,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q3_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 6.19,
+      "ours": 5.8055401665900375,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.06210982769143181,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.89,
+      "ours": 0.9136751300916145,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.02660126976585897,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q4_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 4.76,
+      "ours": 4.750762998622371,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.001940546507905125,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.91,
+      "ours": 0.9323931206814777,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.024607824924700764,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m127_q5_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 4.2,
+      "ours": 4.329804592851971,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0309058554409455,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.08,
+      "ours": 0.9804490654092199,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.09217679128775937,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q1_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.24,
+      "ours": 4.668214433922617,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1091193828391953,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.01,
+      "ours": 0.9746384188629729,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.035011466472304104,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q2_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 4.71,
+      "ours": 4.540410834586146,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.036006192232240844,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.62,
+      "ours": 0.674649114841347,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.08814373361507588,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q3_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 2.75,
+      "ours": 2.9283320841936233,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.06484803061586303,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.5,
+      "ours": 0.4068072709879454,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.18638545802410922,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q4_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 2.2,
+      "ours": 1.7812088216542061,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.19035962652081545,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.16,
+      "ours": 0.15721996261854881,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.017375233634069932,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "pd_m62_q5_t",
+      "notes": null
+    },
+    {
+      "cell": "pd_m62_q5_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.68,
+      "ours": 0.6590198188891735,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.030853207515921403,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.8,
+      "ours": 0.7882595135155055,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.014675608105618188,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q1_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.62,
+      "ours": 5.338405830697242,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.05010572407522379,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.76,
+      "ours": 0.761456362744247,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.0019162667687460345,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q2_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.38,
+      "ours": 5.104935138148666,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.05112729774188361,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.98,
+      "ours": 0.9403621228363296,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.040446813432316736,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q3_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 6.19,
+      "ours": 5.812117273172797,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.06104729027903123,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.84,
+      "ours": 0.9102892009069428,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.08367762012731285,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q4_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.08,
+      "ours": 5.434916292533118,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0698654119159681,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 1.01,
+      "ours": 1.0672056011341258,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.056639209043688875,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m127_q5_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 5.02,
+      "ours": 5.3611961022166374,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0679673510391709,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q1",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.52,
+      "ours": 0.46150624914897453,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.11248798240581823,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q1_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 2.72,
+      "ours": 2.358140036442204,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1330367513080133,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q2",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.46,
+      "ours": 0.5015821071212101,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.09039588504610886,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q2_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 2.31,
+      "ours": 2.4889980143568766,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.07748831790340976,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q3",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.2,
+      "ours": 0.2191293007291999,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.09564650364599941,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "pe_m62_q3_t",
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q3_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.92,
+      "ours": 0.9963309472645954,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08296842093977752,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q4",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.03,
+      "ours": -0.08540125673158108,
+      "tolerance_pct": 60.0,
+      "rel_err": 3.8467085577193694,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "pe_m62_q4_t",
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q4_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": 0.14,
+      "ours": -0.4111025338116178,
+      "tolerance_pct": 50.0,
+      "rel_err": 3.936446670082984,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q5",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": -0.12,
+      "ours": -0.15510961517974597,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.2925801264978832,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "pe_m62_q5_t",
+      "notes": null
+    },
+    {
+      "cell": "pe_m62_q5_t",
+      "table": "T6",
+      "group": "descriptive",
+      "paper": -0.54,
+      "ours": -0.6683419835929262,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.23767033998690026,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s1",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.57,
+      "ours": 0.5665562009615013,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.006041752699120481,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s1_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 4.58,
+      "ours": 5.142060482503964,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.12272062936767765,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s2",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.22,
+      "ours": 0.2565226984274874,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.16601226557948806,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s2_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 2.54,
+      "ours": 2.9330389678954027,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.15473975113992233,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s3",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.47,
+      "ours": 0.4607965544385396,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.019581799066936925,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s3_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 4.42,
+      "ours": 4.398082151254571,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.004958789308920541,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s4",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.27,
+      "ours": 0.3508098463623883,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.2992957272681048,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s4_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 2.19,
+      "ours": 2.9692350426037004,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3558150879468952,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s5",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": -0.13,
+      "ours": -0.02707983052892325,
+      "tolerance_pct": 60.0,
+      "rel_err": 0.791693611315975,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "ind_intercept_s5_t",
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s5_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": -1.5,
+      "ours": -0.31914297165903255,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.7872380188939783,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s6",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.04,
+      "ours": 0.1544132422011529,
+      "tolerance_pct": 60.0,
+      "rel_err": 2.8603310550288223,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "ind_intercept_s6_t",
+      "notes": null
+    },
+    {
+      "cell": "ind_intercept_s6_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.39,
+      "ours": 1.3626429629467305,
+      "tolerance_pct": 50.0,
+      "rel_err": 2.4939563152480266,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_umd_s2",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.49,
+      "ours": 0.4835784221946827,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0131052608271781,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_umd_s2_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 27.1,
+      "ours": 24.99943115733524,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.07751176541198376,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_umd_s5",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.57,
+      "ours": 0.5894178926508451,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.034066478334816054,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_umd_s5_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 32.0,
+      "ours": 31.407533915068356,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.01851456515411387,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_mom62_s3",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.35,
+      "ours": 0.30147285664756185,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1386489810069661,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_mom62_s3_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 12.7,
+      "ours": 10.83520489273038,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1468342604149307,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_mom127_s6",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.39,
+      "ours": 0.3466498183727068,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.11115431186485437,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_mom127_s6_t",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 12.7,
+      "ours": 10.835204892730378,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.14683426041493083,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_r2_s2",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.422,
+      "ours": 0.38257660291922924,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.09342037222931458,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_r2_s3",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.137,
+      "ours": 0.10361535743358496,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.24368352238259156,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_r2_s5",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.504,
+      "ours": 0.4945878201792172,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.018674959961870626,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "ind_r2_s6",
+      "table": "T7",
+      "group": "descriptive",
+      "paper": 0.137,
+      "ours": 0.1036153574335853,
+      "tolerance_pct": 35.0,
+      "rel_err": 0.2436835223825891,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r122_s1",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.62,
+      "ours": 0.5298251020241153,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.14544338383207217,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r122_s1_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 2.91,
+      "ours": 2.5087678956596027,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1378804482269407,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r122_s2",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.55,
+      "ours": 0.34449136460289775,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3736520643583678,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r122_s2_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 2.57,
+      "ours": 1.5834147363758095,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.38388531658528807,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_s3",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 1.02,
+      "ours": 0.8905794546731504,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1268828875753428,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_s3_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 5.38,
+      "ours": 4.702391620391715,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.12594951293834286,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_s4",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.98,
+      "ours": 0.8477859648852072,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1349122807293804,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_s4_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 5.03,
+      "ours": 4.478789244277279,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10958464328483519,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_s7",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.99,
+      "ours": 0.8599070673711968,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.13140700265535674,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_s7_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 5.35,
+      "ours": 4.620227839003755,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1364060114011672,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_s8",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.94,
+      "ours": 0.8129480787376236,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1351616183642301,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r127_s8_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 4.89,
+      "ours": 4.290445421805336,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.12260829819931782,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r62_s5",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.34,
+      "ours": 0.20789577317787475,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.38854184359448607,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "r62_s5_t",
+      "notes": null
+    },
+    {
+      "cell": "r62_s5_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 1.2,
+      "ours": 0.7391564460416044,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3840362949653297,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r62_s6",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.23,
+      "ours": -0.19041840007258554,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.8279060872721111,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "r62_s6_t",
+      "notes": null
+    },
+    {
+      "cell": "r62_s6_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.81,
+      "ours": -0.65857027148778,
+      "tolerance_pct": 50.0,
+      "rel_err": 1.813049717886148,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r62_s7",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.28,
+      "ours": 0.14755556753117072,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.4730158302458189,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "r62_s7_t",
+      "notes": null
+    },
+    {
+      "cell": "r62_s7_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.98,
+      "ours": 0.5339845725772309,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.45511778308445827,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r62_s8",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.16,
+      "ours": -0.253819028062567,
+      "tolerance_pct": 50.0,
+      "rel_err": 2.5863689253910436,
+      "status": "no_effect",
+      "flags": [
+        "absolute_band",
+        "insignificant",
+        "inference_target"
+      ],
+      "inference_cell": "r62_s8_t",
+      "notes": null
+    },
+    {
+      "cell": "r62_s8_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.56,
+      "ours": -0.88204795247266,
+      "tolerance_pct": 50.0,
+      "rel_err": 2.575085629415464,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "sue_s2",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 21.9,
+      "ours": 38.05967624466373,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.7378847600303073,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "sue_s2_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 13.9,
+      "ours": 21.675960248908332,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.5594216006408872,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "sue_s4",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 22.5,
+      "ours": 38.16356129518276,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6961582797859004,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "sue_s4_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 13.8,
+      "ours": 21.239720830490164,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.5391102051079828,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "sue_s6",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 23.7,
+      "ours": 39.21041956686042,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.6544480829898913,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "sue_s6_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 13.6,
+      "ours": 21.13482115595611,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.554030967349714,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "sue_s8",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 22.7,
+      "ours": 38.60490894496155,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.7006567817163679,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "sue_s8_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 13.5,
+      "ours": 21.518977705226852,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.5939983485353224,
+      "status": "FAIL",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s1",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -5.84,
+      "ours": -6.115797299990935,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.047225565066940936,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s1_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -12.4,
+      "ours": -12.741247501644438,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.027519959810035254,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s2",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -6.15,
+      "ours": -6.7939971073633325,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10471497680704588,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s2_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -12.7,
+      "ours": -13.988895113827677,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10148780423839986,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s3",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -5.78,
+      "ours": -6.090422308627684,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.05370628176949539,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s3_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -12.0,
+      "ours": -12.352057154774554,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.029338096231212862,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s4",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -6.11,
+      "ours": -6.757548085088944,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10598168332061267,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s4_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -12.3,
+      "ours": -13.62938033491938,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10807970202596583,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s5",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -5.79,
+      "ours": -6.011095640123003,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0381857754962008,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s5_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -12.0,
+      "ours": -12.390117446810892,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.03250978723424103,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s6",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -6.12,
+      "ours": -6.711213007875906,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09660343265946175,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s6_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -12.3,
+      "ours": -13.65707888835032,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.11033161693905033,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s7",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -5.93,
+      "ours": -6.211879747712703,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.04753452743890444,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s7_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -12.7,
+      "ours": -13.073706515340376,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.02942570986932102,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s8",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -6.28,
+      "ours": -6.9226518342235535,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10233309462158491,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "r10_s8_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -13.0,
+      "ours": -14.329833456165028,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10229488124346371,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s1",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -0.14,
+      "ours": -0.1669389756169231,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.19242125440659355,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s1_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -3.15,
+      "ours": -3.8118358638767553,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.21010662345293823,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s2",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -0.12,
+      "ours": -0.14421136303021884,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.201761358585157,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s2_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -2.78,
+      "ours": -3.156069166141464,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.13527667846815267,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s3",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -0.13,
+      "ours": -0.16242638069750395,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.24943369767310727,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s3_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -2.89,
+      "ours": -3.61004427633963,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.24915026862962975,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s4",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -0.12,
+      "ours": -0.14676249968451127,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.22302083070426065,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s4_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -2.61,
+      "ours": -3.1303559847990314,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.19937010911840292,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s5",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -0.1,
+      "ours": -0.13908529632000052,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3908529632000052,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s5_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -2.44,
+      "ours": -3.2138409864816326,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3171479452793577,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s6",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -0.09,
+      "ours": -0.1154224946149913,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.2824721623887922,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s6_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -2.13,
+      "ours": -2.5459681498992874,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.1952902112203228,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s7",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -0.13,
+      "ours": -0.16257757440982157,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.25059672622939666,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s7_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -3.22,
+      "ours": -3.8359510518991944,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.19128914655254478,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s8",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -0.12,
+      "ours": -0.13937793936426388,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.16148282803553235,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnme_s8_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": -2.82,
+      "ours": -3.163311103297638,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.12174152599207035,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s1",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.3,
+      "ours": 0.2672002550763192,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.10933248307893588,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s1_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 4.82,
+      "ours": 4.387016479580691,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.08983060589612231,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s2",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.26,
+      "ours": 0.31220115298124,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.20077366531246155,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s2_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 4.07,
+      "ours": 4.5899799221510875,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.12775919463171675,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s3",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.31,
+      "ours": 0.27506137353944693,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.11270524664694538,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s3_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 4.96,
+      "ours": 4.470338162679875,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09872214462099298,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s4",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.27,
+      "ours": 0.3143651019206567,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.16431519229872843,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s4_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 4.18,
+      "ours": 4.568315902022882,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09289854115379967,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s5",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.31,
+      "ours": 0.27211759536356256,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.12220130527883045,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s5_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 5.01,
+      "ours": 4.530456807468783,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.09571720409804718,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s6",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.27,
+      "ours": 0.3231547587624394,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.19686947689792353,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s6_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 4.23,
+      "ours": 4.781395042267081,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.13035343788819875,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s7",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.3,
+      "ours": 0.2718937357449387,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.093687547516871,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s7_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 5.07,
+      "ours": 4.673922233067115,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.07812184752127913,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s8",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.27,
+      "ours": 0.32769081862149746,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.21366969859813867,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "lnbm_s8_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 4.35,
+      "ours": 5.0422372716259645,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.15913500497148617,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "diff_s7",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.72,
+      "ours": 0.7123514998400262,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.010622916888852443,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "diff_s7_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 2.93,
+      "ours": 2.9356057658964505,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.0019132306813823695,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "diff_s8",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 0.78,
+      "ours": 1.0667671068001907,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.3676501369233214,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    },
+    {
+      "cell": "diff_s8_t",
+      "table": "T8",
+      "group": "descriptive",
+      "paper": 3.06,
+      "ours": 4.28626169627411,
+      "tolerance_pct": 50.0,
+      "rel_err": 0.4007391164294477,
+      "status": "Match",
+      "flags": [
+        "absolute_band"
+      ],
+      "inference_cell": null,
+      "notes": null
+    }
+  ],
+  "aggregates": {
+    "loss": 0.09513742071881606,
+    "n_cells": 540,
+    "n_committed": 473,
+    "match_count": 428,
+    "fail_count": 45,
+    "missing_count": 0,
+    "skip_count": 0,
+    "no_effect_count": 67,
+    "match_rate": 0.904862579281184,
+    "per_table_status": {
+      "T1": {
+        "Match": 29,
+        "no_effect": 6,
+        "FAIL": 1
+      },
+      "T2": {
+        "Match": 39,
+        "no_effect": 3,
+        "FAIL": 12
+      },
+      "T3": {
+        "Match": 62,
+        "no_effect": 10,
+        "FAIL": 6
+      },
+      "T4": {
+        "no_effect": 23,
+        "Match": 91,
+        "FAIL": 9
+      },
+      "T5": {
+        "Match": 22,
+        "no_effect": 14,
+        "FAIL": 4
+      },
+      "T6": {
+        "Match": 99,
+        "no_effect": 5,
+        "FAIL": 1
+      },
+      "T7": {
+        "Match": 20,
+        "no_effect": 2,
+        "FAIL": 2
+      },
+      "T8": {
+        "Match": 66,
+        "no_effect": 4,
+        "FAIL": 10
+      }
+    }
+  }
+}

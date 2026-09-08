@@ -1,0 +1,140 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 100.0,
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns, prices, shares, exchange and SIC codes for all CRSP stocks January 1926 - December 2010 (motivates universe_all_crsp_stocks, var_r_nm, avail_returns_from_1926)",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_pit",
+      "description": "Point-in-time share/exchange codes and historical SIC for the 'all stocks in the CRSP universe' filter and NYSE-break identification (motivates universe_all_crsp_stocks, sort_decile_nyse_breaks)",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.msenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_factors_monthly",
+      "description": "Fama-French three factors plus UMD and risk-free, monthly, July 1926 onward (motivates factor_umd_validation, factor_ff3_ff4_regressions)",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "Delisting returns and codes for stocks leaving the sample (motivates delisting_paper_silent; paper is silent, CRSP msf.ret already folds dlret into the last month, msedelist provides the raw fields)",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.msedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_annual_be",
+      "description": "Annual fundamentals for tiered book-equity construction (SEQ / CEQ+PSTK / AT-LT plus TXDITC / TXDB+ITCB and PSTKR/PSTKL/PSTK), 1970-2010 for the committed FM samples (motivates var_be_shareholder_equity_tiers, var_be_deferred_taxes_tiers, var_be_preferred_tiers, var_log_bm)",
+      "needed_columns": ["gvkey", "datadate", "fyear", "seq", "ceq", "pstk", "at", "lt", "txditc", "txdb", "itcb", "pstkrv", "pstkl"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "seq", "ceq", "pstk", "at", "lt", "txditc", "txdb", "itcb", "pstkrv", "pstkl"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "dff_book_equity",
+      "description": "Davis-Fama-French (2000) hand-collected book equity for 1927-1949 (and thin 1950s Compustat backfill) required by the paper's log(BM) control before Compustat coverage (motivates avail_dff_book_equity_precompustat)",
+      "needed_columns": ["permno_or_gvkey", "fiscal_year", "book_equity"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["permno_or_gvkey", "fiscal_year", "book_equity"],
+      "status": "missing"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CCM link table to merge Compustat book equity onto CRSP permnos for the FM log(BM) control",
+      "needed_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linktype", "linkprim", "usedflag"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linktype", "linkprim", "usedflag"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_quarterly_sue",
+      "description": "Quarterly earnings and assets for SUE (last quarterly earnings minus its four-quarter average, scaled by assets), sample January 1973 - December 2010 (motivates var_sue, avail_sue_quarterly_earnings)",
+      "needed_columns": ["gvkey", "datadate", "datacqtr", "ibq", "atq"],
+      "matched_table": "comp_202601.fundq",
+      "matched_columns": ["gvkey", "datadate", "datacqtr", "ibq", "atq"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "industry_classification",
+      "description": "Historical SIC codes for constructing the Fama-French 49 industry portfolios for Table 8 (motivates sample_other_markets_assets)",
+      "needed_columns": ["permno", "siccd", "namedt", "nameendt"],
+      "matched_table": "crsp_202601.msenames",
+      "matched_columns": ["permno", "siccd", "namedt", "nameendt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "msci_country_indices",
+      "description": "23 tradable MSCI developed-market country index total returns 1927-2010 (paper Tables 10; NOT a committed table - documented skip)",
+      "needed_columns": ["country", "date", "total_return"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["country", "date", "total_return"],
+      "status": "missing"
+    },
+    {
+      "id": "commodity_futures_prices",
+      "description": "Futures prices on 31 commodities 1927-2010 (paper Table 11; NOT a committed table - documented skip; tr_ds_fut_202606 holds Refinitiv futures metadata but no verified 1927-2010 commodity price series)",
+      "needed_columns": ["commodity", "date", "price_or_return"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["commodity", "date", "price_or_return"],
+      "status": "missing"
+    },
+    {
+      "id": "fx_returns_19currencies",
+      "description": "Exchange-rate returns for 19 currencies 1927-2010 (paper Table 12; NOT a committed table - documented skip; comp_202601.exrt_mly is unpopulated)",
+      "needed_columns": ["currency", "date", "fx_return"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["currency", "date", "fx_return"],
+      "status": "missing"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "dff_book_equity",
+      "reason": "The paper uses Davis, Fama, and French (2000) hand-collected book equity before Compustat availability (footnote 1, L155); no DFF/Moody's book-equity table exists in the catalog and standard-filter funda starts in 1970 (seq NULL for essentially all 1950-1957 rows). Without it the log(BM) control cannot be built for 1927-1949, so Table 1's Whole/Early/First/Second columns are not replicable.",
+      "affected_targets": ["T1"],
+      "recommendation": "Scope reduction already applied at Stage 4: T1 commits only the Late (1969-2010), Third (1969-1989), and Fourth (1990-2010) columns, which are fully covered by Compustat-era book equity. Table 9 (style momentum, sample July 1927-2010) is skipped for the same reason. All 540 committed cells remain computable; substitution logged in preparations/assumptions.md."
+    },
+    {
+      "requirement": "msci_country_indices",
+      "reason": "No MSCI country index return series in the catalog; paper Table 10 is not replicable.",
+      "affected_targets": [],
+      "recommendation": "Tables 10-12 are documented skips (not committed); claim C5 is scoped to the industry test (Table 8) which the catalog fully supports."
+    },
+    {
+      "requirement": "commodity_futures_prices",
+      "reason": "No verified 1927-2010 commodity futures price series in the catalog; paper Table 11 is not replicable.",
+      "affected_targets": [],
+      "recommendation": "Table 11 skipped (not committed); no committed target affected."
+    },
+    {
+      "requirement": "fx_returns_19currencies",
+      "reason": "No 19-currency exchange-rate return series covering 1927-2010 in the catalog; paper Table 12 is not replicable.",
+      "affected_targets": [],
+      "recommendation": "Table 12 skipped (not committed); no committed target affected."
+    }
+  ]
+}

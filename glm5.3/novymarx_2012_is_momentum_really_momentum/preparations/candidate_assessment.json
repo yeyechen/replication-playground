@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Empirical asset-pricing paper with a clearly specified data section (Section 2.1: all CRSP stocks, January 1926 through December 2010), operationalized signals (r_{n,m} = cumulative returns from n to m months inclusive prior to portfolio formation), and 16 numerical tables. Methodology is fully specified: NYSE-break decile/quintile/tertile momentum sorts (value- and equal-weighted), Fama-MacBeth regressions with winsorized 1%/99% controls (Table 1), time-series spanning regressions on FF3/FF4 factors (Tables 2, 3), 5x5 independent double sorts (Tables 4-6), size-quintile conditional sorts (Table 7), and momentum in industry/style portfolios (Tables 8-9). ClickHouse verification confirms crsp_202601.msf covers 1925-12-31 to 2024-12-31 and ff.four_factor_monthly (with UMD) covers 1926-07 to 2025-10, so the full 1927-2010 sample is in the catalog.",
+  "block_reasons": []
+}

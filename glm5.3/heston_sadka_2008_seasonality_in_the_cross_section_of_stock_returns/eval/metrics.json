@@ -1,0 +1,7333 @@
+{
+  "schema_version": 2,
+  "slug": "heston_sadka_2008_seasonality_in_the_cross_section_of_stock_returns",
+  "metrics": {
+    "diag_eligible_jan1965": {
+      "value": 1922.0
+    },
+    "diag_eligible_mean_per_month": {
+      "value": 2394.0
+    },
+    "diag_eligible_min_per_month": {
+      "value": 1903.0
+    },
+    "diag_eligible_max_per_month": {
+      "value": 2919.0
+    },
+    "diag_complete_240m_198501": {
+      "value": 679.0
+    },
+    "diag_complete_240m_199001": {
+      "value": 656.0
+    },
+    "diag_complete_240m_199501": {
+      "value": 931.0
+    },
+    "diag_complete_240m_199901": {
+      "value": 871.0
+    },
+    "diag_complete_240m_200201": {
+      "value": 723.0
+    },
+    "diag_complete_120m_199901": {
+      "value": 1363.0
+    },
+    "diag_delist_n": {
+      "value": 142.0
+    },
+    "diag_delist_n_sample": {
+      "value": 3880.0
+    },
+    "diag_delist_n_dlret_le_-0.90": {
+      "value": 19.0
+    },
+    "diag_delist_frac_msret_gt_-0.99_when_dlret_le_-0.90": {
+      "value": 1.0
+    },
+    "diag_delist_frac_ret_eq_dlret_1pp": {
+      "value": 0.035
+    },
+    "diag_delist_med_absdiff": {
+      "value": 0.2973
+    },
+    "diag_delist_med_msret": {
+      "value": -0.1749
+    },
+    "diag_delist_med_dlret": {
+      "value": -0.1156
+    },
+    "diag_delist_med_combined": {
+      "value": -0.378
+    },
+    "diag_delist_med_absdiff_combined": {
+      "value": 0.1312
+    },
+    "diag_hexcd_agreement": {
+      "value": 1.0
+    },
+    "t2_y1_all_d1": {
+      "value": 1.0575,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d1_t": {
+      "value": 2.484,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_d2": {
+      "value": 0.992,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d2_t": {
+      "value": 3.2312,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_d3": {
+      "value": 1.0525,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d3_t": {
+      "value": 3.8512,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_d4": {
+      "value": 1.1135,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d4_t": {
+      "value": 4.36,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_d5": {
+      "value": 1.1688,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d5_t": {
+      "value": 4.752,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_d6": {
+      "value": 1.2494,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d6_t": {
+      "value": 5.17,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_d7": {
+      "value": 1.3648,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d7_t": {
+      "value": 5.61,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_d8": {
+      "value": 1.4151,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d8_t": {
+      "value": 5.5028,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_d9": {
+      "value": 1.6331,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d9_t": {
+      "value": 5.8871,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_d10": {
+      "value": 1.8527,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_d10_t": {
+      "value": 5.5875,
+      "unit": "t_stat"
+    },
+    "t2_y1_all_spread": {
+      "value": 0.7952,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_all_spread_t": {
+      "value": 2.5964,
+      "unit": "t_stat"
+    },
+    "t2_vw_y1_all_spread": {
+      "value": 1.0664,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y1_all_spread_t": {
+      "value": 3.0514,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d1": {
+      "value": 0.6615,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d1_t": {
+      "value": 2.0197,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d2": {
+      "value": 0.8753,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d2_t": {
+      "value": 3.1666,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d3": {
+      "value": 1.0804,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d3_t": {
+      "value": 4.2729,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d4": {
+      "value": 1.1266,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d4_t": {
+      "value": 4.5656,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d5": {
+      "value": 1.2867,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d5_t": {
+      "value": 5.2663,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d6": {
+      "value": 1.3088,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d6_t": {
+      "value": 5.3621,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d7": {
+      "value": 1.4554,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d7_t": {
+      "value": 5.7266,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d8": {
+      "value": 1.478,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d8_t": {
+      "value": 5.5891,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d9": {
+      "value": 1.6557,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d9_t": {
+      "value": 5.7865,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_d10": {
+      "value": 1.9825,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_d10_t": {
+      "value": 5.613,
+      "unit": "t_stat"
+    },
+    "t2_y1_annual_spread": {
+      "value": 1.321,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_annual_spread_t": {
+      "value": 8.4574,
+      "unit": "t_stat"
+    },
+    "t2_vw_y1_annual_spread": {
+      "value": 0.9568,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y1_annual_spread_t": {
+      "value": 4.0992,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d1": {
+      "value": 1.2794,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d1_t": {
+      "value": 2.8883,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d2": {
+      "value": 1.1112,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d2_t": {
+      "value": 3.5489,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d3": {
+      "value": 1.1399,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d3_t": {
+      "value": 4.1239,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d4": {
+      "value": 1.1269,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d4_t": {
+      "value": 4.3707,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d5": {
+      "value": 1.1346,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d5_t": {
+      "value": 4.6647,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d6": {
+      "value": 1.2199,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d6_t": {
+      "value": 5.0677,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d7": {
+      "value": 1.2529,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d7_t": {
+      "value": 5.1916,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d8": {
+      "value": 1.3622,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d8_t": {
+      "value": 5.3488,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d9": {
+      "value": 1.539,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d9_t": {
+      "value": 5.636,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_d10": {
+      "value": 1.7343,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_d10_t": {
+      "value": 5.3466,
+      "unit": "t_stat"
+    },
+    "t2_y1_nonannual_spread": {
+      "value": 0.4549,
+      "unit": "percent_per_month"
+    },
+    "t2_y1_nonannual_spread_t": {
+      "value": 1.3923,
+      "unit": "t_stat"
+    },
+    "t2_vw_y1_nonannual_spread": {
+      "value": 0.9219,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y1_nonannual_spread_t": {
+      "value": 2.654,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d1": {
+      "value": 1.7665,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d1_t": {
+      "value": 4.7056,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d2": {
+      "value": 1.4614,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d2_t": {
+      "value": 4.942,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d3": {
+      "value": 1.3948,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d3_t": {
+      "value": 5.3446,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d4": {
+      "value": 1.3158,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d4_t": {
+      "value": 5.4746,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d5": {
+      "value": 1.3557,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d5_t": {
+      "value": 5.6634,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d6": {
+      "value": 1.3373,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d6_t": {
+      "value": 5.4647,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d7": {
+      "value": 1.254,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d7_t": {
+      "value": 4.9772,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d8": {
+      "value": 1.2078,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d8_t": {
+      "value": 4.5712,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d9": {
+      "value": 1.1009,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d9_t": {
+      "value": 3.7996,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_d10": {
+      "value": 0.7485,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_d10_t": {
+      "value": 2.239,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_all_spread": {
+      "value": -1.018,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_all_spread_t": {
+      "value": -4.6033,
+      "unit": "t_stat"
+    },
+    "t2_vw_y2_5_all_spread": {
+      "value": -0.5811,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y2_5_all_spread_t": {
+      "value": -2.3831,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d1": {
+      "value": 1.0085,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d1_t": {
+      "value": 3.0964,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d2": {
+      "value": 0.9957,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d2_t": {
+      "value": 3.5912,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d3": {
+      "value": 1.0391,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d3_t": {
+      "value": 4.105,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d4": {
+      "value": 1.1657,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d4_t": {
+      "value": 4.7731,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d5": {
+      "value": 1.2146,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d5_t": {
+      "value": 4.95,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d6": {
+      "value": 1.3296,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d6_t": {
+      "value": 5.3526,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d7": {
+      "value": 1.399,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d7_t": {
+      "value": 5.6304,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d8": {
+      "value": 1.5222,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d8_t": {
+      "value": 5.7418,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d9": {
+      "value": 1.5885,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d9_t": {
+      "value": 5.6056,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_d10": {
+      "value": 1.6949,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_d10_t": {
+      "value": 5.0684,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_annual_spread": {
+      "value": 0.6863,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_annual_spread_t": {
+      "value": 5.107,
+      "unit": "t_stat"
+    },
+    "t2_vw_y2_5_annual_spread": {
+      "value": 0.8648,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y2_5_annual_spread_t": {
+      "value": 4.3616,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d1": {
+      "value": 1.876,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d1_t": {
+      "value": 4.9181,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d2": {
+      "value": 1.6001,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d2_t": {
+      "value": 5.3714,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d3": {
+      "value": 1.3938,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d3_t": {
+      "value": 5.3517,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d4": {
+      "value": 1.4105,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d4_t": {
+      "value": 5.8364,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d5": {
+      "value": 1.3546,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d5_t": {
+      "value": 5.6991,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d6": {
+      "value": 1.2956,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d6_t": {
+      "value": 5.351,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d7": {
+      "value": 1.2013,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d7_t": {
+      "value": 4.8058,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d8": {
+      "value": 1.1488,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d8_t": {
+      "value": 4.2862,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d9": {
+      "value": 0.9883,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d9_t": {
+      "value": 3.4632,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_d10": {
+      "value": 0.6729,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_d10_t": {
+      "value": 2.021,
+      "unit": "t_stat"
+    },
+    "t2_y2_5_nonannual_spread": {
+      "value": -1.2031,
+      "unit": "percent_per_month"
+    },
+    "t2_y2_5_nonannual_spread_t": {
+      "value": -5.23,
+      "unit": "t_stat"
+    },
+    "t2_vw_y2_5_nonannual_spread": {
+      "value": -0.8008,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y2_5_nonannual_spread_t": {
+      "value": -3.3143,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d1": {
+      "value": 1.5104,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d1_t": {
+      "value": 4.7656,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d2": {
+      "value": 1.515,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d2_t": {
+      "value": 5.6683,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d3": {
+      "value": 1.3993,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d3_t": {
+      "value": 5.7051,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d4": {
+      "value": 1.3444,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d4_t": {
+      "value": 5.6948,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d5": {
+      "value": 1.2517,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d5_t": {
+      "value": 5.3441,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d6": {
+      "value": 1.2285,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d6_t": {
+      "value": 5.1528,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d7": {
+      "value": 1.1136,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d7_t": {
+      "value": 4.5991,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d8": {
+      "value": 1.1314,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d8_t": {
+      "value": 4.4096,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d9": {
+      "value": 1.0884,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d9_t": {
+      "value": 3.9024,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_d10": {
+      "value": 1.0999,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_d10_t": {
+      "value": 3.3784,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_all_spread": {
+      "value": -0.4105,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_all_spread_t": {
+      "value": -3.3541,
+      "unit": "t_stat"
+    },
+    "t2_vw_y6_10_all_spread": {
+      "value": -0.2003,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y6_10_all_spread_t": {
+      "value": -0.9598,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d1": {
+      "value": 0.961,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d1_t": {
+      "value": 3.0853,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d2": {
+      "value": 0.8774,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d2_t": {
+      "value": 3.3849,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d3": {
+      "value": 1.0217,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d3_t": {
+      "value": 4.1494,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d4": {
+      "value": 1.1542,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d4_t": {
+      "value": 4.8093,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d5": {
+      "value": 1.21,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d5_t": {
+      "value": 5.1347,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d6": {
+      "value": 1.1904,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d6_t": {
+      "value": 5.098,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d7": {
+      "value": 1.3564,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d7_t": {
+      "value": 5.6684,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d8": {
+      "value": 1.3815,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d8_t": {
+      "value": 5.5383,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d9": {
+      "value": 1.5552,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d9_t": {
+      "value": 5.7914,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_d10": {
+      "value": 1.6667,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_d10_t": {
+      "value": 5.293,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_annual_spread": {
+      "value": 0.7057,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_annual_spread_t": {
+      "value": 5.9848,
+      "unit": "t_stat"
+    },
+    "t2_vw_y6_10_annual_spread": {
+      "value": 0.9062,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y6_10_annual_spread_t": {
+      "value": 4.7161,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d1": {
+      "value": 1.7004,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d1_t": {
+      "value": 5.3067,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d2": {
+      "value": 1.5092,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d2_t": {
+      "value": 5.6597,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d3": {
+      "value": 1.4574,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d3_t": {
+      "value": 5.8927,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d4": {
+      "value": 1.4075,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d4_t": {
+      "value": 5.9212,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d5": {
+      "value": 1.2557,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d5_t": {
+      "value": 5.3771,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d6": {
+      "value": 1.1599,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d6_t": {
+      "value": 4.9575,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d7": {
+      "value": 1.118,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d7_t": {
+      "value": 4.5874,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d8": {
+      "value": 1.0504,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d8_t": {
+      "value": 4.111,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d9": {
+      "value": 1.0165,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d9_t": {
+      "value": 3.6751,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_d10": {
+      "value": 1.0084,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_d10_t": {
+      "value": 3.0947,
+      "unit": "t_stat"
+    },
+    "t2_y6_10_nonannual_spread": {
+      "value": -0.6921,
+      "unit": "percent_per_month"
+    },
+    "t2_y6_10_nonannual_spread_t": {
+      "value": -5.6674,
+      "unit": "t_stat"
+    },
+    "t2_vw_y6_10_nonannual_spread": {
+      "value": -0.4981,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y6_10_nonannual_spread_t": {
+      "value": -2.4521,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d1": {
+      "value": 1.2832,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d1_t": {
+      "value": 4.2972,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d2": {
+      "value": 1.1909,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d2_t": {
+      "value": 4.6859,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d3": {
+      "value": 1.0587,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d3_t": {
+      "value": 4.5044,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d4": {
+      "value": 1.2217,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d4_t": {
+      "value": 5.3067,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d5": {
+      "value": 1.2222,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d5_t": {
+      "value": 5.4344,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d6": {
+      "value": 1.224,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d6_t": {
+      "value": 5.4066,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d7": {
+      "value": 1.275,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d7_t": {
+      "value": 5.5932,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d8": {
+      "value": 1.2207,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d8_t": {
+      "value": 5.0607,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d9": {
+      "value": 1.2954,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d9_t": {
+      "value": 5.0096,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_d10": {
+      "value": 1.2525,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_d10_t": {
+      "value": 4.3534,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_all_spread": {
+      "value": -0.0307,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_all_spread_t": {
+      "value": -0.276,
+      "unit": "t_stat"
+    },
+    "t2_vw_y11_15_all_spread": {
+      "value": -0.1477,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y11_15_all_spread_t": {
+      "value": -0.8722,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d1": {
+      "value": 0.9637,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d1_t": {
+      "value": 3.38,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d2": {
+      "value": 1.0151,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d2_t": {
+      "value": 4.0289,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d3": {
+      "value": 1.033,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d3_t": {
+      "value": 4.461,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d4": {
+      "value": 1.0871,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d4_t": {
+      "value": 4.837,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d5": {
+      "value": 1.1753,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d5_t": {
+      "value": 5.3075,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d6": {
+      "value": 1.2656,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d6_t": {
+      "value": 5.5451,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d7": {
+      "value": 1.3027,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d7_t": {
+      "value": 5.6649,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d8": {
+      "value": 1.3422,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d8_t": {
+      "value": 5.6058,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d9": {
+      "value": 1.44,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d9_t": {
+      "value": 5.6997,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_d10": {
+      "value": 1.6729,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_d10_t": {
+      "value": 5.8823,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_annual_spread": {
+      "value": 0.7093,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_annual_spread_t": {
+      "value": 6.7459,
+      "unit": "t_stat"
+    },
+    "t2_vw_y11_15_annual_spread": {
+      "value": 0.7595,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y11_15_annual_spread_t": {
+      "value": 3.9654,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d1": {
+      "value": 1.4112,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d1_t": {
+      "value": 4.7109,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d2": {
+      "value": 1.2568,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d2_t": {
+      "value": 4.9804,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d3": {
+      "value": 1.1663,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d3_t": {
+      "value": 4.922,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d4": {
+      "value": 1.2154,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d4_t": {
+      "value": 5.1908,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d5": {
+      "value": 1.2366,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d5_t": {
+      "value": 5.4281,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d6": {
+      "value": 1.1673,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d6_t": {
+      "value": 5.3052,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d7": {
+      "value": 1.233,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d7_t": {
+      "value": 5.3739,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d8": {
+      "value": 1.1302,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d8_t": {
+      "value": 4.6738,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d9": {
+      "value": 1.2472,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d9_t": {
+      "value": 4.8026,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_d10": {
+      "value": 1.1814,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_d10_t": {
+      "value": 4.1471,
+      "unit": "t_stat"
+    },
+    "t2_y11_15_nonannual_spread": {
+      "value": -0.2299,
+      "unit": "percent_per_month"
+    },
+    "t2_y11_15_nonannual_spread_t": {
+      "value": -2.0159,
+      "unit": "t_stat"
+    },
+    "t2_vw_y11_15_nonannual_spread": {
+      "value": -0.2703,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y11_15_nonannual_spread_t": {
+      "value": -1.531,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d1": {
+      "value": 1.458,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d1_t": {
+      "value": 5.2023,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d2": {
+      "value": 1.1676,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d2_t": {
+      "value": 4.751,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d3": {
+      "value": 1.0984,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d3_t": {
+      "value": 4.7728,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d4": {
+      "value": 1.1323,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d4_t": {
+      "value": 5.1123,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d5": {
+      "value": 1.0921,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d5_t": {
+      "value": 5.0357,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d6": {
+      "value": 1.2062,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d6_t": {
+      "value": 5.4363,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d7": {
+      "value": 1.197,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d7_t": {
+      "value": 5.4558,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d8": {
+      "value": 1.1196,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d8_t": {
+      "value": 4.9136,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d9": {
+      "value": 1.2373,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d9_t": {
+      "value": 5.0623,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_d10": {
+      "value": 1.1775,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_d10_t": {
+      "value": 4.4865,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_all_spread": {
+      "value": -0.2805,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_all_spread_t": {
+      "value": -2.4061,
+      "unit": "t_stat"
+    },
+    "t2_vw_y16_20_all_spread": {
+      "value": -0.0798,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y16_20_all_spread_t": {
+      "value": -0.435,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d1": {
+      "value": 0.9783,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d1_t": {
+      "value": 3.6166,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d2": {
+      "value": 0.9928,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d2_t": {
+      "value": 4.1101,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d3": {
+      "value": 1.0239,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d3_t": {
+      "value": 4.4218,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d4": {
+      "value": 1.0797,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d4_t": {
+      "value": 4.8821,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d5": {
+      "value": 1.1792,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d5_t": {
+      "value": 5.34,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d6": {
+      "value": 1.1661,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d6_t": {
+      "value": 5.2827,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d7": {
+      "value": 1.1931,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d7_t": {
+      "value": 5.3815,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d8": {
+      "value": 1.3187,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d8_t": {
+      "value": 5.8048,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d9": {
+      "value": 1.353,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d9_t": {
+      "value": 5.6881,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_d10": {
+      "value": 1.4713,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_d10_t": {
+      "value": 5.589,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_annual_spread": {
+      "value": 0.493,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_annual_spread_t": {
+      "value": 4.2692,
+      "unit": "t_stat"
+    },
+    "t2_vw_y16_20_annual_spread": {
+      "value": 0.2862,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y16_20_annual_spread_t": {
+      "value": 1.6238,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d1": {
+      "value": 1.4944,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d1_t": {
+      "value": 5.3018,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d2": {
+      "value": 1.2303,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d2_t": {
+      "value": 5.0108,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d3": {
+      "value": 1.1594,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d3_t": {
+      "value": 5.0744,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d4": {
+      "value": 1.205,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d4_t": {
+      "value": 5.3799,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d5": {
+      "value": 1.1595,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d5_t": {
+      "value": 5.2472,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d6": {
+      "value": 1.1041,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d6_t": {
+      "value": 5.0575,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d7": {
+      "value": 1.1011,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d7_t": {
+      "value": 4.9675,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d8": {
+      "value": 1.192,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d8_t": {
+      "value": 5.1819,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d9": {
+      "value": 1.1265,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d9_t": {
+      "value": 4.7017,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_d10": {
+      "value": 1.115,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_d10_t": {
+      "value": 4.2282,
+      "unit": "t_stat"
+    },
+    "t2_y16_20_nonannual_spread": {
+      "value": -0.3794,
+      "unit": "percent_per_month"
+    },
+    "t2_y16_20_nonannual_spread_t": {
+      "value": -3.1028,
+      "unit": "t_stat"
+    },
+    "t2_vw_y16_20_nonannual_spread": {
+      "value": -0.2955,
+      "unit": "percent_per_month"
+    },
+    "t2_vw_y16_20_nonannual_spread_t": {
+      "value": -1.6796,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag1": {
+      "value": -4.9852,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag1_t": {
+      "value": -8.8401,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag2": {
+      "value": 0.1244,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag2_t": {
+      "value": 0.3162,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag3": {
+      "value": 1.6068,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag3_t": {
+      "value": 4.6798,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag4": {
+      "value": 0.8454,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag4_t": {
+      "value": 2.2596,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag5": {
+      "value": 1.1141,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag5_t": {
+      "value": 2.8551,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag6": {
+      "value": 1.3063,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag6_t": {
+      "value": 3.3157,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag7": {
+      "value": 1.2008,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag7_t": {
+      "value": 3.5402,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag8": {
+      "value": 0.6374,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag8_t": {
+      "value": 1.5296,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag9": {
+      "value": 1.2959,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag9_t": {
+      "value": 3.2762,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag10": {
+      "value": 0.8651,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag10_t": {
+      "value": 2.5145,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag11": {
+      "value": 1.5335,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag11_t": {
+      "value": 4.5416,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag12": {
+      "value": 2.7915,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag12_t": {
+      "value": 8.7711,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag24": {
+      "value": 1.1962,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag24_t": {
+      "value": 3.4355,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag36": {
+      "value": 1.2096,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag36_t": {
+      "value": 3.3264,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag48": {
+      "value": 1.3406,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag48_t": {
+      "value": 3.2257,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag60": {
+      "value": 0.5987,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag60_t": {
+      "value": 1.4628,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag72": {
+      "value": 1.1942,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag72_t": {
+      "value": 3.4723,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag84": {
+      "value": 1.1425,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag84_t": {
+      "value": 3.4135,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag96": {
+      "value": 0.9288,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag96_t": {
+      "value": 2.2504,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag108": {
+      "value": 1.4349,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag108_t": {
+      "value": 3.6956,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag120": {
+      "value": 1.1264,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag120_t": {
+      "value": 3.5956,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag132": {
+      "value": 1.5982,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag132_t": {
+      "value": 5.2495,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag144": {
+      "value": 1.0943,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag144_t": {
+      "value": 3.3058,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag156": {
+      "value": 0.7607,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag156_t": {
+      "value": 1.9561,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag168": {
+      "value": 0.9634,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag168_t": {
+      "value": 2.2516,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag180": {
+      "value": 1.3986,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag180_t": {
+      "value": 3.5197,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag192": {
+      "value": 1.5644,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag192_t": {
+      "value": 3.4976,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag204": {
+      "value": 1.1832,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag204_t": {
+      "value": 2.9284,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag216": {
+      "value": 1.0862,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag216_t": {
+      "value": 2.5101,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag228": {
+      "value": -0.072,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag228_t": {
+      "value": -0.1587,
+      "unit": "t_stat"
+    },
+    "t1_pana_lag240": {
+      "value": 1.0678,
+      "unit": "percent_per_month"
+    },
+    "t1_pana_lag240_t": {
+      "value": 2.573,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag1": {
+      "value": -6.2452,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag1_t": {
+      "value": -10.7112,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag2": {
+      "value": -0.5228,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag2_t": {
+      "value": -1.3726,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag3": {
+      "value": 1.6181,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag3_t": {
+      "value": 4.9035,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag4": {
+      "value": 1.0873,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag4_t": {
+      "value": 2.958,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag5": {
+      "value": 1.189,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag5_t": {
+      "value": 3.3668,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag6": {
+      "value": 1.4453,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag6_t": {
+      "value": 4.1909,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag7": {
+      "value": 1.2634,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag7_t": {
+      "value": 4.5041,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag8": {
+      "value": 0.8164,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag8_t": {
+      "value": 2.3157,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag9": {
+      "value": 1.4269,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag9_t": {
+      "value": 3.8828,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag10": {
+      "value": 1.0097,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag10_t": {
+      "value": 3.3391,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag11": {
+      "value": 1.3825,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag11_t": {
+      "value": 4.2765,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag12": {
+      "value": 2.5168,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag12_t": {
+      "value": 8.787,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag24": {
+      "value": 1.1101,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag24_t": {
+      "value": 3.8811,
+      "unit": "t_stat"
+    },
+    "t1_spec1_lag36": {
+      "value": 1.0992,
+      "unit": "percent_per_month"
+    },
+    "t1_spec1_lag36_t": {
+      "value": 4.1501,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag1": {
+      "value": -6.814,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag1_t": {
+      "value": -12.4311,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag2": {
+      "value": -0.84,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag2_t": {
+      "value": -2.397,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag3": {
+      "value": 1.6169,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag3_t": {
+      "value": 4.3909,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag4": {
+      "value": 1.1821,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag4_t": {
+      "value": 2.9035,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag5": {
+      "value": 1.1724,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag5_t": {
+      "value": 2.8811,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag6": {
+      "value": 1.3539,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag6_t": {
+      "value": 3.589,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag7": {
+      "value": 1.0742,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag7_t": {
+      "value": 3.6794,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag8": {
+      "value": 0.6119,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag8_t": {
+      "value": 1.6,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag9": {
+      "value": 1.4044,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag9_t": {
+      "value": 4.0136,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag10": {
+      "value": 0.926,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag10_t": {
+      "value": 2.9198,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag11": {
+      "value": 1.3969,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag11_t": {
+      "value": 3.6289,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag12": {
+      "value": 2.2614,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag12_t": {
+      "value": 7.4057,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag24": {
+      "value": 1.4683,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag24_t": {
+      "value": 4.7954,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag36": {
+      "value": 1.1614,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag36_t": {
+      "value": 3.6724,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag48": {
+      "value": 1.3476,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag48_t": {
+      "value": 3.6752,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag60": {
+      "value": 0.7302,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag60_t": {
+      "value": 2.1909,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag72": {
+      "value": 0.9578,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag72_t": {
+      "value": 3.2107,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag84": {
+      "value": 0.8168,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag84_t": {
+      "value": 2.9213,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag96": {
+      "value": 0.7604,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag96_t": {
+      "value": 2.5454,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag108": {
+      "value": 0.8408,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag108_t": {
+      "value": 3.1127,
+      "unit": "t_stat"
+    },
+    "t1_spec2_lag120": {
+      "value": 0.5763,
+      "unit": "percent_per_month"
+    },
+    "t1_spec2_lag120_t": {
+      "value": 2.1731,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag1": {
+      "value": -7.3234,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag1_t": {
+      "value": -12.973,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag2": {
+      "value": -1.1529,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag2_t": {
+      "value": -3.0619,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag3": {
+      "value": 1.0948,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag3_t": {
+      "value": 2.5598,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag4": {
+      "value": 0.7344,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag4_t": {
+      "value": 1.6718,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag5": {
+      "value": 1.3291,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag5_t": {
+      "value": 2.7438,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag6": {
+      "value": 1.7415,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag6_t": {
+      "value": 4.4446,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag7": {
+      "value": 1.3205,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag7_t": {
+      "value": 3.6285,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag8": {
+      "value": 0.1381,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag8_t": {
+      "value": 0.4104,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag9": {
+      "value": 1.3245,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag9_t": {
+      "value": 3.4476,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag10": {
+      "value": 0.9669,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag10_t": {
+      "value": 2.5436,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag11": {
+      "value": 1.0515,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag11_t": {
+      "value": 2.7335,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag12": {
+      "value": 2.2149,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag12_t": {
+      "value": 6.1541,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag24": {
+      "value": 1.7784,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag24_t": {
+      "value": 4.4709,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag36": {
+      "value": 1.1295,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag36_t": {
+      "value": 3.9454,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag48": {
+      "value": 1.0001,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag48_t": {
+      "value": 2.4654,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag60": {
+      "value": 1.2655,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag60_t": {
+      "value": 3.2011,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag72": {
+      "value": 1.2547,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag72_t": {
+      "value": 3.4446,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag84": {
+      "value": 1.1464,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag84_t": {
+      "value": 3.6569,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag96": {
+      "value": 0.6495,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag96_t": {
+      "value": 1.907,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag108": {
+      "value": 0.741,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag108_t": {
+      "value": 2.396,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag120": {
+      "value": 0.6383,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag120_t": {
+      "value": 1.9384,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag132": {
+      "value": 1.4558,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag132_t": {
+      "value": 4.4495,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag144": {
+      "value": 0.6665,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag144_t": {
+      "value": 1.58,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag156": {
+      "value": 0.2899,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag156_t": {
+      "value": 0.8319,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag168": {
+      "value": 0.7814,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag168_t": {
+      "value": 2.1327,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag180": {
+      "value": 0.8274,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag180_t": {
+      "value": 2.2355,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag192": {
+      "value": 0.9004,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag192_t": {
+      "value": 2.2982,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag204": {
+      "value": 0.4004,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag204_t": {
+      "value": 1.3317,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag216": {
+      "value": 0.2253,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag216_t": {
+      "value": 0.6355,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag228": {
+      "value": -0.13,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag228_t": {
+      "value": -0.4246,
+      "unit": "t_stat"
+    },
+    "t1_spec3_lag240": {
+      "value": 0.3524,
+      "unit": "percent_per_month"
+    },
+    "t1_spec3_lag240_t": {
+      "value": 1.222,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d1": {
+      "value": -0.4128,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d1_t": {
+      "value": -1.5962,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d2": {
+      "value": -0.3703,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d2_t": {
+      "value": -2.4945,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d3": {
+      "value": -0.2725,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d3_t": {
+      "value": -2.3631,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d4": {
+      "value": -0.1754,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d4_t": {
+      "value": -1.7906,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d5": {
+      "value": -0.1112,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d5_t": {
+      "value": -1.2964,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d6": {
+      "value": -0.0193,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d6_t": {
+      "value": -0.2489,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d7": {
+      "value": 0.117,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d7_t": {
+      "value": 1.4977,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d8": {
+      "value": 0.1691,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d8_t": {
+      "value": 1.878,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d9": {
+      "value": 0.405,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d9_t": {
+      "value": 3.7929,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_d10": {
+      "value": 0.6833,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_d10_t": {
+      "value": 5.175,
+      "unit": "t_stat"
+    },
+    "t3_y1_all_spread": {
+      "value": 1.0961,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_all_spread_t": {
+      "value": 3.5331,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d1": {
+      "value": -0.6806,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d1_t": {
+      "value": -4.977,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d2": {
+      "value": -0.4145,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d2_t": {
+      "value": -4.127,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d3": {
+      "value": -0.1788,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d3_t": {
+      "value": -2.0271,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d4": {
+      "value": -0.1324,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d4_t": {
+      "value": -1.6003,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d5": {
+      "value": 0.0018,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d5_t": {
+      "value": 0.023,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d6": {
+      "value": 0.0463,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d6_t": {
+      "value": 0.5878,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d7": {
+      "value": 0.198,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d7_t": {
+      "value": 2.428,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d8": {
+      "value": 0.198,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d8_t": {
+      "value": 2.2151,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d9": {
+      "value": 0.3448,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d9_t": {
+      "value": 3.4094,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_d10": {
+      "value": 0.5879,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_d10_t": {
+      "value": 3.7526,
+      "unit": "t_stat"
+    },
+    "t3_y1_annual_spread": {
+      "value": 1.2684,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_annual_spread_t": {
+      "value": 8.108,
+      "unit": "t_stat"
+    },
+    "t3_vw_y1_annual_alpha": {
+      "value": 1.0063,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d1": {
+      "value": -0.2528,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d1_t": {
+      "value": -0.9328,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_d2": {
+      "value": -0.2751,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d2_t": {
+      "value": -1.7854,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_d3": {
+      "value": -0.1922,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d3_t": {
+      "value": -1.6304,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_d4": {
+      "value": -0.1538,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d4_t": {
+      "value": -1.5397,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_d5": {
+      "value": -0.138,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d5_t": {
+      "value": -1.6577,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_d6": {
+      "value": -0.0307,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d6_t": {
+      "value": -0.3805,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_d7": {
+      "value": 0.0109,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d7_t": {
+      "value": 0.1343,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_d8": {
+      "value": 0.1244,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d8_t": {
+      "value": 1.4268,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_d9": {
+      "value": 0.3384,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d9_t": {
+      "value": 3.2774,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_d10": {
+      "value": 0.5828,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_d10_t": {
+      "value": 4.3169,
+      "unit": "t_stat"
+    },
+    "t3_y1_nonannual_spread": {
+      "value": 0.8356,
+      "unit": "percent_per_month"
+    },
+    "t3_y1_nonannual_spread_t": {
+      "value": 2.5488,
+      "unit": "t_stat"
+    },
+    "t3_vw_y1_nonannual_alpha": {
+      "value": 1.1721,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d1": {
+      "value": 0.2331,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d1_t": {
+      "value": 1.1758,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_d2": {
+      "value": 0.0155,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d2_t": {
+      "value": 0.1211,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_d3": {
+      "value": 0.0478,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d3_t": {
+      "value": 0.5082,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_d4": {
+      "value": 0.0084,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d4_t": {
+      "value": 0.1091,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_d5": {
+      "value": 0.0683,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d5_t": {
+      "value": 0.9038,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_d6": {
+      "value": 0.0782,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d6_t": {
+      "value": 0.971,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_d7": {
+      "value": -0.0073,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d7_t": {
+      "value": -0.0854,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_d8": {
+      "value": -0.0105,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d8_t": {
+      "value": -0.1139,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_d9": {
+      "value": -0.0948,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d9_t": {
+      "value": -0.9464,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_d10": {
+      "value": -0.3657,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_d10_t": {
+      "value": -3.243,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_all_spread": {
+      "value": -0.5988,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_all_spread_t": {
+      "value": -3.1212,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d1": {
+      "value": -0.3246,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d1_t": {
+      "value": -2.6737,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d2": {
+      "value": -0.2812,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d2_t": {
+      "value": -2.9698,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d3": {
+      "value": -0.2407,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d3_t": {
+      "value": -2.7995,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d4": {
+      "value": -0.0979,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d4_t": {
+      "value": -1.2263,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d5": {
+      "value": -0.0584,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d5_t": {
+      "value": -0.7149,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d6": {
+      "value": 0.0312,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d6_t": {
+      "value": 0.3958,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d7": {
+      "value": 0.1338,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d7_t": {
+      "value": 1.6256,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d8": {
+      "value": 0.2293,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d8_t": {
+      "value": 2.4876,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d9": {
+      "value": 0.2399,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d9_t": {
+      "value": 2.3208,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_d10": {
+      "value": 0.3169,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_d10_t": {
+      "value": 2.2203,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_annual_spread": {
+      "value": 0.6415,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_annual_spread_t": {
+      "value": 4.691,
+      "unit": "t_stat"
+    },
+    "t3_vw_y2_5_annual_alpha": {
+      "value": 0.9513,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d1": {
+      "value": 0.3093,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d1_t": {
+      "value": 1.528,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_d2": {
+      "value": 0.1553,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d2_t": {
+      "value": 1.2043,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_d3": {
+      "value": 0.0254,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d3_t": {
+      "value": 0.269,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_d4": {
+      "value": 0.1041,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d4_t": {
+      "value": 1.278,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_d5": {
+      "value": 0.0768,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d5_t": {
+      "value": 1.0286,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_d6": {
+      "value": 0.0404,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d6_t": {
+      "value": 0.5021,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_d7": {
+      "value": -0.0329,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d7_t": {
+      "value": -0.3926,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_d8": {
+      "value": -0.0739,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d8_t": {
+      "value": -0.7932,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_d9": {
+      "value": -0.1879,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d9_t": {
+      "value": -2.0268,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_d10": {
+      "value": -0.4443,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_d10_t": {
+      "value": -3.9112,
+      "unit": "t_stat"
+    },
+    "t3_y2_5_nonannual_spread": {
+      "value": -0.7536,
+      "unit": "percent_per_month"
+    },
+    "t3_y2_5_nonannual_spread_t": {
+      "value": -3.7667,
+      "unit": "t_stat"
+    },
+    "t3_vw_y2_5_nonannual_alpha": {
+      "value": -0.2693,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d1": {
+      "value": 0.0851,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d1_t": {
+      "value": 0.6795,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_d2": {
+      "value": 0.1657,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d2_t": {
+      "value": 1.6502,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_d3": {
+      "value": 0.1121,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d3_t": {
+      "value": 1.2873,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_d4": {
+      "value": 0.0957,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d4_t": {
+      "value": 1.1757,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_d5": {
+      "value": 0.0013,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d5_t": {
+      "value": 0.0171,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_d6": {
+      "value": -0.0154,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d6_t": {
+      "value": -0.1837,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_d7": {
+      "value": -0.1089,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d7_t": {
+      "value": -1.2478,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_d8": {
+      "value": -0.1199,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d8_t": {
+      "value": -1.2761,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_d9": {
+      "value": -0.2012,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d9_t": {
+      "value": -2.0412,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_d10": {
+      "value": -0.2153,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_d10_t": {
+      "value": -1.8475,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_all_spread": {
+      "value": -0.3004,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_all_spread_t": {
+      "value": -2.5661,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d1": {
+      "value": -0.3774,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d1_t": {
+      "value": -3.0957,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d2": {
+      "value": -0.3775,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d2_t": {
+      "value": -4.1089,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d3": {
+      "value": -0.2342,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d3_t": {
+      "value": -2.8054,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d4": {
+      "value": -0.1119,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d4_t": {
+      "value": -1.4266,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d5": {
+      "value": -0.0364,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d5_t": {
+      "value": -0.4732,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d6": {
+      "value": -0.0432,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d6_t": {
+      "value": -0.5528,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d7": {
+      "value": 0.1141,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d7_t": {
+      "value": 1.4062,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d8": {
+      "value": 0.1027,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d8_t": {
+      "value": 1.1381,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d9": {
+      "value": 0.2398,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d9_t": {
+      "value": 2.413,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_d10": {
+      "value": 0.2955,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_d10_t": {
+      "value": 2.4018,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_annual_spread": {
+      "value": 0.6729,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_annual_spread_t": {
+      "value": 5.5213,
+      "unit": "t_stat"
+    },
+    "t3_vw_y6_10_annual_alpha": {
+      "value": 1.0138,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d1": {
+      "value": 0.2595,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d1_t": {
+      "value": 2.077,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_d2": {
+      "value": 0.1507,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d2_t": {
+      "value": 1.4734,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_d3": {
+      "value": 0.1687,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d3_t": {
+      "value": 1.8541,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_d4": {
+      "value": 0.1511,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d4_t": {
+      "value": 1.8083,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_d5": {
+      "value": 0.0078,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d5_t": {
+      "value": 0.1002,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_d6": {
+      "value": -0.054,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d6_t": {
+      "value": -0.6591,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_d7": {
+      "value": -0.1247,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d7_t": {
+      "value": -1.5175,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_d8": {
+      "value": -0.2036,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d8_t": {
+      "value": -2.2469,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_d9": {
+      "value": -0.2619,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d9_t": {
+      "value": -2.7462,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_d10": {
+      "value": -0.2933,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_d10_t": {
+      "value": -2.4267,
+      "unit": "t_stat"
+    },
+    "t3_y6_10_nonannual_spread": {
+      "value": -0.5528,
+      "unit": "percent_per_month"
+    },
+    "t3_y6_10_nonannual_spread_t": {
+      "value": -4.7709,
+      "unit": "t_stat"
+    },
+    "t3_vw_y6_10_nonannual_alpha": {
+      "value": -0.1141,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d1": {
+      "value": -0.0534,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d1_t": {
+      "value": -0.4889,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_d2": {
+      "value": -0.0481,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d2_t": {
+      "value": -0.5085,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_d3": {
+      "value": -0.1641,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d3_t": {
+      "value": -1.9061,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_d4": {
+      "value": 0.0072,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d4_t": {
+      "value": 0.0911,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_d5": {
+      "value": 0.0104,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d5_t": {
+      "value": 0.1308,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_d6": {
+      "value": 0.0073,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d6_t": {
+      "value": 0.0859,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_d7": {
+      "value": 0.0546,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d7_t": {
+      "value": 0.6453,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_d8": {
+      "value": -0.0478,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d8_t": {
+      "value": -0.5572,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_d9": {
+      "value": 0.0014,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d9_t": {
+      "value": 0.0148,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_d10": {
+      "value": -0.0778,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_d10_t": {
+      "value": -0.6587,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_all_spread": {
+      "value": -0.0244,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_all_spread_t": {
+      "value": -0.2197,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d1": {
+      "value": -0.335,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d1_t": {
+      "value": -3.2859,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d2": {
+      "value": -0.2376,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d2_t": {
+      "value": -2.609,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d3": {
+      "value": -0.1853,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d3_t": {
+      "value": -2.2796,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d4": {
+      "value": -0.1165,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d4_t": {
+      "value": -1.4882,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d5": {
+      "value": -0.016,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d5_t": {
+      "value": -0.2062,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d6": {
+      "value": 0.035,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d6_t": {
+      "value": 0.4508,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d7": {
+      "value": 0.0616,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d7_t": {
+      "value": 0.7776,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d8": {
+      "value": 0.0898,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d8_t": {
+      "value": 1.0662,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d9": {
+      "value": 0.1427,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d9_t": {
+      "value": 1.6419,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_d10": {
+      "value": 0.3343,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_d10_t": {
+      "value": 2.9099,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_annual_spread": {
+      "value": 0.6694,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_annual_spread_t": {
+      "value": 6.2146,
+      "unit": "t_stat"
+    },
+    "t3_vw_y11_15_annual_alpha": {
+      "value": 0.8744,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d1": {
+      "value": 0.0749,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d1_t": {
+      "value": 0.6548,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_d2": {
+      "value": 0.0199,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d2_t": {
+      "value": 0.2038,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_d3": {
+      "value": -0.0506,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d3_t": {
+      "value": -0.5937,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_d4": {
+      "value": -0.0217,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d4_t": {
+      "value": -0.267,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_d5": {
+      "value": 0.0236,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d5_t": {
+      "value": 0.2836,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_d6": {
+      "value": -0.0322,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d6_t": {
+      "value": -0.4309,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_d7": {
+      "value": -0.0061,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d7_t": {
+      "value": -0.0745,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_d8": {
+      "value": -0.1299,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d8_t": {
+      "value": -1.4493,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_d9": {
+      "value": -0.0457,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d9_t": {
+      "value": -0.464,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_d10": {
+      "value": -0.1413,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_d10_t": {
+      "value": -1.2569,
+      "unit": "t_stat"
+    },
+    "t3_y11_15_nonannual_spread": {
+      "value": -0.2162,
+      "unit": "percent_per_month"
+    },
+    "t3_y11_15_nonannual_spread_t": {
+      "value": -1.9047,
+      "unit": "t_stat"
+    },
+    "t3_vw_y11_15_nonannual_alpha": {
+      "value": -0.1504,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d1": {
+      "value": 0.1386,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d1_t": {
+      "value": 1.2192,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_d2": {
+      "value": -0.1131,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d2_t": {
+      "value": -1.1823,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_d3": {
+      "value": -0.141,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d3_t": {
+      "value": -1.6596,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_d4": {
+      "value": -0.0789,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d4_t": {
+      "value": -1.0063,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_d5": {
+      "value": -0.106,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d5_t": {
+      "value": -1.3532,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_d6": {
+      "value": -0.0054,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d6_t": {
+      "value": -0.0668,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_d7": {
+      "value": 0.024,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d7_t": {
+      "value": 0.2939,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_d8": {
+      "value": -0.067,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d8_t": {
+      "value": -0.7869,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_d9": {
+      "value": 0.0237,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d9_t": {
+      "value": 0.2537,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_d10": {
+      "value": -0.0322,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_d10_t": {
+      "value": -0.3286,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_all_spread": {
+      "value": -0.1708,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_all_spread_t": {
+      "value": -1.4891,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d1": {
+      "value": -0.2766,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d1_t": {
+      "value": -2.643,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d2": {
+      "value": -0.2248,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d2_t": {
+      "value": -2.4721,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d3": {
+      "value": -0.2053,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d3_t": {
+      "value": -2.4958,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d4": {
+      "value": -0.1315,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d4_t": {
+      "value": -1.6872,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d5": {
+      "value": -0.0392,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d5_t": {
+      "value": -0.4913,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d6": {
+      "value": -0.0465,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d6_t": {
+      "value": -0.5967,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d7": {
+      "value": -0.0004,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d7_t": {
+      "value": -0.0048,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d8": {
+      "value": 0.109,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d8_t": {
+      "value": 1.2973,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d9": {
+      "value": 0.1234,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d9_t": {
+      "value": 1.4246,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_d10": {
+      "value": 0.1875,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_d10_t": {
+      "value": 1.7354,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_annual_spread": {
+      "value": 0.464,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_annual_spread_t": {
+      "value": 3.9274,
+      "unit": "t_stat"
+    },
+    "t3_vw_y16_20_annual_alpha": {
+      "value": 0.4097,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d1": {
+      "value": 0.1606,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d1_t": {
+      "value": 1.3751,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_d2": {
+      "value": -0.0459,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d2_t": {
+      "value": -0.4627,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_d3": {
+      "value": -0.0846,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d3_t": {
+      "value": -0.9808,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_d4": {
+      "value": -0.0236,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d4_t": {
+      "value": -0.2918,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_d5": {
+      "value": -0.0539,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d5_t": {
+      "value": -0.6867,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_d6": {
+      "value": -0.0681,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d6_t": {
+      "value": -0.8854,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_d7": {
+      "value": -0.0627,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d7_t": {
+      "value": -0.7517,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_d8": {
+      "value": -0.0165,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d8_t": {
+      "value": -0.1915,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_d9": {
+      "value": -0.0744,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d9_t": {
+      "value": -0.8113,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_d10": {
+      "value": -0.0878,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_d10_t": {
+      "value": -0.8896,
+      "unit": "t_stat"
+    },
+    "t3_y16_20_nonannual_spread": {
+      "value": -0.2484,
+      "unit": "percent_per_month"
+    },
+    "t3_y16_20_nonannual_spread_t": {
+      "value": -2.0834,
+      "unit": "t_stat"
+    },
+    "t3_vw_y16_20_nonannual_alpha": {
+      "value": -0.1851,
+      "unit": "percent_per_month"
+    },
+    "diag_t5_avg_small_per_month": {
+      "value": 717.9,
+      "unit": "count"
+    },
+    "diag_t5_avg_medium_per_month": {
+      "value": 958.8,
+      "unit": "count"
+    },
+    "diag_t5_avg_large_per_month": {
+      "value": 717.9,
+      "unit": "count"
+    },
+    "t5_y1_all_small": {
+      "value": -0.0522,
+      "unit": "percent_per_month"
+    },
+    "t5_y1_all_small_t": {
+      "value": -0.131,
+      "unit": "t_stat"
+    },
+    "t5_y1_all_medium": {
+      "value": 1.3263,
+      "unit": "percent_per_month"
+    },
+    "t5_y1_all_medium_t": {
+      "value": 4.7999,
+      "unit": "t_stat"
+    },
+    "t5_y1_all_large": {
+      "value": 0.6081,
+      "unit": "percent_per_month"
+    },
+    "t5_y1_all_large_t": {
+      "value": 2.2156,
+      "unit": "t_stat"
+    },
+    "t5_y1_annual_small": {
+      "value": 1.0719,
+      "unit": "percent_per_month"
+    },
+    "t5_y1_annual_small_t": {
+      "value": 4.9179,
+      "unit": "t_stat"
+    },
+    "t5_y1_annual_medium": {
+      "value": 0.996,
+      "unit": "percent_per_month"
+    },
+    "t5_y1_annual_medium_t": {
+      "value": 6.8243,
+      "unit": "t_stat"
+    },
+    "t5_y1_annual_large": {
+      "value": 0.6759,
+      "unit": "percent_per_month"
+    },
+    "t5_y1_annual_large_t": {
+      "value": 4.1062,
+      "unit": "t_stat"
+    },
+    "t5_y1_nonannual_small": {
+      "value": -0.3418,
+      "unit": "percent_per_month"
+    },
+    "t5_y1_nonannual_small_t": {
+      "value": -0.8009,
+      "unit": "t_stat"
+    },
+    "t5_y1_nonannual_medium": {
+      "value": 1.1453,
+      "unit": "percent_per_month"
+    },
+    "t5_y1_nonannual_medium_t": {
+      "value": 4.051,
+      "unit": "t_stat"
+    },
+    "t5_y1_nonannual_large": {
+      "value": 0.5327,
+      "unit": "percent_per_month"
+    },
+    "t5_y1_nonannual_large_t": {
+      "value": 1.9568,
+      "unit": "t_stat"
+    },
+    "t5_y2_5_all_small": {
+      "value": -1.1288,
+      "unit": "percent_per_month"
+    },
+    "t5_y2_5_all_small_t": {
+      "value": -4.3295,
+      "unit": "t_stat"
+    },
+    "t5_y2_5_all_medium": {
+      "value": -0.6975,
+      "unit": "percent_per_month"
+    },
+    "t5_y2_5_all_medium_t": {
+      "value": -4.1265,
+      "unit": "t_stat"
+    },
+    "t5_y2_5_all_large": {
+      "value": -0.5303,
+      "unit": "percent_per_month"
+    },
+    "t5_y2_5_all_large_t": {
+      "value": -2.67,
+      "unit": "t_stat"
+    },
+    "t5_y2_5_annual_small": {
+      "value": 0.2515,
+      "unit": "percent_per_month"
+    },
+    "t5_y2_5_annual_small_t": {
+      "value": 1.3085,
+      "unit": "t_stat"
+    },
+    "t5_y2_5_annual_medium": {
+      "value": 0.3401,
+      "unit": "percent_per_month"
+    },
+    "t5_y2_5_annual_medium_t": {
+      "value": 2.8424,
+      "unit": "t_stat"
+    },
+    "t5_y2_5_annual_large": {
+      "value": 0.6466,
+      "unit": "percent_per_month"
+    },
+    "t5_y2_5_annual_large_t": {
+      "value": 4.7399,
+      "unit": "t_stat"
+    },
+    "t5_y2_5_nonannual_small": {
+      "value": -1.4247,
+      "unit": "percent_per_month"
+    },
+    "t5_y2_5_nonannual_small_t": {
+      "value": -5.2992,
+      "unit": "t_stat"
+    },
+    "t5_y2_5_nonannual_medium": {
+      "value": -0.8166,
+      "unit": "percent_per_month"
+    },
+    "t5_y2_5_nonannual_medium_t": {
+      "value": -4.7913,
+      "unit": "t_stat"
+    },
+    "t5_y2_5_nonannual_large": {
+      "value": -0.7894,
+      "unit": "percent_per_month"
+    },
+    "t5_y2_5_nonannual_large_t": {
+      "value": -3.9847,
+      "unit": "t_stat"
+    },
+    "t5_y6_10_all_small": {
+      "value": -0.4653,
+      "unit": "percent_per_month"
+    },
+    "t5_y6_10_all_small_t": {
+      "value": -2.1797,
+      "unit": "t_stat"
+    },
+    "t5_y6_10_all_medium": {
+      "value": -0.3251,
+      "unit": "percent_per_month"
+    },
+    "t5_y6_10_all_medium_t": {
+      "value": -2.3807,
+      "unit": "t_stat"
+    },
+    "t5_y6_10_all_large": {
+      "value": -0.2382,
+      "unit": "percent_per_month"
+    },
+    "t5_y6_10_all_large_t": {
+      "value": -1.7779,
+      "unit": "t_stat"
+    },
+    "t5_y6_10_annual_small": {
+      "value": 0.5344,
+      "unit": "percent_per_month"
+    },
+    "t5_y6_10_annual_small_t": {
+      "value": 2.3684,
+      "unit": "t_stat"
+    },
+    "t5_y6_10_annual_medium": {
+      "value": 0.4206,
+      "unit": "percent_per_month"
+    },
+    "t5_y6_10_annual_medium_t": {
+      "value": 3.3264,
+      "unit": "t_stat"
+    },
+    "t5_y6_10_annual_large": {
+      "value": 0.5545,
+      "unit": "percent_per_month"
+    },
+    "t5_y6_10_annual_large_t": {
+      "value": 5.1898,
+      "unit": "t_stat"
+    },
+    "t5_y6_10_nonannual_small": {
+      "value": -0.7982,
+      "unit": "percent_per_month"
+    },
+    "t5_y6_10_nonannual_small_t": {
+      "value": -3.4932,
+      "unit": "t_stat"
+    },
+    "t5_y6_10_nonannual_medium": {
+      "value": -0.4695,
+      "unit": "percent_per_month"
+    },
+    "t5_y6_10_nonannual_medium_t": {
+      "value": -3.5819,
+      "unit": "t_stat"
+    },
+    "t5_y6_10_nonannual_large": {
+      "value": -0.3615,
+      "unit": "percent_per_month"
+    },
+    "t5_y6_10_nonannual_large_t": {
+      "value": -2.756,
+      "unit": "t_stat"
+    },
+    "t5_y11_15_all_small": {
+      "value": 0.0825,
+      "unit": "percent_per_month"
+    },
+    "t5_y11_15_all_small_t": {
+      "value": 0.3234,
+      "unit": "t_stat"
+    },
+    "t5_y11_15_all_medium": {
+      "value": -0.0708,
+      "unit": "percent_per_month"
+    },
+    "t5_y11_15_all_medium_t": {
+      "value": -0.5596,
+      "unit": "t_stat"
+    },
+    "t5_y11_15_all_large": {
+      "value": 0.0825,
+      "unit": "percent_per_month"
+    },
+    "t5_y11_15_all_large_t": {
+      "value": 0.7392,
+      "unit": "t_stat"
+    },
+    "t5_y11_15_annual_small": {
+      "value": 0.9541,
+      "unit": "percent_per_month"
+    },
+    "t5_y11_15_annual_small_t": {
+      "value": 3.3799,
+      "unit": "t_stat"
+    },
+    "t5_y11_15_annual_medium": {
+      "value": 0.3066,
+      "unit": "percent_per_month"
+    },
+    "t5_y11_15_annual_medium_t": {
+      "value": 2.4242,
+      "unit": "t_stat"
+    },
+    "t5_y11_15_annual_large": {
+      "value": 0.3302,
+      "unit": "percent_per_month"
+    },
+    "t5_y11_15_annual_large_t": {
+      "value": 3.1905,
+      "unit": "t_stat"
+    },
+    "t5_y11_15_nonannual_small": {
+      "value": -0.1983,
+      "unit": "percent_per_month"
+    },
+    "t5_y11_15_nonannual_small_t": {
+      "value": -0.7534,
+      "unit": "t_stat"
+    },
+    "t5_y11_15_nonannual_medium": {
+      "value": -0.1165,
+      "unit": "percent_per_month"
+    },
+    "t5_y11_15_nonannual_medium_t": {
+      "value": -0.9016,
+      "unit": "t_stat"
+    },
+    "t5_y11_15_nonannual_large": {
+      "value": -0.0601,
+      "unit": "percent_per_month"
+    },
+    "t5_y11_15_nonannual_large_t": {
+      "value": -0.5475,
+      "unit": "t_stat"
+    },
+    "t5_y16_20_all_small": {
+      "value": -0.389,
+      "unit": "percent_per_month"
+    },
+    "t5_y16_20_all_small_t": {
+      "value": -1.2674,
+      "unit": "t_stat"
+    },
+    "t5_y16_20_all_medium": {
+      "value": 0.001,
+      "unit": "percent_per_month"
+    },
+    "t5_y16_20_all_medium_t": {
+      "value": 0.0064,
+      "unit": "t_stat"
+    },
+    "t5_y16_20_all_large": {
+      "value": -0.2187,
+      "unit": "percent_per_month"
+    },
+    "t5_y16_20_all_large_t": {
+      "value": -1.7805,
+      "unit": "t_stat"
+    },
+    "t5_y16_20_annual_small": {
+      "value": 0.0393,
+      "unit": "percent_per_month"
+    },
+    "t5_y16_20_annual_small_t": {
+      "value": 0.1042,
+      "unit": "t_stat"
+    },
+    "t5_y16_20_annual_medium": {
+      "value": 0.3034,
+      "unit": "percent_per_month"
+    },
+    "t5_y16_20_annual_medium_t": {
+      "value": 1.9891,
+      "unit": "t_stat"
+    },
+    "t5_y16_20_annual_large": {
+      "value": 0.2543,
+      "unit": "percent_per_month"
+    },
+    "t5_y16_20_annual_large_t": {
+      "value": 2.3717,
+      "unit": "t_stat"
+    },
+    "t5_y16_20_nonannual_small": {
+      "value": -0.4084,
+      "unit": "percent_per_month"
+    },
+    "t5_y16_20_nonannual_small_t": {
+      "value": -1.2804,
+      "unit": "t_stat"
+    },
+    "t5_y16_20_nonannual_medium": {
+      "value": -0.0093,
+      "unit": "percent_per_month"
+    },
+    "t5_y16_20_nonannual_medium_t": {
+      "value": -0.0616,
+      "unit": "t_stat"
+    },
+    "t5_y16_20_nonannual_large": {
+      "value": -0.2336,
+      "unit": "percent_per_month"
+    },
+    "t5_y16_20_nonannual_large_t": {
+      "value": -1.9692,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_jan": {
+      "value": -7.2627,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_jan_t": {
+      "value": -3.5669,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_feb": {
+      "value": 0.3244,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_feb_t": {
+      "value": 0.2579,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_mar": {
+      "value": -0.0227,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_mar_t": {
+      "value": -0.0329,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_apr": {
+      "value": 2.206,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_apr_t": {
+      "value": 4.11,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_may": {
+      "value": 0.6974,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_may_t": {
+      "value": 0.9337,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_jun": {
+      "value": 2.9722,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_jun_t": {
+      "value": 4.2209,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_jul": {
+      "value": 0.3939,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_jul_t": {
+      "value": 0.5494,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_aug": {
+      "value": 0.9308,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_aug_t": {
+      "value": 1.4128,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_sep": {
+      "value": 1.8372,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_sep_t": {
+      "value": 2.35,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_oct": {
+      "value": 1.572,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_oct_t": {
+      "value": 1.8566,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_nov": {
+      "value": 2.353,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_nov_t": {
+      "value": 2.5131,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_dec": {
+      "value": 3.5405,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_dec_t": {
+      "value": 3.8211,
+      "unit": "t_stat"
+    },
+    "t7_y1_all_febdec": {
+      "value": 1.5277,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_all_febdec_t": {
+      "value": 6.0981,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_jan": {
+      "value": 3.729,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_jan_t": {
+      "value": 3.8893,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_feb": {
+      "value": 0.2527,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_feb_t": {
+      "value": 0.4148,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_mar": {
+      "value": 1.0347,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_mar_t": {
+      "value": 2.252,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_apr": {
+      "value": 1.3407,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_apr_t": {
+      "value": 4.2015,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_may": {
+      "value": 0.7861,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_may_t": {
+      "value": 2.4674,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_jun": {
+      "value": 0.8228,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_jun_t": {
+      "value": 2.3997,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_jul": {
+      "value": 0.203,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_jul_t": {
+      "value": 0.4653,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_aug": {
+      "value": 0.8698,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_aug_t": {
+      "value": 1.8166,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_sep": {
+      "value": 1.3225,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_sep_t": {
+      "value": 3.819,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_oct": {
+      "value": 1.3713,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_oct_t": {
+      "value": 2.6619,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_nov": {
+      "value": 1.6958,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_nov_t": {
+      "value": 2.9094,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_dec": {
+      "value": 2.4235,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_dec_t": {
+      "value": 4.08,
+      "unit": "t_stat"
+    },
+    "t7_y1_annual_febdec": {
+      "value": 1.1021,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_annual_febdec_t": {
+      "value": 7.7455,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_jan": {
+      "value": -9.3438,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_jan_t": {
+      "value": -4.1823,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_feb": {
+      "value": 0.116,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_feb_t": {
+      "value": 0.0908,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_mar": {
+      "value": -0.2207,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_mar_t": {
+      "value": -0.318,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_apr": {
+      "value": 1.8392,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_apr_t": {
+      "value": 3.1167,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_may": {
+      "value": 0.71,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_may_t": {
+      "value": 0.9228,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_jun": {
+      "value": 2.6905,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_jun_t": {
+      "value": 4.1359,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_jul": {
+      "value": 0.461,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_jul_t": {
+      "value": 0.6253,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_aug": {
+      "value": 1.0495,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_aug_t": {
+      "value": 1.58,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_sep": {
+      "value": 1.5684,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_sep_t": {
+      "value": 2.0195,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_oct": {
+      "value": 1.3219,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_oct_t": {
+      "value": 1.4825,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_nov": {
+      "value": 2.1226,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_nov_t": {
+      "value": 2.1698,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_dec": {
+      "value": 3.1446,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_dec_t": {
+      "value": 3.4788,
+      "unit": "t_stat"
+    },
+    "t7_y1_nonannual_febdec": {
+      "value": 1.3457,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_nonannual_febdec_t": {
+      "value": 5.3195,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_jan": {
+      "value": 13.0727,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_jan_t": {
+      "value": 4.8076,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_feb": {
+      "value": 0.1367,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_feb_t": {
+      "value": 0.0913,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_mar": {
+      "value": 1.2554,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_mar_t": {
+      "value": 1.4778,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_apr": {
+      "value": -0.4985,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_apr_t": {
+      "value": -0.658,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_may": {
+      "value": 0.076,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_may_t": {
+      "value": 0.1031,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_jun": {
+      "value": -1.8677,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_jun_t": {
+      "value": -3.0967,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_jul": {
+      "value": -0.258,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_jul_t": {
+      "value": -0.3363,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_aug": {
+      "value": -0.1797,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_aug_t": {
+      "value": -0.2471,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_sep": {
+      "value": -0.2459,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_sep_t": {
+      "value": -0.3075,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_oct": {
+      "value": 0.0493,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_oct_t": {
+      "value": 0.0497,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_nov": {
+      "value": -0.4268,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_nov_t": {
+      "value": -0.3984,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_dec": {
+      "value": -0.7211,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_dec_t": {
+      "value": -0.8278,
+      "unit": "t_stat"
+    },
+    "t7_y1_diff_febdec": {
+      "value": -0.2437,
+      "unit": "percent_per_month"
+    },
+    "t7_y1_diff_febdec_t": {
+      "value": -0.8922,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_jan": {
+      "value": -8.3336,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_jan_t": {
+      "value": -6.3004,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_feb": {
+      "value": -2.2703,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_feb_t": {
+      "value": -3.1665,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_mar": {
+      "value": -2.1038,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_mar_t": {
+      "value": -3.4995,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_apr": {
+      "value": -0.4016,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_apr_t": {
+      "value": -0.8197,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_may": {
+      "value": -0.9931,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_may_t": {
+      "value": -1.5926,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_jun": {
+      "value": -0.9233,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_jun_t": {
+      "value": -2.0356,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_jul": {
+      "value": -0.8901,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_jul_t": {
+      "value": -1.5747,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_aug": {
+      "value": 0.5905,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_aug_t": {
+      "value": 1.1859,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_sep": {
+      "value": 0.0541,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_sep_t": {
+      "value": 0.1424,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_oct": {
+      "value": 1.3082,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_oct_t": {
+      "value": 2.2144,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_nov": {
+      "value": 0.5719,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_nov_t": {
+      "value": 1.2286,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_dec": {
+      "value": 1.175,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_dec_t": {
+      "value": 1.6577,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_all_febdec": {
+      "value": -0.3529,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_all_febdec_t": {
+      "value": -1.9926,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_jan": {
+      "value": 4.0386,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_jan_t": {
+      "value": 5.6152,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_feb": {
+      "value": -0.5757,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_feb_t": {
+      "value": -1.4088,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_mar": {
+      "value": 0.4769,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_mar_t": {
+      "value": 1.1518,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_apr": {
+      "value": 0.5542,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_apr_t": {
+      "value": 1.3389,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_may": {
+      "value": 0.0322,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_may_t": {
+      "value": 0.1112,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_jun": {
+      "value": 0.2248,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_jun_t": {
+      "value": 0.7742,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_jul": {
+      "value": 0.2721,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_jul_t": {
+      "value": 0.7937,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_aug": {
+      "value": 0.1091,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_aug_t": {
+      "value": 0.3171,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_sep": {
+      "value": 0.339,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_sep_t": {
+      "value": 0.9036,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_oct": {
+      "value": 0.6339,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_oct_t": {
+      "value": 1.2624,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_nov": {
+      "value": 0.7424,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_nov_t": {
+      "value": 1.5086,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_dec": {
+      "value": 1.3887,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_dec_t": {
+      "value": 3.0803,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_annual_febdec": {
+      "value": 0.3816,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_annual_febdec_t": {
+      "value": 3.1523,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_jan": {
+      "value": -9.8069,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_jan_t": {
+      "value": -7.2694,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_feb": {
+      "value": -2.3483,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_feb_t": {
+      "value": -3.0977,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_mar": {
+      "value": -1.9843,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_mar_t": {
+      "value": -3.5735,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_apr": {
+      "value": -0.5721,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_apr_t": {
+      "value": -1.1894,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_may": {
+      "value": -0.9156,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_may_t": {
+      "value": -1.5293,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_jun": {
+      "value": -1.0804,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_jun_t": {
+      "value": -2.4725,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_jul": {
+      "value": -0.7244,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_jul_t": {
+      "value": -1.2376,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_aug": {
+      "value": 0.5523,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_aug_t": {
+      "value": 1.0055,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_sep": {
+      "value": -0.1789,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_sep_t": {
+      "value": -0.5334,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_oct": {
+      "value": 1.2776,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_oct_t": {
+      "value": 2.0859,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_nov": {
+      "value": 0.6629,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_nov_t": {
+      "value": 1.4864,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_dec": {
+      "value": 0.681,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_dec_t": {
+      "value": 1.0107,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_nonannual_febdec": {
+      "value": -0.4209,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_nonannual_febdec_t": {
+      "value": -2.4022,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_jan": {
+      "value": 13.8455,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_jan_t": {
+      "value": 9.2641,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_feb": {
+      "value": 1.7726,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_feb_t": {
+      "value": 2.3159,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_mar": {
+      "value": 2.4612,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_mar_t": {
+      "value": 4.0016,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_apr": {
+      "value": 1.1263,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_apr_t": {
+      "value": 2.176,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_may": {
+      "value": 0.9477,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_may_t": {
+      "value": 1.5492,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_jun": {
+      "value": 1.3052,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_jun_t": {
+      "value": 2.7696,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_jul": {
+      "value": 0.9965,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_jul_t": {
+      "value": 1.6181,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_aug": {
+      "value": -0.4432,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_aug_t": {
+      "value": -0.7026,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_sep": {
+      "value": 0.5179,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_sep_t": {
+      "value": 1.2439,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_oct": {
+      "value": -0.6438,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_oct_t": {
+      "value": -0.7549,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_nov": {
+      "value": 0.0795,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_nov_t": {
+      "value": 0.1395,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_dec": {
+      "value": 0.7077,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_dec_t": {
+      "value": 1.1559,
+      "unit": "t_stat"
+    },
+    "t7_y2_5_diff_febdec": {
+      "value": 0.8025,
+      "unit": "percent_per_month"
+    },
+    "t7_y2_5_diff_febdec_t": {
+      "value": 4.2443,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_jan": {
+      "value": -1.7046,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_jan_t": {
+      "value": -2.9182,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_feb": {
+      "value": -0.691,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_feb_t": {
+      "value": -1.4756,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_mar": {
+      "value": -0.3853,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_mar_t": {
+      "value": -1.1435,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_apr": {
+      "value": -0.3266,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_apr_t": {
+      "value": -0.9018,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_may": {
+      "value": -0.8689,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_may_t": {
+      "value": -2.4188,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_jun": {
+      "value": -0.1333,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_jun_t": {
+      "value": -0.4447,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_jul": {
+      "value": -0.9765,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_jul_t": {
+      "value": -1.794,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_aug": {
+      "value": -0.0586,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_aug_t": {
+      "value": -0.1754,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_sep": {
+      "value": -0.8176,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_sep_t": {
+      "value": -2.4383,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_oct": {
+      "value": 0.4846,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_oct_t": {
+      "value": 1.2028,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_nov": {
+      "value": 0.9218,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_nov_t": {
+      "value": 2.1388,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_dec": {
+      "value": -0.3702,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_dec_t": {
+      "value": -0.8815,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_all_febdec": {
+      "value": -0.2929,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_all_febdec_t": {
+      "value": -2.4172,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_jan": {
+      "value": 3.2624,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_jan_t": {
+      "value": 4.5585,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_feb": {
+      "value": -0.0938,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_feb_t": {
+      "value": -0.2785,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_mar": {
+      "value": 0.3725,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_mar_t": {
+      "value": 1.079,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_apr": {
+      "value": 0.3919,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_apr_t": {
+      "value": 1.4535,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_may": {
+      "value": 0.1153,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_may_t": {
+      "value": 0.3341,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_jun": {
+      "value": 0.876,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_jun_t": {
+      "value": 2.6926,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_jul": {
+      "value": 0.2084,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_jul_t": {
+      "value": 0.6798,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_aug": {
+      "value": -0.0677,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_aug_t": {
+      "value": -0.2421,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_sep": {
+      "value": 0.0508,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_sep_t": {
+      "value": 0.1863,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_oct": {
+      "value": 1.1483,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_oct_t": {
+      "value": 2.8334,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_nov": {
+      "value": 1.3385,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_nov_t": {
+      "value": 2.9359,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_dec": {
+      "value": 0.8659,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_dec_t": {
+      "value": 2.4021,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_annual_febdec": {
+      "value": 0.4733,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_annual_febdec_t": {
+      "value": 4.5405,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_jan": {
+      "value": -2.6775,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_jan_t": {
+      "value": -4.6797,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_feb": {
+      "value": -0.6495,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_feb_t": {
+      "value": -1.3359,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_mar": {
+      "value": -0.8136,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_mar_t": {
+      "value": -2.1116,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_apr": {
+      "value": -0.5729,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_apr_t": {
+      "value": -1.6636,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_may": {
+      "value": -0.8697,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_may_t": {
+      "value": -2.3898,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_jun": {
+      "value": -0.4156,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_jun_t": {
+      "value": -1.5202,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_jul": {
+      "value": -1.0085,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_jul_t": {
+      "value": -1.826,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_aug": {
+      "value": -0.361,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_aug_t": {
+      "value": -1.1189,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_sep": {
+      "value": -0.8697,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_sep_t": {
+      "value": -2.5465,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_oct": {
+      "value": 0.1063,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_oct_t": {
+      "value": 0.2703,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_nov": {
+      "value": 0.6161,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_nov_t": {
+      "value": 1.8196,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_dec": {
+      "value": -0.7892,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_dec_t": {
+      "value": -1.8249,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_nonannual_febdec": {
+      "value": -0.5116,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_nonannual_febdec_t": {
+      "value": -4.2973,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_jan": {
+      "value": 5.9399,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_jan_t": {
+      "value": 6.6977,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_feb": {
+      "value": 0.5557,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_feb_t": {
+      "value": 0.9277,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_mar": {
+      "value": 1.1861,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_mar_t": {
+      "value": 2.2269,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_apr": {
+      "value": 0.9649,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_apr_t": {
+      "value": 2.5732,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_may": {
+      "value": 0.9849,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_may_t": {
+      "value": 2.0531,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_jun": {
+      "value": 1.2916,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_jun_t": {
+      "value": 3.2654,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_jul": {
+      "value": 1.2169,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_jul_t": {
+      "value": 1.9397,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_aug": {
+      "value": 0.2933,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_aug_t": {
+      "value": 0.7669,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_sep": {
+      "value": 0.9205,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_sep_t": {
+      "value": 2.2153,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_oct": {
+      "value": 1.042,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_oct_t": {
+      "value": 2.0337,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_nov": {
+      "value": 0.7224,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_nov_t": {
+      "value": 1.6698,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_dec": {
+      "value": 1.6551,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_dec_t": {
+      "value": 3.3692,
+      "unit": "t_stat"
+    },
+    "t7_y6_10_diff_febdec": {
+      "value": 0.9849,
+      "unit": "percent_per_month"
+    },
+    "t7_y6_10_diff_febdec_t": {
+      "value": 6.787,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_jan": {
+      "value": -0.8329,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_jan_t": {
+      "value": -1.3942,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_feb": {
+      "value": -0.2673,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_feb_t": {
+      "value": -0.5541,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_mar": {
+      "value": 0.1357,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_mar_t": {
+      "value": 0.4041,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_apr": {
+      "value": 0.179,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_apr_t": {
+      "value": 0.6113,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_may": {
+      "value": -0.3176,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_may_t": {
+      "value": -0.8457,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_jun": {
+      "value": 0.2019,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_jun_t": {
+      "value": 0.6958,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_jul": {
+      "value": -0.208,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_jul_t": {
+      "value": -0.6278,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_aug": {
+      "value": 0.1582,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_aug_t": {
+      "value": 0.5433,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_sep": {
+      "value": -0.2906,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_sep_t": {
+      "value": -1.1119,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_oct": {
+      "value": 0.5159,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_oct_t": {
+      "value": 1.1948,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_nov": {
+      "value": 0.9584,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_nov_t": {
+      "value": 2.5457,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_dec": {
+      "value": -0.601,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_dec_t": {
+      "value": -1.5513,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_all_febdec": {
+      "value": 0.0422,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_all_febdec_t": {
+      "value": 0.3905,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_jan": {
+      "value": 2.8739,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_jan_t": {
+      "value": 6.6343,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_feb": {
+      "value": 0.376,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_feb_t": {
+      "value": 1.1586,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_mar": {
+      "value": 0.091,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_mar_t": {
+      "value": 0.2723,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_apr": {
+      "value": 0.2258,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_apr_t": {
+      "value": 0.7375,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_may": {
+      "value": 0.6584,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_may_t": {
+      "value": 2.3951,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_jun": {
+      "value": 0.3903,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_jun_t": {
+      "value": 1.3925,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_jul": {
+      "value": -0.0387,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_jul_t": {
+      "value": -0.1662,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_aug": {
+      "value": 0.2583,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_aug_t": {
+      "value": 0.8915,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_sep": {
+      "value": 0.5235,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_sep_t": {
+      "value": 1.9572,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_oct": {
+      "value": 0.9482,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_oct_t": {
+      "value": 2.1153,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_nov": {
+      "value": 0.8953,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_nov_t": {
+      "value": 2.1903,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_dec": {
+      "value": 1.3093,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_dec_t": {
+      "value": 2.8046,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_annual_febdec": {
+      "value": 0.5125,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_annual_febdec_t": {
+      "value": 4.9941,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_jan": {
+      "value": -2.2044,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_jan_t": {
+      "value": -4.4051,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_feb": {
+      "value": -0.7633,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_feb_t": {
+      "value": -1.7126,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_mar": {
+      "value": 0.1249,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_mar_t": {
+      "value": 0.3431,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_apr": {
+      "value": 0.1288,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_apr_t": {
+      "value": 0.4177,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_may": {
+      "value": -0.4016,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_may_t": {
+      "value": -1.0952,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_jun": {
+      "value": 0.2024,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_jun_t": {
+      "value": 0.6777,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_jul": {
+      "value": -0.1757,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_jul_t": {
+      "value": -0.5251,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_aug": {
+      "value": 0.3693,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_aug_t": {
+      "value": 1.2596,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_sep": {
+      "value": -0.3901,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_sep_t": {
+      "value": -1.419,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_oct": {
+      "value": 0.1533,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_oct_t": {
+      "value": 0.3079,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_nov": {
+      "value": 0.805,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_nov_t": {
+      "value": 2.1572,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_dec": {
+      "value": -0.6071,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_dec_t": {
+      "value": -1.4123,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_nonannual_febdec": {
+      "value": -0.0504,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_nonannual_febdec_t": {
+      "value": -0.45,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_jan": {
+      "value": 5.0784,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_jan_t": {
+      "value": 6.8153,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_feb": {
+      "value": 1.1394,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_feb_t": {
+      "value": 2.1365,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_mar": {
+      "value": -0.0338,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_mar_t": {
+      "value": -0.064,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_apr": {
+      "value": 0.097,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_apr_t": {
+      "value": 0.2586,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_may": {
+      "value": 1.06,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_may_t": {
+      "value": 2.5148,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_jun": {
+      "value": 0.1878,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_jun_t": {
+      "value": 0.4797,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_jul": {
+      "value": 0.1369,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_jul_t": {
+      "value": 0.3498,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_aug": {
+      "value": -0.111,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_aug_t": {
+      "value": -0.274,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_sep": {
+      "value": 0.9136,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_sep_t": {
+      "value": 2.155,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_oct": {
+      "value": 0.7949,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_oct_t": {
+      "value": 1.1956,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_nov": {
+      "value": 0.0904,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_nov_t": {
+      "value": 0.1959,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_dec": {
+      "value": 1.9164,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_dec_t": {
+      "value": 3.1042,
+      "unit": "t_stat"
+    },
+    "t7_y11_15_diff_febdec": {
+      "value": 0.5629,
+      "unit": "percent_per_month"
+    },
+    "t7_y11_15_diff_febdec_t": {
+      "value": 3.8279,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_jan": {
+      "value": -1.5863,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_jan_t": {
+      "value": -3.3618,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_feb": {
+      "value": -1.1349,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_feb_t": {
+      "value": -3.0622,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_mar": {
+      "value": -0.4803,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_mar_t": {
+      "value": -1.3704,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_apr": {
+      "value": -0.7618,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_apr_t": {
+      "value": -2.3642,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_may": {
+      "value": 0.2586,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_may_t": {
+      "value": 0.7189,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_jun": {
+      "value": -0.0279,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_jun_t": {
+      "value": -0.0683,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_jul": {
+      "value": -0.2124,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_jul_t": {
+      "value": -0.5842,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_aug": {
+      "value": -0.3711,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_aug_t": {
+      "value": -0.9921,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_sep": {
+      "value": 0.0107,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_sep_t": {
+      "value": 0.0319,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_oct": {
+      "value": 0.1029,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_oct_t": {
+      "value": 0.2204,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_nov": {
+      "value": 0.8235,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_nov_t": {
+      "value": 1.8182,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_dec": {
+      "value": 0.013,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_dec_t": {
+      "value": 0.0297,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_all_febdec": {
+      "value": -0.1618,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_all_febdec_t": {
+      "value": -1.3686,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_jan": {
+      "value": 3.0056,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_jan_t": {
+      "value": 4.3555,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_feb": {
+      "value": -0.2717,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_feb_t": {
+      "value": -0.8257,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_mar": {
+      "value": 0.1917,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_mar_t": {
+      "value": 0.5953,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_apr": {
+      "value": 0.228,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_apr_t": {
+      "value": 0.7622,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_may": {
+      "value": 0.2959,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_may_t": {
+      "value": 0.8854,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_jun": {
+      "value": 0.6474,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_jun_t": {
+      "value": 1.8209,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_jul": {
+      "value": 0.2838,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_jul_t": {
+      "value": 0.8955,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_aug": {
+      "value": 0.1208,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_aug_t": {
+      "value": 0.3108,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_sep": {
+      "value": 0.405,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_sep_t": {
+      "value": 1.2828,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_oct": {
+      "value": 0.6636,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_oct_t": {
+      "value": 1.5022,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_nov": {
+      "value": 0.3684,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_nov_t": {
+      "value": 1.1597,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_dec": {
+      "value": -0.0225,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_dec_t": {
+      "value": -0.0714,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_annual_febdec": {
+      "value": 0.2646,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_annual_febdec_t": {
+      "value": 2.5783,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_jan": {
+      "value": -2.3,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_jan_t": {
+      "value": -3.5782,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_feb": {
+      "value": -1.1299,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_feb_t": {
+      "value": -2.8867,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_mar": {
+      "value": -0.5694,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_mar_t": {
+      "value": -1.6144,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_apr": {
+      "value": -0.9865,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_apr_t": {
+      "value": -2.7627,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_may": {
+      "value": 0.3473,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_may_t": {
+      "value": 0.9725,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_jun": {
+      "value": -0.2004,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_jun_t": {
+      "value": -0.5169,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_jul": {
+      "value": -0.2222,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_jul_t": {
+      "value": -0.6248,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_aug": {
+      "value": -0.427,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_aug_t": {
+      "value": -1.3647,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_sep": {
+      "value": 0.1305,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_sep_t": {
+      "value": 0.4031,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_oct": {
+      "value": -0.1542,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_oct_t": {
+      "value": -0.3458,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_nov": {
+      "value": 0.8949,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_nov_t": {
+      "value": 2.0266,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_dec": {
+      "value": 0.064,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_dec_t": {
+      "value": 0.1478,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_nonannual_febdec": {
+      "value": -0.2048,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_nonannual_febdec_t": {
+      "value": -1.757,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_jan": {
+      "value": 5.3055,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_jan_t": {
+      "value": 4.4832,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_feb": {
+      "value": 0.8582,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_feb_t": {
+      "value": 2.1698,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_mar": {
+      "value": 0.7611,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_mar_t": {
+      "value": 1.7124,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_apr": {
+      "value": 1.2144,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_apr_t": {
+      "value": 2.7907,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_may": {
+      "value": -0.0514,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_may_t": {
+      "value": -0.1153,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_jun": {
+      "value": 0.8478,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_jun_t": {
+      "value": 1.8642,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_jul": {
+      "value": 0.506,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_jul_t": {
+      "value": 1.0085,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_aug": {
+      "value": 0.5477,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_aug_t": {
+      "value": 1.0912,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_sep": {
+      "value": 0.2745,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_sep_t": {
+      "value": 0.6807,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_oct": {
+      "value": 0.8178,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_oct_t": {
+      "value": 1.4014,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_nov": {
+      "value": -0.5265,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_nov_t": {
+      "value": -1.0775,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_dec": {
+      "value": -0.0865,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_dec_t": {
+      "value": -0.1865,
+      "unit": "t_stat"
+    },
+    "t7_y16_20_diff_febdec": {
+      "value": 0.4694,
+      "unit": "percent_per_month"
+    },
+    "t7_y16_20_diff_febdec_t": {
+      "value": 3.3175,
+      "unit": "t_stat"
+    },
+    "t4_mean_all": {
+      "value": -0.001,
+      "unit": "decimal_sq_x100"
+    },
+    "t4_mean_all_t": {
+      "value": -0.2515,
+      "unit": "t_stat"
+    },
+    "t4_mean_nonannual": {
+      "value": -0.0023,
+      "unit": "decimal_sq_x100"
+    },
+    "t4_mean_nonannual_t": {
+      "value": -0.6239,
+      "unit": "t_stat"
+    },
+    "t4_mean_annual": {
+      "value": 0.0147,
+      "unit": "decimal_sq_x100"
+    },
+    "t4_mean_annual_t": {
+      "value": 3.622,
+      "unit": "t_stat"
+    },
+    "diag_t4_implied_sd_monthly_pct": {
+      "value": 1.2128,
+      "unit": "percent"
+    },
+    "diag_t6_n_industry_groups": {
+      "value": 14,
+      "unit": "count"
+    },
+    "diag_t6_other_share": {
+      "value": 0.0128,
+      "unit": "share"
+    },
+    "t6_y1_all_intra": {
+      "value": 0.515,
+      "unit": "percent_per_month"
+    },
+    "t6_y1_all_intra_t": {
+      "value": 1.8852,
+      "unit": "t_stat"
+    },
+    "t6_y1_all_inter": {
+      "value": 0.2801,
+      "unit": "percent_per_month"
+    },
+    "t6_y1_all_inter_t": {
+      "value": 5.1989,
+      "unit": "t_stat"
+    },
+    "t6_y1_annual_intra": {
+      "value": 1.1833,
+      "unit": "percent_per_month"
+    },
+    "t6_y1_annual_intra_t": {
+      "value": 8.7887,
+      "unit": "t_stat"
+    },
+    "t6_y1_annual_inter": {
+      "value": 0.1377,
+      "unit": "percent_per_month"
+    },
+    "t6_y1_annual_inter_t": {
+      "value": 3.7845,
+      "unit": "t_stat"
+    },
+    "t6_y1_nonannual_intra": {
+      "value": 0.19,
+      "unit": "percent_per_month"
+    },
+    "t6_y1_nonannual_intra_t": {
+      "value": 0.6463,
+      "unit": "t_stat"
+    },
+    "t6_y1_nonannual_inter": {
+      "value": 0.2649,
+      "unit": "percent_per_month"
+    },
+    "t6_y1_nonannual_inter_t": {
+      "value": 4.9081,
+      "unit": "t_stat"
+    },
+    "t6_y2_5_all_intra": {
+      "value": -0.9071,
+      "unit": "percent_per_month"
+    },
+    "t6_y2_5_all_intra_t": {
+      "value": -4.5064,
+      "unit": "t_stat"
+    },
+    "t6_y2_5_all_inter": {
+      "value": -0.1109,
+      "unit": "percent_per_month"
+    },
+    "t6_y2_5_all_inter_t": {
+      "value": -2.7591,
+      "unit": "t_stat"
+    },
+    "t6_y2_5_annual_intra": {
+      "value": 0.6594,
+      "unit": "percent_per_month"
+    },
+    "t6_y2_5_annual_intra_t": {
+      "value": 5.5396,
+      "unit": "t_stat"
+    },
+    "t6_y2_5_annual_inter": {
+      "value": 0.027,
+      "unit": "percent_per_month"
+    },
+    "t6_y2_5_annual_inter_t": {
+      "value": 0.8726,
+      "unit": "t_stat"
+    },
+    "t6_y2_5_nonannual_intra": {
+      "value": -1.0871,
+      "unit": "percent_per_month"
+    },
+    "t6_y2_5_nonannual_intra_t": {
+      "value": -5.1971,
+      "unit": "t_stat"
+    },
+    "t6_y2_5_nonannual_inter": {
+      "value": -0.116,
+      "unit": "percent_per_month"
+    },
+    "t6_y2_5_nonannual_inter_t": {
+      "value": -2.8782,
+      "unit": "t_stat"
+    },
+    "t6_y6_10_all_intra": {
+      "value": -0.3381,
+      "unit": "percent_per_month"
+    },
+    "t6_y6_10_all_intra_t": {
+      "value": -3.1657,
+      "unit": "t_stat"
+    },
+    "t6_y6_10_all_inter": {
+      "value": -0.0724,
+      "unit": "percent_per_month"
+    },
+    "t6_y6_10_all_inter_t": {
+      "value": -1.8925,
+      "unit": "t_stat"
+    },
+    "t6_y6_10_annual_intra": {
+      "value": 0.6259,
+      "unit": "percent_per_month"
+    },
+    "t6_y6_10_annual_intra_t": {
+      "value": 5.8728,
+      "unit": "t_stat"
+    },
+    "t6_y6_10_annual_inter": {
+      "value": 0.0799,
+      "unit": "percent_per_month"
+    },
+    "t6_y6_10_annual_inter_t": {
+      "value": 2.6315,
+      "unit": "t_stat"
+    },
+    "t6_y6_10_nonannual_intra": {
+      "value": -0.587,
+      "unit": "percent_per_month"
+    },
+    "t6_y6_10_nonannual_intra_t": {
+      "value": -5.4326,
+      "unit": "t_stat"
+    },
+    "t6_y6_10_nonannual_inter": {
+      "value": -0.1051,
+      "unit": "percent_per_month"
+    },
+    "t6_y6_10_nonannual_inter_t": {
+      "value": -2.8108,
+      "unit": "t_stat"
+    },
+    "t6_y11_15_all_intra": {
+      "value": -0.0549,
+      "unit": "percent_per_month"
+    },
+    "t6_y11_15_all_intra_t": {
+      "value": -0.5458,
+      "unit": "t_stat"
+    },
+    "t6_y11_15_all_inter": {
+      "value": 0.0242,
+      "unit": "percent_per_month"
+    },
+    "t6_y11_15_all_inter_t": {
+      "value": 0.6868,
+      "unit": "t_stat"
+    },
+    "t6_y11_15_annual_intra": {
+      "value": 0.6372,
+      "unit": "percent_per_month"
+    },
+    "t6_y11_15_annual_intra_t": {
+      "value": 6.7511,
+      "unit": "t_stat"
+    },
+    "t6_y11_15_annual_inter": {
+      "value": 0.0721,
+      "unit": "percent_per_month"
+    },
+    "t6_y11_15_annual_inter_t": {
+      "value": 2.5146,
+      "unit": "t_stat"
+    },
+    "t6_y11_15_nonannual_intra": {
+      "value": -0.2328,
+      "unit": "percent_per_month"
+    },
+    "t6_y11_15_nonannual_intra_t": {
+      "value": -2.2815,
+      "unit": "t_stat"
+    },
+    "t6_y11_15_nonannual_inter": {
+      "value": 0.0029,
+      "unit": "percent_per_month"
+    },
+    "t6_y11_15_nonannual_inter_t": {
+      "value": 0.0788,
+      "unit": "t_stat"
+    },
+    "t6_y16_20_all_intra": {
+      "value": -0.2657,
+      "unit": "percent_per_month"
+    },
+    "t6_y16_20_all_intra_t": {
+      "value": -2.6572,
+      "unit": "t_stat"
+    },
+    "t6_y16_20_all_inter": {
+      "value": -0.0148,
+      "unit": "percent_per_month"
+    },
+    "t6_y16_20_all_inter_t": {
+      "value": -0.35,
+      "unit": "t_stat"
+    },
+    "t6_y16_20_annual_intra": {
+      "value": 0.4168,
+      "unit": "percent_per_month"
+    },
+    "t6_y16_20_annual_intra_t": {
+      "value": 4.1448,
+      "unit": "t_stat"
+    },
+    "t6_y16_20_annual_inter": {
+      "value": 0.0762,
+      "unit": "percent_per_month"
+    },
+    "t6_y16_20_annual_inter_t": {
+      "value": 2.1354,
+      "unit": "t_stat"
+    },
+    "t6_y16_20_nonannual_intra": {
+      "value": -0.3504,
+      "unit": "percent_per_month"
+    },
+    "t6_y16_20_nonannual_intra_t": {
+      "value": -3.3314,
+      "unit": "t_stat"
+    },
+    "t6_y16_20_nonannual_inter": {
+      "value": -0.029,
+      "unit": "percent_per_month"
+    },
+    "t6_y16_20_nonannual_inter_t": {
+      "value": -0.6647,
+      "unit": "t_stat"
+    },
+    "t8_y1_all_pa_event": {
+      "value": 1.2309,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_all_pa_event_t": {
+      "value": 3.2269,
+      "unit": "t_stat"
+    },
+    "t8_y1_all_pa_nonevent": {
+      "value": 0.6542,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_all_pa_nonevent_t": {
+      "value": 2.0368,
+      "unit": "t_stat"
+    },
+    "t8_y1_all_pb_event": {
+      "value": 0.4321,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_all_pb_event_t": {
+      "value": 1.647,
+      "unit": "t_stat"
+    },
+    "t8_y1_all_pb_nonevent": {
+      "value": 0.7932,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_all_pb_nonevent_t": {
+      "value": 2.7315,
+      "unit": "t_stat"
+    },
+    "t8_y1_all_pc_event": {
+      "value": 0.0988,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_all_pc_event_t": {
+      "value": 0.3732,
+      "unit": "t_stat"
+    },
+    "t8_y1_all_pc_nonevent": {
+      "value": 0.9034,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_all_pc_nonevent_t": {
+      "value": 3.1618,
+      "unit": "t_stat"
+    },
+    "t8_y1_all_pd_event": {
+      "value": 0.0804,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_all_pd_event_t": {
+      "value": 0.1891,
+      "unit": "t_stat"
+    },
+    "t8_y1_all_pd_nonevent": {
+      "value": 0.811,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_all_pd_nonevent_t": {
+      "value": 2.6099,
+      "unit": "t_stat"
+    },
+    "t8_y1_annual_pa_event": {
+      "value": 1.2879,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_annual_pa_event_t": {
+      "value": 5.0734,
+      "unit": "t_stat"
+    },
+    "t8_y1_annual_pa_nonevent": {
+      "value": 1.2933,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_annual_pa_nonevent_t": {
+      "value": 7.6738,
+      "unit": "t_stat"
+    },
+    "t8_y1_annual_pb_event": {
+      "value": 0.8548,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_annual_pb_event_t": {
+      "value": 5.6011,
+      "unit": "t_stat"
+    },
+    "t8_y1_annual_pb_nonevent": {
+      "value": 1.1878,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_annual_pb_nonevent_t": {
+      "value": 7.7814,
+      "unit": "t_stat"
+    },
+    "t8_y1_annual_pc_event": {
+      "value": 0.7447,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_annual_pc_event_t": {
+      "value": 4.5425,
+      "unit": "t_stat"
+    },
+    "t8_y1_annual_pc_nonevent": {
+      "value": 1.2157,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_annual_pc_nonevent_t": {
+      "value": 7.8644,
+      "unit": "t_stat"
+    },
+    "t8_y1_annual_pd_event": {
+      "value": 1.0262,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_annual_pd_event_t": {
+      "value": 3.1843,
+      "unit": "t_stat"
+    },
+    "t8_y1_annual_pd_nonevent": {
+      "value": 1.3312,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_annual_pd_nonevent_t": {
+      "value": 7.6046,
+      "unit": "t_stat"
+    },
+    "t8_y1_nonannual_pa_event": {
+      "value": 0.9488,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_nonannual_pa_event_t": {
+      "value": 2.4583,
+      "unit": "t_stat"
+    },
+    "t8_y1_nonannual_pa_nonevent": {
+      "value": 0.282,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_nonannual_pa_nonevent_t": {
+      "value": 0.8093,
+      "unit": "t_stat"
+    },
+    "t8_y1_nonannual_pb_event": {
+      "value": 0.2403,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_nonannual_pb_event_t": {
+      "value": 0.8975,
+      "unit": "t_stat"
+    },
+    "t8_y1_nonannual_pb_nonevent": {
+      "value": 0.4951,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_nonannual_pb_nonevent_t": {
+      "value": 1.5869,
+      "unit": "t_stat"
+    },
+    "t8_y1_nonannual_pc_event": {
+      "value": -0.1535,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_nonannual_pc_event_t": {
+      "value": -0.5572,
+      "unit": "t_stat"
+    },
+    "t8_y1_nonannual_pc_nonevent": {
+      "value": 0.5803,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_nonannual_pc_nonevent_t": {
+      "value": 1.9094,
+      "unit": "t_stat"
+    },
+    "t8_y1_nonannual_pd_event": {
+      "value": -0.4147,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_nonannual_pd_event_t": {
+      "value": -0.8925,
+      "unit": "t_stat"
+    },
+    "t8_y1_nonannual_pd_nonevent": {
+      "value": 0.4639,
+      "unit": "percent_per_month"
+    },
+    "t8_y1_nonannual_pd_nonevent_t": {
+      "value": 1.405,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_all_pa_event": {
+      "value": -1.041,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_all_pa_event_t": {
+      "value": -3.5078,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_all_pa_nonevent": {
+      "value": -0.9386,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_all_pa_nonevent_t": {
+      "value": -4.0199,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_all_pb_event": {
+      "value": -0.7736,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_all_pb_event_t": {
+      "value": -4.035,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_all_pb_nonevent": {
+      "value": -0.754,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_all_pb_nonevent_t": {
+      "value": -3.27,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_all_pc_event": {
+      "value": -0.8378,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_all_pc_event_t": {
+      "value": -4.5368,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_all_pc_nonevent": {
+      "value": -0.7006,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_all_pc_nonevent_t": {
+      "value": -3.108,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_all_pd_event": {
+      "value": -0.5172,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_all_pd_event_t": {
+      "value": -1.4131,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_all_pd_nonevent": {
+      "value": -1.0776,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_all_pd_nonevent_t": {
+      "value": -4.2168,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_annual_pa_event": {
+      "value": 0.8403,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_annual_pa_event_t": {
+      "value": 3.5502,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_annual_pa_nonevent": {
+      "value": 0.5684,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_annual_pa_nonevent_t": {
+      "value": 3.9401,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_annual_pb_event": {
+      "value": 0.6676,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_annual_pb_event_t": {
+      "value": 4.3789,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_annual_pb_nonevent": {
+      "value": 0.6464,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_annual_pb_nonevent_t": {
+      "value": 4.9294,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_annual_pc_event": {
+      "value": 0.4959,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_annual_pc_event_t": {
+      "value": 3.3944,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_annual_pc_nonevent": {
+      "value": 0.6979,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_annual_pc_nonevent_t": {
+      "value": 5.2284,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_annual_pd_event": {
+      "value": 1.0262,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_annual_pd_event_t": {
+      "value": 3.5513,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_annual_pd_nonevent": {
+      "value": 0.688,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_annual_pd_nonevent_t": {
+      "value": 4.9506,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_nonannual_pa_event": {
+      "value": -1.2584,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_nonannual_pa_event_t": {
+      "value": -4.2612,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_nonannual_pa_nonevent": {
+      "value": -1.146,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_nonannual_pa_nonevent_t": {
+      "value": -4.7224,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_nonannual_pb_event": {
+      "value": -0.8985,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_nonannual_pb_event_t": {
+      "value": -4.7109,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_nonannual_pb_nonevent": {
+      "value": -0.9873,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_nonannual_pb_nonevent_t": {
+      "value": -4.1516,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_nonannual_pc_event": {
+      "value": -1.0868,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_nonannual_pc_event_t": {
+      "value": -5.6922,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_nonannual_pc_nonevent": {
+      "value": -0.9336,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_nonannual_pc_nonevent_t": {
+      "value": -3.9226,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_nonannual_pd_event": {
+      "value": -0.7144,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_nonannual_pd_event_t": {
+      "value": -1.9127,
+      "unit": "t_stat"
+    },
+    "t8_y2_5_nonannual_pd_nonevent": {
+      "value": -1.2192,
+      "unit": "percent_per_month"
+    },
+    "t8_y2_5_nonannual_pd_nonevent_t": {
+      "value": -4.6201,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_all_pa_event": {
+      "value": -0.3322,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_all_pa_event_t": {
+      "value": -1.4433,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_all_pa_nonevent": {
+      "value": -0.473,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_all_pa_nonevent_t": {
+      "value": -3.3825,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_all_pb_event": {
+      "value": -0.4066,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_all_pb_event_t": {
+      "value": -2.655,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_all_pb_nonevent": {
+      "value": -0.3652,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_all_pb_nonevent_t": {
+      "value": -2.9949,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_all_pc_event": {
+      "value": -0.5264,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_all_pc_event_t": {
+      "value": -3.445,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_all_pc_nonevent": {
+      "value": -0.3129,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_all_pc_nonevent_t": {
+      "value": -2.549,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_all_pd_event": {
+      "value": -0.4227,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_all_pd_event_t": {
+      "value": -1.3387,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_all_pd_nonevent": {
+      "value": -0.4329,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_all_pd_nonevent_t": {
+      "value": -3.1976,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_annual_pa_event": {
+      "value": 0.7585,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_annual_pa_event_t": {
+      "value": 3.2774,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_annual_pa_nonevent": {
+      "value": 0.6989,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_annual_pa_nonevent_t": {
+      "value": 5.2707,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_annual_pb_event": {
+      "value": 0.6506,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_annual_pb_event_t": {
+      "value": 4.3803,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_annual_pb_nonevent": {
+      "value": 0.6849,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_annual_pb_nonevent_t": {
+      "value": 5.7098,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_annual_pc_event": {
+      "value": 0.562,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_annual_pc_event_t": {
+      "value": 3.9989,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_annual_pc_nonevent": {
+      "value": 0.7429,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_annual_pc_nonevent_t": {
+      "value": 6.0129,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_annual_pd_event": {
+      "value": 0.1936,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_annual_pd_event_t": {
+      "value": 0.6309,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_annual_pd_nonevent": {
+      "value": 0.7328,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_annual_pd_nonevent_t": {
+      "value": 5.3319,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_nonannual_pa_event": {
+      "value": -0.5497,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_nonannual_pa_event_t": {
+      "value": -2.4662,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_nonannual_pa_nonevent": {
+      "value": -0.6792,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_nonannual_pa_nonevent_t": {
+      "value": -4.858,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_nonannual_pb_event": {
+      "value": -0.5787,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_nonannual_pb_event_t": {
+      "value": -3.7284,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_nonannual_pb_nonevent": {
+      "value": -0.5649,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_nonannual_pb_nonevent_t": {
+      "value": -4.5914,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_nonannual_pc_event": {
+      "value": -0.5794,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_nonannual_pc_event_t": {
+      "value": -3.814,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_nonannual_pc_nonevent": {
+      "value": -0.5365,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_nonannual_pc_nonevent_t": {
+      "value": -4.3702,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_nonannual_pd_event": {
+      "value": -0.5241,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_nonannual_pd_event_t": {
+      "value": -1.7907,
+      "unit": "t_stat"
+    },
+    "t8_y6_10_nonannual_pd_nonevent": {
+      "value": -0.7052,
+      "unit": "percent_per_month"
+    },
+    "t8_y6_10_nonannual_pd_nonevent_t": {
+      "value": -4.9223,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_all_pa_event": {
+      "value": -0.1328,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_all_pa_event_t": {
+      "value": -0.6297,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_all_pa_nonevent": {
+      "value": 0.0227,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_all_pa_nonevent_t": {
+      "value": 0.1844,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_all_pb_event": {
+      "value": -0.1913,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_all_pb_event_t": {
+      "value": -1.3415,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_all_pb_nonevent": {
+      "value": -0.1256,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_all_pb_nonevent_t": {
+      "value": -1.0924,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_all_pc_event": {
+      "value": -0.1841,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_all_pc_event_t": {
+      "value": -1.2597,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_all_pc_nonevent": {
+      "value": -0.1254,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_all_pc_nonevent_t": {
+      "value": -1.1176,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_all_pd_event": {
+      "value": 0.0798,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_all_pd_event_t": {
+      "value": 0.2382,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_all_pd_nonevent": {
+      "value": 0.0165,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_all_pd_nonevent_t": {
+      "value": 0.1324,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_annual_pa_event": {
+      "value": 0.768,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_annual_pa_event_t": {
+      "value": 3.6984,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_annual_pa_nonevent": {
+      "value": 0.676,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_annual_pa_nonevent_t": {
+      "value": 5.556,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_annual_pb_event": {
+      "value": 0.4287,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_annual_pb_event_t": {
+      "value": 2.8709,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_annual_pb_nonevent": {
+      "value": 0.5653,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_annual_pb_nonevent_t": {
+      "value": 4.8265,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_annual_pc_event": {
+      "value": 0.1337,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_annual_pc_event_t": {
+      "value": 0.887,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_annual_pc_nonevent": {
+      "value": 0.6773,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_annual_pc_nonevent_t": {
+      "value": 5.1724,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_annual_pd_event": {
+      "value": -0.2589,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_annual_pd_event_t": {
+      "value": -0.7539,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_annual_pd_nonevent": {
+      "value": 0.9156,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_annual_pd_nonevent_t": {
+      "value": 5.8891,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_nonannual_pa_event": {
+      "value": -0.2399,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_nonannual_pa_event_t": {
+      "value": -1.1087,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_nonannual_pa_nonevent": {
+      "value": -0.1994,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_nonannual_pa_nonevent_t": {
+      "value": -1.5601,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_nonannual_pb_event": {
+      "value": -0.2981,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_nonannual_pb_event_t": {
+      "value": -2.1115,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_nonannual_pb_nonevent": {
+      "value": -0.2424,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_nonannual_pb_nonevent_t": {
+      "value": -2.0038,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_nonannual_pc_event": {
+      "value": -0.3405,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_nonannual_pc_event_t": {
+      "value": -2.2993,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_nonannual_pc_nonevent": {
+      "value": -0.3281,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_nonannual_pc_nonevent_t": {
+      "value": -2.7506,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_nonannual_pd_event": {
+      "value": 0.2188,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_nonannual_pd_event_t": {
+      "value": 0.682,
+      "unit": "t_stat"
+    },
+    "t8_y11_15_nonannual_pd_nonevent": {
+      "value": -0.1935,
+      "unit": "percent_per_month"
+    },
+    "t8_y11_15_nonannual_pd_nonevent_t": {
+      "value": -1.3198,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_all_pa_event": {
+      "value": 0.2455,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_all_pa_event_t": {
+      "value": 0.9812,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_all_pa_nonevent": {
+      "value": -0.3104,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_all_pa_nonevent_t": {
+      "value": -2.355,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_all_pb_event": {
+      "value": 0.1,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_all_pb_event_t": {
+      "value": 0.6279,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_all_pb_nonevent": {
+      "value": -0.2734,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_all_pb_nonevent_t": {
+      "value": -2.1275,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_all_pc_event": {
+      "value": 0.0143,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_all_pc_event_t": {
+      "value": 0.0918,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_all_pc_nonevent": {
+      "value": -0.2731,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_all_pc_nonevent_t": {
+      "value": -2.1265,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_all_pd_event": {
+      "value": -0.2945,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_all_pd_event_t": {
+      "value": -0.8102,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_all_pd_nonevent": {
+      "value": -0.3424,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_all_pd_nonevent_t": {
+      "value": -2.3619,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_annual_pa_event": {
+      "value": 0.4502,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_annual_pa_event_t": {
+      "value": 1.7188,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_annual_pa_nonevent": {
+      "value": 0.3627,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_annual_pa_nonevent_t": {
+      "value": 2.687,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_annual_pb_event": {
+      "value": 0.3879,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_annual_pb_event_t": {
+      "value": 2.3679,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_annual_pb_nonevent": {
+      "value": 0.3682,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_annual_pb_nonevent_t": {
+      "value": 2.7992,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_annual_pc_event": {
+      "value": 0.541,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_annual_pc_event_t": {
+      "value": 3.3543,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_annual_pc_nonevent": {
+      "value": 0.4777,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_annual_pc_nonevent_t": {
+      "value": 3.7895,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_annual_pd_event": {
+      "value": 0.9571,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_annual_pd_event_t": {
+      "value": 2.6042,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_annual_pd_nonevent": {
+      "value": 0.4089,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_annual_pd_nonevent_t": {
+      "value": 3.1252,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_nonannual_pa_event": {
+      "value": 0.1447,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_nonannual_pa_event_t": {
+      "value": 0.5951,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_nonannual_pa_nonevent": {
+      "value": -0.4194,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_nonannual_pa_nonevent_t": {
+      "value": -3.0753,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_nonannual_pb_event": {
+      "value": -0.0653,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_nonannual_pb_event_t": {
+      "value": -0.4046,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_nonannual_pb_nonevent": {
+      "value": -0.4132,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_nonannual_pb_nonevent_t": {
+      "value": -3.2225,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_nonannual_pc_event": {
+      "value": -0.1805,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_nonannual_pc_event_t": {
+      "value": -1.2148,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_nonannual_pc_nonevent": {
+      "value": -0.3176,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_nonannual_pc_nonevent_t": {
+      "value": -2.5278,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_nonannual_pd_event": {
+      "value": -0.4392,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_nonannual_pd_event_t": {
+      "value": -1.1548,
+      "unit": "t_stat"
+    },
+    "t8_y16_20_nonannual_pd_nonevent": {
+      "value": -0.4117,
+      "unit": "percent_per_month"
+    },
+    "t8_y16_20_nonannual_pd_nonevent_t": {
+      "value": -2.799,
+      "unit": "t_stat"
+    }
+  }
+}

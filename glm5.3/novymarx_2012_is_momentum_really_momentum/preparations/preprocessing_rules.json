@@ -1,0 +1,261 @@
+[
+  {
+    "rule_id": "sort_large_quintile_nyse",
+    "category": "sort",
+    "section": "§1 Introduction",
+    "paper_location": "L75",
+    "paper_quote": "The value-weighted strategy, restricted to large stocks (largest quintile by market equity using New York Stock Exchange break points, made up of roughly the three hundred largest firms in the economy)"
+  },
+  {
+    "rule_id": "sample_holding_period_one_month",
+    "category": "sample",
+    "section": "§2",
+    "paper_location": "L87",
+    "paper_quote": "I fix the holding period at one month to keep the number of strategies under consideration manageable."
+  },
+  {
+    "rule_id": "universe_all_crsp_stocks",
+    "category": "universe",
+    "section": "§2.1 Data and portfolio construction",
+    "paper_location": "L91-101",
+    "paper_quote": "The data cover the sample period from January 1926 through December 2010 and include all stocks in the Center for Research in Securities Prices (CRSP) universe. [OCR page break between L95 and L101; sentence continues across the break. No share-code or exchange filter is stated anywhere in the paper — 'all stocks' is the universe.]"
+  },
+  {
+    "rule_id": "delisting_paper_silent",
+    "category": "delisting",
+    "section": "§2.1 Data and portfolio construction",
+    "paper_location": "L91-101",
+    "paper_quote": "The data cover the sample period from January 1926 through December 2010 and include all stocks in the Center for Research in Securities Prices (CRSP) universe. [Paper is silent on delisting-return treatment: no passage in the paper discusses delisting codes or delisting returns — grep for 'delist' over content.md returns no hits.]"
+  },
+  {
+    "rule_id": "factor_umd_validation",
+    "category": "factor",
+    "section": "§2.1 Data and portfolio construction",
+    "paper_location": "L101",
+    "paper_quote": "The Fama-French up-minus-down factor (UMD) replicated in this data generates a monthly return series more than 99% correlated with the series posted on Ken French’s website (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html)."
+  },
+  {
+    "rule_id": "sort_decile_nyse_breaks",
+    "category": "sort",
+    "section": "§2.1 Data and portfolio construction",
+    "paper_location": "L103",
+    "paper_quote": "Momentum strategies are constructed each month by buying winners and selling losers, where these are defined as the upper and lower decile, by NYSE breaks, of cumulative returns over a test period."
+  },
+  {
+    "rule_id": "var_r_nm",
+    "category": "variable",
+    "section": "§2.1 Data and portfolio construction",
+    "paper_location": "L103",
+    "paper_quote": "The $n-m$ strategy is based on portfolios sorted on $r_{n,m}$, denoting cumulative returns from $n$ to $m$ months (inclusive) prior to portfolio formation."
+  },
+  {
+    "rule_id": "sort_vw_and_ew",
+    "category": "sort",
+    "section": "§2.1 Data and portfolio construction",
+    "paper_location": "L103",
+    "paper_quote": "I consider value-weighted and equal-weighted strategy returns."
+  },
+  {
+    "rule_id": "avail_returns_from_1926",
+    "category": "sample",
+    "section": "§2.1 Data and portfolio construction",
+    "paper_location": "L103",
+    "paper_quote": "I construct strategies using all available data, employing returns beginning in January 1926."
+  },
+  {
+    "rule_id": "fm_spec_table1",
+    "category": "fm",
+    "section": "§3.1 Parametric results",
+    "paper_location": "L149",
+    "paper_quote": "Table 1 reports results of Fama-MacBeth regressions of returns on recent and intermediate horizon past performances, $r_{6,2}$ and $r_{12,7}$, and controls for past month’s performance, size, and book-to-market (Fama and MacBeth, 1973).$^{1}$"
+  },
+  {
+    "rule_id": "var_log_me",
+    "category": "variable",
+    "section": "§3.1 (footnote 1)",
+    "paper_location": "L155",
+    "paper_quote": "The size control is the log of firms’ market capitalizations, lagged one month."
+  },
+  {
+    "rule_id": "var_log_bm",
+    "category": "variable",
+    "section": "§3.1 (footnote 1)",
+    "paper_location": "L155",
+    "paper_quote": "The book-to-market control is the log of book-to-market, where book-to-market is book equity (shareholder equity, plus deferred taxes, minus preferred stock) scaled by market equity lagged six months, and is updated at the end of each June using accounting data from the fiscal year ending in the previous calendar year."
+  },
+  {
+    "rule_id": "var_be_shareholder_equity_tiers",
+    "category": "variable",
+    "section": "§3.1 (footnote 1)",
+    "paper_location": "L155",
+    "paper_quote": "Stockholders equity is as given in Compustat (SEQ) if available, or else common equity plus the carrying value of preferred stock (CEQ + PSTX) if available, or else total assets minus total liabilities (AT – LT)."
+  },
+  {
+    "rule_id": "var_be_deferred_taxes_tiers",
+    "category": "variable",
+    "section": "§3.1 (footnote 1)",
+    "paper_location": "L155",
+    "paper_quote": "Deferred taxes is deferred taxes and investment tax credits (TXDITC) if available, or else deferred taxes and/or tax credit (TXDB and/or ITCB)."
+  },
+  {
+    "rule_id": "var_be_preferred_tiers",
+    "category": "variable",
+    "section": "§3.1 (footnote 1)",
+    "paper_location": "L155",
+    "paper_quote": "Preferred stock is redemption value (PSTKR) if available, or else liquidating value (PSTKRL) if available, or else carrying value (PSTK)."
+  },
+  {
+    "rule_id": "avail_dff_book_equity_precompustat",
+    "category": "sample",
+    "section": "§3.1 (footnote 1)",
+    "paper_location": "L155",
+    "paper_quote": "Prior to the availability of Compustat, I employ the Davis, Fama, and French (2000) book equity data."
+  },
+  {
+    "rule_id": "winsorize_1_99_indep_vars",
+    "category": "winsorize",
+    "section": "§3.1 (footnote 1)",
+    "paper_location": "L155",
+    "paper_quote": "Independent variables are winsorized at the 1% and 99% levels."
+  },
+  {
+    "rule_id": "fm_sample_subperiods",
+    "category": "fm",
+    "section": "Table 1 description",
+    "paper_location": "L169",
+    "paper_quote": "The sample covers January 1927 to December 2010. The early and late half samples cover 1927 to 1968 and 1969 to 2010, respectively. The quarter samples cover 1927 to 1947, 1948 to 1968, 1969 to 1989, and 1990 to 2010, respectively."
+  },
+  {
+    "rule_id": "winsorize_monthly",
+    "category": "winsorize",
+    "section": "Table 1 description",
+    "paper_location": "L169",
+    "paper_quote": "Independent variables are winsorized each month at the 1% and 99% levels."
+  },
+  {
+    "rule_id": "sort_spanning_deciles_vw",
+    "category": "sort",
+    "section": "§3.2 Spanning tests",
+    "paper_location": "L287",
+    "paper_quote": "The test strategies I employ in these spanning tests are MOM $_{12,7}$ and MOM $_{6,2}$ , which each month hold winners and short losers, defined as the upper and lower deciles of $r_{12,7}$ and $r_{6,2}$ , respectively, using NYSE breaks."
+  },
+  {
+    "rule_id": "sort_spanning_vw_returns",
+    "category": "sort",
+    "section": "§3.2 Spanning tests",
+    "paper_location": "L287",
+    "paper_quote": "Strategy returns are value-weighted."
+  },
+  {
+    "rule_id": "factor_ff3_ff4_regressions",
+    "category": "factor",
+    "section": "§3.2 Spanning tests",
+    "paper_location": "L289",
+    "paper_quote": "Table 2 shows basic properties of the two test strategies, MOM $_{12,7}$ and MOM $_{6,2}$ , by presenting results of time series regressions of the two strategies’ returns on the market, the three Fama-French factors, and the three Fama-French factors plus UMD (up-minus-down)."
+  },
+  {
+    "rule_id": "sample_table2_1927_2010",
+    "category": "sample",
+    "section": "Table 2 description",
+    "paper_location": "L305",
+    "paper_quote": "$MOM_{n,m}$ is the returns of the winner-minus-loser strategy (deciles, employing NYSE breaks), where winners and losers are based on cumulative returns from $n$ to $m$ months (inclusive) prior to portfolio formation. The sample period covers January 1927 through December 2010."
+  },
+  {
+    "rule_id": "sample_table3_excess_returns",
+    "category": "sample",
+    "section": "Table 3 description",
+    "paper_location": "L399",
+    "paper_quote": "This table presents the average excess returns to momentum strategies constructed using intermediate horizon past performance ($MOM_{12,7}$) and recent past performance ($MOM_{6,2}$) and results of time series regressions of these strategies’ returns on the three Fama-French factors and each other. The sample covers January 1927 to December 2010."
+  },
+  {
+    "rule_id": "sort_double_independent_5x5",
+    "category": "sort",
+    "section": "§3.3 Double-sorted portfolios",
+    "paper_location": "L610",
+    "paper_quote": "Table 4 shows average returns and alphas for the 25 portfolios independently double-sorted on intermediate horizon and recent past performances."
+  },
+  {
+    "rule_id": "sort_double_quintile_nyse_vw",
+    "category": "sort",
+    "section": "§3.3 Double-sorted portfolios",
+    "paper_location": "L610",
+    "paper_quote": "To maintain highly diversified portfolios I employ quintile sorts (again using NYSE breakpoints), instead of the decile sorts employed in the univariate portfolio tests. Portfolio returns are value-weighted, though equal-weighting the portfolios’ returns yields qualitatively identical results."
+  },
+  {
+    "rule_id": "sample_table4_1927_2008",
+    "category": "sample",
+    "section": "Table 4 description",
+    "paper_location": "L630",
+    "paper_quote": "The sorts employ NYSE break points, and portfolio returns are value-weighted. The sample covers January 1927 to December 2008."
+  },
+  {
+    "rule_id": "sample_table5_1969_2010",
+    "category": "sample",
+    "section": "Table 5 description",
+    "paper_location": "L1065",
+    "paper_quote": "The sorts employ NYSE break points, and portfolio returns are value-weighted. The sample covers January 1969 to December 2010."
+  },
+  {
+    "rule_id": "sample_table6_conditional_1969_2010",
+    "category": "sample",
+    "section": "Table 6 description",
+    "paper_location": "L1487",
+    "paper_quote": "This table shows the average returns to the five winner-minus-loser portfolios in each direction from the double sort on recent and intermediate horizon past performances ( $r_{6,2}$ and $r_{12,7}$ ), and results from time series regressions employing these strategies’ returns. The sample covers January 1969 to December 2010."
+  },
+  {
+    "rule_id": "sort_within_quintile_momentum",
+    "category": "sort",
+    "section": "§4 The role of size",
+    "paper_location": "L1695",
+    "paper_quote": "These strategies consist of winners-minus-losers, based on a quintile sort on past performance, constructed within size quintiles, and are denoted by MOM $_{n,m}^i$ , where winners and losers are based on cumulative returns from $n$ to $m$ months (inclusive) prior to portfolio formation and the superscript $i$ identifies the size quintile."
+  },
+  {
+    "rule_id": "sort_size_quintiles_nyse_characteristics",
+    "category": "sort",
+    "section": "§4 The role of size",
+    "paper_location": "L1695",
+    "paper_quote": "Panel A of Table 7 shows time series average characteristics of the size portfolios, which are constructed using NYSE breaks."
+  },
+  {
+    "rule_id": "sample_table7_full_and_late",
+    "category": "sample",
+    "section": "Table 7 description",
+    "paper_location": "L1701",
+    "paper_quote": "Portfolio break points based on NYSE stocks only. The full sample covers January 1927 through December 2010. The late sample covers January 1969 through December 2010."
+  },
+  {
+    "rule_id": "sample_other_markets_assets",
+    "category": "sample",
+    "section": "§5.1 Strategy formation",
+    "paper_location": "L1925",
+    "paper_quote": "The assets employed are (1) the Fama-French 49 industries; (2) 25 size and book-to-market sorted portfolios; (3) 23 tradable MSCI developed-market country indices; (4) futures on 31 commodities; and (5) 19 currencies."
+  },
+  {
+    "rule_id": "sort_other_markets_tertile_ew",
+    "category": "sort",
+    "section": "§5.1 Strategy formation",
+    "paper_location": "L1933",
+    "paper_quote": "Because each of these alternative momentum strategies is built from a relatively small set of assets, I employ a tertile sort on past performance. That is, winners are defined as the top 30% of past performers, and losers are the bottom 30%."
+  },
+  {
+    "rule_id": "sort_table13_hedged_strategies",
+    "category": "sort",
+    "section": "Table 13 description",
+    "paper_location": "L2471",
+    "paper_quote": "MOM$_{n,m}$ is the returns, hedged for size and industry-adjusted booked-to-market, of the winner-minus-loser (decile) strategy, where winners and losers are based on cumulative returns from $n$ to $m$ months (inclusive) prior to portfolio formation."
+  },
+  {
+    "rule_id": "var_sue",
+    "category": "variable",
+    "section": "Table 14 description",
+    "paper_location": "L2587",
+    "paper_quote": "SUE, defined here as the deviation of a firm’s most recent quarterly earnings from its average earnings over the previous four quarters, scaled by assets"
+  },
+  {
+    "rule_id": "avail_sue_quarterly_earnings",
+    "category": "sample",
+    "section": "Table 14 description",
+    "paper_location": "L2587",
+    "paper_quote": "The sample period covers January 1973 through December 2010, and is determined be the availability of the quarterly earnings data used to construct SUE."
+  }
+]

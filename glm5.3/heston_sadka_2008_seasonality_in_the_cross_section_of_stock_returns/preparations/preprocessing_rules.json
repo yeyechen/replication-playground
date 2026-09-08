@@ -1,0 +1,303 @@
+[
+  {
+    "rule_id": "universe_exchanges",
+    "category": "universe",
+    "section": "§2 A periodic pattern in stock returns",
+    "paper_location": "L91",
+    "paper_quote": "Our sample includes NYSE- and AMEX-listed firms whose data are available on the Center for Research in Security Prices (CRSP) monthly returns file."
+  },
+  {
+    "rule_id": "delisting_paper_silent",
+    "category": "delisting",
+    "section": "§2 (delisting-return treatment not specified anywhere in the paper)",
+    "paper_location": "L91",
+    "paper_quote": "Our sample includes NYSE- and AMEX-listed firms whose data are available on the Center for Research in Security Prices (CRSP) monthly returns file."
+  },
+  {
+    "rule_id": "sample_strategy_period",
+    "category": "sample",
+    "section": "§2 A periodic pattern in stock returns",
+    "paper_location": "L91",
+    "paper_quote": "This paper calculates returns on portfolio strategies over the years 1965–2002."
+  },
+  {
+    "rule_id": "sample_returns_from_1945",
+    "category": "sample",
+    "section": "§2 A periodic pattern in stock returns",
+    "paper_location": "L91",
+    "paper_quote": "Some of our portfolio strategies depend on up to 20 years of lagged returns. Therefore we use stock returns back to January 1945."
+  },
+  {
+    "rule_id": "sample_survivorship_avoidance",
+    "category": "sample",
+    "section": "§2 A periodic pattern in stock returns",
+    "paper_location": "L105",
+    "paper_quote": "The critical issue is avoiding survivorship bias by using only firms available strictly before each date."
+  },
+  {
+    "rule_id": "winsorize_paper_silent",
+    "category": "winsorize",
+    "section": "§2 (no winsorization or trimming mentioned anywhere in the paper)",
+    "paper_location": "L109",
+    "paper_quote": "We apply the cross-sectional regression methodology (Fama and MacBeth, 1973; Fama and French, 1992) to monthly returns"
+  },
+  {
+    "rule_id": "fm_simple_regression_eq1",
+    "category": "fm",
+    "section": "§2, Eq. (1)",
+    "paper_location": "L112",
+    "paper_quote": "r_{i,t} = \\alpha_{k,t} + \\gamma_{k,t} r_{i,t-k} + e_{i,t},\n\\quad \\text{(1)}"
+  },
+  {
+    "rule_id": "var_return_definition",
+    "category": "variable",
+    "section": "§2, Eq. (1) definition",
+    "paper_location": "L116",
+    "paper_quote": "where $r_{i,t}$ is the return on stock $i$ in month $t$ ."
+  },
+  {
+    "rule_id": "fm_average_over_dates",
+    "category": "fm",
+    "section": "§2 (return effects)",
+    "paper_location": "L116",
+    "paper_quote": "For a given lag $k$ we then compute average return responses or “return effects” over all available dates $t$ ."
+  },
+  {
+    "rule_id": "fm_lag_range",
+    "category": "fm",
+    "section": "§2 (return effects)",
+    "paper_location": "L116",
+    "paper_quote": "Then we compute these averages for different lags $k$ ranging from 1 to 240 months."
+  },
+  {
+    "rule_id": "avail_regression_formation_month",
+    "category": "sample",
+    "section": "§2 (Eq. 2 portfolio interpretation)",
+    "paper_location": "L137",
+    "paper_quote": "We construct these cross-sectional regression portfolios from a sample that includes all stocks with available return data in the formation month $t-k$ preceding the event month $t$ ."
+  },
+  {
+    "rule_id": "fm_multiple_regression_eq3",
+    "category": "fm",
+    "section": "§2, Eq. (3)",
+    "paper_location": "L144",
+    "paper_quote": "r_{i,t} = \\alpha_{k,t} + \\sum_{k=1}^{12} \\gamma_{k,t} r_{i,t-k} + \\gamma_{24,t} r_{i,t-24} + \\gamma_{36,t} r_{i,t-36} + \\cdots + e_{i,t},\n\\quad \\text{(3)}"
+  },
+  {
+    "rule_id": "fm_newey_west_12",
+    "category": "fm",
+    "section": "Table 1 description",
+    "paper_location": "L180",
+    "paper_quote": "The reported Fama and MacBeth (1973) $t$ -statistics are corrected for heteroskedasticity and autocorrelation (using Newey and West, 1987, correction with 12 lags)."
+  },
+  {
+    "rule_id": "fm_regression_period",
+    "category": "fm",
+    "section": "Table 1 description",
+    "paper_location": "L180",
+    "paper_quote": "The regression is calculated for every month $t$ from January 1965 through December 2002 (456 months) and for lag $k$ values 1 through 12 and each 12th lag thereafter through 240."
+  },
+  {
+    "rule_id": "fm_multiple_three_specs",
+    "category": "fm",
+    "section": "Table 1 description (Panel B)",
+    "paper_location": "L180",
+    "paper_quote": "Three regression specifications are considered: including lags 1 through 12, 24, and 36; then adding each 12th lag through 120; and finally adding each 12th lag through 240."
+  },
+  {
+    "rule_id": "sort_decile_formation_average",
+    "category": "sort",
+    "section": "§3 Annual winner–loser strategies",
+    "paper_location": "L245",
+    "paper_quote": "We form decile portfolios based on the average monthly return of stocks over all months in each lagged interval and measure the returns over the next month."
+  },
+  {
+    "rule_id": "sort_interval_example",
+    "category": "sort",
+    "section": "§3 Annual winner–loser strategies",
+    "paper_location": "L245",
+    "paper_quote": "For example, the 2–5 years winner portfolio held in January 2003 would be an equally weighted combination of stocks that had the highest average return from January 1998 to December 2001."
+  },
+  {
+    "rule_id": "sort_annual_nonannual_split",
+    "category": "sort",
+    "section": "§3 Annual winner–loser strategies",
+    "paper_location": "L249",
+    "paper_quote": "We also divide the historical formation months into annual lags 12, 24, …, 240 and nonannual lags. Then we form decile spreads based on average performance in only those lags."
+  },
+  {
+    "rule_id": "sort_value_weighted_variant",
+    "category": "sort",
+    "section": "§3 Annual winner–loser strategies",
+    "paper_location": "L257",
+    "paper_quote": "While Table 2 reports equally weighted strategies, we also examine value-weighted strategies with similar results."
+  },
+  {
+    "rule_id": "sort_deciles_equal_weighted_monthly",
+    "category": "sort",
+    "section": "Table 2 description",
+    "paper_location": "L271",
+    "paper_quote": "The stocks in each portfolio are assigned equal weight, and the portfolios are rebalanced monthly."
+  },
+  {
+    "rule_id": "sample_strategy_period_456_months",
+    "category": "sample",
+    "section": "Table 2 description",
+    "paper_location": "L271",
+    "paper_quote": "The average monthly returns of the various trading strategies for the period January 1965 through December 2002 (456 months) are reported below (in percent), as well as the corresponding $t$-statistics (in brackets)."
+  },
+  {
+    "rule_id": "factor_ff3_alpha",
+    "category": "factor",
+    "section": "Table 3 description",
+    "paper_location": "L713",
+    "paper_quote": "Risk-adjusted returns (in percent) are the intercepts of time-series regressions of monthly portfolio returns (excess of risk-free rate) on the Fama and French (1993) three factors, MKT, SMB, and HML."
+  },
+  {
+    "rule_id": "var_wrss_excess_returns",
+    "category": "variable",
+    "section": "Table 4 description",
+    "paper_location": "L1192",
+    "paper_quote": "For every pair of month $t$ and its lag month $k$ we calculate the return of each stock in each month excess of the equally weighed market return that month (using the cross-section of stocks with available returns in both months $j$ and $k$ )."
+  },
+  {
+    "rule_id": "avail_wrss_both_months",
+    "category": "sample",
+    "section": "Table 4 description",
+    "paper_location": "L1192",
+    "paper_quote": "(using the cross-section of stocks with available returns in both months $j$ and $k$ )"
+  },
+  {
+    "rule_id": "var_wrss_pi",
+    "category": "variable",
+    "section": "Table 4 description",
+    "paper_location": "L1192",
+    "paper_quote": "For each stock, the product of its excess returns during months $t$ and $k$ is calculated. The sum of these products across firms is denoted $\\pi_k(t)$ , and it represents a return of a zero-cost portfolio strategy."
+  },
+  {
+    "rule_id": "var_wrss_groups",
+    "category": "variable",
+    "section": "Table 4 description",
+    "paper_location": "L1192",
+    "paper_quote": "Three groups of returns are then defined: “All” includes all $\\pi_k(t)$ such that $k \\ne 0$ ; “Nonannual” includes all $\\pi_k(t)$ such that $k \\ne 12i$ , for any integer $i$ ; and “Annual” includes all $\\pi_k(t)$ such that $k = 12i$ , for any nonzero integer $i$ ."
+  },
+  {
+    "rule_id": "var_wrss_se_convention",
+    "category": "variable",
+    "section": "Table 4 description",
+    "paper_location": "L1192",
+    "paper_quote": "Standard errors are calculated by dividing the population standard deviation of each group by the square root of 500."
+  },
+  {
+    "rule_id": "sample_table4_period",
+    "category": "sample",
+    "section": "Table 4 description",
+    "paper_location": "L1192",
+    "paper_quote": "The analysis employs NYSE- and AMEX-listed firms for the period January 1963 through December 2002."
+  },
+  {
+    "rule_id": "sample_table4_annual_lags",
+    "category": "sample",
+    "section": "§4 Magnitude of seasonal cross-sectional variation",
+    "paper_location": "L1231",
+    "paper_quote": "Table 4 reports positive results when estimating Eq. (5) based on annual lags $k = 12, 24, \\ldots 468$ ."
+  },
+  {
+    "rule_id": "var_volume",
+    "category": "variable",
+    "section": "§5 Volume, volatility, and expected stock returns",
+    "paper_location": "L1237",
+    "paper_quote": "Abnormal volume is calculated as the logarithm of the ratio of current volume and its past-six-month average (henceforth simply referred to as volume)."
+  },
+  {
+    "rule_id": "var_volatility",
+    "category": "variable",
+    "section": "Fig. 4 description",
+    "paper_location": "L1311",
+    "paper_quote": "Standard deviation is calculated using the daily returns in any given month. For the analysis, standard deviation is the logarithm of the ratio of standard deviation and its prior six-month average."
+  },
+  {
+    "rule_id": "sort_size_subsamples",
+    "category": "sort",
+    "section": "§6.1 Size and industry",
+    "paper_location": "L1335",
+    "paper_quote": "The small-firm subsample for month $t$ contains the smallest 30% of NYSE- and AMEX-listed firms based on their market capitalization at the beginning of month $t$."
+  },
+  {
+    "rule_id": "avail_decile_formation_months",
+    "category": "sample",
+    "section": "§6.1 Size and industry",
+    "paper_location": "L1335",
+    "paper_quote": "The portfolio strategies are then formed from an equally weighted sample of all those small firms with available returns in month $t$ and previous months used for portfolio formation."
+  },
+  {
+    "rule_id": "sort_size_cutoffs",
+    "category": "sort",
+    "section": "Table 5 description",
+    "paper_location": "L1353",
+    "paper_quote": "Small firms are defined as the bottom 30%, large firms are the top 30%, and the remaining 40% are medium size firms."
+  },
+  {
+    "rule_id": "sort_size_reevaluated_monthly",
+    "category": "sort",
+    "section": "Table 5 description",
+    "paper_location": "L1353",
+    "paper_quote": "The size categorization is reevaluated in the beginning of every month."
+  },
+  {
+    "rule_id": "var_industry_decomposition",
+    "category": "variable",
+    "section": "Table 6 description",
+    "paper_location": "L1520",
+    "paper_quote": "The intra-industry component is the monthly return of the stock excess of its industry group return, and the inter-industry component is the monthly return of the industry group itself."
+  },
+  {
+    "rule_id": "var_industry_groups_mg20",
+    "category": "variable",
+    "section": "Table 6 description",
+    "paper_location": "L1520",
+    "paper_quote": "The industry groups (20 groups) are formed according to the classification in Moskowitz and Grinblatt (1999)."
+  },
+  {
+    "rule_id": "sort_calendar_month_breakdown",
+    "category": "sort",
+    "section": "Table 7 description",
+    "paper_location": "L1642",
+    "paper_quote": "The average monthly returns of the various trading strategies are reported separately for every calendar month during the period January 1965 through December 2002 (in percent)."
+  },
+  {
+    "rule_id": "sort_non_january_column",
+    "category": "sort",
+    "section": "Table 7 description",
+    "paper_location": "L1642",
+    "paper_quote": "In a separate column, returns are computed using all non-January months."
+  },
+  {
+    "rule_id": "sort_table8_event_split",
+    "category": "sort",
+    "section": "§6.3 Earnings, dividends, and fiscal year",
+    "paper_location": "L2420",
+    "paper_quote": "We construct decile portfolios using only those firms with earnings announcements in that month and using only firms without announcements."
+  },
+  {
+    "rule_id": "sample_table8_compustat",
+    "category": "sample",
+    "section": "Table 8 description",
+    "paper_location": "L2434",
+    "paper_quote": "The sample in each panel includes only NYSE- and AMEX-listed firms whose respective events are recorded on Compustat."
+  },
+  {
+    "rule_id": "var_wrss_weights",
+    "category": "variable",
+    "section": "Appendix A, Eq. (10)",
+    "paper_location": "L2914",
+    "paper_quote": "w_{i,t}(k) = \\frac{1}{N}(r_{i,t-k} - \\bar{r}_{t-k}),\n\\quad \\text{(10)}"
+  },
+  {
+    "rule_id": "var_sigma_mu_estimator",
+    "category": "variable",
+    "section": "Appendix A, Eq. (14)",
+    "paper_location": "L2944",
+    "paper_quote": "\\hat{\\sigma}_\\mu^2 = \\frac{1}{T(T-1)/2} \\sum_{t=2}^T \\sum_{k=1}^{T-1} \\pi_t(k) = \\frac{1}{NT(T-1)/2} \\sum_{t=2}^T \\sum_{k=1}^{T-1} \\sum_{i=1}^N (r_{i,t-k} - \\bar{r}_{t-k})(r_{i,t} - \\bar{r}_t).\n\\quad \\text{(14)}"
+  }
+]

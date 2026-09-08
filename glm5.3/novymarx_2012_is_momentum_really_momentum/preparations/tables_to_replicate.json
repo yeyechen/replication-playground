@@ -1,0 +1,4876 @@
+{
+ "paper_claims": [
+  {
+   "id": "C1",
+   "claim": "In Fama-MacBeth regressions, the coefficient on intermediate-horizon past performance (r_12,7) is roughly twice that on recent past performance (r_6,2), and the difference is statistically significant.",
+   "paper_location": "L151",
+   "headline": true
+  },
+  {
+   "id": "C2",
+   "claim": "MOM_12,7 is more profitable than MOM_6,2 (1.20% vs 0.67% per month) and retains a significant FF4 alpha (0.54, t=3.78) while MOM_6,2's four-factor alpha is insignificant (-0.05, t=-0.37).",
+   "paper_location": "L289",
+   "headline": true
+  },
+  {
+   "id": "C3",
+   "claim": "In 5x5 independent double sorts, return spreads along the intermediate-horizon dimension are roughly twice those along the recent dimension, and conditional 12-7 strategies within r_6,2 quintiles dominate the reverse construction.",
+   "paper_location": "L612"
+  },
+  {
+   "id": "C4",
+   "claim": "The disparity between intermediate-horizon and recent momentum is especially acute among large stocks: within the largest NYSE size quintile MOM_12,7 earns about 10% per year while MOM_6,2 is insignificant.",
+   "paper_location": "L1905"
+  },
+  {
+   "id": "C5",
+   "claim": "Momentum in other asset classes is likewise driven by intermediate-horizon past performance: FF-49 industry tertile strategies show 12-7 significant (0.57) vs 6-2 insignificant relative to UMD and to the 12-7 strategy.",
+   "paper_location": "L1937"
+  },
+  {
+   "id": "C6",
+   "claim": "Earnings momentum does not explain the result: adding SUE to the FM regressions leaves r_12,7 significant (0.99/0.94) while r_6,2 becomes even more insignificant (0.28/0.16).",
+   "paper_location": "L2573"
+  }
+ ],
+ "budget_flag": "540 committed cells across 8 tables. Cell-heavy tables: T4 Table 4 (123 cells, 5x5x2-panel grid - committed at Panels A+D only), T6 Table 7 (105 cells, 5 panels - full), T3 Table 3 (78 cells - committed at Whole/Early/Late only), T8 Table 14 (80 cells, 8 FM specs - full). Tables 5, 9, 10-13, 15, 16, A1 are documented skips (see data_verification.json).",
+ "tables": [
+  {
+   "id": "T1",
+   "table_ref": "Table 1",
+   "description": "Fama-MacBeth regressions of returns on r_12,7 and r_6,2 with r_1,0, log(ME), log(BM) controls (slope x10^2 and t-stats)",
+   "replication_meaning": "Demonstrates correct FM cross-sectional regression machinery: monthly cross-sections, winsorized 1%/99% independent variables, tiered book-equity construction, June-aligned BM lagged 6 months, and the r_12,7-r_6,2 reparameterization test (whose coefficient must equal b(r12,7)-b(r62) of the same regression). Committed columns Late/Third/Fourth cover the Compustat era; the Whole/Early/First/Second columns need DFF (2000) book equity for 1927-1949, unavailable in the catalog.",
+   "covers_claims": [
+    "C1"
+   ],
+   "paper_quote": "This table reports results from Fama-MacBeth regressions of firms\u2019 returns on past performance, measured at horizons 12 to seven months ( $r_{12,7}$ ) and six to two months ( $r_{6,2}$ ). Regressions include controls for prior month\u2019s performance ( $r_{1,0}$ ), size (log(ME)), and book-to-market (log(BM)). (L167-169)",
+   "exercises_preprocessing_rules": [
+    "fm_spec_table1",
+    "var_log_me",
+    "var_log_bm",
+    "var_be_shareholder_equity_tiers",
+    "var_be_deferred_taxes_tiers",
+    "var_be_preferred_tiers",
+    "winsorize_monthly",
+    "fm_sample_subperiods"
+   ],
+   "metrics": [
+    {
+     "name": "r127_late",
+     "value": 0.93,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L196",
+     "absolute_band": 0.54,
+     "notes": "printed x10^2; band = 3xSE from paper t=5.17"
+    },
+    {
+     "name": "r127_late_t",
+     "value": 5.17,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L196"
+    },
+    {
+     "name": "r127_third",
+     "value": 1.24,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L199",
+     "absolute_band": 0.703,
+     "notes": "printed x10^2; band = 3xSE from paper t=5.29"
+    },
+    {
+     "name": "r127_third_t",
+     "value": 5.29,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L199"
+    },
+    {
+     "name": "r127_fourth",
+     "value": 0.61,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L200",
+     "absolute_band": 0.81,
+     "notes": "printed x10^2; band = 3xSE from paper t=2.26"
+    },
+    {
+     "name": "r127_fourth_t",
+     "value": 2.26,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L200"
+    },
+    {
+     "name": "r62_late",
+     "value": 0.36,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L206",
+     "absolute_band": 0.818,
+     "notes": "printed x10^2; band = 3xSE from paper t=1.32; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "r62_late_t"
+    },
+    {
+     "name": "r62_late_t",
+     "value": 1.32,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L206"
+    },
+    {
+     "name": "r62_third",
+     "value": 0.37,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L209",
+     "absolute_band": 1.11,
+     "notes": "printed x10^2; band = 3xSE from paper t=1.0; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "r62_third_t"
+    },
+    {
+     "name": "r62_third_t",
+     "value": 1.0,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L209"
+    },
+    {
+     "name": "r62_fourth",
+     "value": 0.36,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L210",
+     "absolute_band": 1.241,
+     "notes": "printed x10^2; band = 3xSE from paper t=0.87; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "r62_fourth_t"
+    },
+    {
+     "name": "r62_fourth_t",
+     "value": 0.87,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L210"
+    },
+    {
+     "name": "r10_late",
+     "value": -6.1,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L216",
+     "absolute_band": 1.326,
+     "notes": "printed x10^2; band = 3xSE from paper t=-13.8"
+    },
+    {
+     "name": "r10_late_t",
+     "value": -13.8,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L216"
+    },
+    {
+     "name": "r10_third",
+     "value": -8.18,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L219",
+     "absolute_band": 1.778,
+     "notes": "printed x10^2; band = 3xSE from paper t=-13.8"
+    },
+    {
+     "name": "r10_third_t",
+     "value": -13.8,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L219"
+    },
+    {
+     "name": "r10_fourth",
+     "value": -4.02,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L220",
+     "absolute_band": 1.896,
+     "notes": "printed x10^2; band = 3xSE from paper t=-6.36"
+    },
+    {
+     "name": "r10_fourth_t",
+     "value": -6.36,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L220"
+    },
+    {
+     "name": "logme_late",
+     "value": -0.09,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L226",
+     "absolute_band": 0.118,
+     "notes": "printed x10^2; band = 3xSE from paper t=-2.29"
+    },
+    {
+     "name": "logme_late_t",
+     "value": -2.29,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L226"
+    },
+    {
+     "name": "logme_third",
+     "value": -0.04,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L229",
+     "absolute_band": 0.176,
+     "notes": "printed x10^2; band = 3xSE from paper t=-0.68; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "logme_third_t"
+    },
+    {
+     "name": "logme_third_t",
+     "value": -0.68,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L229"
+    },
+    {
+     "name": "logme_fourth",
+     "value": -0.15,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L230",
+     "absolute_band": 0.179,
+     "notes": "printed x10^2; band = 3xSE from paper t=-2.52"
+    },
+    {
+     "name": "logme_fourth_t",
+     "value": -2.52,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L230"
+    },
+    {
+     "name": "logbm_late",
+     "value": 0.31,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L236",
+     "absolute_band": 0.173,
+     "notes": "printed x10^2; band = 3xSE from paper t=5.39"
+    },
+    {
+     "name": "logbm_late_t",
+     "value": 5.39,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L236"
+    },
+    {
+     "name": "logbm_third",
+     "value": 0.48,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L239",
+     "absolute_band": 0.263,
+     "notes": "printed x10^2; band = 3xSE from paper t=5.47"
+    },
+    {
+     "name": "logbm_third_t",
+     "value": 5.47,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L239"
+    },
+    {
+     "name": "logbm_fourth",
+     "value": 0.14,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L240",
+     "absolute_band": 0.221,
+     "notes": "printed x10^2; band = 3xSE from paper t=1.9; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "logbm_fourth_t"
+    },
+    {
+     "name": "logbm_fourth_t",
+     "value": 1.9,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L240"
+    },
+    {
+     "name": "diff_late",
+     "value": 0.57,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L246",
+     "absolute_band": 0.707,
+     "notes": "printed x10^2; band = 3xSE from paper t=2.42"
+    },
+    {
+     "name": "diff_late_t",
+     "value": 2.42,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L246"
+    },
+    {
+     "name": "diff_third",
+     "value": 0.88,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L249",
+     "absolute_band": 0.892,
+     "notes": "printed x10^2; band = 3xSE from paper t=2.96"
+    },
+    {
+     "name": "diff_third_t",
+     "value": 2.96,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L249"
+    },
+    {
+     "name": "diff_fourth",
+     "value": 0.25,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L250",
+     "absolute_band": 1.087,
+     "notes": "printed x10^2; band = 3xSE from paper t=0.69; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "diff_fourth_t"
+    },
+    {
+     "name": "diff_fourth_t",
+     "value": 0.69,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L250"
+    }
+   ],
+   "notes": "Partial columns: Whole/Early/First/Second samples (1927 start) require Davis-Fama-French (2000) book equity for the log(BM) control pre-Compustat; no DFF table exists in the catalog (see data_verification.json#dff_book_equity). Committed columns: Late (1969-2010), Third (1969-1989), Fourth (1990-2010)."
+  },
+  {
+   "id": "T2",
+   "table_ref": "Table 2",
+   "description": "Time-series regressions of MOM_12,7 (specs 1-4) and MOM_6,2 (specs 5-8) on MKT, FF3, and FF4 factors, 1927-2010",
+   "replication_meaning": "Demonstrates correct VW decile (NYSE breaks) winner-minus-loser strategy construction from the CRSP universe and correct factor regression setup against the Fama-French factors plus UMD. The FF4 alpha contrast (0.54 significant vs -0.05 insignificant) is the paper's headline strategy-level claim.",
+   "covers_claims": [
+    "C2"
+   ],
+   "paper_quote": "This table presents results of time-series regressions employing the returns to momentum strategies constructed using intermediate horizon and recent past performance. $MOM_{n,m}$ is the returns of the winner-minus-loser strategy (deciles, employing NYSE breaks), where winners and losers are based on cumulative returns from $n$ to $m$ months (inclusive) prior to portfolio formation. The sample period covers January 1927 through December 2010. (L303-305)",
+   "exercises_preprocessing_rules": [
+    "sort_decile_nyse_breaks",
+    "sort_spanning_deciles_vw",
+    "sort_spanning_vw_returns",
+    "factor_ff3_ff4_regressions",
+    "sample_table2_1927_2010"
+   ],
+   "metrics": [
+    {
+     "name": "intercept_s1",
+     "value": 1.2,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L328",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "intercept_s1_t",
+     "value": 5.79,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L328"
+    },
+    {
+     "name": "intercept_s2",
+     "value": 1.36,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L329",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "intercept_s2_t",
+     "value": 6.64,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L329"
+    },
+    {
+     "name": "intercept_s3",
+     "value": 1.56,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L330",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "intercept_s3_t",
+     "value": 8.07,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L330"
+    },
+    {
+     "name": "intercept_s4",
+     "value": 0.54,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L331",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "intercept_s4_t",
+     "value": 3.78,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L331"
+    },
+    {
+     "name": "intercept_s5",
+     "value": 0.67,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L332",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "intercept_s5_t",
+     "value": 2.88,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L332"
+    },
+    {
+     "name": "intercept_s6",
+     "value": 0.99,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L333",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "intercept_s6_t",
+     "value": 4.61,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L333"
+    },
+    {
+     "name": "intercept_s7",
+     "value": 1.16,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L334",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "intercept_s7_t",
+     "value": 5.54,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L334"
+    },
+    {
+     "name": "intercept_s8",
+     "value": -0.05,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L335",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "intercept_s8_t"
+    },
+    {
+     "name": "intercept_s8_t",
+     "value": -0.37,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L335"
+    },
+    {
+     "name": "mkt_s2",
+     "value": -0.25,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L340"
+    },
+    {
+     "name": "mkt_s2_t",
+     "value": -6.74,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L340"
+    },
+    {
+     "name": "mkt_s3",
+     "value": -0.15,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L341"
+    },
+    {
+     "name": "mkt_s3_t",
+     "value": -3.92,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L341"
+    },
+    {
+     "name": "mkt_s4",
+     "value": 0.07,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L342"
+    },
+    {
+     "name": "mkt_s4_t",
+     "value": 2.43,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L342"
+    },
+    {
+     "name": "mkt_s6",
+     "value": -0.52,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L345"
+    },
+    {
+     "name": "mkt_s6_t",
+     "value": -13.3,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L345"
+    },
+    {
+     "name": "mkt_s7",
+     "value": -0.41,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L346"
+    },
+    {
+     "name": "mkt_s7_t",
+     "value": -9.95,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L346"
+    },
+    {
+     "name": "mkt_s8",
+     "value": -0.15,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L347"
+    },
+    {
+     "name": "mkt_s8_t",
+     "value": -5.44,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L347"
+    },
+    {
+     "name": "smb_s3",
+     "value": -0.04,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L352",
+     "insignificant": true,
+     "inference_cell": "smb_s3_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "smb_s3_t",
+     "value": -0.6,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L352"
+    },
+    {
+     "name": "smb_s4",
+     "value": 0.03,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L353",
+     "insignificant": true,
+     "inference_cell": "smb_s4_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "smb_s4_t",
+     "value": 0.68,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L353"
+    },
+    {
+     "name": "smb_s7",
+     "value": -0.24,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L357"
+    },
+    {
+     "name": "smb_s7_t",
+     "value": -3.67,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L357"
+    },
+    {
+     "name": "smb_s8",
+     "value": -0.16,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L358"
+    },
+    {
+     "name": "smb_s8_t",
+     "value": -3.81,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L358"
+    },
+    {
+     "name": "hml_s3",
+     "value": -0.64,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L363"
+    },
+    {
+     "name": "hml_s3_t",
+     "value": -11.7,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L363"
+    },
+    {
+     "name": "hml_s4",
+     "value": -0.19,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L364"
+    },
+    {
+     "name": "hml_s4_t",
+     "value": -4.62,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L364"
+    },
+    {
+     "name": "hml_s7",
+     "value": -0.44,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L368"
+    },
+    {
+     "name": "hml_s7_t",
+     "value": -7.5,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L368"
+    },
+    {
+     "name": "hml_s8",
+     "value": 0.09,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L369"
+    },
+    {
+     "name": "hml_s8_t",
+     "value": 2.08,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L369"
+    },
+    {
+     "name": "umd_s4",
+     "value": 0.99,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L375"
+    },
+    {
+     "name": "umd_s4_t",
+     "value": 30.4,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L375"
+    },
+    {
+     "name": "umd_s8",
+     "value": 1.18,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L379"
+    },
+    {
+     "name": "umd_s8_t",
+     "value": 37.2,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L379"
+    },
+    {
+     "name": "r2_s2",
+     "value": 0.042,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L384"
+    },
+    {
+     "name": "r2_s3",
+     "value": 0.156,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L385"
+    },
+    {
+     "name": "r2_s4",
+     "value": 0.56,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L386"
+    },
+    {
+     "name": "r2_s6",
+     "value": 0.15,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L388"
+    },
+    {
+     "name": "r2_s7",
+     "value": 0.204,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L389"
+    },
+    {
+     "name": "r2_s8",
+     "value": 0.665,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L390"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "id": "T3",
+   "table_ref": "Table 3",
+   "description": "Average excess returns and spanning regressions (FF3 + other strategy) of MOM_12,7 (Panel A) and MOM_6,2 (Panel B) over Whole/Early/Late samples",
+   "replication_meaning": "Demonstrates the spanning-test methodology: each strategy regressed on the three FF factors plus the other momentum strategy, whose intercept is the information ratio. Distinct from T2 because it adds the cross-strategy regressor and subsample stability (Early 1927-1968 vs Late 1969-2010).",
+   "covers_claims": [
+    "C2"
+   ],
+   "paper_quote": "This table presents the average excess returns to momentum strategies constructed using intermediate horizon past performance ($MOM_{12,7}$) and recent past performance ($MOM_{6,2}$) and results of time series regressions of these strategies\u2019 returns on the three Fama-French factors and each other. The sample covers January 1927 to December 2010. (L397-399)",
+   "exercises_preprocessing_rules": [
+    "sample_table3_excess_returns",
+    "sort_spanning_deciles_vw",
+    "sort_spanning_vw_returns",
+    "factor_ff3_ff4_regressions"
+   ],
+   "metrics": [
+    {
+     "name": "A_er_whole",
+     "value": 1.2,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L424",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_er_whole_t",
+     "value": 5.79,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L424"
+    },
+    {
+     "name": "A_er_early",
+     "value": 0.99,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L425",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_er_early_t",
+     "value": 2.89,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L425"
+    },
+    {
+     "name": "A_er_late",
+     "value": 1.42,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L426",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_er_late_t",
+     "value": 6.01,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L426"
+    },
+    {
+     "name": "A_int_whole",
+     "value": 1.24,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L434",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_int_whole_t",
+     "value": 6.62,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L434"
+    },
+    {
+     "name": "A_int_early",
+     "value": 1.11,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L435",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_int_early_t",
+     "value": 3.64,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L435"
+    },
+    {
+     "name": "A_int_late",
+     "value": 1.3,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L436",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_int_late_t",
+     "value": 6.13,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L436"
+    },
+    {
+     "name": "A_mkt_whole",
+     "value": -0.04,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L444",
+     "insignificant": true,
+     "inference_cell": "A_mkt_whole_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "A_mkt_whole_t",
+     "value": -0.95,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L444"
+    },
+    {
+     "name": "A_mkt_early",
+     "value": -0.01,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L445",
+     "insignificant": true,
+     "inference_cell": "A_mkt_early_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "A_mkt_early_t",
+     "value": -0.22,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L445"
+    },
+    {
+     "name": "A_mkt_late",
+     "value": -0.0,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L446",
+     "insignificant": true,
+     "inference_cell": "A_mkt_late_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "A_mkt_late_t",
+     "value": -0.09,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L446"
+    },
+    {
+     "name": "A_smb_whole",
+     "value": 0.03,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L454",
+     "insignificant": true,
+     "inference_cell": "A_smb_whole_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "A_smb_whole_t",
+     "value": 0.51,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L454"
+    },
+    {
+     "name": "A_smb_early",
+     "value": 0.14,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L455",
+     "insignificant": true,
+     "inference_cell": "A_smb_early_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "A_smb_early_t",
+     "value": 1.47,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L455"
+    },
+    {
+     "name": "A_smb_late",
+     "value": -0.06,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L456",
+     "insignificant": true,
+     "inference_cell": "A_smb_late_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "A_smb_late_t",
+     "value": -0.88,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L456"
+    },
+    {
+     "name": "A_hml_whole",
+     "value": -0.52,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L464"
+    },
+    {
+     "name": "A_hml_whole_t",
+     "value": -9.63,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L464"
+    },
+    {
+     "name": "A_hml_early",
+     "value": -0.7,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L465"
+    },
+    {
+     "name": "A_hml_early_t",
+     "value": -7.6,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L465"
+    },
+    {
+     "name": "A_hml_late",
+     "value": -0.4,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L466"
+    },
+    {
+     "name": "A_hml_late_t",
+     "value": -5.49,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L466"
+    },
+    {
+     "name": "A_mom_whole",
+     "value": 0.28,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L474"
+    },
+    {
+     "name": "A_mom_whole_t",
+     "value": 9.9,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L474"
+    },
+    {
+     "name": "A_mom_early",
+     "value": 0.21,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L475"
+    },
+    {
+     "name": "A_mom_early_t",
+     "value": 4.78,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L475"
+    },
+    {
+     "name": "A_mom_late",
+     "value": 0.36,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L476"
+    },
+    {
+     "name": "A_mom_late_t",
+     "value": 10.8,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L476"
+    },
+    {
+     "name": "A_r2_whole",
+     "value": 0.23,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L484"
+    },
+    {
+     "name": "A_r2_early",
+     "value": 0.24,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L485"
+    },
+    {
+     "name": "A_r2_late",
+     "value": 0.238,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L486"
+    },
+    {
+     "name": "B_er_whole",
+     "value": 0.67,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L497",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "B_er_whole_t",
+     "value": 2.88,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L497"
+    },
+    {
+     "name": "B_er_early",
+     "value": 0.54,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L498",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "B_er_early_t"
+    },
+    {
+     "name": "B_er_early_t",
+     "value": 1.47,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L498"
+    },
+    {
+     "name": "B_er_late",
+     "value": 0.8,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L499",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "B_er_late_t",
+     "value": 2.8,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L499"
+    },
+    {
+     "name": "B_int_whole",
+     "value": 0.65,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L507",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "B_int_whole_t",
+     "value": 3.18,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L507"
+    },
+    {
+     "name": "B_int_early",
+     "value": 0.9,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L508",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "B_int_early_t",
+     "value": 2.94,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L508"
+    },
+    {
+     "name": "B_int_late",
+     "value": 0.15,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L509",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "B_int_late_t"
+    },
+    {
+     "name": "B_int_late_t",
+     "value": 0.58,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L509"
+    },
+    {
+     "name": "B_mkt_whole",
+     "value": -0.36,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L517"
+    },
+    {
+     "name": "B_mkt_whole_t",
+     "value": -9.12,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L517"
+    },
+    {
+     "name": "B_mkt_early",
+     "value": -0.39,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L518"
+    },
+    {
+     "name": "B_mkt_early_t",
+     "value": -6.6,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L518"
+    },
+    {
+     "name": "B_mkt_late",
+     "value": -0.26,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L519"
+    },
+    {
+     "name": "B_mkt_late_t",
+     "value": -4.5,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L519"
+    },
+    {
+     "name": "B_smb_whole",
+     "value": -0.23,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L527"
+    },
+    {
+     "name": "B_smb_whole_t",
+     "value": -3.66,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L527"
+    },
+    {
+     "name": "B_smb_early",
+     "value": -0.37,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L528"
+    },
+    {
+     "name": "B_smb_early_t",
+     "value": -3.9,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L528"
+    },
+    {
+     "name": "B_smb_late",
+     "value": -0.03,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L529",
+     "insignificant": true,
+     "inference_cell": "B_smb_late_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "B_smb_late_t",
+     "value": -0.37,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L529"
+    },
+    {
+     "name": "B_hml_whole",
+     "value": -0.24,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L537"
+    },
+    {
+     "name": "B_hml_whole_t",
+     "value": -3.95,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L537"
+    },
+    {
+     "name": "B_hml_early",
+     "value": -0.32,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L538"
+    },
+    {
+     "name": "B_hml_early_t",
+     "value": -3.31,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L538"
+    },
+    {
+     "name": "B_hml_late",
+     "value": 0.02,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L539",
+     "insignificant": true,
+     "inference_cell": "B_hml_late_t",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference"
+    },
+    {
+     "name": "B_hml_late_t",
+     "value": 0.25,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L539"
+    },
+    {
+     "name": "B_mom_whole",
+     "value": 0.32,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L547"
+    },
+    {
+     "name": "B_mom_whole_t",
+     "value": 9.9,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L547"
+    },
+    {
+     "name": "B_mom_early",
+     "value": 0.21,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L548"
+    },
+    {
+     "name": "B_mom_early_t",
+     "value": 4.78,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L548"
+    },
+    {
+     "name": "B_mom_late",
+     "value": 0.53,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L549"
+    },
+    {
+     "name": "B_mom_late_t",
+     "value": 10.8,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L549"
+    },
+    {
+     "name": "B_r2_whole",
+     "value": 0.274,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L557"
+    },
+    {
+     "name": "B_r2_early",
+     "value": 0.336,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L558"
+    },
+    {
+     "name": "B_r2_late",
+     "value": 0.229,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L559"
+    }
+   ],
+   "notes": "Committed columns Whole/Early/Late only; the four quarter-sample columns (1927-47, 1948-68, 1969-89, 1990-2010) are omitted to bound the committed cell count (budget_flag) - quarter stability is already exercised by T1's Third/Fourth columns and T6's Panels D/E."
+  },
+  {
+   "id": "T4",
+   "table_ref": "Table 4, Panels A and D",
+   "description": "5x5 independent double sort on r_12,7 (IR) and r_6,2 (RR), NYSE quintile breaks, VW returns, 1927-2008: excess returns (Panel A) and FF4 alphas (Panel D)",
+   "replication_meaning": "Demonstrates correct independent (not conditional) 5x5 quintile sort with NYSE breakpoints and VW portfolio returns, plus the FF4 alpha grid - the paper's strongest nonparametric evidence that the intermediate-horizon dimension carries roughly twice the spread of the recent dimension.",
+   "covers_claims": [
+    "C3"
+   ],
+   "paper_quote": "This table reports intercepts, in percent per month, from time series regressions employing the returns to portfolios double-sorted on intermediate and recent returns (IR and RR). The sorts employ NYSE break points, and portfolio returns are value-weighted. The sample covers January 1927 to December 2008. (L628-630)",
+   "exercises_preprocessing_rules": [
+    "sort_double_independent_5x5",
+    "sort_double_quintile_nyse_vw",
+    "sample_table4_1927_2008"
+   ],
+   "metrics": [
+    {
+     "name": "A_RR1_IR1",
+     "value": -0.03,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L670-683",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "A_RR1_IR1_t"
+    },
+    {
+     "name": "A_RR1_IR1_t",
+     "value": -0.1,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L670-683"
+    },
+    {
+     "name": "A_RR1_IR2",
+     "value": 0.39,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L670-683",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "A_RR1_IR2_t"
+    },
+    {
+     "name": "A_RR1_IR2_t",
+     "value": 1.28,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L670-683"
+    },
+    {
+     "name": "A_RR1_IR3",
+     "value": 0.38,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L670-683",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "A_RR1_IR3_t"
+    },
+    {
+     "name": "A_RR1_IR3_t",
+     "value": 1.45,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L670-683"
+    },
+    {
+     "name": "A_RR1_IR4",
+     "value": 0.51,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L670-683",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR1_IR4_t",
+     "value": 2.08,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L670-683"
+    },
+    {
+     "name": "A_RR1_IR5",
+     "value": 0.96,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L670-683",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR1_IR5_t",
+     "value": 3.4,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L670-683"
+    },
+    {
+     "name": "A_RR1_SP",
+     "value": 0.99,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L670-683",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR1_SP_t",
+     "value": 5.15,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L670-683"
+    },
+    {
+     "name": "A_RR2_IR1",
+     "value": 0.25,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L684-698",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "A_RR2_IR1_t"
+    },
+    {
+     "name": "A_RR2_IR1_t",
+     "value": 0.92,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L684-698"
+    },
+    {
+     "name": "A_RR2_IR2",
+     "value": 0.57,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L684-698",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR2_IR2_t",
+     "value": 2.43,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L684-698"
+    },
+    {
+     "name": "A_RR2_IR3",
+     "value": 0.56,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L684-698",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR2_IR3_t",
+     "value": 2.65,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L684-698"
+    },
+    {
+     "name": "A_RR2_IR4",
+     "value": 0.84,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L684-698",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR2_IR4_t",
+     "value": 3.82,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L684-698"
+    },
+    {
+     "name": "A_RR2_IR5",
+     "value": 0.95,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L684-698",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR2_IR5_t",
+     "value": 4.21,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L684-698"
+    },
+    {
+     "name": "A_RR2_SP",
+     "value": 0.7,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L684-698",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR2_SP_t",
+     "value": 4.13,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L684-698"
+    },
+    {
+     "name": "A_RR3_IR1",
+     "value": 0.12,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L699-713",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "A_RR3_IR1_t"
+    },
+    {
+     "name": "A_RR3_IR1_t",
+     "value": 0.5,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L699-713"
+    },
+    {
+     "name": "A_RR3_IR2",
+     "value": 0.44,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L699-713",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR3_IR2_t",
+     "value": 2.2,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L699-713"
+    },
+    {
+     "name": "A_RR3_IR3",
+     "value": 0.72,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L699-713",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR3_IR3_t",
+     "value": 3.54,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L699-713"
+    },
+    {
+     "name": "A_RR3_IR4",
+     "value": 0.83,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L699-713",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR3_IR4_t",
+     "value": 4.53,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L699-713"
+    },
+    {
+     "name": "A_RR3_IR5",
+     "value": 1.16,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L699-713",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR3_IR5_t",
+     "value": 5.6,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L699-713"
+    },
+    {
+     "name": "A_RR3_SP",
+     "value": 1.04,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L699-713",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR3_SP_t",
+     "value": 5.99,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L699-713"
+    },
+    {
+     "name": "A_RR4_IR1",
+     "value": 0.12,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L714-728",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "A_RR4_IR1_t"
+    },
+    {
+     "name": "A_RR4_IR1_t",
+     "value": 0.53,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L714-728"
+    },
+    {
+     "name": "A_RR4_IR2",
+     "value": 0.55,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L714-728",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR4_IR2_t",
+     "value": 2.81,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L714-728"
+    },
+    {
+     "name": "A_RR4_IR3",
+     "value": 0.61,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L714-728",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR4_IR3_t",
+     "value": 3.37,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L714-728"
+    },
+    {
+     "name": "A_RR4_IR4",
+     "value": 0.87,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L714-728",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR4_IR4_t",
+     "value": 5.01,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L714-728"
+    },
+    {
+     "name": "A_RR4_IR5",
+     "value": 1.08,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L714-728",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR4_IR5_t",
+     "value": 5.31,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L714-728"
+    },
+    {
+     "name": "A_RR4_SP",
+     "value": 0.96,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L714-728",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR4_SP_t",
+     "value": 5.5,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L714-728"
+    },
+    {
+     "name": "A_RR5_IR1",
+     "value": 0.38,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L729-743",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "A_RR5_IR1_t"
+    },
+    {
+     "name": "A_RR5_IR1_t",
+     "value": 1.61,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L729-743"
+    },
+    {
+     "name": "A_RR5_IR2",
+     "value": 0.67,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L729-743",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR5_IR2_t",
+     "value": 3.27,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L729-743"
+    },
+    {
+     "name": "A_RR5_IR3",
+     "value": 0.91,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L729-743",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR5_IR3_t",
+     "value": 4.66,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L729-743"
+    },
+    {
+     "name": "A_RR5_IR4",
+     "value": 0.95,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L729-743",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR5_IR4_t",
+     "value": 5.01,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L729-743"
+    },
+    {
+     "name": "A_RR5_IR5",
+     "value": 1.3,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L729-743",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR5_IR5_t",
+     "value": 6.03,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L729-743"
+    },
+    {
+     "name": "A_RR5_SP",
+     "value": 0.92,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L729-743",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_RR5_SP_t",
+     "value": 5.31,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L729-743"
+    },
+    {
+     "name": "A_SP_IR1",
+     "value": 0.41,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L744-758",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_SP_IR1_t",
+     "value": 1.97,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L744-758"
+    },
+    {
+     "name": "A_SP_IR2",
+     "value": 0.29,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L744-758",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "A_SP_IR2_t"
+    },
+    {
+     "name": "A_SP_IR2_t",
+     "value": 1.33,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L744-758"
+    },
+    {
+     "name": "A_SP_IR3",
+     "value": 0.53,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L744-758",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_SP_IR3_t",
+     "value": 2.69,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L744-758"
+    },
+    {
+     "name": "A_SP_IR4",
+     "value": 0.44,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L744-758",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "A_SP_IR4_t",
+     "value": 2.38,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L744-758"
+    },
+    {
+     "name": "A_SP_IR5",
+     "value": 0.34,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L744-758",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "A_SP_IR5_t"
+    },
+    {
+     "name": "A_SP_IR5_t",
+     "value": 1.63,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L744-758"
+    },
+    {
+     "name": "D_RR1_IR1",
+     "value": -0.4,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L984-998",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR1_IR1_t",
+     "value": -3.67,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L984-998"
+    },
+    {
+     "name": "D_RR1_IR2",
+     "value": 0.03,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L984-998",
+     "notes": "OCR prints 0.030 (three-decimal artifact of the two-decimal table); encoded 0.03",
+     "insignificant": true,
+     "inference_cell": "D_RR1_IR2_t"
+    },
+    {
+     "name": "D_RR1_IR2_t",
+     "value": 0.24,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L984-998"
+    },
+    {
+     "name": "D_RR1_IR3",
+     "value": -0.05,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L984-998",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR1_IR3_t"
+    },
+    {
+     "name": "D_RR1_IR3_t",
+     "value": -0.49,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L984-998"
+    },
+    {
+     "name": "D_RR1_IR4",
+     "value": 0.01,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L984-998",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR1_IR4_t"
+    },
+    {
+     "name": "D_RR1_IR4_t",
+     "value": 0.1,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L984-998"
+    },
+    {
+     "name": "D_RR1_IR5",
+     "value": 0.18,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L984-998",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR1_IR5_t"
+    },
+    {
+     "name": "D_RR1_IR5_t",
+     "value": 1.31,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L984-998"
+    },
+    {
+     "name": "D_RR1_SP",
+     "value": 0.58,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L984-998",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR1_SP_t",
+     "value": 3.36,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L984-998"
+    },
+    {
+     "name": "D_RR2_IR1",
+     "value": -0.14,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L999-1013",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR2_IR1_t"
+    },
+    {
+     "name": "D_RR2_IR1_t",
+     "value": -1.59,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L999-1013"
+    },
+    {
+     "name": "D_RR2_IR2",
+     "value": 0.17,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L999-1013",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR2_IR2_t",
+     "value": 2.17,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L999-1013"
+    },
+    {
+     "name": "D_RR2_IR3",
+     "value": 0.08,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L999-1013",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR2_IR3_t"
+    },
+    {
+     "name": "D_RR2_IR3_t",
+     "value": 1.03,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L999-1013"
+    },
+    {
+     "name": "D_RR2_IR4",
+     "value": 0.21,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L999-1013",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR2_IR4_t",
+     "value": 2.25,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L999-1013"
+    },
+    {
+     "name": "D_RR2_IR5",
+     "value": 0.12,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L999-1013",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR2_IR5_t"
+    },
+    {
+     "name": "D_RR2_IR5_t",
+     "value": 1.14,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L999-1013"
+    },
+    {
+     "name": "D_RR2_SP",
+     "value": 0.26,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L999-1013",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR2_SP_t"
+    },
+    {
+     "name": "D_RR2_SP_t",
+     "value": 1.83,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L999-1013"
+    },
+    {
+     "name": "D_RR3_IR1",
+     "value": -0.31,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1014-1028",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR3_IR1_t",
+     "value": -3.13,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1014-1028"
+    },
+    {
+     "name": "D_RR3_IR2",
+     "value": -0.02,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1014-1028",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR3_IR2_t"
+    },
+    {
+     "name": "D_RR3_IR2_t",
+     "value": -0.27,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1014-1028"
+    },
+    {
+     "name": "D_RR3_IR3",
+     "value": 0.15,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1014-1028",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR3_IR3_t",
+     "value": 1.99,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1014-1028"
+    },
+    {
+     "name": "D_RR3_IR4",
+     "value": 0.12,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1014-1028",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR3_IR4_t"
+    },
+    {
+     "name": "D_RR3_IR4_t",
+     "value": 1.59,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1014-1028"
+    },
+    {
+     "name": "D_RR3_IR5",
+     "value": 0.22,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1014-1028",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR3_IR5_t",
+     "value": 2.41,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1014-1028"
+    },
+    {
+     "name": "D_RR3_SP",
+     "value": 0.53,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1014-1028",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR3_SP_t",
+     "value": 3.68,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1014-1028"
+    },
+    {
+     "name": "D_RR4_IR1",
+     "value": -0.42,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1029-1043",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR4_IR1_t",
+     "value": -3.73,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1029-1043"
+    },
+    {
+     "name": "D_RR4_IR2",
+     "value": -0.02,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1029-1043",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR4_IR2_t"
+    },
+    {
+     "name": "D_RR4_IR2_t",
+     "value": -0.29,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1029-1043"
+    },
+    {
+     "name": "D_RR4_IR3",
+     "value": -0.12,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1029-1043",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR4_IR3_t"
+    },
+    {
+     "name": "D_RR4_IR3_t",
+     "value": -1.71,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1029-1043"
+    },
+    {
+     "name": "D_RR4_IR4",
+     "value": 0.07,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1029-1043",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR4_IR4_t"
+    },
+    {
+     "name": "D_RR4_IR4_t",
+     "value": 1.11,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1029-1043"
+    },
+    {
+     "name": "D_RR4_IR5",
+     "value": 0.05,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1029-1043",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "D_RR4_IR5_t"
+    },
+    {
+     "name": "D_RR4_IR5_t",
+     "value": 0.52,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1029-1043"
+    },
+    {
+     "name": "D_RR4_SP",
+     "value": 0.46,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1029-1043",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "D_RR4_SP_t",
+     "value": 3.18,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1029-1043"
+    },
+    {
+     "name": "D_RR5_IR1",
+     "value": -0.42,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1045-1050",
+     "notes": "OCR truncated Table 4 Panel D at the page break: RR5 t-statistics and the 5-1 row of Panel D are not present in content.md; only the five RR5 estimates are committed"
+    },
+    {
+     "name": "D_RR5_IR2",
+     "value": -0.12,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1045-1050",
+     "notes": "OCR truncated Table 4 Panel D at the page break: RR5 t-statistics and the 5-1 row of Panel D are not present in content.md; only the five RR5 estimates are committed"
+    },
+    {
+     "name": "D_RR5_IR3",
+     "value": -0.09,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1045-1050",
+     "notes": "OCR truncated Table 4 Panel D at the page break: RR5 t-statistics and the 5-1 row of Panel D are not present in content.md; only the five RR5 estimates are committed"
+    },
+    {
+     "name": "D_RR5_IR4",
+     "value": -0.03,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1045-1050",
+     "notes": "OCR truncated Table 4 Panel D at the page break: RR5 t-statistics and the 5-1 row of Panel D are not present in content.md; only the five RR5 estimates are committed"
+    },
+    {
+     "name": "D_RR5_IR5",
+     "value": 0.12,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1045-1050",
+     "notes": "OCR truncated Table 4 Panel D at the page break: RR5 t-statistics and the 5-1 row of Panel D are not present in content.md; only the five RR5 estimates are committed"
+    }
+   ],
+   "notes": "Panels B (CAPM), C (FF3), and E (spanning on MOM_12,7) omitted to bound the committed cell count (budget_flag); Panel D carries the four-factor message and Panel A the raw spreads. Panel D RR5 t-stats and 5-1 row lost to OCR page-break truncation (L1051)."
+  },
+  {
+   "id": "T5",
+   "table_ref": "Table 6",
+   "description": "Conditional momentum strategies 1969-2010: MOM_12,7 within each r_6,2 quintile and MOM_6,2 within each r_12,7 quintile - mean returns and FF3+MOM_12,7 alphas",
+   "replication_meaning": "Demonstrates the conditional (within-quintile) construction: quintile W-L sorts on one signal constructed within each quintile of the other. Distinct from T4's independent sort; validates the claim that intermediate-horizon momentum survives neutralization on recent performance while the converse fails.",
+   "covers_claims": [
+    "C3"
+   ],
+   "paper_quote": "This table shows the average returns to the five winner-minus-loser portfolios in each direction from the double sort on recent and intermediate horizon past performances ( $r_{6,2}$ and $r_{12,7}$ ), and results from time series regressions employing these strategies\u2019 returns. The sample covers January 1969 to December 2010. (L1485-1487)",
+   "exercises_preprocessing_rules": [
+    "sample_table6_conditional_1969_2010",
+    "sort_double_independent_5x5",
+    "sort_double_quintile_nyse_vw"
+   ],
+   "metrics": [
+    {
+     "name": "er_cond127_q1",
+     "value": 1.07,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1512-1516",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "er_cond127_q1_t",
+     "value": 4.58,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1525-1529"
+    },
+    {
+     "name": "er_cond127_q2",
+     "value": 0.77,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1512-1516",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "er_cond127_q2_t",
+     "value": 3.67,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1525-1529"
+    },
+    {
+     "name": "er_cond127_q3",
+     "value": 0.95,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1512-1516",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "er_cond127_q3_t",
+     "value": 4.2,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1525-1529"
+    },
+    {
+     "name": "er_cond127_q4",
+     "value": 0.95,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1512-1516",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "er_cond127_q4_t",
+     "value": 4.69,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1525-1529"
+    },
+    {
+     "name": "er_cond127_q5",
+     "value": 1.3,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1512-1516",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "er_cond127_q5_t",
+     "value": 6.35,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1525-1529"
+    },
+    {
+     "name": "er_cond62_q1",
+     "value": 0.26,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1517-1521",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "er_cond62_q1_t"
+    },
+    {
+     "name": "er_cond62_q1_t",
+     "value": 0.97,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1530-1534"
+    },
+    {
+     "name": "er_cond62_q2",
+     "value": 0.26,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1517-1521",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "er_cond62_q2_t"
+    },
+    {
+     "name": "er_cond62_q2_t",
+     "value": 1.02,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1530-1534"
+    },
+    {
+     "name": "er_cond62_q3",
+     "value": 0.29,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1517-1521",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "er_cond62_q3_t"
+    },
+    {
+     "name": "er_cond62_q3_t",
+     "value": 1.17,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1530-1534"
+    },
+    {
+     "name": "er_cond62_q4",
+     "value": 0.39,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1517-1521",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "er_cond62_q4_t"
+    },
+    {
+     "name": "er_cond62_q4_t",
+     "value": 1.73,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1530-1534"
+    },
+    {
+     "name": "er_cond62_q5",
+     "value": 0.49,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1517-1521",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "er_cond62_q5_t"
+    },
+    {
+     "name": "er_cond62_q5_t",
+     "value": 1.93,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1530-1534"
+    },
+    {
+     "name": "alpha_cond127_q1",
+     "value": 0.15,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1538-1542",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "alpha_cond127_q1_t"
+    },
+    {
+     "name": "alpha_cond127_q1_t",
+     "value": 0.84,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1551-1555"
+    },
+    {
+     "name": "alpha_cond127_q2",
+     "value": -0.15,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1538-1542",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "alpha_cond127_q2_t"
+    },
+    {
+     "name": "alpha_cond127_q2_t",
+     "value": -0.93,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1551-1555"
+    },
+    {
+     "name": "alpha_cond127_q3",
+     "value": -0.03,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1538-1542",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "alpha_cond127_q3_t"
+    },
+    {
+     "name": "alpha_cond127_q3_t",
+     "value": -0.18,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1551-1555"
+    },
+    {
+     "name": "alpha_cond127_q4",
+     "value": 0.04,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1538-1542",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "alpha_cond127_q4_t"
+    },
+    {
+     "name": "alpha_cond127_q4_t",
+     "value": 0.29,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1551-1555"
+    },
+    {
+     "name": "alpha_cond127_q5",
+     "value": 0.39,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1538-1542",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "alpha_cond127_q5_t",
+     "value": 2.8,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1551-1555"
+    },
+    {
+     "name": "alpha_cond62_q1",
+     "value": -0.17,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1543-1547",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "alpha_cond62_q1_t"
+    },
+    {
+     "name": "alpha_cond62_q1_t",
+     "value": -0.65,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1556-1560"
+    },
+    {
+     "name": "alpha_cond62_q2",
+     "value": -0.05,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1543-1547",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "alpha_cond62_q2_t"
+    },
+    {
+     "name": "alpha_cond62_q2_t",
+     "value": -0.21,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1556-1560"
+    },
+    {
+     "name": "alpha_cond62_q3",
+     "value": -0.2,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1543-1547",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "alpha_cond62_q3_t"
+    },
+    {
+     "name": "alpha_cond62_q3_t",
+     "value": -0.82,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1556-1560"
+    },
+    {
+     "name": "alpha_cond62_q4",
+     "value": 0.01,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1543-1547",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "alpha_cond62_q4_t"
+    },
+    {
+     "name": "alpha_cond62_q4_t",
+     "value": 0.06,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1556-1560"
+    },
+    {
+     "name": "alpha_cond62_q5",
+     "value": 0.07,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1543-1547",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "alpha_cond62_q5_t"
+    },
+    {
+     "name": "alpha_cond62_q5_t",
+     "value": 0.28,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1556-1560"
+    }
+   ],
+   "notes": "Committed rows: E[r^d] and alpha only; the MKT/SMB/HML/MOM loading rows are auxiliary (their message duplicates committed spanning cells in T3) - omitted to bound the committed cell count (budget_flag)."
+  },
+  {
+   "id": "T6",
+   "table_ref": "Table 7",
+   "description": "Momentum within NYSE size quintiles: Panel A characteristics, Panels B/D mean excess returns (full/late), Panels C/E alphas vs FF3 and the other strategy (full/late)",
+   "replication_meaning": "Demonstrates size-quintile construction (NYSE breaks) and within-quintile momentum sorts. Panel A's firm counts and capitalization shares validate the 'all CRSP stocks' universe directly against the paper's printed averages; Panels B-E test the claim that the intermediate-vs-recent disparity is most acute among large stocks.",
+   "covers_claims": [
+    "C4"
+   ],
+   "paper_quote": "This table reports the average returns to momentum strategies based on recent and intermediate horizon past performance, constructed within size quintiles [...], and the abnormal returns to these strategies relative to the three Fama-French factors and each other. Portfolio break points based on NYSE stocks only. The full sample covers January 1927 through December 2010. The late sample covers January 1969 through December 2010. (L1699-1701)",
+   "exercises_preprocessing_rules": [
+    "sort_within_quintile_momentum",
+    "sort_size_quintiles_nyse_characteristics",
+    "sample_table7_full_and_late",
+    "sort_large_quintile_nyse"
+   ],
+   "metrics": [
+    {
+     "name": "pa_nfirms_q1",
+     "value": 1772,
+     "unit": "count",
+     "tolerance_pct": 15,
+     "paper_location": "L1715-1721",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_nfirms_q2",
+     "value": 653.6,
+     "unit": "count",
+     "tolerance_pct": 15,
+     "paper_location": "L1715-1721",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_nfirms_q3",
+     "value": 481.9,
+     "unit": "count",
+     "tolerance_pct": 15,
+     "paper_location": "L1715-1721",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_nfirms_q4",
+     "value": 385.1,
+     "unit": "count",
+     "tolerance_pct": 15,
+     "paper_location": "L1715-1721",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_nfirms_q5",
+     "value": 336.6,
+     "unit": "count",
+     "tolerance_pct": 15,
+     "paper_location": "L1715-1721",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_pfirms_q1",
+     "value": 38.1,
+     "unit": "percent",
+     "tolerance_pct": 20,
+     "paper_location": "L1723-1729",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 2.0
+    },
+    {
+     "name": "pa_pfirms_q2",
+     "value": 18.6,
+     "unit": "percent",
+     "tolerance_pct": 20,
+     "paper_location": "L1723-1729",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 2.0
+    },
+    {
+     "name": "pa_pfirms_q3",
+     "value": 15.7,
+     "unit": "percent",
+     "tolerance_pct": 20,
+     "paper_location": "L1723-1729",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 2.0
+    },
+    {
+     "name": "pa_pfirms_q4",
+     "value": 14.2,
+     "unit": "percent",
+     "tolerance_pct": 20,
+     "paper_location": "L1723-1729",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 2.0
+    },
+    {
+     "name": "pa_pfirms_q5",
+     "value": 13.5,
+     "unit": "percent",
+     "tolerance_pct": 20,
+     "paper_location": "L1723-1729",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 2.0
+    },
+    {
+     "name": "pa_totcap_q1",
+     "value": 57.2,
+     "unit": "billions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1730-1737",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_totcap_q2",
+     "value": 102.8,
+     "unit": "billions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1730-1737",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_totcap_q3",
+     "value": 183.8,
+     "unit": "billions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1730-1737",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_totcap_q4",
+     "value": 370.1,
+     "unit": "billions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1730-1737",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_totcap_q5",
+     "value": 2668,
+     "unit": "billions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1730-1737",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_pcap_q1",
+     "value": 1.7,
+     "unit": "percent",
+     "tolerance_pct": 25,
+     "paper_location": "L1739-1745",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 3.0
+    },
+    {
+     "name": "pa_pcap_q2",
+     "value": 3.0,
+     "unit": "percent",
+     "tolerance_pct": 25,
+     "paper_location": "L1739-1745",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 3.0
+    },
+    {
+     "name": "pa_pcap_q3",
+     "value": 5.5,
+     "unit": "percent",
+     "tolerance_pct": 25,
+     "paper_location": "L1739-1745",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 3.0
+    },
+    {
+     "name": "pa_pcap_q4",
+     "value": 12.0,
+     "unit": "percent",
+     "tolerance_pct": 25,
+     "paper_location": "L1739-1745",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 3.0
+    },
+    {
+     "name": "pa_pcap_q5",
+     "value": 77.9,
+     "unit": "percent",
+     "tolerance_pct": 25,
+     "paper_location": "L1739-1745",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction",
+     "absolute_band": 3.0
+    },
+    {
+     "name": "pa_avecap_q1",
+     "value": 19.6,
+     "unit": "millions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1747-1753",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_avecap_q2",
+     "value": 87.3,
+     "unit": "millions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1747-1753",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_avecap_q3",
+     "value": 218.6,
+     "unit": "millions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1747-1753",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_avecap_q4",
+     "value": 577.3,
+     "unit": "millions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1747-1753",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pa_avecap_q5",
+     "value": 4694,
+     "unit": "millions_usd",
+     "tolerance_pct": 30,
+     "paper_location": "L1747-1753",
+     "notes": "time-series average characteristic of NYSE-break size quintiles; sanity cell validating the 'all CRSP stocks' universe and ME construction"
+    },
+    {
+     "name": "pb_m127_q1",
+     "value": 0.83,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1758-1772",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pb_m127_q1_t",
+     "value": 5.17,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1758-1772"
+    },
+    {
+     "name": "pb_m127_q2",
+     "value": 0.85,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1758-1772",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pb_m127_q2_t",
+     "value": 6.39,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1758-1772"
+    },
+    {
+     "name": "pb_m127_q3",
+     "value": 1.0,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1758-1772",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pb_m127_q3_t",
+     "value": 6.53,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1758-1772"
+    },
+    {
+     "name": "pb_m127_q4",
+     "value": 0.87,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1758-1772",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pb_m127_q4_t",
+     "value": 5.1,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1758-1772"
+    },
+    {
+     "name": "pb_m127_q5",
+     "value": 0.82,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1758-1772",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pb_m127_q5_t",
+     "value": 4.66,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1758-1772"
+    },
+    {
+     "name": "pb_m62_q1",
+     "value": 0.53,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1774-1788",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pb_m62_q1_t",
+     "value": 2.99,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1774-1788"
+    },
+    {
+     "name": "pb_m62_q2",
+     "value": 0.73,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1774-1788",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pb_m62_q2_t",
+     "value": 4.22,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1774-1788"
+    },
+    {
+     "name": "pb_m62_q3",
+     "value": 0.52,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1774-1788",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pb_m62_q3_t",
+     "value": 2.7,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1774-1788"
+    },
+    {
+     "name": "pb_m62_q4",
+     "value": 0.53,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1774-1788",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pb_m62_q4_t",
+     "value": 2.85,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1774-1788"
+    },
+    {
+     "name": "pb_m62_q5",
+     "value": 0.24,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1774-1788",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "pb_m62_q5_t"
+    },
+    {
+     "name": "pb_m62_q5_t",
+     "value": 1.25,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1774-1788"
+    },
+    {
+     "name": "pc_m127_q1",
+     "value": 0.8,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1793-1807",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m127_q1_t",
+     "value": 5.17,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1793-1807"
+    },
+    {
+     "name": "pc_m127_q2",
+     "value": 0.84,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1793-1807",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m127_q2_t",
+     "value": 6.69,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1793-1807"
+    },
+    {
+     "name": "pc_m127_q3",
+     "value": 1.1,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1793-1807",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m127_q3_t",
+     "value": 7.72,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1793-1807"
+    },
+    {
+     "name": "pc_m127_q4",
+     "value": 0.94,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1793-1807",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m127_q4_t",
+     "value": 6.28,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1793-1807"
+    },
+    {
+     "name": "pc_m127_q5",
+     "value": 0.93,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1793-1807",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m127_q5_t",
+     "value": 5.58,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1793-1807"
+    },
+    {
+     "name": "pc_m62_q1",
+     "value": 0.63,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1809-1823",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m62_q1_t",
+     "value": 3.92,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1809-1823"
+    },
+    {
+     "name": "pc_m62_q2",
+     "value": 0.79,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1809-1823",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m62_q2_t",
+     "value": 5.02,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1809-1823"
+    },
+    {
+     "name": "pc_m62_q3",
+     "value": 0.63,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1809-1823",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m62_q3_t",
+     "value": 3.58,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1809-1823"
+    },
+    {
+     "name": "pc_m62_q4",
+     "value": 0.51,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1809-1823",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m62_q4_t",
+     "value": 3.12,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1809-1823"
+    },
+    {
+     "name": "pc_m62_q5",
+     "value": 0.4,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1809-1823",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pc_m62_q5_t",
+     "value": 2.25,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1809-1823"
+    },
+    {
+     "name": "pd_m127_q1",
+     "value": 1.09,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1828-1842",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pd_m127_q1_t",
+     "value": 6.95,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1828-1842"
+    },
+    {
+     "name": "pd_m127_q2",
+     "value": 1.02,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1828-1842",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pd_m127_q2_t",
+     "value": 6.6,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1828-1842"
+    },
+    {
+     "name": "pd_m127_q3",
+     "value": 1.05,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1828-1842",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pd_m127_q3_t",
+     "value": 6.19,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1828-1842"
+    },
+    {
+     "name": "pd_m127_q4",
+     "value": 0.89,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1828-1842",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pd_m127_q4_t",
+     "value": 4.76,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1828-1842"
+    },
+    {
+     "name": "pd_m127_q5",
+     "value": 0.91,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1828-1842",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pd_m127_q5_t",
+     "value": 4.2,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1828-1842"
+    },
+    {
+     "name": "pd_m62_q1",
+     "value": 1.08,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1844-1858",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pd_m62_q1_t",
+     "value": 5.24,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1844-1858"
+    },
+    {
+     "name": "pd_m62_q2",
+     "value": 1.01,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1844-1858",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pd_m62_q2_t",
+     "value": 4.71,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1844-1858"
+    },
+    {
+     "name": "pd_m62_q3",
+     "value": 0.62,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1844-1858",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pd_m62_q3_t",
+     "value": 2.75,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1844-1858"
+    },
+    {
+     "name": "pd_m62_q4",
+     "value": 0.5,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1844-1858",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pd_m62_q4_t",
+     "value": 2.2,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1844-1858"
+    },
+    {
+     "name": "pd_m62_q5",
+     "value": 0.16,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1844-1858",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "pd_m62_q5_t"
+    },
+    {
+     "name": "pd_m62_q5_t",
+     "value": 0.68,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1844-1858"
+    },
+    {
+     "name": "pe_m127_q1",
+     "value": 0.8,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1863-1877",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pe_m127_q1_t",
+     "value": 5.62,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1863-1877"
+    },
+    {
+     "name": "pe_m127_q2",
+     "value": 0.76,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1863-1877",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pe_m127_q2_t",
+     "value": 5.38,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1863-1877"
+    },
+    {
+     "name": "pe_m127_q3",
+     "value": 0.98,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1863-1877",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pe_m127_q3_t",
+     "value": 6.19,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1863-1877"
+    },
+    {
+     "name": "pe_m127_q4",
+     "value": 0.84,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1863-1877",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pe_m127_q4_t",
+     "value": 5.08,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1863-1877"
+    },
+    {
+     "name": "pe_m127_q5",
+     "value": 1.01,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1863-1877",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pe_m127_q5_t",
+     "value": 5.02,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1863-1877"
+    },
+    {
+     "name": "pe_m62_q1",
+     "value": 0.52,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1879-1893",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pe_m62_q1_t",
+     "value": 2.72,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1879-1893"
+    },
+    {
+     "name": "pe_m62_q2",
+     "value": 0.46,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1879-1893",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "pe_m62_q2_t",
+     "value": 2.31,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1879-1893"
+    },
+    {
+     "name": "pe_m62_q3",
+     "value": 0.2,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1879-1893",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "pe_m62_q3_t"
+    },
+    {
+     "name": "pe_m62_q3_t",
+     "value": 0.92,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1879-1893"
+    },
+    {
+     "name": "pe_m62_q4",
+     "value": 0.03,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1879-1893",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "pe_m62_q4_t"
+    },
+    {
+     "name": "pe_m62_q4_t",
+     "value": 0.14,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1879-1893"
+    },
+    {
+     "name": "pe_m62_q5",
+     "value": -0.12,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1879-1893",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "pe_m62_q5_t"
+    },
+    {
+     "name": "pe_m62_q5_t",
+     "value": -0.54,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1879-1893"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "id": "T7",
+   "table_ref": "Table 8",
+   "description": "Industry momentum spanning tests: FF-49-industry tertile (top/bottom 30%) EW strategies on r_12,7 and r_6,2 regressed on UMD and each other, 1927-2010",
+   "replication_meaning": "Demonstrates construction of VW FF-49 industry portfolios from CRSP SIC codes and the tertile EW momentum sort over non-stock assets - the first test that the intermediate-vs-recent term structure extends beyond individual equities.",
+   "covers_claims": [
+    "C5"
+   ],
+   "paper_quote": "$MOM_{n,m}^{indus}$ is the returns to the winner-minus-loser portfolio (tertiles), where winners and losers are based on cumulative returns from $n$ to $m$ months (inclusive) prior to portfolio formation. The sample period covers January 1927 through December 2010. (L1953-1955)",
+   "exercises_preprocessing_rules": [
+    "sample_other_markets_assets",
+    "sort_other_markets_tertile_ew"
+   ],
+   "metrics": [
+    {
+     "name": "ind_intercept_s1",
+     "value": 0.57,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1976",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "ind_intercept_s1_t",
+     "value": 4.58,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1976"
+    },
+    {
+     "name": "ind_intercept_s2",
+     "value": 0.22,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1977",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "ind_intercept_s2_t",
+     "value": 2.54,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1977"
+    },
+    {
+     "name": "ind_intercept_s3",
+     "value": 0.47,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1978",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "ind_intercept_s3_t",
+     "value": 4.42,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1978"
+    },
+    {
+     "name": "ind_intercept_s4",
+     "value": 0.27,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1979",
+     "notes": "band 0.15pp (alpha default)"
+    },
+    {
+     "name": "ind_intercept_s4_t",
+     "value": 2.19,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1979"
+    },
+    {
+     "name": "ind_intercept_s5",
+     "value": -0.13,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1980",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "ind_intercept_s5_t"
+    },
+    {
+     "name": "ind_intercept_s5_t",
+     "value": -1.5,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1980"
+    },
+    {
+     "name": "ind_intercept_s6",
+     "value": 0.04,
+     "unit": "percent_per_month",
+     "tolerance_pct": 60,
+     "absolute_band": 0.15,
+     "paper_location": "L1981",
+     "notes": "paper reports insignificant (|t|<1.96); t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "ind_intercept_s6_t"
+    },
+    {
+     "name": "ind_intercept_s6_t",
+     "value": 0.39,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1981"
+    },
+    {
+     "name": "ind_umd_s2",
+     "value": 0.49,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L1995"
+    },
+    {
+     "name": "ind_umd_s2_t",
+     "value": 27.1,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1995"
+    },
+    {
+     "name": "ind_umd_s5",
+     "value": 0.57,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L1998"
+    },
+    {
+     "name": "ind_umd_s5_t",
+     "value": 32.0,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L1998"
+    },
+    {
+     "name": "ind_mom62_s3",
+     "value": 0.35,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L2014"
+    },
+    {
+     "name": "ind_mom62_s3_t",
+     "value": 12.7,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2023"
+    },
+    {
+     "name": "ind_mom127_s6",
+     "value": 0.39,
+     "unit": "factor_loading",
+     "tolerance_pct": 50,
+     "absolute_band": 0.1,
+     "paper_location": "L2035"
+    },
+    {
+     "name": "ind_mom127_s6_t",
+     "value": 12.7,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2044"
+    },
+    {
+     "name": "ind_r2_s2",
+     "value": 0.422,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L2049"
+    },
+    {
+     "name": "ind_r2_s3",
+     "value": 0.137,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L2050"
+    },
+    {
+     "name": "ind_r2_s5",
+     "value": 0.504,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L2052"
+    },
+    {
+     "name": "ind_r2_s6",
+     "value": 0.137,
+     "unit": "adj_r_squared",
+     "tolerance_pct": 35,
+     "absolute_band": 0.03,
+     "paper_location": "L2053"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "id": "T8",
+   "table_ref": "Table 14",
+   "description": "FM regressions of returns on r_12,2 / r_12,7 / r_6,2 and SUE with r_1,0, ln(ME), ln(BM) controls, 1973-2010 (8 specifications)",
+   "replication_meaning": "Demonstrates the quarterly-earnings extension: SUE from Compustat fundq (last quarterly earnings minus its 4-quarter average, scaled by assets), merged to CRSP monthly returns. Tests that earnings momentum absorbs recent-past-performance power but not intermediate-horizon power.",
+   "covers_claims": [
+    "C6"
+   ],
+   "paper_quote": "This table reports results of Fama-MacBeth regressions of firms\u2019 returns on past performance variables ( $r_{12,2}$ , $r_{12,7}$ , and $r_{6,2}$ ) and standardized unexpected earnings (SUE, defined here as the deviation of a firm\u2019s most recent quarterly earnings from its average earnings over the previous four quarters, scaled by assets). [...] The sample period covers January 1973 through December 2010 (L2585-2587)",
+   "exercises_preprocessing_rules": [
+    "var_sue",
+    "avail_sue_quarterly_earnings",
+    "fm_spec_table1",
+    "winsorize_monthly",
+    "var_log_bm",
+    "var_log_me"
+   ],
+   "metrics": [
+    {
+     "name": "r122_s1",
+     "value": 0.62,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2609",
+     "absolute_band": 0.639,
+     "notes": "printed x10^2; band = 3xSE from paper t=2.91"
+    },
+    {
+     "name": "r122_s1_t",
+     "value": 2.91,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2609"
+    },
+    {
+     "name": "r122_s2",
+     "value": 0.55,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2610",
+     "absolute_band": 0.642,
+     "notes": "printed x10^2; band = 3xSE from paper t=2.57"
+    },
+    {
+     "name": "r122_s2_t",
+     "value": 2.57,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2610"
+    },
+    {
+     "name": "r127_s3",
+     "value": 1.02,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2622",
+     "absolute_band": 0.569,
+     "notes": "printed x10^2; band = 3xSE from paper t=5.38"
+    },
+    {
+     "name": "r127_s3_t",
+     "value": 5.38,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2622"
+    },
+    {
+     "name": "r127_s4",
+     "value": 0.98,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2623",
+     "absolute_band": 0.584,
+     "notes": "printed x10^2; band = 3xSE from paper t=5.03"
+    },
+    {
+     "name": "r127_s4_t",
+     "value": 5.03,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2623"
+    },
+    {
+     "name": "r127_s7",
+     "value": 0.99,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2626",
+     "absolute_band": 0.555,
+     "notes": "printed x10^2; band = 3xSE from paper t=5.35"
+    },
+    {
+     "name": "r127_s7_t",
+     "value": 5.35,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2626"
+    },
+    {
+     "name": "r127_s8",
+     "value": 0.94,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2627",
+     "absolute_band": 0.577,
+     "notes": "printed x10^2; band = 3xSE from paper t=4.89"
+    },
+    {
+     "name": "r127_s8_t",
+     "value": 4.89,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2627"
+    },
+    {
+     "name": "r62_s5",
+     "value": 0.34,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2635",
+     "absolute_band": 0.85,
+     "notes": "printed x10^2; band = 3xSE from paper t=1.2; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "r62_s5_t"
+    },
+    {
+     "name": "r62_s5_t",
+     "value": 1.2,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2635"
+    },
+    {
+     "name": "r62_s6",
+     "value": 0.23,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2636",
+     "absolute_band": 0.852,
+     "notes": "printed x10^2; band = 3xSE from paper t=0.81; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "r62_s6_t"
+    },
+    {
+     "name": "r62_s6_t",
+     "value": 0.81,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2636"
+    },
+    {
+     "name": "r62_s7",
+     "value": 0.28,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2637",
+     "absolute_band": 0.857,
+     "notes": "printed x10^2; band = 3xSE from paper t=0.98; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "r62_s7_t"
+    },
+    {
+     "name": "r62_s7_t",
+     "value": 0.98,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2637"
+    },
+    {
+     "name": "r62_s8",
+     "value": 0.16,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2638",
+     "absolute_band": 0.857,
+     "notes": "printed x10^2; band = 3xSE from paper t=0.56; paper reports insignificant (|t|<1.96) -> no_effect, t-cell carries inference",
+     "insignificant": true,
+     "inference_cell": "r62_s8_t"
+    },
+    {
+     "name": "r62_s8_t",
+     "value": 0.56,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2638"
+    },
+    {
+     "name": "sue_s2",
+     "value": 21.9,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2643",
+     "absolute_band": 4.727,
+     "notes": "printed x10^2; band = 3xSE from paper t=13.9"
+    },
+    {
+     "name": "sue_s2_t",
+     "value": 13.9,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2643"
+    },
+    {
+     "name": "sue_s4",
+     "value": 22.5,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2645",
+     "absolute_band": 4.891,
+     "notes": "printed x10^2; band = 3xSE from paper t=13.8"
+    },
+    {
+     "name": "sue_s4_t",
+     "value": 13.8,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2645"
+    },
+    {
+     "name": "sue_s6",
+     "value": 23.7,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2647",
+     "absolute_band": 5.228,
+     "notes": "printed x10^2; band = 3xSE from paper t=13.6"
+    },
+    {
+     "name": "sue_s6_t",
+     "value": 13.6,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2647"
+    },
+    {
+     "name": "sue_s8",
+     "value": 22.7,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2649",
+     "absolute_band": 5.044,
+     "notes": "printed x10^2; band = 3xSE from paper t=13.5"
+    },
+    {
+     "name": "sue_s8_t",
+     "value": 13.5,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2649"
+    },
+    {
+     "name": "r10_s1",
+     "value": -5.84,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2653",
+     "absolute_band": 1.413,
+     "notes": "printed x10^2; band = 3xSE from paper t=-12.4"
+    },
+    {
+     "name": "r10_s1_t",
+     "value": -12.4,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2653"
+    },
+    {
+     "name": "r10_s2",
+     "value": -6.15,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2654",
+     "absolute_band": 1.453,
+     "notes": "printed x10^2; band = 3xSE from paper t=-12.7"
+    },
+    {
+     "name": "r10_s2_t",
+     "value": -12.7,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2654"
+    },
+    {
+     "name": "r10_s3",
+     "value": -5.78,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2655",
+     "absolute_band": 1.445,
+     "notes": "printed x10^2; band = 3xSE from paper t=-12.0"
+    },
+    {
+     "name": "r10_s3_t",
+     "value": -12.0,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2655"
+    },
+    {
+     "name": "r10_s4",
+     "value": -6.11,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2656",
+     "absolute_band": 1.49,
+     "notes": "printed x10^2; band = 3xSE from paper t=-12.3"
+    },
+    {
+     "name": "r10_s4_t",
+     "value": -12.3,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2656"
+    },
+    {
+     "name": "r10_s5",
+     "value": -5.79,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2657",
+     "absolute_band": 1.448,
+     "notes": "printed x10^2; band = 3xSE from paper t=-12.0"
+    },
+    {
+     "name": "r10_s5_t",
+     "value": -12.0,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2657"
+    },
+    {
+     "name": "r10_s6",
+     "value": -6.12,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2658",
+     "absolute_band": 1.493,
+     "notes": "printed x10^2; band = 3xSE from paper t=-12.3"
+    },
+    {
+     "name": "r10_s6_t",
+     "value": -12.3,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2658"
+    },
+    {
+     "name": "r10_s7",
+     "value": -5.93,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2659",
+     "absolute_band": 1.401,
+     "notes": "printed x10^2; band = 3xSE from paper t=-12.7"
+    },
+    {
+     "name": "r10_s7_t",
+     "value": -12.7,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2659"
+    },
+    {
+     "name": "r10_s8",
+     "value": -6.28,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2660",
+     "absolute_band": 1.449,
+     "notes": "printed x10^2; band = 3xSE from paper t=-13.0"
+    },
+    {
+     "name": "r10_s8_t",
+     "value": -13.0,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2660"
+    },
+    {
+     "name": "lnme_s1",
+     "value": -0.14,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2664",
+     "absolute_band": 0.133,
+     "notes": "printed x10^2; band = 3xSE from paper t=-3.15"
+    },
+    {
+     "name": "lnme_s1_t",
+     "value": -3.15,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2664"
+    },
+    {
+     "name": "lnme_s2",
+     "value": -0.12,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2665",
+     "absolute_band": 0.129,
+     "notes": "printed x10^2; band = 3xSE from paper t=-2.78"
+    },
+    {
+     "name": "lnme_s2_t",
+     "value": -2.78,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2665"
+    },
+    {
+     "name": "lnme_s3",
+     "value": -0.13,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2666",
+     "absolute_band": 0.135,
+     "notes": "printed x10^2; band = 3xSE from paper t=-2.89"
+    },
+    {
+     "name": "lnme_s3_t",
+     "value": -2.89,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2666"
+    },
+    {
+     "name": "lnme_s4",
+     "value": -0.12,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2667",
+     "absolute_band": 0.138,
+     "notes": "printed x10^2; band = 3xSE from paper t=-2.61"
+    },
+    {
+     "name": "lnme_s4_t",
+     "value": -2.61,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2667"
+    },
+    {
+     "name": "lnme_s5",
+     "value": -0.1,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2668",
+     "absolute_band": 0.123,
+     "notes": "printed x10^2; band = 3xSE from paper t=-2.44"
+    },
+    {
+     "name": "lnme_s5_t",
+     "value": -2.44,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2668"
+    },
+    {
+     "name": "lnme_s6",
+     "value": -0.09,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2669",
+     "absolute_band": 0.127,
+     "notes": "printed x10^2; band = 3xSE from paper t=-2.13"
+    },
+    {
+     "name": "lnme_s6_t",
+     "value": -2.13,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2669"
+    },
+    {
+     "name": "lnme_s7",
+     "value": -0.13,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2670",
+     "absolute_band": 0.121,
+     "notes": "printed x10^2; band = 3xSE from paper t=-3.22"
+    },
+    {
+     "name": "lnme_s7_t",
+     "value": -3.22,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2670"
+    },
+    {
+     "name": "lnme_s8",
+     "value": -0.12,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2671",
+     "absolute_band": 0.128,
+     "notes": "printed x10^2; band = 3xSE from paper t=-2.82"
+    },
+    {
+     "name": "lnme_s8_t",
+     "value": -2.82,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2671"
+    },
+    {
+     "name": "lnbm_s1",
+     "value": 0.3,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2675",
+     "absolute_band": 0.187,
+     "notes": "printed x10^2; band = 3xSE from paper t=4.82"
+    },
+    {
+     "name": "lnbm_s1_t",
+     "value": 4.82,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2675"
+    },
+    {
+     "name": "lnbm_s2",
+     "value": 0.26,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2676",
+     "absolute_band": 0.192,
+     "notes": "printed x10^2; band = 3xSE from paper t=4.07"
+    },
+    {
+     "name": "lnbm_s2_t",
+     "value": 4.07,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2676"
+    },
+    {
+     "name": "lnbm_s3",
+     "value": 0.31,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2677",
+     "absolute_band": 0.188,
+     "notes": "printed x10^2; band = 3xSE from paper t=4.96"
+    },
+    {
+     "name": "lnbm_s3_t",
+     "value": 4.96,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2677"
+    },
+    {
+     "name": "lnbm_s4",
+     "value": 0.27,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2678",
+     "absolute_band": 0.194,
+     "notes": "printed x10^2; band = 3xSE from paper t=4.18"
+    },
+    {
+     "name": "lnbm_s4_t",
+     "value": 4.18,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2678"
+    },
+    {
+     "name": "lnbm_s5",
+     "value": 0.31,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2679",
+     "absolute_band": 0.186,
+     "notes": "printed x10^2; band = 3xSE from paper t=5.01"
+    },
+    {
+     "name": "lnbm_s5_t",
+     "value": 5.01,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2679"
+    },
+    {
+     "name": "lnbm_s6",
+     "value": 0.27,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2680",
+     "absolute_band": 0.191,
+     "notes": "printed x10^2; band = 3xSE from paper t=4.23"
+    },
+    {
+     "name": "lnbm_s6_t",
+     "value": 4.23,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2680"
+    },
+    {
+     "name": "lnbm_s7",
+     "value": 0.3,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2681",
+     "absolute_band": 0.178,
+     "notes": "printed x10^2; band = 3xSE from paper t=5.07"
+    },
+    {
+     "name": "lnbm_s7_t",
+     "value": 5.07,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2681"
+    },
+    {
+     "name": "lnbm_s8",
+     "value": 0.27,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2682",
+     "absolute_band": 0.186,
+     "notes": "printed x10^2; band = 3xSE from paper t=4.35"
+    },
+    {
+     "name": "lnbm_s8_t",
+     "value": 4.35,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2682"
+    },
+    {
+     "name": "diff_s7",
+     "value": 0.72,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2692",
+     "absolute_band": 0.737,
+     "notes": "printed x10^2; band = 3xSE from paper t=2.93"
+    },
+    {
+     "name": "diff_s7_t",
+     "value": 2.93,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2692"
+    },
+    {
+     "name": "diff_s8",
+     "value": 0.78,
+     "unit": "fm_coef_x100",
+     "tolerance_pct": 50,
+     "paper_location": "L2693",
+     "absolute_band": 0.765,
+     "notes": "printed x10^2; band = 3xSE from paper t=3.06"
+    },
+    {
+     "name": "diff_s8_t",
+     "value": 3.06,
+     "unit": "t_stat",
+     "tolerance_pct": 50,
+     "absolute_band": 0.5,
+     "paper_location": "L2693"
+    }
+   ],
+   "notes": null
+  }
+ ]
+}

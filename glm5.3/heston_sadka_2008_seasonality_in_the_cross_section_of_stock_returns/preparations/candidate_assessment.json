@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Cross-sectional asset-pricing paper using CRSP monthly returns for NYSE/AMEX stocks (returns from January 1945, strategies over January 1965-December 2002). Methodology is fully operationalized: monthly Fama-MacBeth cross-sectional regressions of returns on lagged returns at lags 1-240 (Eq. 1/3), equal-weighted decile winner-loser portfolios formed on annual vs nonannual lagged months (Tables 2/3/5/6/7/8), and a weighted relative-strength-strategy estimator of the cross-sectional variance of seasonal expected returns (Table 4, Appendix A Eq. 10-15). Every table reports numerical means and t-statistics. Only CRSP monthly returns, CRSP market caps, SIC industry codes, FF3 factors, and (for Table 8) Compustat event dates are required.",
+  "block_reasons": []
+}
